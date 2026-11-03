@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-03 · zip 制品 + 封面墙
+- CI：每本书 PDF 经 Ghostscript 尝试压缩（仅当小 ≥10% 且页数不变才采用），再 `zip -9` 为 `<slug>-<version>.zip` 作为 artifact。
+- Tag 发布：附各书 zip + SHA256SUMS；`v*` 全书 tag 另附 `ebooks-all-<tag>.zip`，Release notes 列出书目、版本与 CC BY-SA 4.0 许可。
+- README：3×3 封面墙 + 「书目介绍」（封面图为 Drive「Grok Bot 制品/books/covers」新上传文件）。
+
 ## 2026-11-03 · 初始导入
 - 9 本书源码 + 构建脚本入库：图解平台工程 v0.9.18、图解 IT 简史 v4.9.1、趣谈数据基础设施 v5.1、出海第一步 v1.2、AI 工具出海通关 v0.2.5、AI-Native v0.9.6、独立开发观察者计划 v0.1-r5、Agent Skills 工程规范 v0.2、人民币海外卡三条路线攻略 v1.1。
 - 观察者计划升到 v0.1-r5：正文取自 knowledge main（含 #294 合并的 articles 00–15）。

@@ -4,6 +4,116 @@
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE-code)
 [![build](https://github.com/ai-workspace-services/ebooks/actions/workflows/build.yml/badge.svg)](https://github.com/ai-workspace-services/ebooks/actions/workflows/build.yml)
 
+<table>
+<tr>
+<td align="center" width="33%"><a href="books/it-history/"><img src="https://lh3.googleusercontent.com/d/1wM6mMs-nDa4543i41jaXLMm_BkwUspSM" width="200" alt="cover"></a><br><b>图解 IT 简史</b><br><code>v4.9.1</code></td>
+<td align="center" width="33%"><a href="books/platform-engineering/"><img src="https://lh3.googleusercontent.com/d/1Wezxm2cAbXwMu5s7x7cOMPu-8CohndPt" width="200" alt="cover"></a><br><b>图解平台工程 · 云中立实践</b><br><code>v0.9.18</code></td>
+<td align="center" width="33%"><a href="books/data-infra/"><img src="https://lh3.googleusercontent.com/d/1cFqXY2ToExUQ_HoOu5k0CmVPbBoERL6F" width="200" alt="cover"></a><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
+</tr>
+<tr>
+<td align="center" width="33%"><a href="books/chuhai-first-step/"><img src="https://lh3.googleusercontent.com/d/1lbYhmyW64aN_ywcs9FlgxBv0AniWTfmB" width="200" alt="cover"></a><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.2</code></td>
+<td align="center" width="33%"><a href="books/ai-tools-overseas/"><img src="https://lh3.googleusercontent.com/d/1pWGTuerIkUAu_1hrnNgj7Lf1IjAIsPaY" width="200" alt="cover"></a><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.5</code></td>
+<td align="center" width="33%"><a href="books/ai-native/"><img src="https://lh3.googleusercontent.com/d/12PUFf5jWoU53sEvmQueTbvLoqaQeJ6MM" width="200" alt="cover"></a><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
+</tr>
+<tr>
+<td align="center" width="33%"><a href="books/indie-observer/"><img src="https://lh3.googleusercontent.com/d/1Yq_kA-qcEFPsj8zwzpjzkd8-vmHVCaFh" width="200" alt="cover"></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
+<td align="center" width="33%"><a href="books/agent-skills-spec/"><img src="https://lh3.googleusercontent.com/d/1AhPsl4HPqk7pA1xAkFaaEu70q2g82oGG" width="200" alt="cover"></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.2</code></td>
+<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><img src="https://lh3.googleusercontent.com/d/1OtnaFPGKC7G1OpZD1a_BL8zQ2nXvAu5d" width="200" alt="cover"></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.1</code></td>
+</tr>
+</table>
+
+## 书目介绍
+
+<table><tr><td width="130" valign="top"><a href="books/it-history/"><img src="https://lh3.googleusercontent.com/d/1wM6mMs-nDa4543i41jaXLMm_BkwUspSM" width="120" alt="cover"></a></td><td valign="top">
+
+### 图解 IT 简史 · `v4.9.1`
+
+这是一本讲“看不见的城市”的书：从 1964 年 IBM System/360 打地基，到云、Kubernetes，再到 ChatGPT 盖起的 AI 摩天楼，把散落在公众号和小红书上的图文按时间和因果重新排队，讲成一个连贯的故事。工程师拿它当全景地图，技术管理者拿它当选型参照，好奇的朋友也能当一本不用背名词的入门书。
+
+467 页 · [源码](books/it-history/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/it-history-v4.9.1.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/platform-engineering/"><img src="https://lh3.googleusercontent.com/d/1Wezxm2cAbXwMu5s7x7cOMPu-8CohndPt" width="120" alt="cover"></a></td><td valign="top">
+
+### 图解平台工程 · 云中立实践 · `v0.9.18`
+
+全书只讲一个判断：工具拼在一起 ≠ 平台。把平台拆成 Git 与 CI、资源即代码、交付引擎、安全与身份、环境治理、云中立、可观测七层，坚持“最大程度自建”，每章都对着 ai-workspace-infra 里真实的仓库和 PR 讲。适合手里工具一大堆、却总在出事那天才发现缺了点什么的团队。
+
+158 页 · [源码](books/platform-engineering/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/platform-engineering-v0.9.18.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/data-infra/"><img src="https://lh3.googleusercontent.com/d/1cFqXY2ToExUQ_HoOu5k0CmVPbBoERL6F" width="120" alt="cover"></a></td><td valign="top">
+
+### 趣谈数据基础设施 · AI 时代 · `v5.1`
+
+一条“地下管道”的故事：推荐、账单、AI 的回答背后，是一套搬运、存放、加工和守护数据的系统，从 1970 年代一路长到今天的 AI、Agent 和向量。13 章先画总地图，再自下而上走过存储、采集、计算、仓湖与 BI、治理和 AI 数据层，还给各路工具排排“年龄”。读的时候不必正襟危坐，就当听老工程师在茶水间讲往事。
+
+93 页 · [源码](books/data-infra/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/data-infra-v5.1.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/chuhai-first-step/"><img src="https://lh3.googleusercontent.com/d/1lbYhmyW64aN_ywcs9FlgxBv0AniWTfmB" width="120" alt="cover"></a></td><td valign="top">
+
+### 出海第一步 · 一人公司合规全流程 · `v1.2`
+
+从 LLC 到 EIN，再到银行和应用商店账户：美国 LLC 设立、EIN 与 147C、Mercury 企业账户，Microsoft、Apple、Google Play 三家公司开发者号，最后理清大陆、香港、美国三段资金合规。都是作者自己一步步走过的真实顺序，适合想用一人公司把产品卖向全球的独立开发者。
+
+40 页 · [源码](books/chuhai-first-step/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/chuhai-first-step-v1.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/ai-tools-overseas/"><img src="https://lh3.googleusercontent.com/d/1pWGTuerIkUAu_1hrnNgj7Lf1IjAIsPaY" width="120" alt="cover"></a></td><td valign="top">
+
+### AI 工具出海通关 · 注册与订阅全流程 · `v0.2.5`
+
+从网络环境、海外手机号、Gmail，到 ChatGPT、Claude、Grok、Gemini 的注册登录，再到 Codex、Claude Code、Cursor、Antigravity 和 App Store、Google Play 的订阅支付，一条能长期维护的路径。目标不是“一次注册成功”，而是让每个账号关系清楚、可恢复、可管理；前提只有一条：用真实资料，由本人长期控制。
+
+34 页 · [源码](books/ai-tools-overseas/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/ai-tools-overseas-v0.2.5.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/ai-native/"><img src="https://lh3.googleusercontent.com/d/12PUFf5jWoU53sEvmQueTbvLoqaQeJ6MM" width="120" alt="cover"></a></td><td valign="top">
+
+### AI-Native 超级个体 · 新时代游戏 · `v0.9.6`
+
+一本开局攻略：不带你再刷一轮“工具收藏”，而是先递一张全局地图——技术人 → AI 工具使用者 → AI 实践者 → AI 系统构建者 → AI 超级个体。它不是手把手训练营，也不承诺一夜暴富，而是帮你判断从哪条支线开始。程序员、运维、架构师、产品经理、独立开发者，想用 AI 打开新机会的技术人都适合。
+
+83 页 · [源码](books/ai-native/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/ai-native-v0.9.6.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/indie-observer/"><img src="https://lh3.googleusercontent.com/d/1Yq_kA-qcEFPsj8zwzpjzkd8-vmHVCaFh" width="120" alt="cover"></a></td><td valign="top">
+
+### 独立开发观察者计划：AI × 可观测 SaaS 首季 · `v0.1-r5`
+
+本季主题：AI 如何帮一个个人 SaaS 被开发出来、被看懂、被持续运行。12 篇核心稿分三个月：接得上（接观测、搬面板、串 Trace）、看得懂 AI（告警、工具调用、Token、Agent 循环）、守得住退得出（发布对比、AI 排障、自监控、季度复盘）。适合一个人做 SaaS、又想把它看清楚的开发者。
+
+199 页 · [源码](books/indie-observer/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/indie-observer-v0.1-r5.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/agent-skills-spec/"><img src="https://lh3.googleusercontent.com/d/1AhPsl4HPqk7pA1xAkFaaEu70q2g82oGG" width="120" alt="cover"></a></td><td valign="top">
+
+### XWorkspace Agent Skills 工程规范 · 开放方案 · `v0.2`
+
+一个人，十几个 Agent，和一座会说话的工具箱。主角小潘发现最大的问题不是 Agent 不够聪明，而是每个 Agent 都要重新被教一遍“我们家的规矩”，于是把规矩写成了一个个 SKILL.md。这本书只讲一件事：这些技能在真实的一天里怎么用，适合同时带着一群 Agent 干活的人。
+
+11 页 · [源码](books/agent-skills-spec/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/agent-skills-spec-v0.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
+<table><tr><td width="130" valign="top"><a href="books/cny-overseas-card-routes/"><img src="https://lh3.googleusercontent.com/d/1OtnaFPGKC7G1OpZD1a_BL8zQ2nXvAu5d" width="120" alt="cover"></a></td><td valign="top">
+
+### 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.1`
+
+只回答一个问题：人民币怎么进到海外卡，海外卡里的钱又怎么回到人民币。香港、菲律宾（DITO eSIM + Maya）、美国 Mercury 三条路线，各自讲清绕不开的前提。是个人经历加官方公开资料整理，适合要给海外 AI 订阅付款或收美元营收的朋友。
+
+15 页 · [源码](books/cny-overseas-card-routes/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/cny-overseas-card-routes-v1.1.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
 把书当仓库维护：每本书的 Markdown 正文、构建脚本和版本号在一起走版本，改版时章节和示例一起提交、一起评审。PDF 由 CI 构建，不入库。
 
 | 书 | 版本 | 构建 | 图片素材 | PDF |
