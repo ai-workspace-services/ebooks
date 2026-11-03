@@ -7,3 +7,4 @@
 - 许可统一为内容 CC BY-SA 4.0、脚本 MIT；各书版权页改为 CC BY-SA 4.0。
 - 平台工程书：节点 IP、实例/磁盘 ID 改为占位符。
 - 新增矩阵 CI：PR 构建；tag 发布 Release。
+- CI：PR 构建自检。
