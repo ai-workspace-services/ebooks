@@ -77,8 +77,11 @@ cover=f'''<section class="cover"><div class="band"></div><div class="ctag">图�
 <div class="cdesc">香港 · 菲律宾 DITO eSIM + Maya · 美国 LLC + Mercury · 购汇额度 · 出资与回流</div>
 <div class="cfig">{FIGS['overview'][1] if False else hflow([('人民币','内地本人卡'),('香港','枢纽'),('Mercury','美元营收'),('Maya','小额订阅')],hi=(1,))}</div>
 <div class="cby">{AUTHOR}</div><div class="csup">{SUPPORT}</div><div class="cver">{V}</div></section>'''
+_cv=os.path.join(ROOT,'assets','cover.png')
+if os.path.exists(_cv):  # designed cover from Drive assets (assets.manifest.json); falls back to the HTML cover
+    cover=f'<section class="imgcover"><img src="file://{_cv}"></section>'
 tochtml='<section class="toc"><h1 class="pre">目录</h1>'+''.join(f'<div class="t{l}"><a href="#{a}">{inl(t)}</a><span class="pg" data-a="{a}"></span></div>' for l,t,a in toc)+'</section>'
-CSS='''@page{size:A5;margin:16mm 14mm 18mm}body{font-family:'Noto Sans CJK SC',sans-serif;color:#1b2340;font-size:10pt;line-height:1.7}
+CSS='''@page{size:A5;margin:16mm 14mm 18mm}@page:first{margin:0}.imgcover{height:210mm;width:148mm;display:flex;align-items:center;background:linear-gradient(#fbe3e9,#f8fafc);page-break-after:always;overflow:hidden}.imgcover img{width:148mm;display:block}body{font-family:'Noto Sans CJK SC',sans-serif;color:#1b2340;font-size:10pt;line-height:1.7}
 .cover{page-break-after:always;height:170mm;position:relative;overflow:hidden;text-align:center}.band{height:10mm;background:linear-gradient(90deg,#075ecc,#4338ca);border-radius:6px}
 .ctag{margin-top:14mm;color:#4b43e8;font-weight:700;letter-spacing:3px}.ct{font-size:30pt;font-weight:900;color:#101c44;margin-top:6mm}.cs{font-size:16pt;color:#0058bd;font-weight:700;margin-top:2mm}
 h2,h3{break-after:avoid;page-break-after:avoid}.cdesc{font-size:8.5pt;color:#46506e;margin:8mm 6mm}.cfig svg{width:100%}.cby{margin-top:14mm;font-size:13pt;font-weight:700}.csup{color:#46506e;font-size:9pt}.cver{position:absolute;bottom:0;width:100%;color:#888;font-size:8pt}

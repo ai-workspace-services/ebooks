@@ -1,0 +1,12 @@
+{
+ "book": "agent-skills-spec",
+ "note": "cover only; Drive 「Grok Bot 制品」/books/agent-skills-spec/assets/agent-skills-spec-light-2x.png",
+ "files": [],
+ "extra_files": [
+  {
+   "path": "assets/cover.png",
+   "drive_file_id": "1T1QKA6CZFd71AdYwjhbgne4Gtpc9N6Xp",
+   "sha256": "0023bae698e110af7e02be499574de7fcc14fd67e49d84abbfc252300471310c"
+  }
+ ]
+}
