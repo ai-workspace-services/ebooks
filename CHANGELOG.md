@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-11-03 · designed covers
+- agent-skills-spec & cny-overseas-card-routes: new light/dark covers in the xworktech.com/docs style (Drive `books/<slug>/assets`), used on the PDF cover page via `assets.manifest.json` + `fetch-assets.sh` (HTML cover kept as fallback); README uses Drive lh3 direct-render URLs with `<picture>` light/dark.
+
 ## 2026-11-03 · zip 制品 + 封面墙
 - CI：每本书 PDF 经 Ghostscript 尝试压缩（仅当小 ≥10% 且页数不变才采用），再 `zip -9` 为 `<slug>-<version>.zip` 作为 artifact。
 - Tag 发布：附各书 zip + SHA256SUMS；`v*` 全书 tag 另附 `ebooks-all-<tag>.zip`，Release notes 列出书目、版本与 CC BY-SA 4.0 许可。
