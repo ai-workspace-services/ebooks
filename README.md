@@ -6,17 +6,17 @@
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="books/it-history/"><img src="https://lh3.googleusercontent.com/d/1wM6mMs-nDa4543i41jaXLMm_BkwUspSM" width="200" alt="cover"></a><br><b>图解 IT 简史</b><br><code>v4.9.1</code></td>
-<td align="center" width="33%"><a href="books/platform-engineering/"><img src="https://lh3.googleusercontent.com/d/1Wezxm2cAbXwMu5s7x7cOMPu-8CohndPt" width="200" alt="cover"></a><br><b>图解平台工程 · 云中立实践</b><br><code>v0.9.18</code></td>
-<td align="center" width="33%"><a href="books/data-infra/"><img src="https://lh3.googleusercontent.com/d/1cFqXY2ToExUQ_HoOu5k0CmVPbBoERL6F" width="200" alt="cover"></a><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
+<td align="center" width="33%"><a href="books/it-history/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/it-history-dark.webp"><img src="https://xworktech.com/ebooks/covers/it-history-light.webp" width="200" alt="cover"></picture></a><br><b>图解 IT 简史</b><br><code>v4.9.1</code></td>
+<td align="center" width="33%"><a href="books/platform-engineering/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/platform-engineering-dark.webp"><img src="https://xworktech.com/ebooks/covers/platform-engineering-light.webp" width="200" alt="cover"></picture></a><br><b>图解平台工程 · 云中立实践</b><br><code>v0.9.18</code></td>
+<td align="center" width="33%"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="200" alt="cover"></picture></a><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/chuhai-first-step/"><img src="https://lh3.googleusercontent.com/d/1lbYhmyW64aN_ywcs9FlgxBv0AniWTfmB" width="200" alt="cover"></a><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.2</code></td>
-<td align="center" width="33%"><a href="books/ai-tools-overseas/"><img src="https://lh3.googleusercontent.com/d/1pWGTuerIkUAu_1hrnNgj7Lf1IjAIsPaY" width="200" alt="cover"></a><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.5</code></td>
-<td align="center" width="33%"><a href="books/ai-native/"><img src="https://lh3.googleusercontent.com/d/12PUFf5jWoU53sEvmQueTbvLoqaQeJ6MM" width="200" alt="cover"></a><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
+<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.2</code></td>
+<td align="center" width="33%"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="200" alt="cover"></picture></a><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.5</code></td>
+<td align="center" width="33%"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="200" alt="cover"></picture></a><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/indie-observer/"><img src="https://lh3.googleusercontent.com/d/1Yq_kA-qcEFPsj8zwzpjzkd8-vmHVCaFh" width="200" alt="cover"></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
+<td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
 <td align="center" width="33%"><a href="books/agent-skills-spec/"><img src="https://lh3.googleusercontent.com/d/1AhPsl4HPqk7pA1xAkFaaEu70q2g82oGG" width="200" alt="cover"></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.2</code></td>
 <td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><img src="https://lh3.googleusercontent.com/d/1OtnaFPGKC7G1OpZD1a_BL8zQ2nXvAu5d" width="200" alt="cover"></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.1</code></td>
 </tr>
@@ -24,7 +24,7 @@
 
 ## 书目介绍
 
-<table><tr><td width="130" valign="top"><a href="books/it-history/"><img src="https://lh3.googleusercontent.com/d/1wM6mMs-nDa4543i41jaXLMm_BkwUspSM" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/it-history/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/it-history-dark.webp"><img src="https://xworktech.com/ebooks/covers/it-history-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### 图解 IT 简史 · `v4.9.1`
 
@@ -34,7 +34,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/platform-engineering/"><img src="https://lh3.googleusercontent.com/d/1Wezxm2cAbXwMu5s7x7cOMPu-8CohndPt" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/platform-engineering/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/platform-engineering-dark.webp"><img src="https://xworktech.com/ebooks/covers/platform-engineering-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### 图解平台工程 · 云中立实践 · `v0.9.18`
 
@@ -44,7 +44,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/data-infra/"><img src="https://lh3.googleusercontent.com/d/1cFqXY2ToExUQ_HoOu5k0CmVPbBoERL6F" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### 趣谈数据基础设施 · AI 时代 · `v5.1`
 
@@ -54,7 +54,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/chuhai-first-step/"><img src="https://lh3.googleusercontent.com/d/1lbYhmyW64aN_ywcs9FlgxBv0AniWTfmB" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### 出海第一步 · 一人公司合规全流程 · `v1.2`
 
@@ -64,7 +64,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/ai-tools-overseas/"><img src="https://lh3.googleusercontent.com/d/1pWGTuerIkUAu_1hrnNgj7Lf1IjAIsPaY" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### AI 工具出海通关 · 注册与订阅全流程 · `v0.2.5`
 
@@ -74,7 +74,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/ai-native/"><img src="https://lh3.googleusercontent.com/d/12PUFf5jWoU53sEvmQueTbvLoqaQeJ6MM" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### AI-Native 超级个体 · 新时代游戏 · `v0.9.6`
 
@@ -84,7 +84,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/indie-observer/"><img src="https://lh3.googleusercontent.com/d/1Yq_kA-qcEFPsj8zwzpjzkd8-vmHVCaFh" width="120" alt="cover"></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### 独立开发观察者计划：AI × 可观测 SaaS 首季 · `v0.1-r5`
 
