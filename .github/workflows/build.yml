@@ -1,0 +1,81 @@
+name: build
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*', '*-v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref_type != 'tag' }}
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      books: ${{ steps.m.outputs.books }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        run: .github/scripts/matrix.sh
+
+  build:
+    needs: matrix
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        book: ${{ fromJson(needs.matrix.outputs.books) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: System deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji poppler-utils
+          google-chrome --version
+      - name: Python deps
+        run: pip install -q pymupdf pypdf markdown pyyaml pillow numpy fonttools google-auth requests
+      - name: Build ${{ matrix.book }}
+        id: b
+        env:
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+        run: .github/scripts/build-book.sh "${{ matrix.book }}"
+      - if: steps.b.outputs.outcome == 'built'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-${{ matrix.book }}
+          path: books/${{ matrix.book }}/dist/*.pdf
+          if-no-files-found: error
+
+  release:
+    if: github.ref_type == 'tag'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pdf-*
+          path: out
+          merge-multiple: true
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          shopt -s nullglob
+          files=(out/*.pdf)
+          if [ ${#files[@]} -eq 0 ]; then echo "::error::no PDFs built for $TAG (assets missing?)"; exit 1; fi
+          gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$TAG" -R "$GITHUB_REPOSITORY" --title "$TAG" --notes "PDF builds for $TAG. Content CC BY-SA 4.0 · Haitao Pan / XWork Technologies LLC."
+          gh release upload "$TAG" "${files[@]}" -R "$GITHUB_REPOSITORY" --clobber

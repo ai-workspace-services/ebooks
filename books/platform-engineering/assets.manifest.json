@@ -1,0 +1,46 @@
+{
+ "book": "platform-engineering",
+ "archive": {
+  "name": "platform-engineering-assets.tar",
+  "sha256": "dc2fce85f817a950b325d2c0b52278e91e24b7d6191089be702e71fbb71e38db",
+  "bytes": 2887680,
+  "parts": [
+   {
+    "name": "platform-engineering-assets.tar",
+    "drive_file_id": "1VpRREqbNqH07qNQ-Qy9EPjMOVAu7KeBk",
+    "sha256": "dc2fce85f817a950b325d2c0b52278e91e24b7d6191089be702e71fbb71e38db"
+   }
+  ],
+  "drive_folder": "Grok Bot 制品/books/platform-engineering/assets"
+ },
+ "files": [
+  {
+   "path": "assets/ch6/dims.png",
+   "sha256": "6b2f8d4f879bfe5fa892622cd9822d8432e50a2e36dcd43750dce342de0fe735"
+  },
+  {
+   "path": "assets/ch6/feature-lane-pipeline-1080-final.png",
+   "sha256": "2b56079153694ea4fec09f37bb7b71497bd93d82847fc01137d8bedcbf6d7ee6"
+  },
+  {
+   "path": "assets/ch6/matrix.png",
+   "sha256": "85e2268744a08f80793722f56275edba94291bcbe1fde21a32a19f745d61f0d7"
+  },
+  {
+   "path": "assets/fig0-open-platform-toolkit.png",
+   "sha256": "d861f24ce7fdd56f5f91b7fe576a594f5b8cdaa7ab46d7486cc7921227d3ee5b"
+  },
+  {
+   "path": "assets/overview-src.png",
+   "sha256": "39589f5b6153fac350e66de8f39fb2c062e16f7ff8fbc6c49dc59cda3f301615"
+  }
+ ],
+ "extra_files": [
+  {
+   "path": "assets/xwork-logo-mark.svg",
+   "drive_file_id": "1sLmosC0K-wxmeKE3yhRAa383dRRsq2F7",
+   "sha256": "d5b7db61c105d1e9a39b8f4221e2997b21b9c4064eb0b2806d16cf80167c42fd",
+   "drive_path": "Grok Bot 制品/books/xwork-logo-mark.svg"
+  }
+ ]
+}

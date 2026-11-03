@@ -1,0 +1,199 @@
+{
+ "title": "独立开发观察者计划：AI × 可观测 SaaS 首季",
+ "subtitle": "季度合集预览版",
+ "arcs": [
+  "第一月·接得上",
+  "第二月·看得懂 AI",
+  "第三月·守得住、退得出"
+ ],
+ "core": [
+  {
+   "id": "01",
+   "dir": "01-free-zone-onboarding",
+   "title_orig": "Cloudflare + Cloud Run + Supabase 之后，我给个人 SaaS 补上了观测云免费专区",
+   "xhs_title": "低成本 SaaS 拼好了，还差一双眼睛",
+   "template": "成本账本型",
+   "arc": "第一月·接得上",
+   "status": "全文稿",
+   "wechat_chars": "1330",
+   "xhs_chars": "637",
+   "gifs": "4",
+   "title": "栈拼好了，还差一双眼睛——补上观测云免费专区"
+  },
+  {
+   "id": "02",
+   "dir": "02-dashboard-semantic-reconcile",
+   "title_orig": "AI 辅助 Grafana 面板搬家：从 JSON 到观测云配置，保留回退",
+   "xhs_title": "面板搬家，最难的是查询口径对上",
+   "template": "动手实操型",
+   "arc": "第一月·接得上",
+   "status": "全文稿",
+   "wechat_chars": "1378",
+   "xhs_chars": "630",
+   "gifs": "4",
+   "title": "面板搬家最怕口径对不上——AI 帮我从 Grafana 迁到观测云"
+  },
+  {
+   "id": "03",
+   "dir": "03-code-agent-vs-obsy-agent-teams",
+   "title_orig": "同一场线上排障：Coding Agent 和观测 Agent 谁更适合独立开发者？",
+   "xhs_title": "AI 都会排障，为什么还要观测 Agent？",
+   "template": "对比选型型",
+   "arc": "第一月·接得上",
+   "status": "大纲，待实测",
+   "wechat_chars": "—",
+   "xhs_chars": "—",
+   "gifs": "—",
+   "title": "同一场线上排障——Coding Agent 和观测 Agent，谁更适合独立开发者？"
+  },
+  {
+   "id": "04",
+   "dir": "04-login-trace-across-clouds",
+   "title_orig": "一个登录请求经过几朵云？用Trace把它接起来",
+   "xhs_title": "一个登录请求到底去了哪里？",
+   "template": "故障复盘型",
+   "arc": "第一月·接得上",
+   "status": "全文稿",
+   "wechat_chars": "1169",
+   "xhs_chars": "647",
+   "gifs": "4",
+   "title": "一个登录请求去了哪——用 Trace 把几朵云串起来"
+  },
+  {
+   "id": "05",
+   "dir": "05-actionable-alerts",
+   "title_orig": "AI帮我生成的告警，怎样才能真的值得打断我？",
+   "xhs_title": "告警太多，AI能帮我筛吗？",
+   "template": "问答拆解型",
+   "arc": "第二月·看得懂 AI",
+   "status": "全文稿",
+   "wechat_chars": "963",
+   "xhs_chars": "635",
+   "gifs": "3",
+   "title": "AI 生成的告警，怎样才值得打断我？"
+  },
+  {
+   "id": "06",
+   "dir": "06-codex-tool-calls",
+   "title_orig": "Codex的一次任务，到底调用了多少次工具？",
+   "xhs_title": "AI说完成了，我想看它做了什么",
+   "template": "动手实操型",
+   "arc": "第二月·看得懂 AI",
+   "status": "大纲",
+   "wechat_chars": "709",
+   "xhs_chars": "256",
+   "gifs": "3",
+   "title": "AI 说「搞定了」——我想看它调用了多少次工具"
+  },
+  {
+   "id": "07",
+   "dir": "07-token-to-delivery",
+   "title_orig": "Token花掉以后，怎样知道它有没有换来交付？",
+   "xhs_title": "Token用得多，不代表真的干成了",
+   "template": "成本账本型",
+   "arc": "第二月·看得懂 AI",
+   "status": "大纲",
+   "wechat_chars": "670",
+   "xhs_chars": "226",
+   "gifs": "3",
+   "title": "Token 烧了，怎样知道换来了交付？"
+  },
+  {
+   "id": "08",
+   "dir": "08-agent-loops",
+   "title_orig": "Agent没有报错，为什么我的任务一直跑不完？",
+   "xhs_title": "AI没崩，但一直在原地打转",
+   "template": "故障复盘型",
+   "arc": "第二月·看得懂 AI",
+   "status": "大纲",
+   "wechat_chars": "629",
+   "xhs_chars": "229",
+   "gifs": "3",
+   "title": "Agent 没报错，为什么任务一直原地打转？"
+  },
+  {
+   "id": "09",
+   "dir": "09-release-before-after",
+   "title_orig": "AI改完代码就发布？我用观测数据检查这一版",
+   "xhs_title": "AI写完了，怎么确认没变差？",
+   "template": "对比选型型",
+   "arc": "第三月·守得住、退得出",
+   "status": "大纲",
+   "wechat_chars": "617",
+   "xhs_chars": "244",
+   "gifs": "3",
+   "title": "AI 改完就发？我先用观测数据验这一版"
+  },
+  {
+   "id": "10",
+   "dir": "10-ai-triage-clues",
+   "title_orig": "凌晨收到告警，让AI先帮我整理排障线索",
+   "xhs_title": "没有值班团队，AI先查什么？",
+   "template": "问答拆解型",
+   "arc": "第三月·守得住、退得出",
+   "status": "大纲",
+   "wechat_chars": "650",
+   "xhs_chars": "215",
+   "gifs": "3",
+   "title": "凌晨告警响了——先让 AI 帮我整理排障线索"
+  },
+  {
+   "id": "11",
+   "dir": "11-who-monitors-monitoring",
+   "title_orig": "自建监控自己挂了，谁来提醒我？",
+   "xhs_title": "监控坏了，谁来监控监控？",
+   "template": "误区纠偏型",
+   "arc": "第三月·守得住、退得出",
+   "status": "全文稿",
+   "wechat_chars": "1058",
+   "xhs_chars": "626",
+   "gifs": "4",
+   "title": "自建监控自己挂了，谁来提醒我？"
+  },
+  {
+   "id": "12",
+   "dir": "12-season-review-exit",
+   "title_orig": "和AI一起运营个人SaaS一季，我还会继续用观测SaaS吗？",
+   "xhs_title": "AI、监控、账单：这一季到底值不值",
+   "template": "对比选型型",
+   "arc": "第三月·守得住、退得出",
+   "status": "全文稿",
+   "wechat_chars": "929",
+   "xhs_chars": "612",
+   "gifs": "4",
+   "title": "和 AI 一起运营一季——我还会继续用观测 SaaS 吗？"
+  }
+ ],
+ "subs": [
+  {
+   "id": "R1",
+   "dir": "R1-otel-dual-target-portability",
+   "file": "outline.md",
+   "title": "换平台演练：同一份 OTel 数据，能不能同时送进自建和观测云？",
+   "template": "动手实操型",
+   "use": "可替换 #08",
+   "status": "替补大纲",
+   "outline_chars": "757"
+  },
+  {
+   "id": "R2",
+   "dir": "R2-ai-latency-model-vs-tool",
+   "file": "outline.md",
+   "title": "AI 调用慢，是模型慢还是工具慢？",
+   "template": "问答拆解型",
+   "use": "可替换 #08",
+   "status": "替补大纲",
+   "outline_chars": "600"
+  },
+  {
+   "id": "R3",
+   "dir": "03-rum-ai-page-slow",
+   "file": "wechat.md",
+   "title": "AI 生成的页面上线后变卡，我先看用户体验而不是 CPU",
+   "template": "误区纠偏型",
+   "use": "可替换 #03",
+   "status": "替补大纲，原稿保留",
+   "outline_chars": "693"
+  }
+ ]
+}

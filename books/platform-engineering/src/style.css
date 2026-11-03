@@ -1,0 +1,72 @@
+@page{size:621pt 828pt;margin:58pt 56pt 56pt 56pt}
+@page bleed{margin:0}
+:root{--bg:#f8f9fa;--panel:#e8f0fb;--t:#101c44;--acc:#4b43e8;--pri:#0058bd}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Noto Sans CJK SC','Noto Sans CJK',sans-serif;color:#26304d;font-size:11.2pt;line-height:1.85;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+section{break-after:page}
+.cover,.end,.figpage{page:bleed;height:828pt;background:var(--bg);position:relative;overflow:hidden;padding:56pt 52pt}
+.cover:before{content:"";position:absolute;left:0;top:0;right:0;height:10pt;background:linear-gradient(90deg,#075ecc,#4338ca)}
+.ver{display:inline-block;font-size:9.5pt;color:#fff;background:linear-gradient(90deg,#075ecc,#4338ca);padding:3pt 10pt;border-radius:20pt}
+.kicker{margin-top:30pt;color:var(--acc);font-weight:700;letter-spacing:3pt;font-size:11pt}
+.ct{margin:6pt 0 0;color:var(--t);font-size:46pt;line-height:1.15}
+.ct span{color:var(--pri)}
+.theme{margin-top:14pt;font-size:13pt;color:#34405f;line-height:1.6}
+.keys{margin-top:16pt;display:flex;gap:7pt;flex-wrap:wrap}
+.keys span{background:#fff;border:1.2pt solid var(--pri);color:var(--pri);border-radius:6pt;padding:3pt 9pt;font-size:10pt;font-weight:700}
+.prev{margin-top:22pt;background:var(--panel);border-radius:12pt;padding:14pt 18pt}
+.ph{color:var(--t);font-weight:700;font-size:11.5pt;margin-bottom:4pt}
+.cols{display:flex;gap:18pt}.cols ol{list-style:none;margin:0;padding:0;flex:1}
+.cols li{font-size:10.5pt;color:var(--t);line-height:2}.cols b{display:inline-block;width:20pt;color:var(--acc)}
+.promo{margin-top:16pt;font-size:10.5pt;color:var(--acc);font-weight:700}
+.author{margin-top:12pt;font-size:12pt;color:var(--t);font-weight:700}
+.brand{position:absolute;left:0;right:0;bottom:40pt;display:flex;justify-content:center;align-items:center;gap:9pt;color:var(--t);font-weight:700;font-size:12pt}
+.brand.big{position:static;margin:150pt 0 18pt}
+h1.pre,.ch h1{color:var(--t);font-size:24pt;margin:0 0 14pt;line-height:1.3}
+h1.pre:before{content:"序";display:block;color:var(--acc);font-size:12pt;letter-spacing:2pt}
+.chopen{border-bottom:3pt solid var(--pri);margin-bottom:18pt;padding-bottom:8pt}
+.chno{color:#fff;background:linear-gradient(90deg,#075ecc,#4338ca);display:inline-block;padding:2pt 10pt;border-radius:4pt;font-size:11pt;margin-bottom:8pt}
+h2{color:var(--pri);font-size:14.5pt;margin:20pt 0 6pt;break-after:avoid}
+p{margin:0 0 8pt;text-indent:2em;text-align:justify}
+b{color:var(--t)} code{font-family:'Noto Sans Mono CJK SC',monospace;font-size:9.5pt;background:var(--panel);color:var(--acc);padding:0 3pt;border-radius:3pt}
+figure{margin:12pt 0 14pt;break-inside:avoid;text-align:center}figure svg{width:100%;height:auto}
+figcaption{font-size:9.5pt;color:var(--acc);margin-top:4pt;font-weight:700}
+.practice{break-inside:avoid;margin-top:16pt;border:1.5pt solid var(--acc);border-radius:10pt;background:var(--panel);padding:12pt 14pt}
+.practice p{text-indent:0;font-size:10pt;line-height:1.7}.ptag{color:var(--acc);font-weight:700;margin-bottom:5pt}
+.figpage .fh{color:var(--t);margin-top:20pt}.figpage img{width:100%;border-radius:10pt;margin:18pt 0;box-shadow:0 2pt 10pt rgba(16,28,68,.15)}
+.fc{font-size:10.5pt;color:#34405f}
+.toc h1{color:var(--t);font-size:24pt;margin:0 0 10pt}
+.tpart{margin-top:10pt;color:var(--acc);font-weight:700;font-size:10.5pt;border-bottom:1pt solid #c9d6ef}
+.tr{display:flex;align-items:baseline;font-size:10.5pt;line-height:1.85;color:var(--t)}
+.tr i{flex:1;border-bottom:1pt dotted #9aa6c4;margin:0 6pt}
+.tr.l0{font-weight:700}.tr.l1{padding-left:18pt;font-size:9.6pt;color:#46506e}.tr.on span:first-child{color:var(--pri)}
+.tr em{font-style:normal;font-weight:400;font-size:8.5pt;color:#8a94b0}
+.end{text-align:center}.end h1{color:var(--t)}.end p{text-indent:0;text-align:center;color:#34405f}.end .pl{margin-top:30pt;color:var(--t);font-weight:700}
+
+.qs{break-before:page}.qsh{color:#101c44;font-size:17pt;border-left:5px solid #4b43e8;padding-left:10px;margin:0 0 6pt}
+.qst{font-size:9.5pt;color:#0058bd}.plan{background:#fff4e0;border:1px solid #f0b44c;color:#8a5a00;font-size:9pt;padding:4pt 8pt;border-radius:6px}
+.qs h3{color:#0058bd;font-size:11.5pt;margin:8pt 0 2pt}
+.qs pre{background:#101c44;color:#e8f0fb;font-size:8.3pt;line-height:1.5;padding:8pt 10pt;border-radius:8px;white-space:pre-wrap;word-break:break-all}
+.qs .note,.qs .ref{font-size:9pt}.qs .ref{color:#555}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:8.6pt;line-height:1.5;margin:8pt 0}table.cmp th{background:#0058bd;color:#fff;padding:4pt}table.cmp td{border:1px solid #c9d6ec;padding:4pt;vertical-align:top}table.cmp tr:nth-child(odd) td{background:#e8f0fb}
+.flow.ch .chopen{break-before:page}
+.badge{display:inline-block;background:#fff4e0;border:1px solid #f0b44c;color:#8a5a00;font-size:9.5pt;padding:2pt 10pt;border-radius:12px;margin:4pt 0 10pt}
+.secl{font-size:11pt;color:#101c44}.qslink{color:#0058bd;font-weight:700}.tlegend{font-size:8.5pt;color:#555}.qsr span{color:#4b43e8}
+.secl{list-style:none;padding-left:8pt}
+.plan.ok{background:#e6f6ec;border-color:#3aa76d;color:#1d6b40}
+.chov{display:block;width:100%;margin:6mm 0 8mm;border-radius:4mm;break-inside:avoid}
+.lic h2{font-size:12pt;margin-top:12pt}.lic p{text-indent:0}.lic .attr{background:#eef3fb;padding:6pt 8pt;border-radius:4pt}
+.lich{color:var(--t);font-size:24pt;margin:0 0 14pt}
+
+pre.code{background:#101c44;color:#e8f0fb;font-family:'Noto Sans Mono CJK SC',monospace;font-size:8pt;line-height:1.45;padding:8pt 10pt;border-radius:8px;white-space:pre-wrap;word-break:break-all;break-inside:avoid}
+.partdiv{break-before:page;break-after:page;height:250mm;display:flex;flex-direction:column;justify-content:center;padding:0 18mm;background:linear-gradient(160deg,#e8f0fb,#fff 60%)}
+.partdiv .pk{color:#4b43e8;font-weight:700;letter-spacing:.2em;font-size:13pt}
+.partdiv h1{font-size:23pt;color:#0058bd;margin:6mm 0}
+.partdiv .ps{font-size:12pt;color:#334;line-height:1.8;max-width:150mm}
+.partdiv .pl2{list-style:none;padding:0;margin-top:10mm}
+.partdiv .pl2 li{margin:2mm 0;font-size:11pt}.partdiv .pl2 b{color:#0058bd;margin-right:3mm}
+.tpart.big{font-size:12pt;color:#0058bd;border-top:2px solid #0058bd;margin-top:3mm}
+.sk{border-left:3px solid #0058bd;background:#e8f0fb;padding:2mm 4mm;margin:3mm 0;break-inside:avoid}
+.sk .skt{font-weight:700;color:#0058bd}.sk p{margin:1mm 0 0}
+.dai{display:inline-block;margin-left:3mm;font-size:8.5pt;color:#fff;background:#4b43e8;border-radius:3px;padding:0 2mm}
+ul.rl li{margin:1.2mm 0}

@@ -1,0 +1,1664 @@
+{
+ "book": "it-history",
+ "archive": {
+  "name": "it-history-assets.tar",
+  "sha256": "a6209c14564330301554d40f47020d76112b3d4dbe2e1614a3f7aa1a85a489f2",
+  "bytes": 658360320,
+  "parts": [
+   {
+    "name": "it-history-assets.tar.part00",
+    "drive_file_id": "1BI0MBNCgnBdqK1Mmqbj8PZqKtFNBflVp",
+    "sha256": "44825eb1d12435542e7c1662228b95f2031cba00192b53e5e8a8aa8a5d8e87e7"
+   },
+   {
+    "name": "it-history-assets.tar.part01",
+    "drive_file_id": "1tG8HBTLDoN31ZIoA6YlbtGimYSitb71P",
+    "sha256": "c79ae2b73ba9103617a29ae8535f4921462c2ea6408ce76c141705fd21e9fb1e"
+   },
+   {
+    "name": "it-history-assets.tar.part02",
+    "drive_file_id": "138OcmbutL4FZya5ffmV-sI3o0r78r4Tc",
+    "sha256": "60b87870fc4bd2010d2a486e9a8606c19db164b4a637dbb8bde8b53fc2b37a5a"
+   },
+   {
+    "name": "it-history-assets.tar.part03",
+    "drive_file_id": "1wg8TA1L33TLiQE-f_aWTaRub89Y6tR_V",
+    "sha256": "296eb4ae04f3be0af46efe4c3ffb784ef782ea923b7bd018c44d3cd14dd03d14"
+   },
+   {
+    "name": "it-history-assets.tar.part04",
+    "drive_file_id": "1sQP-2qobJQ6bSviqMzFf16rXEfl4hwIX",
+    "sha256": "21c77786b6a67603e54cd9fbd3fd37d5db110014b2f23bd2916fb5d375162798"
+   },
+   {
+    "name": "it-history-assets.tar.part05",
+    "drive_file_id": "1PtdO5ZFtYorMQIibnehddIpTaIg_FTM2",
+    "sha256": "730244102a3e4b8017a8e2ad03f83701729316e628eaed56124b3c26e53cb2a5"
+   },
+   {
+    "name": "it-history-assets.tar.part06",
+    "drive_file_id": "1WI1nSqonh_EC0EnBITMkWhiyT7UCjG9O",
+    "sha256": "68911fa8079b7ce01024cd8406c60d63d76eee643204dd51fce8d754790f0481"
+   }
+  ],
+  "drive_folder": "Grok Bot 制品/books/it-history/assets"
+ },
+ "files": [
+  {
+   "path": "chapters/00-overview/images/001-00-overview.png",
+   "sha256": "43c0d1d0bea5ffd30a990205a0454ef8a04a1fa7d2a4469e7ac978b0e02331e1"
+  },
+  {
+   "path": "chapters/00-overview/images/002-01-complexity.png",
+   "sha256": "09c1961b47afc33f058152a01d74aa48717621d161a0a4b9eb1be3d8778bf5b5"
+  },
+  {
+   "path": "chapters/00-overview/images/003-02-virt.png",
+   "sha256": "405cead9f351f7df113d9fc36eed9e0987be3f59509b81b8aea15114e47aaa0c"
+  },
+  {
+   "path": "chapters/00-overview/images/004-03-cloud1.png",
+   "sha256": "31231e5efc54ef1879c062c36b4e6c16aa2facbfc9ff6461d2b872be414fe4a5"
+  },
+  {
+   "path": "chapters/00-overview/images/005-04-cloud2.png",
+   "sha256": "8f039e39d21af8be910103b002413d33b32666e15403e4720539cc9a0fe46720"
+  },
+  {
+   "path": "chapters/00-overview/images/006-05-cloud3.png",
+   "sha256": "05576b3c4d46b7180b53f598234a69c30437496c2f70d984a64d82b61047b028"
+  },
+  {
+   "path": "chapters/00-overview/images/007-06-auto.png",
+   "sha256": "d79dcfc628016150a146f7c1d8cefb9fe519a9e14b5374d726fa6a6565baa9d4"
+  },
+  {
+   "path": "chapters/00-overview/images/008-07-dw.png",
+   "sha256": "7e8d1ca22b54ba62f1917445171d6b81078d03f7a710ee971fbc6199348910a0"
+  },
+  {
+   "path": "chapters/00-overview/images/009-07x-ai-family-ages-r2.png",
+   "sha256": "15e94c737e86617175dd6e5f7fb0926be8b33733a2824d2608d3791971887bd3"
+  },
+  {
+   "path": "chapters/00-overview/images/010-08-iam.png",
+   "sha256": "96c1de3ccd58b0c1e7597d2bdef1ad8c7f645ad74e8476e172b73cfd5e9f6415"
+  },
+  {
+   "path": "chapters/00-overview/images/011-09-oss.png",
+   "sha256": "cd5b0cd2e87a7bd3d6e93176a4e101cbaee57c5968af2a6ea7d6186877175ee2"
+  },
+  {
+   "path": "chapters/00-overview/images/012-10-ai.png",
+   "sha256": "11e859e5b54bc0d701200d4bdba71032bfd263c37f21a0d79a0338cab067e8c0"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/001-IT基础设施演进史.png",
+   "sha256": "211123fe0f0f13ed53725c03d03a30875696de3a1125361eb6a71a788060813f"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/002-一图看懂_SLA_为什么不是运维口号.png",
+   "sha256": "d2a178bb2fb6d1a1b750aee33dce080e776417e9376645d5edcab5267fada116"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/003-一图看懂SLA为什么不是运维口号-2026-0515.png",
+   "sha256": "038e03ec7d500146309ff53bcfd07467208d9e5eba630f850e8e149721fc6d52"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/004-一图看懂业务峰谷与容量曲线-2026-0513.png",
+   "sha256": "8405690508d159b012b0a54f53abe2b175fe0b1e917788d6e667c654df68f4a4"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/005-一图看懂容量预留背后的问题.png",
+   "sha256": "732358f72d4ece60d5293f839a119f6956893bcc9a5a0405a6de58a7151b2d54"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/006-一图看懂应用架构演进-2026-0513.png",
+   "sha256": "f9112f2deb52be440d07af090e21634f54612b7e0e4be2f5859c91bdfe565647"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/007-一图看懂性能瓶颈为什么总在高峰出现.png",
+   "sha256": "8ab2dc707d33460071a128e9c88e9201443d8bec36ac464a9d3fa7afff93eba3"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/008-一图看懂成本、性能与体验的三角关系.png",
+   "sha256": "fa33e48a52d21ef11b1d87bc198b5bd35159c7b59cae4f88173cc84d9b065d9c"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/009-一图看懂故障恢复与业务损失-2026-0515.png",
+   "sha256": "78cf8e691d68f78e8e71a53207f88c5ea4697d2d777b30cbef8776d83692e35a"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/010-一图看懂现代IT系统复杂度.png",
+   "sha256": "f156b33cb6d01a0605a24ed1ec2b2031d3c025e1e22d34ccf7f7e5ae9358dac1"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/011-一图看懂用户请求如何变成计算压力-2026-0514.png",
+   "sha256": "6d4b502b9dac071882180a6539b98934ac78e5ece700239085186e9a5ebf6888"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/012-一图看懂闲置资源如何吞掉预算.png",
+   "sha256": "7dd57f12350d189793e0519d65872cdffe595554d4719443174cc3ba8ebfa3fb"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/013-一图看懂高可用.png",
+   "sha256": "2693a1921e3af64fabf3661582d4e27bcfbf8e4be703653db74e07361c4bc548"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/014-一图读懂IT系统-01.png",
+   "sha256": "924af71240447b116a348ecebdbaffe45ad383a2741daa0983cd870f2e89841d"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/015-一图读懂存储系统.png",
+   "sha256": "03eaf2690ad23eeba5674c819b5937ddb7d3b5a194ce6f08e7e2595e67dd83b5"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/016-一图读懂数据库.png",
+   "sha256": "7be3e7d573bdc0df8eba4e23d4d14a227152ccca317b103d281df2051ce592cb"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/017-一图读懂监控系统.png",
+   "sha256": "c8ba0ba4b2feeb2641ed1dab38ef8d6e6fc28eee9e7cdb8724f0019ad82fe933"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/018-一图读懂网络与协议.png",
+   "sha256": "2edfd9168ff80b8d89a45ce3978f38cdd35adb3133e2a934908bfcf092480ce2"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/019-业务与IT系统.png",
+   "sha256": "0ea09df8ff358ea9710a39850748652db0e9c55d620a8f5272798a819ce77162"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/020-业务与技术之争.png",
+   "sha256": "52b3b4f603c974b508cd1d7aa03aa4c4bc6e6a8231b678dc3362370ead999550"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/021-业务团队VS_IT技术团队.png",
+   "sha256": "b1a34fbaabcf0b95b4e5159a732aeba1917505716442352c3fba6771871b0667"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/022-业务增长之后，可靠性会变成成本问题.png",
+   "sha256": "0c18705811282b551f02f810b9eb654c65f604e32d5215d7f7da61751e13b4fd"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/023-云平台与业务发展.png",
+   "sha256": "be6c8be573a1ddfd6d5af6ea8b9955de215c70e89994b6f73f5bce7e97ba804e"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/024-企业基础设施为什么必须围绕业务波动设计.png",
+   "sha256": "01eb9f390eac35e6bca8b281c55e1479ec16415115cbf5d92e7f8742df381d89"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/025-容量与成本.png",
+   "sha256": "431bc5e11c2d1c84fb90a08524b723293da9a76da984b82a12e9a72613f2bf30"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/026-小红书-IT基础设置演进之路.png",
+   "sha256": "0d4f4563b531e81d1105f2ea8d9b171297b0fee5c7688ec4e0a23bb438c067ba"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/027-小红书-存储演进之路.png",
+   "sha256": "dbebba04f02579398d674b99601fd2a58ce21bb20f3f4c21075473f24301babd"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/028-小红书-监控的前生今世.png",
+   "sha256": "586a16a23f5c470c42fd668d57b30505e186a03c838df60fd803d0cd42ad5c67"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/029-小红书-网络与协议.png",
+   "sha256": "37383398bcc2fc985cff13e8bc357d8a5c8975ea23ef818a59df56e2f187f599"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/030-弹性扩容的错觉.png",
+   "sha256": "b47894d738621054d1be8fd4c84164dcd3d3e0edf18e1ff451afa3eb1e00bf01"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/031-控制权之争.png",
+   "sha256": "101ebb5b5a4124fb127dad8e345cd084400d5b817e72004e3454b146df1b5b29"
+  },
+  {
+   "path": "chapters/01-system-evolution/images/032-一图详解：利用率与稳定性.png",
+   "sha256": "293ee77c35244cf0672a3c62308eaef4a6355bf58ba291f5638df80a06d50fc9"
+  },
+  {
+   "path": "chapters/02-virtualization/images/001-01-服务器曾经是一座座孤岛.png",
+   "sha256": "40363ee7726ff6365e2bb2258cc9f0a0c0aa7d0f09cb248c5e5d416f9c1b3829"
+  },
+  {
+   "path": "chapters/02-virtualization/images/002-01-调度遇到物理边界.png",
+   "sha256": "ff62ee8241e900f1f10960103354c0e783e87d0757295747de062550920ef909"
+  },
+  {
+   "path": "chapters/02-virtualization/images/003-02-服务器是一座孤岛.png",
+   "sha256": "d18155f19b3b4ff5e40728e4d2d91f130a0323458f50aef607135b5d4f8a9f8d"
+  },
+  {
+   "path": "chapters/02-virtualization/images/004-02-虚拟化实现资源切片.png",
+   "sha256": "d5e38b3211f87058af12aa5a48e35c360d22eb0167378371742a6df1f4a791ec"
+  },
+  {
+   "path": "chapters/02-virtualization/images/005-03-Hypervisor成为新的资源仲裁者.png",
+   "sha256": "8c803019bbe08673bd43bde9596219389b4aa961a44173f84abc1fba2154624f"
+  },
+  {
+   "path": "chapters/02-virtualization/images/006-03-虚拟化把服务器切成逻辑资源.png",
+   "sha256": "855ea08373b3ea9f14813c836a11e6eba0a124f639ba761b8edc18b4bf2e4bf6"
+  },
+  {
+   "path": "chapters/02-virtualization/images/007-04-Hypervisor_是新的资源仲裁者.png",
+   "sha256": "6b6a15b9d972a8c00f17d2fb1daba93a43cb97657b1716b8efc25b092f19edce"
+  },
+  {
+   "path": "chapters/02-virtualization/images/008-04-虚拟化带来的能力重构.png",
+   "sha256": "b615a9a4a202c15df344323aaf4ba7085f16f1c86167f42e4e3a3734c41293e6"
+  },
+  {
+   "path": "chapters/02-virtualization/images/009-05-Xen、KVM、ESXi_背后是控制权路线之争.png",
+   "sha256": "abdbaddc8f76923fb2b9c82ee5b71a823f867bd5c1ea85a367340e2852ed8b34"
+  },
+  {
+   "path": "chapters/02-virtualization/images/010-05-虚拟化带来四个关键能力.png",
+   "sha256": "281ce79071f2704d2c8edf3067200d81aed74969f2686aba6830a293ceadf042"
+  },
+  {
+   "path": "chapters/02-virtualization/images/011-06-Linux_为什么最终成了虚拟化入口.png",
+   "sha256": "3f9991585934bff1dc16c6f4edd8b92a29a4fbcee83b5632a73e3f90a9695cfe"
+  },
+  {
+   "path": "chapters/02-virtualization/images/012-06-虚拟化技术革命.png",
+   "sha256": "20e7cbdc003e2a1237765575756abd803658274667a38aabcf98d8fa2de41bb2"
+  },
+  {
+   "path": "chapters/02-virtualization/images/013-07另一条支线-从_chroot_到_Docker，隔离开始下沉到应用.png",
+   "sha256": "3deb7e038d3a2e924e02c55dc51b97a73b8f78d781926ba53fdad492140dae67"
+  },
+  {
+   "path": "chapters/02-virtualization/images/014-08_云平台的前夜已经到来.png",
+   "sha256": "71c1d0d23d97b75fabc8d1b2d06bc95ce3b41608039a78a2bae75d7a72221884"
+  },
+  {
+   "path": "chapters/02-virtualization/images/015-AI与物理机.png",
+   "sha256": "2ecbffd5aba47ced2479a055e13bf95c3ae34719b3f1baa9c6921d0e34a3a6db"
+  },
+  {
+   "path": "chapters/02-virtualization/images/016-AI时代的工作负载.png",
+   "sha256": "915b293fccf51e5caf3e383f835eecae73b063f218146aaae495413a1e0ad579"
+  },
+  {
+   "path": "chapters/02-virtualization/images/017-图解_Xen、KVM、OpenVZ、ESXi_的架构差异.png",
+   "sha256": "0280e368075ca37932b3f8714d8f08c95df141b8601e5f65b6ec13d7a77addbe"
+  },
+  {
+   "path": "chapters/02-virtualization/images/018-一图详解-虚拟化技术路线之争.png",
+   "sha256": "073a6ec78c436b01d306aef96146a22293a5e591dcaf5d4c2d96391a533314ba"
+  },
+  {
+   "path": "chapters/02-virtualization/images/019-一图详解-虚拟化革命.png",
+   "sha256": "409948eebdd9ad5868c34f53b3e53c3a39d143bf231b9d9ff04a27dc9ae28ee1"
+  },
+  {
+   "path": "chapters/02-virtualization/images/020-一图详解：Hypervisor_不是为了虚拟，而是为了分资源.png",
+   "sha256": "b491fb617dc9bb7a72a5a22894bc1f5d4070fccabfd9981fcc38b1ae2369674c"
+  },
+  {
+   "path": "chapters/02-virtualization/images/021-一图详解：Xen、KVM、OpenVZ_各自争的是什么.png",
+   "sha256": "ca0e40dc7c1d1709eb186fe1a9a61df25bebf6dcc6505c90496b15ba5775a8e4"
+  },
+  {
+   "path": "chapters/02-virtualization/images/022-一图详解：为什么_KVM_最终赢了_Xen.png",
+   "sha256": "aa410600ca44c76d7a6eb5fd8cd61312814be2ed27550bb6a47b3884c13f2b6a"
+  },
+  {
+   "path": "chapters/02-virtualization/images/023-一图详解：为什么_Xen_没能成为_Linux_虚拟化底座.png",
+   "sha256": "e2e5a3322a44623b2beded740c6ab58c1fa74bc9f94bd9ae33ed1cb9dddabd12"
+  },
+  {
+   "path": "chapters/02-virtualization/images/024-一图详解：虚拟化为什么改变了整个数据中心.png",
+   "sha256": "5a4857b3468707ce5a6f1317cad5bea4bd75cb73fe271cdba47c90047904c242"
+  },
+  {
+   "path": "chapters/02-virtualization/images/025-存储虚拟化演进.png",
+   "sha256": "5d23daae241aa314e2387226910ee006b1564e07ad4ee14adfa13df8666f502d"
+  },
+  {
+   "path": "chapters/02-virtualization/images/026-网络虚拟化演变.png",
+   "sha256": "4f4a64909aa3b4b5e54735d2830d54c5bcad0cc226e99d4e01b22d34aa2660af"
+  },
+  {
+   "path": "chapters/02-virtualization/images/027-虚拟化从未消失.png",
+   "sha256": "26e9646358c23788e7762af30f4f893a8c7798af35ac2f52b2103e8827d43869"
+  },
+  {
+   "path": "chapters/02-virtualization/images/028-虚拟化技术的演变.png",
+   "sha256": "3ef591b576fb1b5bec0c419ee6066bb3d5fb612435f7b48e8f14e65d0f28853f"
+  },
+  {
+   "path": "chapters/02-virtualization/images/029-计算虚拟化.png",
+   "sha256": "762ce31395a97c8ae357e75aa45fe9c4e4414877619e33900a57894f01c5c663"
+  },
+  {
+   "path": "chapters/02-virtualization/images/030-资源抽象史.png",
+   "sha256": "4982aa55185293d3ad157128bc8b25c6ba1cfb127dcb4caa64a7a0dd5de72014"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/001-01-物理单机时代：资源很多，却不会流动.png",
+   "sha256": "25bfb606f043e7b9e6447dcbf0b2be7527cf1b5619b2b737a51f41ca334b1d38"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/002-02_虚拟化革命：服务器第一次被切成资源.png",
+   "sha256": "62f6cab11105aebfd1ccff2162b66f7ec6cde905909e98015cafdd824258550d"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/003-03_云存储与_VPC：数据和网络也被解耦.png",
+   "sha256": "1fff1adcc2553cce8833a6db323462023ca67e4e68231d073b5a370e860fe92e"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/004-04_容器崛起：隔离对象从机器下沉到应用.png",
+   "sha256": "c0b54b54b3efac4693401e8f7262f41312214a58046a60c38d3aa1cb8d60b8f4"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/005-05_Kubernetes：Linux_被组织成云原生平台.png",
+   "sha256": "ae7390ea42f83214ee3888c17a1f89d8b9a31fa95c5d37c22fedda187972936b"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/006-06_云上帝国：基础设施最终变成_API.png",
+   "sha256": "2a94fa211032be4095aa71c40ab703d1176a74520a15d538f0872030aa88d880"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/007-图解：Overlay_为什么出现.png",
+   "sha256": "ff6d77424d506e4804df7345038a38f5af431febd36a59e29476ca2e0754a248"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/008-图解：为什么_S3_是_AWS_第一个正式商用云服务.png",
+   "sha256": "f2b811107698d4a5063f79d8240bcc0c1e6813e24aeabfa072ffdce99421101f"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/009-图解：云存储如何托起数据湖、备份与_AI.png",
+   "sha256": "a7483f06ad5bdcc56d9e1b07c3dc50e088004c96247c5bc7f522979b2fe8d8cd"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/010-图解：云服务不是只是_EC2.png",
+   "sha256": "5e4ad9810c7478d8f87ade19fd48380aba02b1296dcd984957c978a3f5a692a4"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/011-图解：云服务如何接管资源世界.png",
+   "sha256": "f44f56f35b30f50a676628bc998472ff5c1b65bb9636c760fb0d5c92de679df9"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/012-图解：云网络为什么要走向专属硬件.png",
+   "sha256": "de12641a0c85989efaa4b7aa15cf9e05329f14da0ffb7a4ab64cffea70f88e2e"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/013-图解：网络如何开始软件化.png",
+   "sha256": "2025da27329a7099b1d9c86247af9b7e54121163a98b043f2d0fb76fc4b007e3"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/014-容器时代的底层转折.png",
+   "sha256": "b7c1b4a730eb0fc759c39f07d11de02d3a212384df89a9b3c6b26ba765729886"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/015-图解：数据为什么不能再绑死在服务器上.png",
+   "sha256": "eee4fb1303c88020a1e04fa28dbcdf2e3e67785b4226619146505c98608cb45d"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/016-一图详解-Linux占领云基座.png",
+   "sha256": "55dfd5f7e466a6ee7573c22379e2e49a5cb4204e84ec6d294159a72f8df87ce8"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/017-一图详解-VPC.png",
+   "sha256": "83375285733500a4fc3af32e0c231f71fe80f22df1186c5f8e9e133d616a19d8"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/018-一图详解-存储服务化-s3.png",
+   "sha256": "47afb466852928141628e32b3497247a6ea93a3d82d1eb855afd764fdd8dd122"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/019-一图详解-资源池化-云平台.png",
+   "sha256": "bf46216e9d8df6b9e21d0dbb6f4d167ab705e22b186b2847d5da9492c93eb720"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/020-一图详解：AWS_为什么重新定义了基础设施.png",
+   "sha256": "71443c2a9565c0d98208fad0189deda59b8365a7b5be3af0ff183850b016cd84"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/021-一图详解：cgroup_与_namespace_为什么开始抬头.png",
+   "sha256": "481e23849790c56c554f257cb06f6448aa96ed1841bb35126dc79178ac44d941"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/022-一图详解：cgroup_和_namespace_如何成为资源控制内核.png",
+   "sha256": "c7e82488972a5bb0d308466b8d5e6108375349cf1ac75d903944d498cfb99f20"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/023-一图详解：eBPF_为什么把_Linux_推向控制面中心.png",
+   "sha256": "4b2b1d1c7f9d201f2a11fe932b728df8a73653a27288b7073ab5433ef32b3647"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/024-一图详解：Linux_如何跨越统治从单机到云时代.png",
+   "sha256": "ce550536cb5e134f16177eff260f77a6f7203e2177ddd289200c3807d00e2dae"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/025-一图详解：Overlay_网络为什么会出现.png",
+   "sha256": "7b71cc480f217b8fd77bc13c3169e25057a2419a227a85e11aad4a84ac70c935"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/026-一图详解：S3_为什么让存储变成_API.png",
+   "sha256": "d27d1e09871ca971f8c65476a84f29f4ab8fdba13bbe63c191c962b7f881411d"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/027-一图详解：VPC_为什么重新定义了云上网络.png",
+   "sha256": "4d9a161491ac924668d198ca65edc9b979dd1e0a5ffdb23d03cb55e5cc261f7b"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/028-一图详解：VPC_重塑云网络.png",
+   "sha256": "9ae818da01b0372ba4984cf6b29afd892a2c9a05057984fb94ef3d8afb3d06af"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/029-一图详解：云存储如何成为云平台地基.png",
+   "sha256": "7b6d59416dd9b2f8dbd89993a2da39e8082be6d2a9c951abf505e6563a7c76a2"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/030-一图详解：云平台如何接管资源世界.png",
+   "sha256": "8e4e24b64048c582824c0a5fa280d3fd7d67d3d8abef9898723bcf1e8ce37d71"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/031-一图详解：从磁盘、NAS、SAN_到对象存储.png",
+   "sha256": "48edfe24c84f9e103b9eb833ab6b1e1608cea3aa3d70942b56603b5e129f0f45"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/032-一图详解：网络为什么也开始软件化.png",
+   "sha256": "096bfe99713f01ed686a72c971d2df68b50c81a5e83d4fc5b2e9a6c1f1cecefa"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/033-一图详解：资源切片如何重新定义服务器.png",
+   "sha256": "ebec30d88f95a37b96ffd5840f7b5cb188c1378f51504e77ab38dc3b66cb2a2b"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/034-一图详解：资源池化如何把服务器变成_API.png",
+   "sha256": "d5a5420d94c1fb440a94d337cc3e405ee5a38075f5d87ba8831f9c9e7de6de80"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/035-一图详解：资源调度的探索.png",
+   "sha256": "92b46958b8599731e48cf4798a77c56b50243a720aeabcdce030e60fc67744ee"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/036-一图详解：资源过剩时代的窘境.png",
+   "sha256": "cf98d1a7aa37515271f7ed5d2b45deff046d73982b67991267ebbddcd3bc5e9f"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/037-图解：从块存储、文件存储到对象存储.png",
+   "sha256": "7fb804635e86cf5321e3f029f718d419ac54b72795798b1c7dc127fd6f3ccbcc"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/038-资源不缺，为什么系统还是会卡-封面1.png",
+   "sha256": "7ff2fbb65e54c4e6cfc1dc417233aeaae693a599cc239147759a1510528fb99c"
+  },
+  {
+   "path": "chapters/03-cloud-s1/images/039-资源不缺，为什么系统还是会卡-封面2.png",
+   "sha256": "50cef3d4c01f0c9361cd0d8a9a7355afb85b870911ac963f63f6f4e0cbc84753"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/001-aws-cloud-01.png",
+   "sha256": "16621dcb5e282ffeabb7d2dee470a85b0e03094f03e5a76e0e5c14bacaf5cdbd"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/002-aws-cloud-02.png",
+   "sha256": "ceaef3bd4a869834e9a82dbccb9d876cf0e9b0dbacdea8140c13e4a26683bb3a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/003-aws-cloud-03.png",
+   "sha256": "a4e15ad34448ddac9ad24cda3a38126456043c4871f6dfc35a6280464f07c3a9"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/004-aws-cloud-04.png",
+   "sha256": "9c8af2a607e3adc4ea268972c8c19dbeb3d5cabde030c1dbb2f76ae64be6b7c3"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/005-aws-cloud-05.png",
+   "sha256": "4480cf08514a1bc5478323821f3ed040e327a70c873db2acc44afdbc5f2a62d1"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/006-aws-cloud-06.png",
+   "sha256": "e5b3a668e077df7351cc9a158a0d93ff83504641aa7e661e03dac17e9560e2b6"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/007-aws-cloud-07.png",
+   "sha256": "e13c352a27910fb8328dd0652fa5d2a17afeb3a7d228e8ea64bd1ef5f506db25"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/008-aws-cloud-08.png",
+   "sha256": "51b2b16b772db7bb020f4cd3b783eb05454cfa75499cafe36147e76c4d7573f8"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/009-aws-cloud-09.png",
+   "sha256": "34dd23046c5eda9d395173e9340828147124ecb28875933221559cf667c7c626"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/010-aws-cloud-10.png",
+   "sha256": "97f6a5a8474235b551ee74461ebe22c3e8802171a3fb0ae8d1b7f06aa4c8a697"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/011-IT简史：Serverless与运维变化.png",
+   "sha256": "743ce58abfc4b4587dc38425ed51a924b1bfc99f1e70073157828fa085f6b2b4"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/012-IT简史：为什么企业怕的不是上云，是失控.png",
+   "sha256": "d46370677e43d21256f2545f5c57835cff046279e82f53dedb944403cd93889c"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/013-IT简史：图解企业控制权.png",
+   "sha256": "e2b1ad971e8ffa58cc29ab2ff7f5af2982ce72d2857d0f243cf6448b9105f3b4"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/014-IT简史：私有云不死之谜.png",
+   "sha256": "d180715009ef82d59614f5543b264c291c88c3259098cce97df74b015ac6e548"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/015-ESXi、vCenter、vSphere_到底是什么关系.png",
+   "sha256": "f8657927c98b07489b73eb69f7d2ffc59379935095e33bd07907260c60164e71"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/016-Kubernetes_如何从_Google_走向开源世界.png",
+   "sha256": "4f927a970aca7e385cfaf7eaf83ea5c0b50c9a0a0fe67ac4cf614db2d7c59052"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/017-PVE_为什么成为私有云的补位选择.png",
+   "sha256": "4ec24af941550326dbbbc095ef7a4f69466350f8bfc5d71ae958aa3e87e3a84a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/018-SUSE_Rancher：Kubernetes_正在反向接管私有云.png",
+   "sha256": "60a07875d0a687a2461398680054cde3ae2409a47b3060120b731f3ca588941e"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/019-一图概览：省了授权，真省钱吗？.png",
+   "sha256": "1e6d868433f35246792eca03a9565ba11464d15d1527bc1e5131009f4036fe42"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/020-一图概览：私有云到底该选谁.png",
+   "sha256": "d7392c04a1818ab351894baee543e2ad1d2abe8118a73b82789a53982721fa5e"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/021-一图概览：选技术，还是选生态？.png",
+   "sha256": "5a49703ceaab54bfbb5d3d634a7d0cb99b58bb75330f9e1c64734f8922f046a3"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/022-一图概览：通向云端，只有一条路吗？.png",
+   "sha256": "e1e0d8640e398f02f43d97b022441da761d9498ca91518d67e826e34ff6d460b"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/023-为什么_Serverless_会诞生.png",
+   "sha256": "36cb70aa89828f38912c39a4e2ebdda3c9a5a19d6ba4fa746dabc6943d59b682"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/024-为什么_VMware_又稳又贵.png",
+   "sha256": "fdf0e86a8d39306003d67c7071c9017620b921c43fcc664c6c8fe1b94c1846f7"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/025-从服务时代到事件时代.png",
+   "sha256": "ba8f0bb0c110f51d7662aec0b57a2f82c1d011ff5aedf4b39ed3b6b0d1a0f8cd"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/026-图解：Auto_Scaling.png",
+   "sha256": "0cf18b647af121327bb8db29124cebec6a3f68034c4a8757f17e8314a12bf49a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/027-图解：Harvester_如何融合_VM_与容器.png",
+   "sha256": "1d75b6918bf9ba28976d82191ed3f94f36ae163b6e1f26b448ff3e4b6bfd268b"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/028-图解：IaaS_抽象了什么.png",
+   "sha256": "23dd92b0b98cbc4dd2ffccb3c9250179ade2427d22590b433d3c60c5a6564bdd"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/029-图解：Kubernetes_如何从_Google_走向开源世界.png",
+   "sha256": "2e7bbacad4c247117aa2dd0e480480e0894c9631abf3176bb5d41140867c0c4a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/030-图解：Kubernetes_控制面.png",
+   "sha256": "973da6fa3e5e0b76f3ea1f1a8de6929c22f149b922dde7f92b5fbc796b6f03f5"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/031-图解：KVM、LXC、Ceph_如何组成_PVE_底座.png",
+   "sha256": "d6a6c31175b7ead62ede3aba7a4d5ebb35e0fc42b6002b98877524e4865627b5"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/032-图解：Nova、Neutron、Cinder_如何拼成云.png",
+   "sha256": "316f9077056eb851cffa1bc3ae93e1e44982f2825f74721cedcfbdde3890a49c"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/033-图解：Pod_网络如何接入_VM.png",
+   "sha256": "6fafb89dbe2278e65a60b87868443ef953e1f378fb2a04869730a367e41d1639"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/034-图解：vSphere、vCenter、ESXi_是什么关系.png",
+   "sha256": "7c16f25679a5041bf6ef37b2572df3d3b8667e21937eefdaa63a973b546363fc"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/035-图解：为什么容器启动比_VM_快？.png",
+   "sha256": "f3a6c9d83771ac9c8872af33baf2f5f95d77cdc2c06e7ca865288cb30382e74e"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/036-图解：为什么说_PaaS_解放了开发者.png",
+   "sha256": "2270da948ca18105dde088d68a7ecd8197700fda0d5b68ec8da56eb900e8745d"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/037-图解：为何弹性计算能放大预算焦虑.png",
+   "sha256": "a5ce68dcb39fb5b6abae98b33efc3d0d5fef407c40ad433ea7cc2c3c5b4f998d"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/038-图解：函数计算与事件驱动.png",
+   "sha256": "1bfdce6d63faa0711e02aa201aa755dd1ab55944554cb085eff5e02b47e44afa"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/039-图解：商业套件为什么又稳又贵.png",
+   "sha256": "777f697c92cc629539594123c02bb6dfa3753e98065a7f6a476d69010c9e717a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/040-图解：容器到底隔离了什么？.png",
+   "sha256": "feb7c432a6886c56cd917e3b691a127d866aade62381619fee33865548c82293"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/041-图解：容量计划动态化.png",
+   "sha256": "40bb5dfe8309b9970040dc403e8c555bcc6373b80a23af280387683824788614"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/042-图解：开源不等于低成本.png",
+   "sha256": "52e1dd6bda30e4ac2773c1f15d6a5a9e8e6df984f80d8f8d2c0b58ca426b8852"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/043-图解：弹性与预算.png",
+   "sha256": "7f0851480f1f44ce40578912bf8376502d9a71c76c1704069335d412aabe70e3"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/044-图解：技术成本与商业成本.png",
+   "sha256": "4c579938c0acf2c46181b97cf081474892a6ae07b2a05ccf040a6b912aa28678"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/045-图解：生态成熟度决定私有云成败.png",
+   "sha256": "ae781515d9e7f75f01fb93d205a76e6e8fafff5ab526002acb2e4ede939c9b1a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/046-图解：资源_API_替代工单.png",
+   "sha256": "27562cfcab514f579c9b2d1c98cf9f02af3c1f8e15b88a2651aed6625641784b"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/047-图解：资源标签治理.png",
+   "sha256": "ae8b510de1d0d465dc13f3d5db049cd025135bf1efe88b39e99bd48c54211967"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/048-开源为什么不一定便宜.png",
+   "sha256": "ef618caa3fcd6dd4c27d7d428665ebb5e5b3b1db317cfe807a7ba65b5f5fe546"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/049-Serverless_是厂商绑定的极端形态.png",
+   "sha256": "450cbc6c5e8ec788707f964dc64cf4377a890954fa91d4f303de128c71f1994a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/050-图解：低成本私有云的边界在哪里.png",
+   "sha256": "def605ff3bc644ed20302a5bd7a4045914c40d53246d8af07b95e4837f6daf81"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/051-一台云主机背后的_OpenStack_组件.png",
+   "sha256": "ef076a29a7f4a62048994b6be3ec66923cbdd064d1c929eccd204511bdc7816e"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/052-一图看懂：Namespace_与_Cgroups_为什么是容器底座.png",
+   "sha256": "093bd53a439de6e0ebceb6c2287205feeb1a9d18f7f2437dfb775dc921347fa3"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/053-一图看懂：Pod_为什么也是一种资源抽象.png",
+   "sha256": "e9cd51bdc4f33475dc7dda03cc12cacc250ed8410f3bd89da5f0055a84e27272"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/054-一图看懂：VM调度-容器调度差异.png",
+   "sha256": "d7c05731a0692ebc26321c4792ebd0ea988934fcfc192eab090088de58d695ad"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/055-一图看懂：从_VM_调度到容器调度，控制权.png",
+   "sha256": "c23532500e22ca25550c4359cbda1c387b69613be64ed1186f5c0e652afa93ec"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/056-一图看懂：容器和虚拟机到底隔离了什么.png",
+   "sha256": "414c18373036e086f8f443c8061e10d459f2c21f016fa0f1d5fc1d9a0bd6ce0d"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/057-一图看懂：虚拟机-云控制面.png",
+   "sha256": "88023a6853b55e790fd6e4efad20fab3ad6cef1ea38d58998302c2af216aa962"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/058-一图看懂：隔离强度与启动速度为什么不可兼得.png",
+   "sha256": "c82dcbd70719d8f1c91e16e5008d9dddab4703a21e6c160610d5aa083f0b65c2"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/059-一图详解：OpenStack_为什么难做.png",
+   "sha256": "346f564ba905d7bf48fe57fff00adcdc3b69f96946f3b2b7503eff511d801588"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/060-一图详解：PVE_为什么成为私有云替代选项.png",
+   "sha256": "6807e7e9ba763ffe6cd8ed0b550e012fdeb001abccb1b105d7794bc11c1de773"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/061-一图详解：Serverless_藏起服务器.png",
+   "sha256": "642818dc00b226fcf4e42202cb2d90efe234bce74f2daebeee45b0b483f5476a"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/062-一图详解：VMware_如何守住企业数据中心.png",
+   "sha256": "30b7d34f64dd95d1ccc985e60968a7ecc908509012c9832d5e639afa094ecfd8"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/063-一图详解：为什么还要再抽象出_Pod.png",
+   "sha256": "00ec43e67b4308f4f01702e2c22b177ed0e792390279b97ed21c3df999f46956"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/064-一图详解：云平台弹性.png",
+   "sha256": "d9cace644688c0d8cf181f1f7aadd0ba252dc6ac5047598f98b4cbb77e2394b1"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/065-一图详解：云平台接管资源_控制面.png",
+   "sha256": "0028defb91e5c95065e5207853a2c01007e486bb12c9694df6c5ddc0852e5e0b"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/066-一图详解：云服务吞掉基础设施入口.png",
+   "sha256": "2a672e7061389ccaaed6634b14be324cf39d604e77277ad5da8bad7d44ec359e"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/067-一图详解：从_IaaS_到_Serverless，谁在控制资源.png",
+   "sha256": "31edf728bde2535077ff2d9b90816abce22f0de2d65b456fb159f64bc443d68d"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/068-一图详解：公有云这么强，私有云为什么还没死？.png",
+   "sha256": "a226ef35bff37bdae1fc1be449c3788602cd80caa4081f2762408bb0a9a986f0"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/069-一图详解：按量计费改变成本.png",
+   "sha256": "7be716d810b950bc50d54d380ee212690d847fff299469244431b46290621e39"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/070-一图详解：私有云为什么没有消失.png",
+   "sha256": "9271a4c596c9f9daf15c596669f174aa7a08543e41314acaebdc1d5176f50d7d"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/071-一图详解：私有云四条路线如何选择.png",
+   "sha256": "0300b71702c3d0bbd8f39b2d4e870fddb16cfc71fff0594c0829a3b011bf764d"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/072-一图详解｜OpenStack_为什么是绕不开的一站.png",
+   "sha256": "d52cbb5a2b420f2c38bac4bacbe968955052c655559459c377f650b2c5290be7"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/073-一图详解｜Rancher_如何把_Kubernetes_带进私有云.png",
+   "sha256": "0c09bb9813d08ff7297d79d920d91514e6ca392d2aabfda6aefbb6e3d6e7a57e"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/074-一图读懂｜为什么_VMware_能统治企业数据中心_20_年.png",
+   "sha256": "3ec37f925c08abdd4b4fdb9d92db2c584940d6c0d42a23f2924282d227b60564"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/075-业务_APP_越来越标准化.png",
+   "sha256": "67b0608347650d86358bd8b78d27907a2bb16fd8e57143c83b8090a67518c408"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/076-去编号_PaaS解放开发者_1.png",
+   "sha256": "5dc2a4ab6f59a72272c0a3e3faa245a6a5c95155f6a803918a44060fe81515bd"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/077-去编号_Serverless藏到最深处.png",
+   "sha256": "3387efab83ada72d8657e22ee252664aa5a84f18b5fafc3bacd78548222b9aee"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/078-去编号_弹性计算控制权上移.png",
+   "sha256": "aea010da0d5fb83e562784a2846245168cb72ce37e4cf830db9c0433bd048270"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/079-图文_2_IT简史｜图解：Kubernetes_控制面.png",
+   "sha256": "800918631459cbb6ee75416a3b3e311fbb918c28920376c0e755d364411d99bf"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/080-图文_3：控制权很贵，私有云也有边界.png",
+   "sha256": "15dab9e79f50f18748ec3a2ddeeaaac8ba03a66f6b4896eb626a2080572d1ea2"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/081-物理资源池-云平台.png",
+   "sha256": "1bd27ec82e12c6591f68d613bb1d8c7aab1f182d15d6aaafe65e64244debbbf8"
+  },
+  {
+   "path": "chapters/04-cloud-s2-compute/images/082-计算、网络、存储的整合，诞生了_IaaS_云服务.png",
+   "sha256": "433507e3ec0232588da71a4e8f41d3d606df2b78c0bbe02a9ffad25a3575497f"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/001-DNS_为什么成为混合云时代的流量调度中心.png",
+   "sha256": "0e201c3a26f789100b4542f832f29b73c59558d83753d3fbecad7a1ad1848c75"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/002-IT_简史：企业如何重新编排云控制权.png",
+   "sha256": "432fba81b59094e08343bfbac43538d3d9e5dc1f7fdbb6dbfcda93db29a4dbec"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/003-IT_简史：混合云为什么不是两套环境并存.png",
+   "sha256": "8e70f2ab95a07eaf9a1a2406271459a6c130e420d5e22adb60da7470879e443e"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/004-IT_简史｜企业为什么需要_Landing_Zone.png",
+   "sha256": "7500749bc3e21e0af0f97ffdeb7525bef2196999d6a7fcaa0bb063487672d6d1"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/005-IT_简史｜混合云不是简单的专线_VPN_组网_DNS_负载均衡.png",
+   "sha256": "02076ad21115d471389cc057e23fb91a21bd1f406cebe592ebcddcec85327e43"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/006-IT简史_Landing_Zone到底是什么.png",
+   "sha256": "8daa381039d7bf13be5e84ca42e4df10b14667cf44d11ce649f1eebc97c062ff"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/007-IT简史_为什么企业上云前要先建LandingZone.png",
+   "sha256": "131f9f71b886f18e91a67c38410f886dee19ebc1c4742a2f001e6bf9199e7fe9"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/008-IT简史_账号网络权限日志如何成为云底座.png",
+   "sha256": "36a37fc28420f98441f2c4bc40b4a417f59f016d74822cf6fcb67a6ad2319be3"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/009-IT简史：企业如何重新编排云控制权.png",
+   "sha256": "eb0920b2a67cbd1906ed8c48dbf94bb044c166a8f9007f857449127572ccfb65"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/010-IT简史：混合云为什么不是两套环境并存.png",
+   "sha256": "e5fa82f7643e8e2cd21faa5c15ac1059ec90687068dda7087f1cedcd71f53228"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/011-上云不是搬家.png",
+   "sha256": "8c9c8f8841cf5fbc7865a7098c2dcc21d39ff5c6ab3a159a2527f385288d9610"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/012-不要再把混合组网当做建设混合云.png",
+   "sha256": "b84ee3b6ce431523300b5e85753f88cc3eededdd6f4521e6ddc337108bfa9412"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/013-为什么上云容易，重构最难.jpeg",
+   "sha256": "5860c1b0c6ada58f17a76b16683a685164f586bef5dda9b71e4704498e6f7d2c"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/014-企业缺的不是云，而是自己的控制面.png",
+   "sha256": "590930626e2b54394cad2b32146e7f3ca1aedf26d8f1492509a9bebe00a53932"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/015-一图概览：Landing_Zone_是什么.png",
+   "sha256": "ec4a888139ca59fb8677e24c47f786e8fe47d0f2cfb247bb26bf724573140448"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/016-一图概览｜混合云的_多态_：上云、下云、业务混合.png",
+   "sha256": "3d25c56af4b8e0370e15d6cbda0c5e430f928c62b7a1fd5a8ef6b3ad29c24035"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/017-一图看懂：FinOps_为什么会成为混合云必修课.png",
+   "sha256": "f38f3515c83d14baddd1223dc1b094195c045d86e705975ec4f8f5d72c2cd36a"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/018-一图看懂：GTM、负载均衡、API_Gateway_分别解决什么.png",
+   "sha256": "1cccfcb698f28aec3529f8046402cb5751e2f54885501c655270f4d4295708e6"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/019-一图看懂：IAM、OIDC、SAML、RBAC_如何串起多云权限.png",
+   "sha256": "c2191b8b9085aba7b80e7eddfbcd716f0337033a07f2c952d4a9f2852d1cb1ac"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/020-一图看懂：IDC_网络如何过渡到云网络.png",
+   "sha256": "89bf1ffad9659f21176c28d8fc604596576141f3adf5f3b977237cca103d446c"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/021-一图看懂：SSO_为什么是混合云入口.png",
+   "sha256": "4661646c2d12597923eb955c70152d5b0a71fd04196d7228513a858159911954"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/022-一图看懂：VPN、专线、SD-WAN、BGP_分别解决什么.png",
+   "sha256": "e9348b130c753a210afd82339bea35f59d64cc92d2f0d937f02c9986d9e5d7dc"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/023-一图看懂：为什么企业上云前要先建_Landing_Zone.png",
+   "sha256": "25664d3a93b7b2260cf9c02617b5ee49a6f4a571dd492fdc5868cd7eaf8bf0e8"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/024-一图看懂：为什么数据才是决定了云迁移难度.png",
+   "sha256": "5f89283cfd15d04caa11aff94ca5ee51b9785e5388f0a8484a1522b5ff4e1bda"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/025-一图看懂：云上流量入口是如何工作的？.png",
+   "sha256": "15995246dcf3d80df6362df5bf03a9afeb77fea7798fb23a639ecc97d606efb2"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/026-一图看懂：云中立到底中立在哪里.png",
+   "sha256": "24746877f89c1cffbb7f8a7175e30c22d11e7ff356fc8b62160625916194b5b1"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/027-一图看懂：人、服务、机器为什么都需要统一身份.png",
+   "sha256": "4ef0379416ebf4b2052907a73998b2a75ac1037b72d80e2dc70475e8bb4084b4"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/028-一图看懂：日志、审计、标签、账单如何统一.png",
+   "sha256": "aca19fa453e3ecea9d03c1b1b692bafb630ce334133a8a40a03cfdecb456133a"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/029-一图看懂：混合云到底混合了什么.png",
+   "sha256": "8b79d6723d4c7e7537e90b822bd11b79d045ae2c0c77bdc2638abb2e04e9a678"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/030-一图看懂：混合云到底混合了什么（另一版-原在第二季目录）.png",
+   "sha256": "480dc5b1ecb9a33e94ad81e57db86f8266cef6b8db61d3ddc882564c2f3c709a"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/031-一图看懂：混合云如何做策略治理.png",
+   "sha256": "a640a013cb1fc6effa06d024d653b33cef0ad93b7d81b4406027cecd2a1690d9"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/032-一图看懂：混合云组网为什么复杂.png",
+   "sha256": "d55b4fb079e0b8f78d3a53d4dc151826d2fb72cd22043b577b38f21ddb7a8a9f"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/033-一图看懂：账号、网络、权限、日志如何成为云底座.png",
+   "sha256": "1f89a2b5e99a9a5ba9e8dd3477f9144a0c0950d4fbed537bb80ebe9a7b003c00"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/034-一图看懂：跨云网络如何形成统一访问边界.png",
+   "sha256": "84077503735224df7e4b5cb3bdc6231d3d37c5718310d9980cca150d6f687a77"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/035-一图纵览-_-_公有云服务云中立地图：Azure_版本.png",
+   "sha256": "613dabbd666236008bf48de0e64a976d27b957cc56720975c642191ab94bc6b6"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/036-一图纵览-_公有云服务云中立地图_AWS_版本.png",
+   "sha256": "1517c8cb73601183c0abb474d1cd1dd3b187b597ceeff738cdf72f5eb8b82a93"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/037-一图纵览-_公有云服务云中立地图：_腾讯云_版本.png",
+   "sha256": "8ef37bada1106949397258cffd6f4060f63c29d7f31eedf2a5f34763804dbd5e"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/038-一图纵览-_公有云服务云中立地图：Google_Cloud_版本.png",
+   "sha256": "161d55e9d02944374f7a0af118e736b111c15784d32662dbe325dedebdc9552f"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/039-一图纵览-_公有云服务云中立地图：UCloud_版本.png",
+   "sha256": "e209ce0e3296e7c8b417ecdb1da1dd6536023e8950bbc07709e085e3bc9339e0"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/040-一图纵览-_公有云服务云中立地图：华为云_版本.png",
+   "sha256": "274df7cc2ddb40ce07010ea029637d5a3ae76d865fae494be0f23134507bc977"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/041-一图纵览-_公有云服务云中立地图：阿里云_版本.png",
+   "sha256": "23e745bc87a14dfc34b37447a36d87ac3e1a35f112532fdd577d20eb692fcd35"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/042-为什么系统上云后，问题反而变多.png",
+   "sha256": "8c34bcc8eb52cddef23b0e4e97794a9b065c92d0218db3b93c8f2bb75a4bd89c"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/043-应用上云-6_笔债.png",
+   "sha256": "74f3197a87e3d249f20c2c787fc772aa6a731799d0c6424124804a90bcd28787"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/044-混合云不是资源拼接，而是控制面重组.png",
+   "sha256": "429afb587d22f3305fc254fd9a030aba5606c13edef693b3c0c73890f1079210"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/045-第一篇：为什么企业最终走向混合云.png",
+   "sha256": "171d830cf3362bdbfb72ce766e137877ca3a6584ddf6e9ce1e88b692ebf4f2b8"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/046-第二篇：混合云真正复杂在哪里.png",
+   "sha256": "94c5c10fa124a6f7c245dc4c20e5f8c002fef9527277be7a76d53a2f74ea104a"
+  },
+  {
+   "path": "chapters/05-cloud-s3-hybrid/images/047-迁云重构路径图.png",
+   "sha256": "ff74ae47d19bf2c21eb1f175e6cc5078abd076997da82462b7ca7ede6a2f17dd"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/001-AI接管基础设施-01.png",
+   "sha256": "5bbd785a423a321cbf9dc28cb4e3864dc429d8010ddea1e4a3b43a85349f2980"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/002-AI接管基础设施-02.png",
+   "sha256": "c2ac6f0b1b655dd61d15defd0c6fb9195ba4373402c6c1c17db7087be7c4efeb"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/003-AI接管基础设施-03.png",
+   "sha256": "66eda05c9809e54eb961db1af5f94a2a04f165cfcb498c31fa9b89b49edc54f2"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/004-AI接管基础设施-封面.png",
+   "sha256": "3c9395c14ff4036672153919593dfa999fda916be45b40b03c0273131e529e47"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/005-Git-Flow-图解.png",
+   "sha256": "a3920137ec42fda6e9cef595c8185d974cc520f7cd13294707934d4fdc589f8a"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/006-GIT-流程图-横版.png",
+   "sha256": "df94459e49b316b45d8aab2159c6c29040885133f87816b97dd0f594d0eceb8f"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/007-github_分支模型管理策略_流程图-从小团队到中型团队.png",
+   "sha256": "163ddcf70f511c2d3ebd90b05f81fd6f0817de2c85283005fd03da608fe8daef"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/008-github_分支模型管理策略_流程图.png",
+   "sha256": "56bba00b5d2e1cb8c0d1b5f81725db5756339ef4ea077835f41de471f6734b46"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/009-GITOPS-灰度-回滚.png",
+   "sha256": "daea3a0827385e3b9058afecfd73086eb8051ee58becdb3d727f0c72b30c897f"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/010-CI_CD_解决发布，GITOPS解决发布状态.png",
+   "sha256": "964d57880ceefec8da86881a91f35f520ceae72ec754beee5941797cee87e5d9"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/011-CI_CD_解决发布，不解决状态.png",
+   "sha256": "d9a56d9d278f48db98c952cd1232a1f1b6eb8d353d202fb3bcdefa9c6b7a8391"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/012-DevOps_不是工具，而是企业交付协作方式的变化.png",
+   "sha256": "c31ccf8b8b909a9b3a21fbf19607c79efb7c0978a1c5b9b548ea59ae53caf4e8"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/013-GITOPS_的本质.png",
+   "sha256": "bfe096e7a52c86270d180c63b48d32cd884820cd9ba80b5626a9392fa30f8be7"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/014-平台工程不是新概念，而是混合云复杂度的收容所.png",
+   "sha256": "be9962a50a4f4734823bced2fd9231e856c718a301417e85ec153088a9aac538"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/015-漫谈_DevOps、GitOps、Landing_Zone、IaC、平台工程.png",
+   "sha256": "60fb5623e4f8b9b121908de19fbdd276171a48eaae37ea806b48b53916f7f4b1"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/016-K8S_让什么更加复杂？.png",
+   "sha256": "75ed4dec988163eae26a02c6a67bc638be24d6d33bd8a991992835b4247aa563"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/017-landingzone-最小化实现.png",
+   "sha256": "77c620ae66668ed25b43b5c71c7887eb35b49e15716e854ce773732d0ad7cda9"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/018-SiteRecovery-01.png",
+   "sha256": "1d17a95a967db1fa733257b894dab4b7efd91e25358a92391f24f4456d44abd5"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/019-SiteRecovery-02.png",
+   "sha256": "bef2b41fc84a98aa7eec7d3d90e8612b288243fa27c0760e1a373026397af118"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/020-SiteRecovery-03.png",
+   "sha256": "8c80a60c4151bf1340ff86759e069f6f1a759ab2c67b0084fdcc565ed012f990"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/021-SiteRecovery-04.png",
+   "sha256": "bcdbb423277335e8e8884712a6d77e5bac2a900fbcd6f38a42121decb23518f4"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/022-SiteRecovery-05.png",
+   "sha256": "b7e077c9af4c66872caa4dd0f81e64a3c6d49756808048603dddf04324147d7a"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/023-SiteRecovery-06.png",
+   "sha256": "d4944f0d663bf61d0851c1a98b74a94579a57475d6ad7ed954556dd9c65e5534"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/024-一图_IT｜GitLab_CI、Tekton、Argo_CD、Harbor_如何组成交付链.png",
+   "sha256": "a96d5850e56965805c5f9a7da55f53ae8fbd5e9edc93ff725e26fca2ed4ac2c5"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/025-一图_IT｜Helm、Argo_CD、FluxCD_到底在管什么.png",
+   "sha256": "45c4b16e66e3a3066a50ff23913063a527ae4bf2db5f4140777cc238f99aa251"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/026-一图理解平台工程.png",
+   "sha256": "c64a4285b3a20f83b5312cbb1bec905468f814858ea41fe899313d710324374d"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/027-一图看懂-landing-zone.png",
+   "sha256": "7afbe24b79a0c0d50b9f76a6770ef368be768985e6640667a0217cb6800e2588"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/028-一图看懂：IaC_如何管理混合云资源.png",
+   "sha256": "e3cd1ec95c2b3b125dad54f362eab413ce9a784997f40f129fdf537ac1136e37"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/029-一图看懂：Terraform、Pulumi、Ansible_分别适合什么.png",
+   "sha256": "3b5fac76c642dfa379c87410a5b2ebf74b43b99469e33940c6ab58cd0a04e15a"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/030-一图看懂：为什么企业上云前要先建_Landing_Zone.png",
+   "sha256": "19193fb6193e210d94e8ee6a8704285029cf062cf3113976a4d46de2f879b793"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/031-一图看懂：基础设施为什么要从手工配置变成代码.png",
+   "sha256": "ac8a20182c25f5c646194debed47b19fc43fae412ff2a56b8d46b4fcff008320"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/032-一图看懂：平台工程为什么会接过混合云复杂度.png",
+   "sha256": "07f77e262dd8b6e8754af0bbc2768fd6eaf739233c76832916c627dac870965d"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/033-一图看懂：账号、网络、权限、日志如何成为云底座.png",
+   "sha256": "b7ca1b55d1b12ff08be2a336fc860dc56c36efc1bcc30b3dbf42b8e964b74c06"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/034-一图读懂｜从_MSP_到平台工程，企业到底升级了什么？.png",
+   "sha256": "ebb89d207a5f3deab1ba004d7d1048a399577d48faed59abc2f720f96901e159"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/035-为什么企业交付慢，不是因为没有流水线，而是交付链没有闭环.png",
+   "sha256": "170fe29a97c8350b662cda3913af53f8797fb088c6d8f622889b57aa9d9c8919"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/036-分支管理.png",
+   "sha256": "cedd2fa0e6f984eac19205643b4c9151ddf6d33b5666e640d5ecb92d218b7c69"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/037-小红书-从手工运维到现代平台工程.png",
+   "sha256": "3e02e2f9d185512c6dcb11b4189147619269d95ed3e16073677ff685fe7ce18a"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/038-生产环境总是失控.png",
+   "sha256": "b40f0f78bddd49e7559f72d94c0cb65ca557e23d13d7f41ce1ddc15c05166e38"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/039-第三篇：混合云的终点为什么是平台工程.png",
+   "sha256": "200a8360b17c78fa474a26ca9c4f820db7c133a1aa78122139bc6299efa19e50"
+  },
+  {
+   "path": "chapters/06-automation-platform/images/040-结束语-首页.png",
+   "sha256": "b0ad0921a3f9793d7332ad951beb58dab926d99f6f8439b91ac75cfdcd96c57f"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/001-01_BI五代总览时间轴.png",
+   "sha256": "1a9cd50285a3a39d95e200442d9716a7fe719e848a853934f5d92b91a3de578c"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/002-02_第一代_固定报表时代.png",
+   "sha256": "10c0709a21ab0e3fa06cb7a8dc5e4f0169b3efc60d12aa603687a73a6ca9df3f"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/003-03_第二代_企业数仓时代.png",
+   "sha256": "b626e38c3ba2b55a38439c5ab76b7c89a463a14497e0eb856c53ed68816f9f11"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/004-04_第三代_部门分析时代.png",
+   "sha256": "e5be55e015982d7778e0bd81d3ffadeefed517de61f2cbe8f6c7fd75094a5e12"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/005-05_第四代_自助分析时代.png",
+   "sha256": "7c025a53a12bde97751c15cb7e7896d32d2b02339f24ecc06b124e1fdd224c1b"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/006-06_第五代_AI分析时代.png",
+   "sha256": "467535d08330a8dc750d46e180ae71d27e8d92060cf3ae46ea9f7ee4288c7e51"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/007-07_BI演进最终主线.png",
+   "sha256": "42409cb6e431a99af65779e96b39497cdfcb06e25302fa0bc4b6c6fd0d3b34dc"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/008-数仓04_云原生数仓.png",
+   "sha256": "06a263bf8b7d5d9b6dd8890d2d16420ad998b15ad45c435da51cf3ae81b1b3b0"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/009-数仓07_面向AI的统一数据底座.png",
+   "sha256": "84d6b98972f3eb8f97835014f61335c0fd654484894956df93f07101136b8eac"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/010-数仓03_Hadoop大数据平台.png",
+   "sha256": "91917bca833835b26f5ed35d421dd457926b4f1fa5c89002a0745b4e74ac7a6f"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/011-数仓01_集中式关系型数仓.png",
+   "sha256": "5336ad2ca6c74dee8c7ddd8dc7f0f8e7c14d46910588ec26d8eb53f5e593afb4"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/012-数仓02_MPP并行数仓.png",
+   "sha256": "8597c26d98b12770a34b97f78ccf7d84d5953b94537d28554f01ce542de18c93"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/013-数据仓库-1.png",
+   "sha256": "af10f0fddc8ad9416134fbcf774564350b936ffd8cd2c03b92d1ef3fdb88ddc5"
+  },
+  {
+   "path": "chapters/07-data-warehouse-bi/images/014-数据仓库-image.png",
+   "sha256": "66f3da271e6d5dfb63a7e7a69afb4c9bf35c646543ffe80dc9292ab345c87402"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/001-00-数据基础设施概览-v2.png",
+   "sha256": "ebad09e6e32469366300c2cf51851e140d3c3dc228f70b9aed7c03adc07fd8bf"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/002-01-数据库与存储-v2.png",
+   "sha256": "4f3d50cbba07f914559781a56712787d6005cdb7c3a95311789717617f1143a7"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/003-02-数据采集与集成-v2.png",
+   "sha256": "f3998d117da9beed68d8fb0aada318a1875045c39934b1cc1f14dc776d5b5f86"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/004-03-计算与处理-v2.png",
+   "sha256": "0c596ce7fa1ea66ab04529856d78fe88ca1a29293c9c893ebe7d6f1f33d2dbf7"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/005-04-分析仓湖与BI-v2.png",
+   "sha256": "8c16a70444369029f66356379c40d23e0001396bbac36e143dfa61c13c112ede"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/006-05-数据治理与安全-v2.png",
+   "sha256": "c9182f788f2ca42d80243826f4ca05836eecb7d3c053a65396b65a3cb5d41789"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/007-06-AI数据层-v2.png",
+   "sha256": "9b04d82f393fef1f65ee9e5f5ea42da6b6be222d6a0d8348369ea92ca360338c"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/008-07-数据分析工具.png",
+   "sha256": "ff83fe5102e39d87f3de504e6821a72951d285e168bd411d55dbd09ae5788ef6"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/009-08-机器学习算法与库.png",
+   "sha256": "83e919a647f2497d1834005a39c02d091b68f8806aa0c16aebdd2e3ffde172ef"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/010-09-深度学习框架与里程碑.png",
+   "sha256": "feb49bdaececf3bf03e18a3880522a323401beac18edf82d2bf6545bac3f0ee7"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/011-10-大语言模型.png",
+   "sha256": "7fc10d1800d9e4ba0bbfdbecdc6ba70322a01309d097b55e7aa19df570e0a7de"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/012-11-AI-Agent.png",
+   "sha256": "15cac9ac3df8de60b35bafae7d016866a77e790549c5856bd2d9696f3fa9ff1e"
+  },
+  {
+   "path": "chapters/07x-data-infra-evolution/images/013-12-AI与科技公司寿命.png",
+   "sha256": "8a84096f676ddd5045ed8cb5c3763450106391341825239bc31a9706a3723f3d"
+  },
+  {
+   "path": "chapters/08-identity-security/images/001-01-单机时代.png",
+   "sha256": "b23241ebc9d4af5fa5562d8d890107c2c1b24f0ed0bddadffe2d329b988a052e"
+  },
+  {
+   "path": "chapters/08-identity-security/images/002-01一图看懂-AI_Agent_为什么必须有身份.png",
+   "sha256": "738541de08bf31bef02da27c987d49dc44897dcee45d321273c9ffa0a5c6e7a6"
+  },
+  {
+   "path": "chapters/08-identity-security/images/003-01一图看懂-防火墙与_DMZ_为什么越来越不够用了.png",
+   "sha256": "0f0ea0ae8aa7881c143428db4764f8a7f808e8d571553bd98aec7a1220695f09"
+  },
+  {
+   "path": "chapters/08-identity-security/images/004-01一图看懂：为什么云时代开始失去“固定边界”.png",
+   "sha256": "6f2f717ba625e25f3e188f77d75e6467b40254df2d0627d9adc41b97be67092a"
+  },
+  {
+   "path": "chapters/08-identity-security/images/005-02-局域网时代.png",
+   "sha256": "029b2450cae78be2a4dd44be103ed02f709a005c708e67cd799419aa50686703"
+  },
+  {
+   "path": "chapters/08-identity-security/images/006-02一图看懂-IAM-OAuth-JWT.png",
+   "sha256": "7a04bfe3a5d5015518559c0afba3ce59a129f6d15b42f09b5f1f581c7022d6e1"
+  },
+  {
+   "path": "chapters/08-identity-security/images/007-02一图看懂-Web_安全是如何诞生的.png",
+   "sha256": "892a3bd2c2137805e51362ea163ac01e90dfe3dd119491b07db1680d2d60593a"
+  },
+  {
+   "path": "chapters/08-identity-security/images/008-02一图看懂：AI_Agent_有权限后谁来管它.png",
+   "sha256": "cae71051d5e5a48eecdfc6b135a72e9365acacf39c55831fc2214b56fd52c57e"
+  },
+  {
+   "path": "chapters/08-identity-security/images/009-03-web时代.png",
+   "sha256": "07fd235e1c5b75e14905f1ba62148abda175ab56411a464ec051c7e5cf6012b2"
+  },
+  {
+   "path": "chapters/08-identity-security/images/010-03一图看懂-Agent_越权为什么会成为新的攻击面.png",
+   "sha256": "26483c1488e3e546f9c0d438e4abc153a397c44729094188c084cd92b23dc36e"
+  },
+  {
+   "path": "chapters/08-identity-security/images/011-03一图看懂-Web_攻击为什么越来越危险.png",
+   "sha256": "3740d8359b36dae7e008fd0e0ec113a0f85ba6738e00c9ee2a6ed6b9912152b0"
+  },
+  {
+   "path": "chapters/08-identity-security/images/012-03一图看懂-为什么_Token_正在变成新的攻击面.png",
+   "sha256": "92f9ac93f6b8660d80cb63ab55f63d1157fcbcc4c9bb522709a159e4b8b871c5"
+  },
+  {
+   "path": "chapters/08-identity-security/images/013-04-统一认证.png",
+   "sha256": "eb110d56f8afd1b898ad2b3ae0a432487ab9fabf62855300fe7889d0525c75a2"
+  },
+  {
+   "path": "chapters/08-identity-security/images/014-04一图看懂-为什-Web-安全越来越像一场身份战争.png",
+   "sha256": "d91ef02ddae96666832c195f87fb5c0656e5cb5532cfe022c37f515122a18c44"
+  },
+  {
+   "path": "chapters/08-identity-security/images/015-05-为什么Web攻击改变了整个安全世界-封面.png",
+   "sha256": "7f57b9603b08c1a209d545124c80767ab8ea562604e477160748ca125d92376b"
+  },
+  {
+   "path": "chapters/08-identity-security/images/016-05-开放平台.png",
+   "sha256": "c1a8704ddc61bb80957d95a8804f3a63f928b63012501aa97cdd6d54f9b5f805"
+  },
+  {
+   "path": "chapters/08-identity-security/images/017-06-云与微服务.png",
+   "sha256": "7a3a37b448db1e4eb4ec60c08c7a834a218a6ce50eb64904cfbd3db3f9e94cf1"
+  },
+  {
+   "path": "chapters/08-identity-security/images/018-07-零信任.png",
+   "sha256": "5076b72a4d5d1c3d712cc7b5299426000371a12b69320e953f63f0135e35da9e"
+  },
+  {
+   "path": "chapters/08-identity-security/images/019-08-AIGC-LLM.png",
+   "sha256": "30d81219e3de37626c20d48254a211199b7856ee8ab7029e45a46ef16d94e2d7"
+  },
+  {
+   "path": "chapters/08-identity-security/images/020-09-AI-Agent.png",
+   "sha256": "032adba4944abca87a3973692c1a6d24381408d333477c85b56305ae465b5ed7"
+  },
+  {
+   "path": "chapters/08-identity-security/images/021-10-AI-Native.png",
+   "sha256": "4f7ca3cb30fa0f7e86096c1360e167c54d7dad9ec2559baa7695202736c66e98"
+  },
+  {
+   "path": "chapters/08-identity-security/images/022-Zero_Trust_不是产品，而是一种“默认不放心”的系统-封面.png",
+   "sha256": "79186e554a3beaad3dc4c17e3928a688e09dd30f7ea8b20429c8424871146d6b"
+  },
+  {
+   "path": "chapters/08-identity-security/images/023-一图总览：数字世界信任模型演进史.png",
+   "sha256": "cabc8a75fa1ebb321386ef56a36484b3a9e35d6374e33c333f6bcc90aed2445b"
+  },
+  {
+   "path": "chapters/08-identity-security/images/024-一图概览账户与安全演进史.png",
+   "sha256": "8f5359bd93fa8456c222020f2222448d766b90c608be8403c7782da70aa95c43"
+  },
+  {
+   "path": "chapters/08-identity-security/images/025-一图看懂-IT_安全为何转向身份可信系统.png",
+   "sha256": "e99d14f9044982d9fe49903d4ae0c63e456b27cc1bf94c5586fabd4fd703b246"
+  },
+  {
+   "path": "chapters/08-identity-security/images/026-一图看懂-为什么-Zero-Trust-总会输给先方便一下.png",
+   "sha256": "f7bb6d753fe7a92058b3c25fa96cf9106a5836f73b81a0da10a88b3721825e79"
+  },
+  {
+   "path": "chapters/08-identity-security/images/027-一图看懂-为什么内网不再值得默认信任.png",
+   "sha256": "16bd36f203d06aa1daad157bc83dceb5487b6720c42039cedbc6c84d72f3d2cb"
+  },
+  {
+   "path": "chapters/08-identity-security/images/028-一图看懂-为什么系统越来越不敢轻易信你.png",
+   "sha256": "0b06ea9331ee478f85eb09281ea067bda103550bb012e730b3617eb7dd0223ee"
+  },
+  {
+   "path": "chapters/08-identity-security/images/029-一图看懂-机器为什么也需要身份认证.png",
+   "sha256": "5fd1e50ad7b8fceddd18ace022cf7690152bcdde63fb1e134013658ac25e2100"
+  },
+  {
+   "path": "chapters/08-identity-security/images/030-一图看懂操作系统权限演进.png",
+   "sha256": "e05a5353d68980ddbc3ccfdbf2ff2434c41684eb4a0862b7fc37bea1dc1463b3"
+  },
+  {
+   "path": "chapters/08-identity-security/images/031-一图看懂：模型为什么正在变成核心资产.png",
+   "sha256": "c75cb926a05c819c9672f290641179fd9a87198b1196c73b49dba66074e90dde"
+  },
+  {
+   "path": "chapters/08-identity-security/images/032-一图看懂：模型蒸馏与能力窃取.png",
+   "sha256": "7ff20cd23c7a011feeaba1af6e5bbb288e91b114e7bd0aa7268a4d44d16973c3"
+  },
+  {
+   "path": "chapters/08-identity-security/images/033-一图解读账户与安全体系.png",
+   "sha256": "45cab3f0afc805074142a5b278c7fafcc4864d1d65f8ae35d6d98779c501484b"
+  },
+  {
+   "path": "chapters/08-identity-security/images/034-下篇-账户与身份安全演进史-从ZeroTrust到AI_Native_能力保护.png",
+   "sha256": "7c921e5d231a607da8b9e79cc994bb128d9a460a759d3475dd54058757fc451c"
+  },
+  {
+   "path": "chapters/08-identity-security/images/035-从-Root-到最小权限-长文封面.png",
+   "sha256": "56572ada7614b10e773a7d46b8d63904de34eb5549629562c4436f29af0858ec"
+  },
+  {
+   "path": "chapters/08-identity-security/images/036-小红书-账户与安全体系.png",
+   "sha256": "a32ee6d7467f2c283a92d53dfcec97b0809fb22399d491b6e4213ba7c12b1027"
+  },
+  {
+   "path": "chapters/08-identity-security/images/037-当_Agent_开始替人做事，安全边界如何重新定义-封面.png",
+   "sha256": "684cc2aeff8f1ef1c1a461644815ef0625454af0ef0841c9793663e0f939719c"
+  },
+  {
+   "path": "chapters/08-identity-security/images/038-统一身份系统是如何诞生-封面.png",
+   "sha256": "6da496407a7fac6657a18c48b75195ac4d3af954828af34481b71277534639b0"
+  },
+  {
+   "path": "chapters/08-identity-security/images/039-账户与身份安全-9宫格.png",
+   "sha256": "53b71ac0dd67fd3e0d066d377f36f6999d29a253d7b141eaa8ff086c98a3a534"
+  },
+  {
+   "path": "chapters/08-identity-security/images/040-账户与身份安全-演进历史.png",
+   "sha256": "23df54e5c06e88292ed70bdeded8ab48c02695203bf9140f33153c943e6c1e8a"
+  },
+  {
+   "path": "chapters/08-identity-security/images/041-账户与身份安全演进史-信任边界如何从机器走向身份-上篇封面.png",
+   "sha256": "383de718ca8cbb8d9431f3dbe1ca020486039e1ec182ace7bcdf30c8244985a8"
+  },
+  {
+   "path": "chapters/08-identity-security/images/042-账户安全体系概览-封面图片.png",
+   "sha256": "acb1d183ec820e4894615630d8c7e85915ab1fb6bf656d54e1325030b1b5b34d"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/001-01.png",
+   "sha256": "33358bcd35bf5ff24d226a1a3df6bab8e7bc3e7e9ca920df6e810b735ba65b00"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/002-02.png",
+   "sha256": "ddf4092e2eb181d1eb3de1a3fbcc6a45358cf6c03f8f5bbf56da1bb75e6f383e"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/003-03.png",
+   "sha256": "5271b094a7ce34ffe52f96475245c1ac0c0e3d7190ccc38ac58abbcfc75fb50e"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/004-04.png",
+   "sha256": "eb05b33cc5843fe4bd1396cbef77bc68f1f717ae9ffab0d16c30be31cc6a4ddf"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/005-05.png",
+   "sha256": "cb12afaf3c73eced5044f9372f666f7589e561fcb904af428a473787d1df8e0f"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/006-06.png",
+   "sha256": "1a1ab4663b15c0d0e33ae7b6dab1e12f610d6cd220950d65f339207ffd6e36e0"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/007-07.png",
+   "sha256": "7548a25cb8a4e112cc16101ee456ffafcfa5b1d61b0422065685244eaeeb51c9"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/008-08.png",
+   "sha256": "c7b716efbf92dad1b95aada8242e67be19aa7803b4bc0814c422a0222a27408e"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/009-09.png",
+   "sha256": "73de3517773deb8a8a153eec2352bb4080d589988e155f4426a73d28197bd004"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/010-10.png",
+   "sha256": "aec5653a8b0f7dcf9120942b381c5aa4ed11e302e03c2c73fbc6f223b75948cc"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/011-11.png",
+   "sha256": "4bcfe9ae15e65741acc3796937acbb099162f2a7731f8cc149b58ad84afeaef9"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/012-12.png",
+   "sha256": "51ed19bba0f78300f888f4e4790f259b3e3aeddfe596ff54495aaed3b912889d"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/013-aws-cloud.jpeg",
+   "sha256": "6805bf90a30fe5f21568036e778fc987be8ce5f510b3d4dadbb9bbfc495737d2"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/014-azure-cloud.jpeg",
+   "sha256": "42381a4d7cb8364c60b75968a3b4a9cf84b241961cd75ff5ebe11d664da4bf46"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/015-case-1.png",
+   "sha256": "ccdf70371fe400c3713f4cf4cff86240d278643728d83a1de74b0c59c7e3d6fa"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/016-gogole-cloud.jpeg",
+   "sha256": "50b85daf7ea81cf867a6621e8f21d8842f6d592a04e6b6a1df68a46a948b3724"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/017-Ucloud-开源与云中立.png",
+   "sha256": "99ca13cbec25e10636707cfbbd3912a05faa42d7f4dbab101d99d7bd16a89011"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/018-华为云.jpeg",
+   "sha256": "4c561b5aa54e4ad4a8d587afb3b9c975632c5e50f4c97db21518e52b2762fc45"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/019-开源与云中立-下一站.png",
+   "sha256": "c5b8df8b5b84977a44c1d9ba8b365740b362e5c5a0f93b969a61d8ce52f354a1"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/020-腾讯云.jpeg",
+   "sha256": "cf2aa002fa35e27039715b4692105bfbb63eaed8db5d893259573e339b96e799"
+  },
+  {
+   "path": "chapters/09-open-source-cloud-neutral/images/021-阿里云.jpeg",
+   "sha256": "1c3aada6d0a7819e0c8c76872f2342880fe6c8ccb3567d632ce0dbe2f57535b8"
+  },
+  {
+   "path": "chapters/10-ai-era/images/001-01-总览.png",
+   "sha256": "e909a07ac2ef33edfb6aa12b3f11dfcf3f6e4dd7af5323da28cde7f57041caa4"
+  },
+  {
+   "path": "chapters/10-ai-era/images/002-01.png",
+   "sha256": "ddc24365896291f596060b16db3c4750e2da622475ab45140ceb1081096aa76d"
+  },
+  {
+   "path": "chapters/10-ai-era/images/003-02-为什么需要_AI-Native.png",
+   "sha256": "3b3b884eb721e4a42cd41e32e156fac5a4ec5d79eb6a56f8b693de95dfa7ab4f"
+  },
+  {
+   "path": "chapters/10-ai-era/images/004-02.png",
+   "sha256": "9267e6b160ef0cb8593975a5297450b0855aeb3def04cabc6894c8d551045228"
+  },
+  {
+   "path": "chapters/10-ai-era/images/005-03-AI-Native_超级个体模型.png",
+   "sha256": "3e9b4fc34a638db407e3d9f71dc2c21885adffd421bccbbeca4fe2734df95583"
+  },
+  {
+   "path": "chapters/10-ai-era/images/006-03.png",
+   "sha256": "211a86d50bbcc6ea2cc5c2c8b8b956e7c3fdae15437908a1ae09d7048af763e8"
+  },
+  {
+   "path": "chapters/10-ai-era/images/007-04.png",
+   "sha256": "f7d894db471ef86029055f62c19f141a1a638c5092e120b8b935e9662090de4b"
+  },
+  {
+   "path": "chapters/10-ai-era/images/008-05-适合谁.png",
+   "sha256": "6cd8c51539ccfa62f80a3fa93f59042b397b9b4564d7b1e5910fa008fc48007a"
+  },
+  {
+   "path": "chapters/10-ai-era/images/009-05.png",
+   "sha256": "e3fc6c2cca0ebad1965840d1f3136ce394dc051b639b77127c5f8ee0057ce443"
+  },
+  {
+   "path": "chapters/10-ai-era/images/010-06-你会获得什么.png",
+   "sha256": "06f3d8609b6d4da63a85e82fa5add8802c95d8180a2907fda52ed36295611fff"
+  },
+  {
+   "path": "chapters/10-ai-era/images/011-06.png",
+   "sha256": "3370341a20a18fcada4c44a25e7a5f9cc2a6962eb1fe06085e62f3ad8cd23b19"
+  },
+  {
+   "path": "chapters/10-ai-era/images/012-07-行动页.png",
+   "sha256": "6966fd322b140cf8bc7a47cdfb733b9f3eac58077cc5d7a47d819e67abfcc19c"
+  },
+  {
+   "path": "chapters/10-ai-era/images/013-07.png",
+   "sha256": "3e2b973c403fb5e54c2081826e225129cc3a89411c6b8d22e624ea5ec9591276"
+  },
+  {
+   "path": "chapters/10-ai-era/images/014-08.png",
+   "sha256": "27f59bb1288cea99a8fbc7d253633e7a88dc9edd39c8a5a601fa6430e60f684f"
+  },
+  {
+   "path": "chapters/10-ai-era/images/015-09.png",
+   "sha256": "02abe8978055715776b2aff767d9ce4229896d6fa79eb4e653bc0163d963f8ad"
+  },
+  {
+   "path": "chapters/10-ai-era/images/016-10.png",
+   "sha256": "923f0f8634f160286a5a8dae5f24b198ae3a8b5422a14115b6eeba98adc3bafd"
+  },
+  {
+   "path": "chapters/10-ai-era/images/017-5_大核心模块.png",
+   "sha256": "04f3a7ae771a630fcf238ecfac8d636930533e398b89c22b16c60a0a0df2c80b"
+  },
+  {
+   "path": "chapters/10-ai-era/images/018-home-page.png",
+   "sha256": "433e051fb17284ef8e1a5f5fc8a2c8e98f3eb5dcff49ab7a0054148d65db659b"
+  },
+  {
+   "path": "chapters/10-ai-era/images/019-一图-Openclaw-hermes-双栈部署.png",
+   "sha256": "2324265b44c19e679d4a9c51d9f869b3c477cad9e181bdad1b3fbdea6086b3d0"
+  },
+  {
+   "path": "chapters/10-ai-era/images/020-一图概览-FSD-背后的-AI基座.png",
+   "sha256": "a70669a53af0e3354081c76ac76f624f1eacc405916f5e6ab8a69e1ba916a99e"
+  },
+  {
+   "path": "chapters/10-ai-era/images/021-一图概览FSD_背后的AI基座.png",
+   "sha256": "78846311597d7b994e093b6d6ff11e231bab5ea04723d0add982b4eb4a1bdeb8"
+  },
+  {
+   "path": "chapters/10-ai-era/images/022-一图看懂_H200_如果真正进入中国-将会改变的是什么.png",
+   "sha256": "135e3e82a9795b004469c9d49aee6e747354b60ad856fe45e09dd6b503368721"
+  },
+  {
+   "path": "chapters/10-ai-era/images/023-一图看懂AI巨头与“现实世界”之争.png",
+   "sha256": "fbe02b9117a0544806ab3b3ea06cb5cb15219a25a5f546cbc121e19731c5e235"
+  },
+  {
+   "path": "chapters/10-ai-era/images/024-一图看懂基础设施正在重回核心.png",
+   "sha256": "621ff07093f3bf1682a860a076d4bb4cc26116de93ecf9c8b59431403c51f2a3"
+  },
+  {
+   "path": "chapters/10-ai-era/images/025-一图读懂openclaw最佳实践.png",
+   "sha256": "3e392b06dbcee029dd1558ec150c4ad1f7025977ab8477461df96221f41839f2"
+  },
+  {
+   "path": "chapters/10-ai-era/images/026-原图.webp",
+   "sha256": "46f19966dd033a5998053144954548451fa3645726e43545cc1eb8ae3199a135"
+  },
+  {
+   "path": "chapters/10-ai-era/images/027-小红书-与AI共同进化.png",
+   "sha256": "d55569a0789a2086f71b5d3ee93f2ca478abe679a99e817dacd4fda81d3c78c2"
+  },
+  {
+   "path": "chapters/10-ai-era/images/028-成品.webp",
+   "sha256": "d394851180b1cf59bc40e6d465e6ad818507965d99a64f9f4008a53a75ffd213"
+  },
+  {
+   "path": "chapters/10-ai-era/images/029-提示词.webp",
+   "sha256": "615a5902009749e3489d7700f31288475c4218a72c7830257cc2e000e35298ab"
+  },
+  {
+   "path": "chapters/10-ai-era/images/030-概率-01.png",
+   "sha256": "597601f1a86d948fcc08ece578ebba8f497a1ea043a134e26c1401eec91152f2"
+  }
+ ],
+ "extra_files": [
+  {
+   "path": "scripts/xwork-logo-mark.svg",
+   "drive_file_id": "1sLmosC0K-wxmeKE3yhRAa383dRRsq2F7",
+   "sha256": "d5b7db61c105d1e9a39b8f4221e2997b21b9c4064eb0b2806d16cf80167c42fd",
+   "drive_path": "Grok Bot 制品/books/xwork-logo-mark.svg"
+  }
+ ]
+}

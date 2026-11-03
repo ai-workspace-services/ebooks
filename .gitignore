@@ -1,0 +1,28 @@
+# build output
+dist/
+_work/
+preview/
+__pycache__/
+*.pyc
+books/agent-skills-spec/book.md
+books/agent-skills-spec/book.html
+*.html
+!books/**/templates/*.html
+# binaries live on Google Drive (see assets.manifest.json)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp4
+*.mov
+*.pdf
+*.tar
+*.tar.*
+*.tgz
+*.zip
+*.otf
+*.ttf
+*.woff*
+*.part[0-9][0-9]
+*.svg

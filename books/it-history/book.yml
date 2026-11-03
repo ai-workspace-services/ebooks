@@ -1,0 +1,39 @@
+# 书籍配置（书名只改 title；edition_label 为封面书名下方的版本标签）
+title: 图解 IT 简史
+edition_label: 合订本
+xhs_title: 《图解 IT 简史》合订本来了
+subtitle: 从大型机到云再到 AI：复杂度上涨，一层层盖控制面
+version: v4.9.1
+author: xworktech.com · XWork Technologies LLC 提供开源平台方案
+publisher: XWork Technologies LLC
+website: https://xworktech.com/products/open-platform
+edition: v4.9 合订本 · 2026-10
+support_line: xworktech.com · XWork Technologies LLC 提供开源平台方案
+# 封面署名区（两行）与页脚右侧小字
+cover_credit: xworktech.com · XWork Technologies LLC 提供开源平台方案
+site_label: xworktech.com
+site_url: https://xworktech.com/
+date: '2026-10-20'
+output: 图解IT简史-合订本-{version}.pdf
+chapters:
+- 00-overview
+- 01-system-evolution
+- 02-virtualization
+- 03-cloud-s1
+- 04-cloud-s2-compute
+- 05-cloud-s3-hybrid
+- 06-automation-platform
+- 07-data-warehouse-bi
+- 08-identity-security
+- 09-open-source-cloud-neutral
+- 10-ai-era
+- 07x-data-infra-evolution
+image:
+  dpi: 145
+  jpeg_quality: 85
+max_size_mb: 100
+fonts:
+  regular: auto
+  bold: auto
+drive:
+  folder_id: 1GOf7MX28-JpUwWuKjVtbNm7V8HtY1NMO

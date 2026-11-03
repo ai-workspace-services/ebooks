@@ -1,0 +1,258 @@
+{
+ "book": "data-infra",
+ "archive": {
+  "name": "data-infra-assets.tar",
+  "sha256": "9be3dae6dc7bf85520716a615b79f4348b40a2d3d9b55571dba2ec07d71d374f",
+  "bytes": 12390400,
+  "parts": [
+   {
+    "name": "data-infra-assets.tar",
+    "drive_file_id": "1Sl98lJ81PcEJ_P7jBm09Fb1UuZvx8GcP",
+    "sha256": "9be3dae6dc7bf85520716a615b79f4348b40a2d3d9b55571dba2ec07d71d374f"
+   }
+  ],
+  "drive_folder": "Grok Bot 制品/books/data-infra/assets"
+ },
+ "files": [
+  {
+   "path": "xhs/data-infra-overview-v2-01.jpg",
+   "sha256": "47b6bf0bb3301ff029e33f51306bcd00fe989b285677b9ef9dc2dd778b13a413"
+  },
+  {
+   "path": "xhs/data-infra-overview-v2-02.jpg",
+   "sha256": "fb888e63a2bdd0a667e69baa4ee39bd3c047bd8c0f8a508849c107d0c9f7391c"
+  },
+  {
+   "path": "xhs/series-01-v2-01.jpg",
+   "sha256": "992cb599dd556907b0773633d197e1f22863f369828701807f5b6edd4e9cb6da"
+  },
+  {
+   "path": "xhs/series-01-v2-02.jpg",
+   "sha256": "1dd36a5c3705b135860becba02d486a8055e1c9cb869111f6530625c19db77f8"
+  },
+  {
+   "path": "xhs/series-01-v2-03.jpg",
+   "sha256": "12838207f1fa22d9d4e3a9f12435a34aae150e01636e74e7b714b72f73c57ce2"
+  },
+  {
+   "path": "xhs/series-01-v2-04.jpg",
+   "sha256": "7710ceaaf0751ddaf7e16227fbe80e9ed542584c7caf9477154be7422b296beb"
+  },
+  {
+   "path": "xhs/series-02-v2-01.jpg",
+   "sha256": "5d858227f4e14dcc068c8727a9bdfdb72700aa68710b2f0f1d3c71bd0cfd4376"
+  },
+  {
+   "path": "xhs/series-02-v2-02.jpg",
+   "sha256": "b8f7848e0c3ed79d73f1440e7744f05879825e323d9c52ad62da47b4e82ff553"
+  },
+  {
+   "path": "xhs/series-02-v2-03.jpg",
+   "sha256": "a9a263f647ad45b9ecdb6cb4662060646d591ea179056130446f1139bb9910c0"
+  },
+  {
+   "path": "xhs/series-02-v2-04.jpg",
+   "sha256": "3a7dc7de3c3842ea3c86709fa3ea302cdca9aeee32925a97435a1ae078930989"
+  },
+  {
+   "path": "xhs/series-03-v2-01.jpg",
+   "sha256": "15d5627c2360561f67955e5d7082fd025a443fcca9c1a67219488f357b942066"
+  },
+  {
+   "path": "xhs/series-03-v2-02.jpg",
+   "sha256": "cea4a1097563808e0db7c807748b05c584865e4474b8af57383a42de779206e8"
+  },
+  {
+   "path": "xhs/series-03-v2-03.jpg",
+   "sha256": "163904195b9a5e8310c0fd5cb9927da7a0307639e943a3368a2222ec3cd27e46"
+  },
+  {
+   "path": "xhs/series-03-v2-04.jpg",
+   "sha256": "6492c97a20d63ab7ae6a7f54229c604e480336137c56258ced94a628f310615c"
+  },
+  {
+   "path": "xhs/series-03-v2-05.jpg",
+   "sha256": "971e5eb4ded611e3f30abb30dc572ceffcf2f19fec7ba67b7d97016109fa4ce2"
+  },
+  {
+   "path": "xhs/series-04-v2-01.jpg",
+   "sha256": "57b57001cf2de2e1530d2ae5370b8ed5445d67e1c6371725e8a67e92dcab6565"
+  },
+  {
+   "path": "xhs/series-04-v2-02.jpg",
+   "sha256": "c9a76e7b5a345d64c97b66c2d2e256d00666a6c9be0ef45c9015de7f605e59d7"
+  },
+  {
+   "path": "xhs/series-04-v2-03.jpg",
+   "sha256": "2a9fc17c8e6bfba0e999d7ea578c168612857c35d942267c9f0dca978afacd88"
+  },
+  {
+   "path": "xhs/series-04-v2-04.jpg",
+   "sha256": "c61f29f293885af15a9044e256f9644955b356287f317ced01efbd18f35f51ef"
+  },
+  {
+   "path": "xhs/series-04-v2-05.jpg",
+   "sha256": "6940270d4715aee19b5b6f0f3ca001296e928db79a6febd44859fccb64aeeaed"
+  },
+  {
+   "path": "xhs/series-05-v2-01.jpg",
+   "sha256": "2e514271dcc56fc15dcc6e807374c1ff6ccaffccbe8db502ce95e42dcc5615b7"
+  },
+  {
+   "path": "xhs/series-05-v2-02.jpg",
+   "sha256": "01ca73fedda63ecac23bc1173fe807ce379c9b698df41d2b99a4d725baa1ba3d"
+  },
+  {
+   "path": "xhs/series-05-v2-03.jpg",
+   "sha256": "900dabcadca430c7beedece5797df43b6609a758046ef7722c3bc67d8e70a251"
+  },
+  {
+   "path": "xhs/series-05-v2-04.jpg",
+   "sha256": "ef4e018db36af68ec6cc625370486eee0bb9f46dc1d50542b9fa465b112b1bf4"
+  },
+  {
+   "path": "xhs/series-06-v2-01.jpg",
+   "sha256": "d6c1de4db49336ccd40ec572cd14460f169aacf622c189c43f0f95a99ea36eda"
+  },
+  {
+   "path": "xhs/series-06-v2-02.jpg",
+   "sha256": "ab210ef9faf2eaf6830b800db67aa0eddadee99e9afe31ac278ddd2b83219181"
+  },
+  {
+   "path": "xhs/series-06-v2-03.jpg",
+   "sha256": "29f0159b3c189547ad4689fe70e540b363ba7e0617b3a2daf87ca36104286bb7"
+  },
+  {
+   "path": "xhs/series-06-v2-04.jpg",
+   "sha256": "bc9359f3bc5d22bddb4c2a56988c0918ea152d6c0c790d3a7211a97bb37dc7f2"
+  },
+  {
+   "path": "xhs/series-06-v2-05.jpg",
+   "sha256": "dd3ea2885787634a222ff1e95151bfdfa8184c8eee9c2b129a2f35a8057f1b16"
+  },
+  {
+   "path": "xhs/series-07-v2-01.jpg",
+   "sha256": "f5079219c65c4bd6bc1bc9a135ef516126b3d3b272fdb4fbbc58c1670fa087b6"
+  },
+  {
+   "path": "xhs/series-07-v2-02.jpg",
+   "sha256": "17ad16a3699720177a7958c21f31c2a6acc7ffd7a6773abe7613a714c2592463"
+  },
+  {
+   "path": "xhs/series-07-v2-03.jpg",
+   "sha256": "ee55127cbf1a0a68e0052c249d48edd7203c855890e170a916a24a75b14cf926"
+  },
+  {
+   "path": "xhs/series-07-v2-04.jpg",
+   "sha256": "ab9b378c4c5f05ec465e6b2ec259d45029c147df8efe2a9c41611733f7c800cc"
+  },
+  {
+   "path": "xhs/series-07-v2-05.jpg",
+   "sha256": "4f7a041bc0bdae299787ee9584a2208eca86205d09ab5b297f94050da09507cb"
+  },
+  {
+   "path": "xhs/series-07-v2-06.jpg",
+   "sha256": "189b7b941f1f8d123ea23ea108a62d5d99e634eccf9d82f81569a577a6f1fd6d"
+  },
+  {
+   "path": "xhs/series-08-v2-01.jpg",
+   "sha256": "03922cf358e408e76e4b8d803aa0d4a774d4793e1048a4be8ccb6639dce1346d"
+  },
+  {
+   "path": "xhs/series-08-v2-02.jpg",
+   "sha256": "be72065b6724db1b0eac09f7bbcfad4b366b6ef3a704976b1fba743ba6dc2136"
+  },
+  {
+   "path": "xhs/series-08-v2-03.jpg",
+   "sha256": "e5415d1fc107e26a9fb4f2647cfb9fafd4c73d106ff863a19d3bda6e604deba0"
+  },
+  {
+   "path": "xhs/series-08-v2-04.jpg",
+   "sha256": "dae2b71fe989ae1e0d2c3328730ce0d2a70d2f7884eef8ab74e3b9fa1a0d63b8"
+  },
+  {
+   "path": "xhs/series-08-v2-05.jpg",
+   "sha256": "6c419d11be92ff3c787de6359d2b003b7a6f7a45d009593b0c88e9a852277710"
+  },
+  {
+   "path": "xhs/series-09-v2-01.jpg",
+   "sha256": "779e2ffc52932ef6bedf8528746e987ed9404f534f323c9d6548a69ae9fed0b4"
+  },
+  {
+   "path": "xhs/series-09-v2-02.jpg",
+   "sha256": "3243ca9add498e01bd75cac1347681f243342a2e2daa3fbe0ce190d6dfdf7a55"
+  },
+  {
+   "path": "xhs/series-09-v2-03.jpg",
+   "sha256": "4709898fbb53bb083247a2fbd15e887a708658b1b362dd0f357b7ea7b3f21f6c"
+  },
+  {
+   "path": "xhs/series-09-v2-04.jpg",
+   "sha256": "45c1d07f159f5959d02bcd6d5b40139ed6f2114dec5042dbf256c43994bbaf9a"
+  },
+  {
+   "path": "xhs/series-09-v2-05.jpg",
+   "sha256": "5e755ffe0af7ddd408dc598069b1d5e995c6f9bae9d4d2d9be32c02af5870a1e"
+  },
+  {
+   "path": "xhs/series-10-v2-01.jpg",
+   "sha256": "1ebb7dd58f8d9b283a05bb2f8c50822f60ee444560e294fe13a0a6e49304c603"
+  },
+  {
+   "path": "xhs/series-10-v2-02.jpg",
+   "sha256": "4c5fd29f3f0f25c218b107536a80781bc0f2cfd05b22cbb1add646d4b8ef698e"
+  },
+  {
+   "path": "xhs/series-10-v2-03.jpg",
+   "sha256": "66762cfc6d63151a0a7eb98e1fd43885c43250f83ad8a4dd2f0c495659a595a6"
+  },
+  {
+   "path": "xhs/series-10-v2-04.jpg",
+   "sha256": "c39312fa21317398480febbcef414819acc64b653b9957be3305b06efc953f0d"
+  },
+  {
+   "path": "xhs/series-11-v2-01.jpg",
+   "sha256": "97b25d4f060d49f97fc39052f68b22059ac4325f1ccb9fc33d6024d237ac22d7"
+  },
+  {
+   "path": "xhs/series-11-v2-02.jpg",
+   "sha256": "b4c58ffe4ee8e6fe2b60eb50a96efc1d550921069587f522fb0147dc8ca1d824"
+  },
+  {
+   "path": "xhs/series-11-v2-03.jpg",
+   "sha256": "27c2e928fc241dbb2f2ccdab15593a99f9267f444c4d6de7b9b834f2d8e4c66f"
+  },
+  {
+   "path": "xhs/series-11-v2-04.jpg",
+   "sha256": "26edd667ce67cd5667b5ca8d18b8ed4e5961441a70567c1660f4106d29ce23e4"
+  },
+  {
+   "path": "xhs/series-12-v2-01.jpg",
+   "sha256": "78f3729f4e3c840f337848c15e73a2bc4fda16a0850e90f855530bfae0e38848"
+  },
+  {
+   "path": "xhs/series-12-v2-02.jpg",
+   "sha256": "f7545d09828d821a2055f07a0d7ce82162b8965b160ede6bf5760af7b3a8a45d"
+  },
+  {
+   "path": "xhs/series-12-v2-03.jpg",
+   "sha256": "32c3805c3b880f9ff9532dfde1092cb777d083db7010090859ddf2fc9f14b5da"
+  },
+  {
+   "path": "xhs/series-12-v2-04.jpg",
+   "sha256": "5f8e44c951fc4cb67eb4e40575708bf121ccb976b06ad3a05ccb3305cc0454db"
+  },
+  {
+   "path": "xhs/series-12-v2-05.jpg",
+   "sha256": "935d166c7b543272f72ecf032dbbff9852814a1730273f49c3735aeef2167977"
+  }
+ ],
+ "extra_files": [
+  {
+   "path": "book/xwork-logo-mark.svg",
+   "drive_file_id": "1sLmosC0K-wxmeKE3yhRAa383dRRsq2F7",
+   "sha256": "d5b7db61c105d1e9a39b8f4221e2997b21b9c4064eb0b2806d16cf80167c42fd",
+   "drive_path": "Grok Bot 制品/books/xwork-logo-mark.svg"
+  }
+ ]
+}

@@ -1,0 +1,194 @@
+{
+ "book": "ai-native",
+ "archive": {
+  "name": "ai-native-assets.tar",
+  "sha256": "f77650272f3f4dd251df7bda5c16706401cfc40dc3fd7651288528fbc5df7b4e",
+  "bytes": 29122560,
+  "parts": [
+   {
+    "name": "ai-native-assets.tar",
+    "drive_file_id": "1FKPMdgdJLAQEvEcnKc1GVLN9krlzBsD7",
+    "sha256": "f77650272f3f4dd251df7bda5c16706401cfc40dc3fd7651288528fbc5df7b4e"
+   }
+  ],
+  "drive_folder": "Grok Bot 制品/books/ai-native/assets"
+ },
+ "files": [
+  {
+   "path": "assets/01.png",
+   "sha256": "e909a07ac2ef33edfb6aa12b3f11dfcf3f6e4dd7af5323da28cde7f57041caa4"
+  },
+  {
+   "path": "assets/02.png",
+   "sha256": "3b3b884eb721e4a42cd41e32e156fac5a4ec5d79eb6a56f8b693de95dfa7ab4f"
+  },
+  {
+   "path": "assets/03.png",
+   "sha256": "3e9b4fc34a638db407e3d9f71dc2c21885adffd421bccbbeca4fe2734df95583"
+  },
+  {
+   "path": "assets/04.png",
+   "sha256": "04f3a7ae771a630fcf238ecfac8d636930533e398b89c22b16c60a0a0df2c80b"
+  },
+  {
+   "path": "assets/05.png",
+   "sha256": "6cd8c51539ccfa62f80a3fa93f59042b397b9b4564d7b1e5910fa008fc48007a"
+  },
+  {
+   "path": "assets/06.png",
+   "sha256": "06f3d8609b6d4da63a85e82fa5add8802c95d8180a2907fda52ed36295611fff"
+  },
+  {
+   "path": "assets/07.png",
+   "sha256": "99d1710110c8871243e910d160583d0c0b9e2e39359f55ae0462c6011a477cd5"
+  },
+  {
+   "path": "assets/arch-v2.2.png",
+   "sha256": "d2a0c361d451e37771e78e89ad8f9bb51b6205eb2e07135b516fd190cfec0f4a"
+  },
+  {
+   "path": "assets/cover-v07.png",
+   "sha256": "3bfb600a9c195c11ffcbc7dbf314adf3063c7cd07a0609b638f94e172ca883f4"
+  },
+  {
+   "path": "assets/entry-1.png",
+   "sha256": "0653434609bbab180076156114a847b293c1713439d9f682234859252a6b6f5f"
+  },
+  {
+   "path": "assets/entry-2.png",
+   "sha256": "739a159dfa000be8d21a04dc88a6be04ecd9f09531c3c28c927cec72dd335fdc"
+  },
+  {
+   "path": "assets/entry-3.png",
+   "sha256": "6850b090dc459d68acb9eeb29b4a9f802155befbf8453136f03da4b5e84556f9"
+  },
+  {
+   "path": "assets/entry-4.png",
+   "sha256": "ecee8d4a39eb6238158defd3f4a23a1769b425c646f823e5cecc21d50da68a1c"
+  },
+  {
+   "path": "assets/entry-5.png",
+   "sha256": "d953127cd82316f0b7d6d2abeb15135de680f3f9fbd953824536d7c92657d0a0"
+  },
+  {
+   "path": "assets/entry-6.png",
+   "sha256": "a0a4963605c3b644bdbcb937214025b40e2d6196b0e6d4f42593b9c3a544a07b"
+  },
+  {
+   "path": "assets/jpg/01.jpg",
+   "sha256": "3050cbf89a5aa069fce68c579eaf0ab188574a2ca741653c4390a982b9009f1e"
+  },
+  {
+   "path": "assets/jpg/02.jpg",
+   "sha256": "4fa285b85aca56f3fe2ae87a7b16a44f3dc6005116f7431c40f7c38ce4f62c6d"
+  },
+  {
+   "path": "assets/jpg/03.jpg",
+   "sha256": "5737d2ff4f7a191fb5f1ed7e244f2251fb8fc93bc0b3370d2bb6c13390ee81db"
+  },
+  {
+   "path": "assets/jpg/04.jpg",
+   "sha256": "66985ee5c6b045eebd6f6930d48b469d87df44207920fafe495cccdcac989dc8"
+  },
+  {
+   "path": "assets/jpg/05.jpg",
+   "sha256": "9f5456d41f4318742bbfe70c133fc4eb629435436b12a01983ae38ec39f0f227"
+  },
+  {
+   "path": "assets/jpg/06.jpg",
+   "sha256": "756468dcfb834e523178507fdee4f3335cc43ed1058910a43eea4f0ad2cf2c3d"
+  },
+  {
+   "path": "assets/jpg/07.jpg",
+   "sha256": "5f9b427426f6607c5094a8cee6f50f3afc8948c95e5e1f135b2882a58841b74f"
+  },
+  {
+   "path": "assets/jpg/arch-v2.2.jpg",
+   "sha256": "92c0847b0971022d2b814bb6ab043efd9ecce983c2ba3040dfbbac01abe3b9e1"
+  },
+  {
+   "path": "assets/jpg/cover-v07.jpg",
+   "sha256": "99e23962ba3cba76416718031e475b3986733f0ac4f72892eea3be46583ac240"
+  },
+  {
+   "path": "assets/jpg/entry-1.jpg",
+   "sha256": "caf3d987eeec2c8d8e001b7318a02c57b1c7a59156b131a72f6dee420dca9687"
+  },
+  {
+   "path": "assets/jpg/entry-2.jpg",
+   "sha256": "f99078e544f978c1a4ab8c24b81d36f32e8325e21c751187e4474f744b425f7e"
+  },
+  {
+   "path": "assets/jpg/entry-3.jpg",
+   "sha256": "ff6c290cf76ad3ca4042aa180f640e048d2320666a166d1a08fb3885aada636d"
+  },
+  {
+   "path": "assets/jpg/entry-4.jpg",
+   "sha256": "1fcdef7e2916e5e5cc3fbb81dd46d7a38f7b2d3e997e1f56d0af0546273df979"
+  },
+  {
+   "path": "assets/jpg/entry-5.jpg",
+   "sha256": "fe5bf00eb9dc71e228dc9da4bf2bc29e2a2dd5fd3f6e5c439fb1785294ce74ad"
+  },
+  {
+   "path": "assets/jpg/entry-6.jpg",
+   "sha256": "e95fe123b08d44f4209ed10f60ebf910892152eedc74d2fc259039c109e7fa5a"
+  },
+  {
+   "path": "assets/jpg/lv-01-docs.jpg",
+   "sha256": "b159233c318d74d74a1d8024d1cc09bebe13af43ca2ad64eb4020d3521f28d41"
+  },
+  {
+   "path": "assets/jpg/lv-02-coding.jpg",
+   "sha256": "4030bc94f0c2784a09fc1fae6a3981733c0fe353c5bb83586feba6be18adf3f1"
+  },
+  {
+   "path": "assets/jpg/lv-03-execution.jpg",
+   "sha256": "7766c0705b3f96fa9d16bbec8216764107eab326fda8c09446c5df0172d7b5fb"
+  },
+  {
+   "path": "assets/jpg/lv-04-chuhai-compliance.jpg",
+   "sha256": "f09bc687ee7f093abfb3c8080ac966f3a1d2df50dccb880a0514d17ebafc3d3e"
+  },
+  {
+   "path": "assets/jpg/map-v07.jpg",
+   "sha256": "a40672b92f79fd99409ab75f7f59509ffc819e3ec58cff6ae0a6eea095464dc4"
+  },
+  {
+   "path": "assets/jpg/xworkmate-app-dashboard-threads.jpg",
+   "sha256": "dc6e8d8c0a1ce15f3e432da44e11587f67ffe2e32e43243e57355b93cfdf9868"
+  },
+  {
+   "path": "assets/jpg/xworkmate-app-sidebar-bridge-connect.jpg",
+   "sha256": "2cac1c060b699c00add2d640bb8ba91fea3b5faba92aa1b1651ecabdffa1f4a9"
+  },
+  {
+   "path": "assets/lv-01-docs.png",
+   "sha256": "32c3111057561a1813f491b7730796cdf4ee8b6066ea09d7a14af8265d116fdd"
+  },
+  {
+   "path": "assets/lv-02-coding.png",
+   "sha256": "5d535f00ba54c8095f549a4b2fda39020f7d87c189d12105a34c1f84b5628624"
+  },
+  {
+   "path": "assets/lv-03-execution.png",
+   "sha256": "77e03e850e2860728a4b70232ab65feebc3c976ad788302f1fac03611b0f01e9"
+  },
+  {
+   "path": "assets/lv-04-chuhai-compliance.png",
+   "sha256": "1df794fc288d5e0d72d3c77a1386c7c41bc2a980eb05fe8cc3420b5821d6a6f0"
+  },
+  {
+   "path": "assets/map-v07.png",
+   "sha256": "dced2a52f5b36d7c1a74d0d2cfd67da41af56e53b7db908d0e14e4e7fea4f561"
+  },
+  {
+   "path": "assets/xworkmate-app-dashboard-threads.png",
+   "sha256": "377cd8489b4b959b197592c35393af713e8babe8657f116b7717957dce54504d"
+  },
+  {
+   "path": "assets/xworkmate-app-sidebar-bridge-connect.png",
+   "sha256": "3ff5700271bd51e1609a4fc6e9c7c263ac5415ee1ae82b97721840c0cd4f7cb1"
+  }
+ ]
+}

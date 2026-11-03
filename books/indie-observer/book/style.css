@@ -1,0 +1,15 @@
+@page{size:A4;margin:18mm 16mm}
+body{font-family:"Noto Sans CJK SC",sans-serif;font-size:10.5pt;line-height:1.65;color:#222;margin:0}
+/* cover: fixed height well under printable area (261mm) so it never spills into a blank page */
+.cover{break-after:page;height:240mm;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.cover.last{break-after:auto;break-before:page}
+.cover img{max-width:100%;max-height:240mm}
+.toc{break-after:page}
+h1{font-size:22pt;color:#0b3d5c;margin-top:0}h2{color:#0b3d5c;border-bottom:2px solid #1aa;padding-bottom:3px}h2.art{break-before:page}
+table{border-collapse:collapse;font-size:8.5pt;width:100%}td,th{border:1px solid #bbb;padding:3px 5px}th{background:#e6f4f4}
+img{max-width:100%}.meta{color:#666;font-size:8.5pt;word-break:break-all}.note{background:#fff6dc;padding:4px 8px}
+.colophon{break-before:page;text-align:center;padding-top:100mm;color:#555}pre{white-space:pre-wrap;background:#f5f5f5;padding:6px}
+/* Chinese title on top of front cover (edit text in book/toc.json "title") */
+.cover.front{flex-direction:column;justify-content:flex-start}
+.cover-title{font-size:21pt;font-weight:800;color:#0b3d5c;text-align:center;padding:4mm 0 5mm;letter-spacing:1px}
+.cover.front img{max-height:215mm}
