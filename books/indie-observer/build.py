@@ -19,7 +19,7 @@ for arc in B['arcs']:
     toc+=f'<h3>{arc}</h3><ol start="{n}">'+''.join(f'<li>{c["title"]}</li>' for c in core if c['arc']==arc)+'</ol>'
 toc+='<h3>替补（不另加篇）</h3><ul>'+''.join(f'<li>{s["id"]} {s["title"]}</li>' for s in subs)+'</ul>'
 # cover is its own page; title+TOC start directly on page 2 (no spacer page)
-o=[f'<section class="cover front"><div class="cover-title">{B["title"]}</div><img src="cover-front.png"></section>',
+o=[f'<section class="cover front"><div class="cover-title">{B["title"]}</div><img src="cover-front.jpg"></section>',
 f'<section class="toc"><h1>{B["title"]}</h1><p class="ver">{V} · {D} · {B["subtitle"]}</p><h2>目录</h2>{toc}</section>',
 M(open('book/intro.md',encoding='utf-8').read()),
 '<h2>核心 12 篇</h2><table><tr><th>#</th><th>标题</th><th>小红书标题</th><th>模板</th><th>阶段</th><th>状态</th><th>公众号字</th><th>小红书字</th><th>动图</th></tr>']
@@ -44,7 +44,7 @@ if arts:
     o.append('<h2 class="art">第一季成稿（knowledge #294 合并正文）</h2>')
     for f in arts:
         d=os.path.dirname(f); o.append(f'<h2 class="art">{os.path.basename(d)}</h2>'+md(f,d))
-o.append(f'<section class="colophon"><p>版本 {V} · {D}<br>Haitao Pan / XWork Technologies LLC 服务支持<br>内容源：github.com/ai-workspace-services/knowledge（series-v4 + articles）<br>许可：CC BY-SA 4.0 · 署名 Haitao Pan / XWork Technologies LLC</p></section><section class="cover last"><img src="cover-back.png"></section>')
+o.append(f'<section class="colophon"><p>版本 {V} · {D}<br>Haitao Pan / XWork Technologies LLC 服务支持<br>内容源：github.com/ai-workspace-services/knowledge（series-v4 + articles）<br>许可：CC BY-SA 4.0 · 署名 Haitao Pan / XWork Technologies LLC</p></section><section class="cover last"><img src="cover-back.jpg"></section>')
 css=open('book/style.css').read()
 open('dist/book.html','w').write(f'<html><head><meta charset="utf-8"><base href="../"><style>{css}</style></head><body>{"".join(o)}</body></html>')
 print('dist/book.html',V)

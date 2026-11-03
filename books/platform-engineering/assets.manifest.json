@@ -1,38 +1,39 @@
 {
  "book": "platform-engineering",
  "archive": {
-  "name": "platform-engineering-assets.tar",
-  "sha256": "dc2fce85f817a950b325d2c0b52278e91e24b7d6191089be702e71fbb71e38db",
-  "bytes": 2887680,
+  "name": "platform-engineering-assets-v2.tar",
+  "sha256": "2ff5f011bf1737639183195f602ceda8c7bbb40bec427782045e563167841873",
+  "bytes": 737280,
   "parts": [
    {
-    "name": "platform-engineering-assets.tar",
-    "drive_file_id": "1VpRREqbNqH07qNQ-Qy9EPjMOVAu7KeBk",
-    "sha256": "dc2fce85f817a950b325d2c0b52278e91e24b7d6191089be702e71fbb71e38db"
+    "name": "platform-engineering-assets-v2.tar",
+    "drive_file_id": "1-XQA78j5-Td4Y_AJ45s3PqJjqvJoNjYW",
+    "sha256": "2ff5f011bf1737639183195f602ceda8c7bbb40bec427782045e563167841873"
    }
   ],
-  "drive_folder": "Grok Bot 制品/books/platform-engineering/assets"
+  "drive_folder": "Grok Bot 制品/books/platform-engineering/assets",
+  "note": "v2 compressed for CI; originals kept on Drive"
  },
  "files": [
   {
-   "path": "assets/ch6/dims.png",
-   "sha256": "6b2f8d4f879bfe5fa892622cd9822d8432e50a2e36dcd43750dce342de0fe735"
+   "path": "assets/ch6/dims.jpg",
+   "sha256": "4cae9443405fb954e30bfed8fa2e4f5300e8293dc629178031cad14369d1ea4a"
   },
   {
-   "path": "assets/ch6/feature-lane-pipeline-1080-final.png",
-   "sha256": "2b56079153694ea4fec09f37bb7b71497bd93d82847fc01137d8bedcbf6d7ee6"
+   "path": "assets/ch6/feature-lane-pipeline-1080-final.jpg",
+   "sha256": "8b89b0708aa422af2dc15fee00d30cb60da648a6f9dda1aa7d177cb1c7244fb4"
   },
   {
-   "path": "assets/ch6/matrix.png",
-   "sha256": "85e2268744a08f80793722f56275edba94291bcbe1fde21a32a19f745d61f0d7"
+   "path": "assets/ch6/matrix.jpg",
+   "sha256": "15b07502ee46dd1b6979362925e7c9d04756d133090049876ff81149affae300"
   },
   {
-   "path": "assets/fig0-open-platform-toolkit.png",
-   "sha256": "d861f24ce7fdd56f5f91b7fe576a594f5b8cdaa7ab46d7486cc7921227d3ee5b"
+   "path": "assets/fig0-open-platform-toolkit.jpg",
+   "sha256": "96765bda9c8cc27f78350314ac72ed021584c1c956377a14f11eb7a14f936d62"
   },
   {
-   "path": "assets/overview-src.png",
-   "sha256": "39589f5b6153fac350e66de8f39fb2c062e16f7ff8fbc6c49dc59cda3f301615"
+   "path": "assets/overview-src.jpg",
+   "sha256": "c4112299e12cb5a999f95d1634d6dd424141190cf53a85a5c281cecb5cac09a9"
   }
  ],
  "extra_files": [

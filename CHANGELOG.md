@@ -7,3 +7,7 @@
 - 许可统一为内容 CC BY-SA 4.0、脚本 MIT；各书版权页改为 CC BY-SA 4.0。
 - 平台工程书：节点 IP、实例/磁盘 ID 改为占位符。
 - 新增矩阵 CI：PR 构建；tag 发布 Release。
+
+## 2026-11-03 · 素材压缩 + 公开拉取
+- 五本有图的书素材压缩为 v2 包并新上传 Drive；it-history 658MB→110MB。
+- `tools/fetch_assets.py` 支持无密钥公开下载（大文件 confirm）。

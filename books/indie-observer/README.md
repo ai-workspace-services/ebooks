@@ -25,5 +25,5 @@
 - `book/reading-notes.md`：阅读顺序说明。
 - `book/style.css`：版式。封面固定 240mm 高，勿超过 261mm 可打印高度，否则会多出空白页。
 - `src/content/...series-v4/<篇目>/`：文章正文（从 knowledge 仓库同步过来，替换后重跑即可）。
-- `cover-front.png` / `cover-back.png`：封面封底。
+- `cover-front.jpg` / `cover-back.jpg`：封面封底。
 - `legacy/`：旧的一次性脚本，仅留档。

@@ -22,9 +22,9 @@ note: 本章金句：平台工程不是新概念，而是混合云复杂度的�
 
 生产环境为什么总是失控？因为改动太多、太快，而且散落在不同人手里：有人手工改了一条配置，有人临时开了一台机器，过几个月谁也说不清现在线上到底是什么样子。从手工运维走向现代平台工程，就是一部“把手交给代码”的历史。
 
-![生产环境总是失控](images/038-生产环境总是失控.png)
+![生产环境总是失控](images/038-生产环境总是失控.jpg)
 
-![小红书-从手工运维到现代平台工程](images/037-小红书-从手工运维到现代平台工程.png)
+![小红书-从手工运维到现代平台工程](images/037-小红书-从手工运维到现代平台工程.jpg)
 
 ### 45 分钟，4.6 亿美元
 
@@ -40,7 +40,7 @@ note: 本章金句：平台工程不是新概念，而是混合云复杂度的�
 
 2009 年，比利时人 Patrick Debois 在根特组织了第一届 DevOpsDays，“DevOps”这个词由此流行起来。在那之前，开发和运维常常是两拨人：开发写完代码往墙那边一扔，运维接住了再想办法上线。
 
-![DevOps 不是工具，而是企业交付协作方式的变化](images/012-DevOps_不是工具，而是企业交付协作方式的变化.png)
+![DevOps 不是工具，而是企业交付协作方式的变化](images/012-DevOps_不是工具，而是企业交付协作方式的变化.jpg)
 
 DevOps 想推倒的就是这堵墙。它首先不是工具，而是一种协作方式：开发和运维一起为“交付”负责。同一时期，配置管理工具纷纷出现：2005 年的 Puppet、2009 年的 Chef、2012 年的 Ansible，让“装机器、改配置”变成了可以重复执行的脚本。
 
@@ -50,11 +50,11 @@ DevOps 的诞生有一个清晰的导火索。2009 年 6 月，在 O'Reilly 的 
 
 远在比利时的 Patrick Debois 通过网络直播看到了这个演讲，深受触动。几个月后，他在根特办了第一届 DevOpsDays。
 
-![漫谈 DevOps、GitOps、Landing Zone、IaC、平台工程](images/015-漫谈_DevOps、GitOps、Landing_Zone、IaC、平台工程.png)
+![漫谈 DevOps、GitOps、Landing Zone、IaC、平台工程](images/015-漫谈_DevOps、GitOps、Landing_Zone、IaC、平台工程.jpg)
 
 很多企业交付慢，并不是因为没有流水线，而是交付链没有形成闭环：代码、测试、发布、回滚，中间总有一段还靠人工传话。
 
-![为什么企业交付慢，不是因为没有流水线，而是交付链没有闭环](images/035-为什么企业交付慢，不是因为没有流水线，而是交付链没有闭环.png)
+![为什么企业交付慢，不是因为没有流水线，而是交付链没有闭环](images/035-为什么企业交付慢，不是因为没有流水线，而是交付链没有闭环.jpg)
 
 配置管理工具带来了一个观念上的转变，常被概括成一句俏皮话：服务器应该像“牲口”，而不是“宠物”。宠物有名字，生病了要精心照料；牲口有编号，病了就换一头。听起来有点冷酷，意思却很实在：如果每台服务器都能用脚本一模一样地重建出来，你就不必害怕任何一台倒下。
 
@@ -64,17 +64,17 @@ DevOps 的诞生有一个清晰的导火索。2009 年 6 月，在 O'Reilly 的 
 
 今天几乎人人在用的 Git，是 Linus Torvalds 在 2005 年为管理 Linux 内核代码而写的。那一年，Linux 社区原本使用的商业版本控制工具不再免费提供给他们，Torvalds 干脆自己动手，据说最初的版本只花了大约几周时间。
 
-![Git-Flow-图解](images/005-Git-Flow-图解.png)
+![Git-Flow-图解](images/005-Git-Flow-图解.jpg)
 
-![GIT-流程图-横版](images/006-GIT-流程图-横版.png)
+![GIT-流程图-横版](images/006-GIT-流程图-横版.jpg)
 
 小团队和中型团队适合的分支策略不太一样：人少时车道越简单越好，人多了才需要更细的交通规则。
 
-![github 分支模型管理策略 流程图-从小团队到中型团队](images/007-github_分支模型管理策略_流程图-从小团队到中型团队.png)
+![github 分支模型管理策略 流程图-从小团队到中型团队](images/007-github_分支模型管理策略_流程图-从小团队到中型团队.jpg)
 
-![github 分支模型管理策略 流程图](images/008-github_分支模型管理策略_流程图.png)
+![github 分支模型管理策略 流程图](images/008-github_分支模型管理策略_流程图.jpg)
 
-![分支管理](images/036-分支管理.png)
+![分支管理](images/036-分支管理.jpg)
 
 ### CI/CD 解决发布，GitOps 解决状态
 
@@ -84,31 +84,31 @@ DevOps 的诞生有一个清晰的导火索。2009 年 6 月，在 O'Reilly 的 
 
 打个比方，CI/CD 像快递员，负责把包裹送到你家门口；可如果有人后来偷偷把包裹换了，快递员是不知道的。线上环境也一样：有人临时登上服务器改了一个参数，流水线完全不会察觉，这种现象叫“配置漂移”。
 
-![CI:CD 解决发布，不解决状态](images/011-CI_CD_解决发布，不解决状态.png)
+![CI:CD 解决发布，不解决状态](images/011-CI_CD_解决发布，不解决状态.jpg)
 
-![CI:CD 解决发布，GITOPS解决发布状态](images/010-CI_CD_解决发布，GITOPS解决发布状态.png)
+![CI:CD 解决发布，GITOPS解决发布状态](images/010-CI_CD_解决发布，GITOPS解决发布状态.jpg)
 
 2017 年，Weaveworks 提出了 GitOps：把期望的系统状态写在 Git 里，由一个程序不停地对比线上实际状态，发现不一致就自动纠正。Git 成了唯一的“真相来源”，灰度发布和回滚也变得像回退一次提交那么简单。
 
-![GITOPS 的本质](images/013-GITOPS_的本质.png)
+![GITOPS 的本质](images/013-GITOPS_的本质.jpg)
 
-![GITOPS-灰度-回滚](images/009-GITOPS-灰度-回滚.png)
+![GITOPS-灰度-回滚](images/009-GITOPS-灰度-回滚.jpg)
 
 一条典型的交付链大致是这样：GitLab CI 或 Tekton 负责构建，Harbor 存放镜像，Argo CD 或 FluxCD 负责把状态同步到集群，Helm 负责打包应用。
 
 这条链路里最关键的变化，是“推”变成了“拉”。过去是流水线把新版本推到服务器上；GitOps 则是集群里的一个程序主动去 Git 仓库看：“期望的状态变了吗？”变了就自己拉取、自己更新。生产环境的钥匙不必再交给外面的流水线，安全边界也随之收紧了一圈。
 
-![一图 IT｜GitLab CI、Tekton、Argo CD、Harbor 如何组成交付链](images/024-一图_IT｜GitLab_CI、Tekton、Argo_CD、Harbor_如何组成交付链.png)
+![一图 IT｜GitLab CI、Tekton、Argo CD、Harbor 如何组成交付链](images/024-一图_IT｜GitLab_CI、Tekton、Argo_CD、Harbor_如何组成交付链.jpg)
 
-![一图 IT｜Helm、Argo CD、FluxCD 到底在管什么](images/025-一图_IT｜Helm、Argo_CD、FluxCD_到底在管什么.png)
+![一图 IT｜Helm、Argo CD、FluxCD 到底在管什么](images/025-一图_IT｜Helm、Argo_CD、FluxCD_到底在管什么.jpg)
 
 ### IaC：基础设施也写成代码
 
 应用可以用代码交付，基础设施为什么不行？这就是 IaC（基础设施即代码）。2014 年，Terraform 0.1 发布，你可以用几行声明，描述“我要一个 VPC、三台机器、一个数据库”，然后一键创建。
 
-![一图看懂：基础设施为什么要从手工配置变成代码](images/031-一图看懂：基础设施为什么要从手工配置变成代码.png)
+![一图看懂：基础设施为什么要从手工配置变成代码](images/031-一图看懂：基础设施为什么要从手工配置变成代码.jpg)
 
-![一图看懂：IaC 如何管理混合云资源](images/028-一图看懂：IaC_如何管理混合云资源.png)
+![一图看懂：IaC 如何管理混合云资源](images/028-一图看懂：IaC_如何管理混合云资源.jpg)
 
 Terraform、Pulumi、Ansible 各有所长：前两者擅长“创建资源”，Ansible 更擅长“配置机器”。2023 年，HashiCorp 修改许可证之后，社区分叉出了 OpenTofu。
 
@@ -118,19 +118,19 @@ Terraform 的工作方式，有两个词值得记住：plan 和 state。state �
 
 IaC 最大的好处，其实不是“快”，而是“看得见”。基础设施写成了代码，就可以像代码一样被审查、被比对、被回滚。谁在什么时候加了一条防火墙规则，看一下提交记录就知道了。前面 Knight Capital 的故事里，最致命的恰恰是“没有人复核”；而代码评审，正是把复核变成了日常。
 
-![一图看懂：Terraform、Pulumi、Ansible 分别适合什么](images/029-一图看懂：Terraform、Pulumi、Ansible_分别适合什么.png)
+![一图看懂：Terraform、Pulumi、Ansible 分别适合什么](images/029-一图看懂：Terraform、Pulumi、Ansible_分别适合什么.jpg)
 
 ### Landing Zone 的最小化实现
 
 上一章讲过 Landing Zone，这一章它又出场了，因为它天然适合用代码来实现：账号、网络、权限、日志这几样底座，写成模板，一键铺好，既不漏项，也能反复复用。
 
-![landingzone-最小化实现](images/017-landingzone-最小化实现.png)
+![landingzone-最小化实现](images/017-landingzone-最小化实现.jpg)
 
-![一图看懂-landing-zone](images/027-一图看懂-landing-zone.png)
+![一图看懂-landing-zone](images/027-一图看懂-landing-zone.jpg)
 
-![一图看懂：为什么企业上云前要先建 Landing Zone](images/030-一图看懂：为什么企业上云前要先建_Landing_Zone.png)
+![一图看懂：为什么企业上云前要先建 Landing Zone](images/030-一图看懂：为什么企业上云前要先建_Landing_Zone.jpg)
 
-![一图看懂：账号、网络、权限、日志如何成为云底座](images/033-一图看懂：账号、网络、权限、日志如何成为云底座.png)
+![一图看懂：账号、网络、权限、日志如何成为云底座](images/033-一图看懂：账号、网络、权限、日志如何成为云底座.jpg)
 
 ### 演练：当灾难真的来了
 
@@ -138,23 +138,23 @@ IaC 最大的好处，其实不是“快”，而是“看得见”。基础设�
 
 灾备里有两个常用的指标：RPO 和 RTO。RPO 问的是“最多能丢多少数据”——是丢最近一秒，还是丢最近一天？RTO 问的是“多久能恢复”——是几分钟，还是几小时？两个数字越小，方案越贵。没有演练过的灾备方案，往往只是一份让人安心的文档；真正的考验，是在一个普通的工作日里，故意把主站点关掉试试看。
 
-![SiteRecovery-01](images/018-SiteRecovery-01.png)
+![SiteRecovery-01](images/018-SiteRecovery-01.jpg)
 
-![SiteRecovery-02](images/019-SiteRecovery-02.png)
+![SiteRecovery-02](images/019-SiteRecovery-02.jpg)
 
-![SiteRecovery-03](images/020-SiteRecovery-03.png)
+![SiteRecovery-03](images/020-SiteRecovery-03.jpg)
 
-![SiteRecovery-04](images/021-SiteRecovery-04.png)
+![SiteRecovery-04](images/021-SiteRecovery-04.jpg)
 
-![SiteRecovery-05](images/022-SiteRecovery-05.png)
+![SiteRecovery-05](images/022-SiteRecovery-05.jpg)
 
-![SiteRecovery-06](images/023-SiteRecovery-06.png)
+![SiteRecovery-06](images/023-SiteRecovery-06.jpg)
 
 ### Kubernetes 让什么更复杂了？
 
 Kubernetes 解决了容器编排，却也带来了新的复杂度：YAML 越写越多，组件越装越多，网络、存储、权限、监控样样要配。一个开发者想上线一个服务，可能要先学会十几样工具。
 
-![K8S 让什么更加复杂？](images/016-K8S_让什么更加复杂？.png)
+![K8S 让什么更加复杂？](images/016-K8S_让什么更加复杂？.jpg)
 
 ### 平台工程：复杂度的收容所
 
@@ -164,30 +164,30 @@ Kubernetes 解决了容器编排，却也带来了新的复杂度：YAML 越写�
 
 好的平台不是逼着所有人走同一条路，而是让大路好走到大家自愿去走。
 
-![平台工程不是新概念，而是混合云复杂度的收容所](images/014-平台工程不是新概念，而是混合云复杂度的收容所.png)
+![平台工程不是新概念，而是混合云复杂度的收容所](images/014-平台工程不是新概念，而是混合云复杂度的收容所.jpg)
 
-![一图理解平台工程](images/026-一图理解平台工程.png)
+![一图理解平台工程](images/026-一图理解平台工程.jpg)
 
 平台工程并不是全新的概念，它更像是 DevOps、GitOps、Landing Zone、IaC 一路发展下来的自然结果：混合云的复杂度，总得有个地方收容。从 MSP（托管服务商）到平台工程，企业升级的是“自己掌握交付能力”的程度。
 
-![一图看懂：平台工程为什么会接过混合云复杂度](images/032-一图看懂：平台工程为什么会接过混合云复杂度.png)
+![一图看懂：平台工程为什么会接过混合云复杂度](images/032-一图看懂：平台工程为什么会接过混合云复杂度.jpg)
 
-![一图读懂｜从 MSP 到平台工程，企业到底升级了什么？](images/034-一图读懂｜从_MSP_到平台工程，企业到底升级了什么？.png)
+![一图读懂｜从 MSP 到平台工程，企业到底升级了什么？](images/034-一图读懂｜从_MSP_到平台工程，企业到底升级了什么？.jpg)
 
-![第三篇：混合云的终点为什么是平台工程](images/039-第三篇：混合云的终点为什么是平台工程.png)
+![第三篇：混合云的终点为什么是平台工程](images/039-第三篇：混合云的终点为什么是平台工程.jpg)
 
 ### 下一步：AI 接管基础设施？
 
 自动化走到今天，又有了新的变量：AI。让 AI 来写配置、看告警、做变更，听起来很诱人，但它同样需要边界、审计和回滚。
 
-![AI接管基础设施-封面](images/004-AI接管基础设施-封面.png)
+![AI接管基础设施-封面](images/004-AI接管基础设施-封面.jpg)
 
-![AI接管基础设施-01](images/001-AI接管基础设施-01.png)
+![AI接管基础设施-01](images/001-AI接管基础设施-01.jpg)
 
-![AI接管基础设施-02](images/002-AI接管基础设施-02.png)
+![AI接管基础设施-02](images/002-AI接管基础设施-02.jpg)
 
-![AI接管基础设施-03](images/003-AI接管基础设施-03.png)
+![AI接管基础设施-03](images/003-AI接管基础设施-03.jpg)
 
-![结束语-首页](images/040-结束语-首页.png)
+![结束语-首页](images/040-结束语-首页.jpg)
 
 自动化让系统跑得更快，但系统里流动的最宝贵的东西，是数据。下一章，我们离开流水线，走进数据仓库。

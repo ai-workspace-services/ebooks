@@ -33,7 +33,7 @@ add(f'''<div class="kicker">GAME MANUAL · 游戏说明书</div><h1>开局前先
 <div class="note"><b>道具鉴定（证据等级）</b>：E0 = 规划，E4 = 已合并到主干。书中凡未标 E4 的架构内容均为规划（E0）。<br><b>信息截至</b>：模型与产品信息截至 {C.MODEL_DATE}；第 03 章只写官方文档可查的能力，价格与额度以官方页面为准。</div>
 ''', '游戏说明书', bm='游戏说明书')
 
-# 07.png 已裁去含价格字样的上半部分（v0.3）
+# 07.jpg 已裁去含价格字样的上半部分（v0.3）
 import game as GM
 def tips3(pit, egg, tip):
     return (f'<div class="gbox pit"><b>⚠ 踩坑提示</b>{pit}</div><div class="gbox egg"><b>★ 隐藏彩蛋</b>{egg}</div>'

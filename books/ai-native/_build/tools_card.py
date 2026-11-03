@@ -1,4 +1,4 @@
-# v0.9：1.4 关卡插画改为 HTML 卡片（替换旧位图 04.png）。模型/工具名与第 03 章一致，信息截至 2026-10-23。
+# v0.9：1.4 关卡插画改为 HTML 卡片（替换旧位图 04.jpg）。模型/工具名与第 03 章一致，信息截至 2026-10-23。
 MODS=[('01','主流 AI 工具全景','选对入口，别装满整个工具箱',[('聊天','ChatGPT · Claude · Gemini · Grok'),('编码','OpenCode · Codex · Claude Code · Grok Build · Antigravity'),('研究','Deep Research · Grok X 搜索'),('创作','GPT-Image-2.5 Sunburst · Nano Banana 2.1 · Grok Imagine · Gemini Omni Flash')]),
 ('02','主流模型与选择策略','旗舰打 Boss，快速档清小怪',[('OpenAI','GPT-6 Astra｜GPT-6.1 Sol｜GPT-6 Luna'),('Anthropic','Claude Fable 5.1｜Opus 5.5｜Sonnet 5.5｜Haiku 5.5'),('xAI · Google','Grok 4.7｜Grok Build　·　Gemini 4 Argon｜Gemini 3.8 Flash'),('开放权重','DeepSeek-V4.1-Flash · Qwen3.8-Max · Kimi K3 · GLM-5.3 · MiniMax-M3 · Muse Spark Open · Mistral Large 4')]),
 ('03','AI Agent 入门路线','从对话到多 Agent 编队',[('路线','对话 → 任务拆解 → 工具调用 → 记忆 → 多 Agent 协作'),('官方 Agent 平台','OpenAI Agents API · Claude Agent SDK / Managed Agents · Antigravity Agent'),('本书主城','OpenCode + DSH + DS-Bot 主运行时；Codex / Claude Code / Grok Build 作适配器')]),

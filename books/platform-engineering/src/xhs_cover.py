@@ -7,7 +7,7 @@ B=dict(title=(160,88,820,205),center=(420,330,605,460),git=(425,208,600,325),iac
  identity=(100,235,192,345),obs=(98,358,192,465),ops=(98,470,192,577),secure=(798,235,892,357),observable=(798,362,892,462),recov=(798,470,892,582),chain=(205,572,805,645))
 MAP={'1':['title','center'],'2':['git','chain'],'3':['iac'],'4':['auto'],'5':['sec','identity','secure'],'6':['env'],'7':['cloud'],'8':['obs','observable'],'9':['recov'],'10':['ops','chain'],'11':list(B)}
 def cover(n,path=None):
-    src=Image.open(os.path.join(ROOT,'assets','overview-src.png')).convert('RGB'); k=src.width/1024
+    src=Image.open(os.path.join(ROOT,'assets','overview-src.jpg')).convert('RGB'); k=src.width/1024
     sc=lambda b:tuple(int(v*k) for v in b)
     im=src.crop(sc(CROP)); ox,oy=sc(CROP)[:2]
     dim=ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(0.15)).enhance(0.55)
