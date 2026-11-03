@@ -17,8 +17,8 @@
 </tr>
 <tr>
 <td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
-<td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://lh3.googleusercontent.com/d/1I-Szt5ThOMqY0XS78i2AvdC_rmzrMGoP"><img src="https://lh3.googleusercontent.com/d/1IviGhpNkj6aWPnVKwuRCjYf4GoEXwMnq" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.2</code></td>
-<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://lh3.googleusercontent.com/d/1BDc8tx-n85m3TFMLKyRsX1BiGIJzQ7OX"><img src="https://lh3.googleusercontent.com/d/1hGl2JXnqPQVcTQFVqSpH-nWvm_i3baZd" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.1</code></td>
+<td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.2</code></td>
+<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.1</code></td>
 </tr>
 </table>
 
@@ -94,7 +94,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://lh3.googleusercontent.com/d/1I-Szt5ThOMqY0XS78i2AvdC_rmzrMGoP"><img src="https://lh3.googleusercontent.com/d/1IviGhpNkj6aWPnVKwuRCjYf4GoEXwMnq" width="120" alt="cover"></picture></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### XWorkspace Agent Skills 工程规范 · 开放方案 · `v0.2`
 
@@ -104,7 +104,7 @@
 
 </td></tr></table>
 
-<table><tr><td width="130" valign="top"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://lh3.googleusercontent.com/d/1BDc8tx-n85m3TFMLKyRsX1BiGIJzQ7OX"><img src="https://lh3.googleusercontent.com/d/1hGl2JXnqPQVcTQFVqSpH-nWvm_i3baZd" width="120" alt="cover"></picture></a></td><td valign="top">
+<table><tr><td width="130" valign="top"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
 ### 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.1`
 
