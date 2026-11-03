@@ -16,4 +16,4 @@ for a,b,c,bg,(x,y) in B:
 d.ellipse((cx-110,cy-62,cx+110,cy+62),fill=(15,23,42))
 for i,s in enumerate(["一次变更","按需选组合"]):
     d.text((cx-d.textlength(s,font=f(FB,24))/2,cy-36+i*36),s,font=f(FB,24),fill="white")
-im.save("assets/ch6/dims.png")
+im.save("assets/ch6/dims.jpg")

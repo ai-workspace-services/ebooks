@@ -37,6 +37,19 @@ make clean
 认证顺序：`GDRIVE_SA_JSON`（服务账号 JSON 内容或路径）→ `GDRIVE_ACCESS_TOKEN` → 公开下载。
 **公开构建前提**：要么把这些 Drive 文件共享给 CI 服务账号，要么设成「知道链接的任何人可查看」。本仓库没有改动任何共享设置。
 
+
+## 图片素材体积（v2 压缩后）
+
+| 书 | 压缩前 archive | 压缩后 | 说明 |
+|---|---:|---:|---|
+| it-history | 658 MB | 110 MB | PNG→JPEG q82，长边≤1800；2 分卷 |
+| indie-observer | 68 MB | 57 MB | 仍含大量动图 GIF，压缩空间有限 |
+| ai-native | 29 MB | 7.6 MB | |
+| data-infra | 12 MB | 7.1 MB | JPEG 再压缩 |
+| platform-engineering | 2.9 MB | 0.7 MB | |
+
+Drive 上保留了压缩前的旧包；CI 与 `assets.manifest.json` 指向 `*-assets-v2.tar`。公开下载不需要 `GDRIVE_SA_JSON`（文件夹已「知道链接的人可查看」），仍建议配置该 secret 作为备用。
+
 ## CI / Release
 
 `.github/workflows/build.yml`：按 `books/*` 生成矩阵，每本书一个 job。

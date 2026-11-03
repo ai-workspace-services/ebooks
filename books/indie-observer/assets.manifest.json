@@ -1,162 +1,163 @@
 {
  "book": "indie-observer",
  "archive": {
-  "name": "indie-observer-assets.tar",
-  "sha256": "00e3f79334538ad8c0affa1b565b40d28342d9e9239f05532dd7dc4dce14a7c1",
-  "bytes": 67778560,
+  "name": "indie-observer-assets-v2.tar",
+  "sha256": "684c22a3246edb231a71e02e1cef34bc1952872f40d4dcb82c271ab25c7a3ffc",
+  "bytes": 59596800,
   "parts": [
    {
-    "name": "indie-observer-assets.tar",
-    "drive_file_id": "1lhfHOa_PLmf1GTUCP7UjzYnCRqpEfVYv",
-    "sha256": "00e3f79334538ad8c0affa1b565b40d28342d9e9239f05532dd7dc4dce14a7c1"
+    "name": "indie-observer-assets-v2.tar",
+    "drive_file_id": "1lyk8aEKJ_0hTi4XD1YLt-vxI8L_ad8Bk",
+    "sha256": "684c22a3246edb231a71e02e1cef34bc1952872f40d4dcb82c271ab25c7a3ffc"
    }
   ],
-  "drive_folder": "Grok Bot 制品/books/indie-observer/assets"
+  "drive_folder": "Grok Bot 制品/books/indie-observer/assets",
+  "note": "v2 compressed for CI; originals kept on Drive"
  },
  "files": [
   {
-   "path": "cover-back.png",
-   "sha256": "a762c4dbcc3d3654bb2cb0acacaf643b9c829babb50c6af543f120e4d28e53ab"
+   "path": "cover-back.jpg",
+   "sha256": "b5596ddc8b55d222daab4dc4bb26f8db4bb028839a3db48e8617d0831778d614"
   },
   {
-   "path": "cover-front.png",
-   "sha256": "21c1d46a9812214e1ba196e233333639bb2346b12be7bbf5e6fb70b80bde912d"
+   "path": "cover-front.jpg",
+   "sha256": "214942a6d2737b8d3e9ae3bc92a305ec179c284c7a130d2d6740c9195ff4545e"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-01-stack-blindspots-wechat.gif",
    "sha256": "1fb13c80e6f288ae390938947be8ad8ace9f61835f3bd7b11b7b4b2fa89534e9"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-01-stack-blindspots-wechat.png",
-   "sha256": "6be25e8fda91a4f8ebce3f640679c429b31f0537c763376caffeb0d5ba361c1a"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-01-stack-blindspots-wechat.jpg",
+   "sha256": "553076be739173baf1a7d6e01061383cbc927b9f2e2f4d7e40eaa8ceb2529937"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-01-stack-blindspots-xhs.gif",
    "sha256": "7d4b14290c56edd73bf153f41895eb15b9d0456f6b2ce64b4cff9d10589ff682"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-01-stack-blindspots-xhs.png",
-   "sha256": "f072ef6947dc397205ad4d05105e9b9acdc57e090d989e14f41e46f21e6815ec"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-01-stack-blindspots-xhs.jpg",
+   "sha256": "d3117de239cb4d63ff10223f84ba8918d6b5690cbf5a7b0569abaaecc66618bd"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-02-free-boundary-wechat.gif",
    "sha256": "6ea7d26265b446b723971d9f84b2ea6f431b03c259c7de4538af7dc06e7fa33f"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-02-free-boundary-wechat.png",
-   "sha256": "21affe9530a46593d636a17c87c8f2c63a5d18d2d92393a2571c8c9066518b4b"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-02-free-boundary-wechat.jpg",
+   "sha256": "380a6753a929af9501cf36c6bad0a6280073a00f875b0b3118b8a4550abca24b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-02-free-boundary-xhs.gif",
    "sha256": "5b00d4fb83deab4611f6b0867d88dea66aeca2094f0c86be4abd0a0a1371413b"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-02-free-boundary-xhs.png",
-   "sha256": "8726739f9cd550aa2995e801293d3f1bfb2a5fe31d6f3c2fe636acd49333ab7d"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-02-free-boundary-xhs.jpg",
+   "sha256": "15dad0314d2269c5d56b5111bbb4d1760ba5e742e99821328f04ab7456c83f6c"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-03-automation-path-wechat.gif",
    "sha256": "ae82b27f6f5dee4163d6d0f6275df106400cca813a8f5bd37fc9111ae3878873"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-03-automation-path-wechat.png",
-   "sha256": "e6b35417b754bc71ce768d2a34e6d1b112ed1541e8d338697b742a645c285e19"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-03-automation-path-wechat.jpg",
+   "sha256": "3ff5aead58ab4b0160972f83a1ad73e0131f40240b6edf3624ab08aca000d8ed"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-03-automation-path-xhs.gif",
    "sha256": "f93ff881cd54f91d95a4d4a7243461b7a93a212166478d37a41d210d1b6956b6"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-03-automation-path-xhs.png",
-   "sha256": "4170b6c7e03669f55e654da16c648581ee8bf6452e18edb8ee770ef0ea86921f"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-03-automation-path-xhs.jpg",
+   "sha256": "d26b429fbbcb72aa17bc109b8c0d6f06461366a23ba50cc0ea357d935a36acc9"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-04-evidence-chain-wechat.gif",
    "sha256": "cd58cb30d944800981b21f359f28790439a8f8cb6f38cd7e4f5c914b8efa3fcf"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-04-evidence-chain-wechat.png",
-   "sha256": "d86875264b728fa0d255a8cc0d1a32ca3f1d4d421ce5750bc7220073cc5c3ed3"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-04-evidence-chain-wechat.jpg",
+   "sha256": "592adc66a4b015890aad0b9bd070a5db71884e60f64d2e5a4d850c9e159a328b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-04-evidence-chain-xhs.gif",
    "sha256": "ff00fccec1b72972fe4a184b3199c370ae3ede6fa0448cdb2d940abc5c6f89d2"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-04-evidence-chain-xhs.png",
-   "sha256": "569ae473393f35610ccefeffe643850f34d353aeac3482fd9afb3476b36a6fa4"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-04-evidence-chain-xhs.jpg",
+   "sha256": "4d1e55de0414b840087f32112607f310b5ee187fe4a97f90df301257406cd6f7"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-05-saas-or-selfhost-wechat.gif",
    "sha256": "063e39f3e6c4080347defcd4029b3db6280c0324b69dfce3c9c57b4405a2c006"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-05-saas-or-selfhost-wechat.png",
-   "sha256": "52da555cb7b1cf2ef505ca460bc6f62a0f3ccc62b9ea5ad4845043366bcb6a60"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-05-saas-or-selfhost-wechat.jpg",
+   "sha256": "d020cd174f1c5d419bbab2e611681c52facd39c5ee6231d67cd3ca0319dc197f"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-05-saas-or-selfhost-xhs.gif",
    "sha256": "be35238c7b777838f7e0df235d5e1e6afe156b4473d31954a501ca144170e0c8"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-05-saas-or-selfhost-xhs.png",
-   "sha256": "3201360427af781a3511be3a2946147fb20eedb979a6fea61f29db5fcd76eb8c"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/a1-05-saas-or-selfhost-xhs.jpg",
+   "sha256": "50c443935032b3fd48c829a24c2ba616b69835a4ddcd6ae1829cfe15459901b9"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/fig1_topology.png",
-   "sha256": "a5acd60022956fac99f2c978d34ccc60d28ec1e04dbf542dbe6dcfdf035059c6"
+   "sha256": "ee315504c2e47c191e8bfb79e26abaf5b126aba1834c7b7e1e8053e834b919de"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/fig2_pipeline.png",
-   "sha256": "9271e044b1251fd9829ca2f7e76735559ad4d968c94dc0cbcab065d8c827e2e5"
+   "sha256": "3c4fb02b05503b70f62fb2c9890a42c1d191178521c30e32fb727955affe42df"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/fig3_optimization.png",
-   "sha256": "dcd7861f6fb372988a6d6a0f200cb86540872e7d186a82ccae48803dbf0f0c18"
+   "sha256": "be7b10c2b93c2877a6b66228b4714daf3ec116cdd8d840a1fc46fd759c3ae77e"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/assets/fig4_boundary.png",
-   "sha256": "7af00c2398bc16bf436438ee4e444beb37ad2d730d650d3e0aafce8bdc84b059"
+   "sha256": "e521169a2916da4025816863ab5c86934b0a083b397393b9415f259362cdb8b8"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-01-stack-blindspots-wechat.png",
-   "sha256": "6be25e8fda91a4f8ebce3f640679c429b31f0537c763376caffeb0d5ba361c1a"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-01-stack-blindspots-wechat.jpg",
+   "sha256": "553076be739173baf1a7d6e01061383cbc927b9f2e2f4d7e40eaa8ceb2529937"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-01-stack-blindspots-xhs.png",
-   "sha256": "f072ef6947dc397205ad4d05105e9b9acdc57e090d989e14f41e46f21e6815ec"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-01-stack-blindspots-xhs.jpg",
+   "sha256": "d3117de239cb4d63ff10223f84ba8918d6b5690cbf5a7b0569abaaecc66618bd"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-02-free-boundary-wechat.png",
-   "sha256": "21affe9530a46593d636a17c87c8f2c63a5d18d2d92393a2571c8c9066518b4b"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-02-free-boundary-wechat.jpg",
+   "sha256": "380a6753a929af9501cf36c6bad0a6280073a00f875b0b3118b8a4550abca24b"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-02-free-boundary-xhs.png",
-   "sha256": "8726739f9cd550aa2995e801293d3f1bfb2a5fe31d6f3c2fe636acd49333ab7d"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-02-free-boundary-xhs.jpg",
+   "sha256": "15dad0314d2269c5d56b5111bbb4d1760ba5e742e99821328f04ab7456c83f6c"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-03-automation-path-wechat.png",
-   "sha256": "e6b35417b754bc71ce768d2a34e6d1b112ed1541e8d338697b742a645c285e19"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-03-automation-path-wechat.jpg",
+   "sha256": "3ff5aead58ab4b0160972f83a1ad73e0131f40240b6edf3624ab08aca000d8ed"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-03-automation-path-xhs.png",
-   "sha256": "4170b6c7e03669f55e654da16c648581ee8bf6452e18edb8ee770ef0ea86921f"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-03-automation-path-xhs.jpg",
+   "sha256": "d26b429fbbcb72aa17bc109b8c0d6f06461366a23ba50cc0ea357d935a36acc9"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-04-evidence-chain-wechat.png",
-   "sha256": "d86875264b728fa0d255a8cc0d1a32ca3f1d4d421ce5750bc7220073cc5c3ed3"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-04-evidence-chain-wechat.jpg",
+   "sha256": "592adc66a4b015890aad0b9bd070a5db71884e60f64d2e5a4d850c9e159a328b"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-04-evidence-chain-xhs.png",
-   "sha256": "569ae473393f35610ccefeffe643850f34d353aeac3482fd9afb3476b36a6fa4"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-04-evidence-chain-xhs.jpg",
+   "sha256": "4d1e55de0414b840087f32112607f310b5ee187fe4a97f90df301257406cd6f7"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-05-saas-or-selfhost-wechat.png",
-   "sha256": "52da555cb7b1cf2ef505ca460bc6f62a0f3ccc62b9ea5ad4845043366bcb6a60"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-05-saas-or-selfhost-wechat.jpg",
+   "sha256": "d020cd174f1c5d419bbab2e611681c52facd39c5ee6231d67cd3ca0319dc197f"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-05-saas-or-selfhost-xhs.png",
-   "sha256": "3201360427af781a3511be3a2946147fb20eedb979a6fea61f29db5fcd76eb8c"
+   "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/a1-05-saas-or-selfhost-xhs.jpg",
+   "sha256": "50c443935032b3fd48c829a24c2ba616b69835a4ddcd6ae1829cfe15459901b9"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/01-free-tier-for-indie-saas/diagrams/gif/a1-01-stack-blindspots-wechat.gif",
@@ -203,112 +204,112 @@
    "sha256": "979ccf876792f3be73f7d095e6ad43634d85e1b46de85fafea66751ffbd09d05"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-01-migration-funnel-wechat.png",
-   "sha256": "e1260245ac2c743358aadbfda2fdc2f318f2ab2260025a09084d13266aab1661"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-01-migration-funnel-wechat.jpg",
+   "sha256": "fda8fbb03b14e8d39b981ae743f6a42e8a01c11e45ba45750215c54632074840"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-01-migration-funnel-xhs.gif",
    "sha256": "33ac3520fb606642a6433c733fe20a1de09d2a1e44882a284223d2d1032d3a50"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-01-migration-funnel-xhs.png",
-   "sha256": "e97e03a28cab2c3b36f928451833cd0e2c4f6dfc1a2b9a26ff1305c529aaa83d"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-01-migration-funnel-xhs.jpg",
+   "sha256": "3b948b585530ecde1de6147c9a17e355c520c03aa465d184e9d3d48630bd3dc5"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-02-query-traps-wechat.gif",
    "sha256": "6881f537ca898d54138f5165d48070f1b026f0cb066053b278f14a15ee71fc0c"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-02-query-traps-wechat.png",
-   "sha256": "2a27b0bb8b6fe939a88d6d2ac3fd1e6e1d5ff1d041fd0e44e2ee08c053c23e05"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-02-query-traps-wechat.jpg",
+   "sha256": "3bbf5e66c2526a305779d180321a4b9fab94d9d00980aa2cb585d8ef9988fe05"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-02-query-traps-xhs.gif",
    "sha256": "c78bd4e563778a311c726a4cf8abd9fbdf18021183ae85761c6bd6c7119165be"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-02-query-traps-xhs.png",
-   "sha256": "8612e41909caf5b138960c9cdaf39c1ed4f9445f6bcbb1fad3fdd121e74e4991"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-02-query-traps-xhs.jpg",
+   "sha256": "6bf7026edeb203e0078e22baddd1bc2164585b684fdee303c4cb09e5dc85ffdb"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-03-gitops-hcl-wechat.gif",
    "sha256": "46489b0f1036c17be2f35dbce1c4b94476d2527a2e245ba9a3b9f529801eea7a"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-03-gitops-hcl-wechat.png",
-   "sha256": "43b8fea75a14ae4a8c00b7d85469436316c7b6763a10526c8336db53d7f97c8a"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-03-gitops-hcl-wechat.jpg",
+   "sha256": "12c4ee084274e2d253e0628740fb3807ded6fc5a1392f07fc6cfca6d8d3ebe69"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-03-gitops-hcl-xhs.gif",
    "sha256": "14eb17eda9b60f1a1a3955878a7d764f7e75e352c120e9722d653a0eb559feee"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-03-gitops-hcl-xhs.png",
-   "sha256": "a4d000f2c8d73df9e3659665be89bb59a9d2db090336240d8b74b9eebe8c9b2d"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-03-gitops-hcl-xhs.jpg",
+   "sha256": "bd664953eda4fef812b4c1688eb26c22fe1ce6f9e715bab7b8a6c0410fa5858b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-04-side-by-side-rollback-wechat.gif",
    "sha256": "7ca8b973d9cadec25cb1cc807fa8782e0fce77afa196eb76b782f31da45771e6"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-04-side-by-side-rollback-wechat.png",
-   "sha256": "f4aef0c0b0a9d3720824e7e12168da02c25b45b51e1524d2af85b3735527c61a"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-04-side-by-side-rollback-wechat.jpg",
+   "sha256": "207e8ecd3604fc1dfe13a518367ea83c539ac67020f58d3deb93168f5347bf72"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-04-side-by-side-rollback-xhs.gif",
    "sha256": "131b330077871c5d4635c9e8b864a6ec484a0f38a84e8d8de64f5d9df122df5f"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-04-side-by-side-rollback-xhs.png",
-   "sha256": "90ed7fa62a4fb2f5ce72162de241804a7b4b54a8a7f348e9f9c4be802be1f28b"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/a2-04-side-by-side-rollback-xhs.jpg",
+   "sha256": "4e4e2788d5389dee11e31a225ac40b95ee420632b0977c262b4454bbb4086866"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/fig1_ast_parser.png",
-   "sha256": "080bb141d3ad8f36f961a6331343157dfba13f601a1617c202fc6dd872167b1e"
+   "sha256": "f0838ad6eb0d6672623ce07013848b144f37fb8d37847224b5dd0d960a464f2e"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/fig2_circuit_breaker.png",
-   "sha256": "1e6c66e05207fd333521c006ba689a2f2cd0044fa31a7da4f96fd03371a69dcb"
+   "sha256": "7425f7aedf3283a61798d516c1c92a03fd0977859ca4381239b441edf2b05887"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/fig3_reconciliation.png",
-   "sha256": "6888411de0e32304461a0044deed56cecf0ce17578747b9969517383ed22c6b1"
+   "sha256": "cf376edb837df7d1a06b71326e241dd6351a3d669e607bad2f827de7d7b99bee"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/assets/fig4_state_machine.png",
-   "sha256": "2285d660023bf671bab465ffbfab78ddfa49303326536671867b3ebd1fd2619f"
+   "sha256": "b2c4302912a562cd6fd4f6df1e5625aaee1f7120f2f3d98802df864992a6c0d8"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-01-migration-funnel-wechat.png",
-   "sha256": "e1260245ac2c743358aadbfda2fdc2f318f2ab2260025a09084d13266aab1661"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-01-migration-funnel-wechat.jpg",
+   "sha256": "fda8fbb03b14e8d39b981ae743f6a42e8a01c11e45ba45750215c54632074840"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-01-migration-funnel-xhs.png",
-   "sha256": "e97e03a28cab2c3b36f928451833cd0e2c4f6dfc1a2b9a26ff1305c529aaa83d"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-01-migration-funnel-xhs.jpg",
+   "sha256": "3b948b585530ecde1de6147c9a17e355c520c03aa465d184e9d3d48630bd3dc5"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-02-query-traps-wechat.png",
-   "sha256": "2a27b0bb8b6fe939a88d6d2ac3fd1e6e1d5ff1d041fd0e44e2ee08c053c23e05"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-02-query-traps-wechat.jpg",
+   "sha256": "3bbf5e66c2526a305779d180321a4b9fab94d9d00980aa2cb585d8ef9988fe05"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-02-query-traps-xhs.png",
-   "sha256": "8612e41909caf5b138960c9cdaf39c1ed4f9445f6bcbb1fad3fdd121e74e4991"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-02-query-traps-xhs.jpg",
+   "sha256": "6bf7026edeb203e0078e22baddd1bc2164585b684fdee303c4cb09e5dc85ffdb"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-03-gitops-hcl-wechat.png",
-   "sha256": "43b8fea75a14ae4a8c00b7d85469436316c7b6763a10526c8336db53d7f97c8a"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-03-gitops-hcl-wechat.jpg",
+   "sha256": "12c4ee084274e2d253e0628740fb3807ded6fc5a1392f07fc6cfca6d8d3ebe69"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-03-gitops-hcl-xhs.png",
-   "sha256": "a4d000f2c8d73df9e3659665be89bb59a9d2db090336240d8b74b9eebe8c9b2d"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-03-gitops-hcl-xhs.jpg",
+   "sha256": "bd664953eda4fef812b4c1688eb26c22fe1ce6f9e715bab7b8a6c0410fa5858b"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-04-side-by-side-rollback-wechat.png",
-   "sha256": "f4aef0c0b0a9d3720824e7e12168da02c25b45b51e1524d2af85b3735527c61a"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-04-side-by-side-rollback-wechat.jpg",
+   "sha256": "207e8ecd3604fc1dfe13a518367ea83c539ac67020f58d3deb93168f5347bf72"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-04-side-by-side-rollback-xhs.png",
-   "sha256": "90ed7fa62a4fb2f5ce72162de241804a7b4b54a8a7f348e9f9c4be802be1f28b"
+   "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/a2-04-side-by-side-rollback-xhs.jpg",
+   "sha256": "4e4e2788d5389dee11e31a225ac40b95ee420632b0977c262b4454bbb4086866"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/02-observability-migration-with-rollback/diagrams/gif/a2-01-migration-funnel-wechat.gif",
@@ -347,144 +348,144 @@
    "sha256": "8dd14715506fd3c55fdd78666252b6a95462b791586449587f7a9aedd87f6b2f"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/field-allowlist-wechat.png",
-   "sha256": "431fecc6588b1cde9adcf12d1fcd0e7ec3c46fa71762878f430129e10db22180"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/field-allowlist-wechat.jpg",
+   "sha256": "82e44f5bc54e7cd2b5871a343bfc03b52a2a2a9b5ef1181d4388a0135b1c8f7b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/field-allowlist-xhs.gif",
    "sha256": "250b7c2849e0adde39c2090b9cdcbb710cc495e4f441996976d9016d4f387ce1"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/field-allowlist-xhs.png",
-   "sha256": "d44e15f5cd9a97be81009e16306c6e36bf256da81282624f9dc25ca756e41e0e"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/field-allowlist-xhs.jpg",
+   "sha256": "2527750470e2cc7318ab3c3ea5dc40baaa4560f2cb17d3eb6ed298d0444e63dd"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/fig1_vitals.png",
-   "sha256": "1cac02b7c586d48c0be2b6068fafd3d7a5f48cf9d9753af259cff85dd5f55fb7"
+   "sha256": "95b99d1b4a801bf3fe4b3fa821b1432be86a43216b41d511278360526885ba62"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/fig2_privacy.png",
-   "sha256": "2df10455077467a88e4fe354cf179756e517e24f15b18ac7600f1d96137a361d"
+   "sha256": "58015b7fa7555bc9d3cc100c3857ac2b3aae69c0c16a5b09627674d68ca23ef6"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/fig3_waterfall.png",
-   "sha256": "345ba4d4bab1436a186db8150f43f669b93a20a1f32ca6d59921e97907c5be36"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/fig3_waterfall.jpg",
+   "sha256": "4878cf295e4fe96ad567f76e241ed333204d773c8c11fcf028786afdd514d18f"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/fig4_correlation.png",
-   "sha256": "a7a3bf603a792770902d416a552c15a44cdcf277d4994a68b9f4d06561df45dd"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/fig4_correlation.jpg",
+   "sha256": "02a03a1b93d9568eb64c7ab32309b44aa58eea3e40764ffbd091db8c619753c1"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/rum-pipeline-wechat.gif",
    "sha256": "3a0ee5ba275c8dc6c3277d52849a4fc23fdda9ebc4e44b29ddff4ad0beb557ea"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/rum-pipeline-wechat.png",
-   "sha256": "c3d133fedaf509edc156abf78acf11ce2daf60b90e6ab595a8a1886a90491094"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/rum-pipeline-wechat.jpg",
+   "sha256": "5463dc1e84feaacead0432d6d3e620fd40a0bdb3c9ae7403162569ff4edad53c"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/rum-pipeline-xhs.gif",
    "sha256": "e4fa54e403c83e4686505bd8b6aaefdf3004f0c783c512e7bf76a4538b075a53"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/rum-pipeline-xhs.png",
-   "sha256": "7a0f9ab71eebde8d19f4b6f9ea4c8bef9d5957c7dfa9bdbf7a3ca9182e2f11c8"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/rum-pipeline-xhs.jpg",
+   "sha256": "54789ec505eaa7dd9b3ed8d1e081b2a21e82385ddb543336f25cb6fa5251a8ec"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/ux-before-cpu-wechat.gif",
    "sha256": "4e0d3bc48090e1c22b0c9b18d4d63fc55990f387001bec4bbcba51561ecb5487"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/ux-before-cpu-wechat.png",
-   "sha256": "3dde94f9155891e95e86a1fc0ef1bb149b4d0ffcb443557e5438f6365e2b619e"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/ux-before-cpu-wechat.jpg",
+   "sha256": "a0c89a33198437cccdc50387c3e6f7c3cb15e9c354978233ed81d015e3226a5f"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/ux-before-cpu-xhs.gif",
    "sha256": "b241a9917f9469d069c5453a69b819382e7cfd5400f60c2346864bb7a5ac8826"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/ux-before-cpu-xhs.png",
-   "sha256": "2f30365da713d821cc1fd94bbc50b68af4bfa3cf8997e15264234e115aec249b"
+   "path": "src/content/03-observability/guance-data-ai/articles/03-real-user-experience-rum/assets/ux-before-cpu-xhs.jpg",
+   "sha256": "742e344bf329c239c7324fed93f8d746f75e76ca2d76175b27fcad7ef8647bc0"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/evidence-chain-wechat.gif",
    "sha256": "d752acea698af5e60c75fbab5a3c1d7edceb33fd7196d11b34e7d40562262b8c"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/evidence-chain-wechat.png",
-   "sha256": "4393b226fdad97d98e629923ab913df92a6038e9ce802eb77285ae967e7ca897"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/evidence-chain-wechat.jpg",
+   "sha256": "3b19ae371508ea46aa77ab962f84c3a357eff5c883adb82ab4e9044fafac779b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/evidence-chain-xhs.gif",
    "sha256": "452c6a48c5f8c7432670bda34d2e9089b664fd6b9799dadb35b7a6de627e0e93"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/evidence-chain-xhs.png",
-   "sha256": "c05de17d8059c661482c5083f957c8c1847b22492df11b35a4960af2cfb5f6fe"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/evidence-chain-xhs.jpg",
+   "sha256": "e608eea8d156b49d751dc488ff0649e1b22b28768bb0095a64cb25447b04b97b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/field-contract-wechat.gif",
    "sha256": "4f8deaedf4b55aeab8caba1dc3baa10464ab0394386c16d3220626fde81f61b9"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/field-contract-wechat.png",
-   "sha256": "b994c510349df8995d033f4cc5a6c90874503648fb58d7a0ff5180b1ca176377"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/field-contract-wechat.jpg",
+   "sha256": "7eb9eac9a0dd1b6ac82b8cbe3a62abe4cef7ba214cdb7360db06bd57a2f23515"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/field-contract-xhs.gif",
    "sha256": "75a48f2dfec5647f8be164d9422bb60001e4ec8944e51e3262e94dece195af34"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/field-contract-xhs.png",
-   "sha256": "90db09a55f73a9f61010e8e8d52539638ebc16b5c70b382cb2e93493e38ce379"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/field-contract-xhs.jpg",
+   "sha256": "cd0a39700f1a27881f783ec3042d663008697b39bcd0a378e1e329990ba8b72a"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig1_context_prop.png",
-   "sha256": "2656e13a986743e1fa58272260fa2305659c4a26f39a6b105385d6953f5b95c8"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig1_context_prop.jpg",
+   "sha256": "139f8a0ff88854f74242bf20e9ff22c35e787a62b7d7b14061d6dca57916b29d"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig2_collector_pipe.png",
-   "sha256": "6077fd6f045b3fd9e9b4866d1ef950b5eb974103bc51039bc70f6f08ed914bc9"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig2_collector_pipe.jpg",
+   "sha256": "1a1c87abc8d810565f15c0a4e294618e7460598ad25ab603241fc41383c81fc6"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig3_auth_waterfall.png",
-   "sha256": "7ffb6d6e2e10838cc10dfd8a44c245ce0cecbd77adf59c242cf9a4dafab75927"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig3_auth_waterfall.jpg",
+   "sha256": "52b335775b82f07292f6ca5f1001fcd265f826934bb13c54faef58f8e1013d50"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig4_vault_security.png",
-   "sha256": "0289d198b74ce43a9d13fa6eb1ad5a43e252e9fc66275577fa957499db026b9d"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/fig4_vault_security.jpg",
+   "sha256": "93f2cfcd6b22bdaa0800058e6922ceafcbdd27cc07a1ce6b591b19173dcbba4b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/stack-blindspots-wechat.gif",
    "sha256": "57c2e73c87c14342dae0897206fb9a1206686f5a38d1304c8e71a378fd8f6eaf"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/stack-blindspots-wechat.png",
-   "sha256": "e065a595e4ef9fbbe7eb70e930b6e47d76ed90106bceaf6ab239e423db94eae0"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/stack-blindspots-wechat.jpg",
+   "sha256": "5738e6a0295e540c221e296d495f68b7f147d75cfd1a5f69d2120b0b93685a03"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/stack-blindspots-xhs.gif",
    "sha256": "3154530f32d58267a4350015e706373f575224b3880ed1e719dfc1caa6c5a089"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/stack-blindspots-xhs.png",
-   "sha256": "1024bfd262aaa5d925241a85226b02ddf09c4cf1c6ad0fac3bb474a2f1b860cc"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/stack-blindspots-xhs.jpg",
+   "sha256": "1a86b563caf9ea85a1a1e2bd7002c2882fc1177b19fe6e2d5c426ad12ddd8afc"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/triage-path-wechat.gif",
    "sha256": "105a5c722559c4957b3483e1ad764061505fd92c54154815479c58a148c50c6a"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/triage-path-wechat.png",
-   "sha256": "82c6b6e1f643b75dbab3212dadaccca13701b54650faca6c76b8cfed2723382e"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/triage-path-wechat.jpg",
+   "sha256": "557b753f59dd673ca6e3a6612a8054143f5d8f804c735710682a36ffe83b5f48"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/triage-path-xhs.gif",
    "sha256": "76ce1f76203e044968a2990d652892dd09a906c0fca42c43d41df3076c255da2"
   },
   {
-   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/triage-path-xhs.png",
-   "sha256": "872e9fa8085556c51574a905ca45f1579a44eaa1f72d6e4da117d463b5cd1d1b"
+   "path": "src/content/03-observability/guance-data-ai/articles/04-cross-cloud-distributed-tracing/assets/triage-path-xhs.jpg",
+   "sha256": "4567f6e34703cfe115599eaa2c86bb2197c0b412a2716b646d70afc6f06cdbe3"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/05-actionable-alerts-and-noise-reduction/assets/alert-as-code-wechat.gif",
@@ -768,39 +769,39 @@
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a1-01-stack-blindspots.raw.png",
-   "sha256": "8631b388dbf9454678c006d5d0b3198d4513df7e1a70b044b32829c9e868a18b"
+   "sha256": "c5492baae3331617d9a0489ff4ae34f250fb50c65d5d3ec5bb033d6b83441c26"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a1-02-free-boundary.raw.png",
-   "sha256": "83093a67f621e68b93d063acf093062c5eeaf072b9334b2f838fb79ff59bf412"
+   "sha256": "623a24b0475fcd00d86320c3bed7ab2989c7e5fcbe8a26e4ae8c72fc6a52f640"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a1-03-automation-path.raw.png",
-   "sha256": "58a42645de763ef62607b241b2724ec99d41dbd9381e0aa92b88096cd10f3e79"
+   "sha256": "ff21659e3a262468f7c3d2c7d651af228b3e5d5d57c6e70320c59abc5c66ff9d"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a1-04-evidence-chain.raw.png",
-   "sha256": "7913f0d588047a9076b65f7b901acdf2ab47755c59bbbb4fdb8cda15ba794a3b"
+   "sha256": "c4e90205b55a43dd83673c0a4991998e0cdd797ca00a0dcd824d2b6d78ee6610"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a1-05-saas-or-selfhost.raw.png",
-   "sha256": "c1094aed38c3e666506a5c3b5828e5fee34c00f50e7c097dbab7e9a2939e0df6"
+   "sha256": "fdfc25188bd3447cd5747d45b69bf41e13bbc56d5ad92ca5ff2d6b800d4b5b48"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a2-01-migration-funnel.raw.png",
-   "sha256": "0162778c7bede524241c64ef6d77dbea07a343fc44b109f1b1c2dbc934287065"
+   "sha256": "55aa91e9a16fb62c350600a0aa5f9d1ef52d9c27df256b3f264927b419d54d2f"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a2-02-query-traps.raw.png",
-   "sha256": "651f486bed5998b355b2fc3bfc2517bd84f7e1d3d2e53726bc36a7605f2345e2"
+   "sha256": "ceae6c4fbf46b1104aa5bc0dd5f27498648af6f8da9d2d5389cb6da2f29c7c66"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a2-03-gitops-hcl.raw.png",
-   "sha256": "9936e46cd7b8635cfa5850ff7c38be968826c306f3367749595e4309ad85fae8"
+   "sha256": "0c7af93d3e52a80a684854ed5442c7d6deff993f1187e91942ac525b78d6721b"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/articles/_shared/diagrams-src/a2-04-side-by-side-rollback.raw.png",
-   "sha256": "de86868f62620415e23d34863cd9e9fe380e08fdddc2bc276b28b72781a493e9"
+   "sha256": "41fc4b15df57593a6b873bb33952b90e67a248687c8815e8ac328ab61bcc649e"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/series-v4/01-free-zone-onboarding/diagrams/gif/credential-split-wechat.gif",
@@ -836,7 +837,7 @@
   },
   {
    "path": "src/content/03-observability/guance-data-ai/series-v4/02-dashboard-semantic-reconcile/diagrams/gif/json-to-plan-wechat.gif",
-   "sha256": "c21a8ec7d04dc5538f1632d23462435faca7b5f969440d8d9995974c5c6e95ff"
+   "sha256": "3feb97305eb4683f6fba600ccf919b5f74706d5ead4929c61685378b120125eb"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/series-v4/02-dashboard-semantic-reconcile/diagrams/gif/json-to-plan-xhs.gif",
@@ -844,7 +845,7 @@
   },
   {
    "path": "src/content/03-observability/guance-data-ai/series-v4/02-dashboard-semantic-reconcile/diagrams/gif/query-traps-wechat.gif",
-   "sha256": "a835c332ebf5d761bcfb30ffd0b5254fb2b876ce1118ae748710613a874cf3d1"
+   "sha256": "7696bc3fc1e6daed9e20d1cf340a55ae73daba7b99908f45ce326d1d2c1c9609"
   },
   {
    "path": "src/content/03-observability/guance-data-ai/series-v4/02-dashboard-semantic-reconcile/diagrams/gif/query-traps-xhs.gif",

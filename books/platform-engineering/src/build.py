@@ -11,9 +11,9 @@ from figs_xhs import X as _X
 
 import base64 as _b64
 def _png(n): return '<img style="width:100%;height:auto" src="data:image/png;base64,'+_b64.b64encode(open(os.path.join(os.path.dirname(HERE),'assets','ch6',n),'rb').read()).decode()+'">'
-FIGS['figX1']=('图 6-10 四个维度交叉：多环境、多分支、滚动发布、特性泳道，一次变更按需选组合',_png('dims.png'))
-FIGS['figX2']=('图 6-11 一个需求一条泳道：PR 拉起 SIT 泳道，合并 main 进 UAT，签发 Release 后受控进 PROD',_png('feature-lane-pipeline-1080-final.png'))
-FIGS['figX3']=('图 6-12 SIT / UAT / PROD 多环境分层与生命周期矩阵',_png('matrix.png'))
+FIGS['figX1']=('图 6-10 四个维度交叉：多环境、多分支、滚动发布、特性泳道，一次变更按需选组合',_png('dims.jpg'))
+FIGS['figX2']=('图 6-11 一个需求一条泳道：PR 拉起 SIT 泳道，合并 main 进 UAT，签发 Release 后受控进 PROD',_png('feature-lane-pipeline-1080-final.jpg'))
+FIGS['figX3']=('图 6-12 SIT / UAT / PROD 多环境分层与生命周期矩阵',_png('matrix.jpg'))
 
 VERSION=os.environ.get('BOOK_VERSION','v0.9.18')
 TITLE='图解平台工程 · 云中立实践'; AUTHOR='Haitao Pan'
@@ -80,7 +80,7 @@ for part in ch_md.split('\n## '):
     part=part if part.startswith('## ') else '## '+part
     n=part[3:].split(' ',1)[0]; h_,ss=render_body(part); CHHTML[n]=h_; SECS+=ss
 logo=open(os.path.join(ROOT,'assets','xwork-logo-mark.svg')).read().replace('width="22" height="22"','width="40" height="40"')
-fig0=base64.b64encode(open(os.path.join(ROOT,'assets','fig0-open-platform-toolkit.png'),'rb').read()).decode()
+fig0=base64.b64encode(open(os.path.join(ROOT,'assets','fig0-open-platform-toolkit.jpg'),'rb').read()).decode()
 def toc_html(pages):
     P=lambda k:str(pages.get(k,'')) 
     rows=[('序 工具拼在一起 ≠ 平台','pre',0),('图 0 Open Platform Toolkit 总图','fig0',1),('目录','toc',0),('快速开始手册：一个域名，一台机器，一行脚本','qsall',0)]
