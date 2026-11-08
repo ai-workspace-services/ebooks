@@ -1584,7 +1584,7 @@ DNS 边界|dns_mode 与切换计划|如 dns_mode=none：本次不切流量，DNS
 
 ## 18 最佳实践设计参考：platform-delivery 全文收录
 
-本章**全文收录** `ai-workspace-services/knowledge` 仓库 `docs/reference/platform-delivery/` 下的一份总体架构与五份专项参考（main @ `53492be`，2026-11-01 10:46 北京时间）。第 17 章是摘要式的 case，这里是原文：先总体架构，再专项参考 1–5。原文标题层级已压平为本书排版，表格与代码块保持原样。
+本章**全文收录** `ai-workspace-services/knowledge` 仓库 `docs/reference/platform-delivery/` 下的一份总体架构与五份专项参考（main @ `53492be`，2026-11-01 10:46 北京时间）。第 17 章是摘要式的 case，这里是原文：先总体架构，再专项参考 1–5。18.7–18.9 是 2026-11-08 补入的实践变化（运维看板与资产矩阵、Flux/GitOps/Flagger/Traefik 证据链、后续新增文档摘要），为改写摘要而非全文。原文标题层级已压平为本书排版，表格与代码块保持原样。
 
 **诚实标注。** 这些文档大多是**规划草案或状态归档**：草案描述目标设计，不代表代码已实现；归档中的 ✅ 只代表当时的证据，不代表今天的线上状态，也不替代业务验收。读的时候请保持「规划 → 代码与契约验证 → 已合并 → 授权后实际交付 → 真实身份与业务验收」五档分开。
 
@@ -2891,3 +2891,127 @@ V5 K3s 的业务 SecretStore 声明指向 `https://vault-raft.platform-vault.svc
 来源文件：GitOps `services/distributed-web-saas-fullstack/prod/{external-secret,secret-store}.yaml`；Playbooks `roles/vhosts/vault_operator_material/README.md`；白皮书配套 `knowledge/docs/reference/platform-ops-toolkit/04-security-vault-and-iam/{kv_tier_model,manual-unseal}.md`。这里只核对路径、字段与规则，没有读取秘密值。
 
 GitOps [草稿 PR #673](https://github.com/ai-workspace-infra/gitops/pull/673) 正在清理 V6 混合暂停状态和已删除节点的旧回执引用。完整冷启动 DAG、三身份交付、ESO 字段映射及服务验收仍在配套实现，不能将本节确认写成部署完成。
+
+### 18.7 实践变化 1　运维看板与全量 Routes & APIs 资产矩阵
+
+来源：`knowledge/docs/reference/platform-delivery/Web-Console-前端全量路由与后端微服务-API-目录统计白皮书.md` 及 2026-11-08（北京时间）的控制台与 Grafana 截图观察。本节是摘要式改写，不全文收录；截图数字只代表当时界面，不是独立验收，也不是发布授权。示例地址统一用 `console.example.com`、`accounts.example.com`、`billing.example.com`。
+
+**▍一页三个视图，不能互相替代**
+
+运维看板从上到下是三张表：**核心健康矩阵**（Service × Endpoint，10 个精选指标）、**Flagger 渐进发布权重矩阵**、**全量 Routes & APIs 三级折叠树**。核心矩阵只挑 10 个端点做门禁，全量树登记全部资产；「门禁 10 项全过」不等于「181 项资产都健康」，反过来也一样。
+
+:::table
+视图|回答什么问题|数据来源
+核心健康矩阵|这次发布能不能放行|探针指标：结果、HTTP 码、时延、新鲜度
+Flagger 权重矩阵|流量现在切到哪里|Canary Phase 与候选权重
+Routes & APIs 三级树|我们到底有哪些页面和接口，各自状态如何|静态资产目录 + 动态遥测
+:::
+
+**▍三级树：前端 / 后端 → 大类 → 路由或接口**
+
+一级是前端页面与后端接口两棵根；二级是功能大类（子组件），带中英文名和 `fe-*` / `be-*` 标识；三级是逐行明细：Method、Path、Service、Description、Expected、Observed、Latency、Result（控制台另有 Age 列，Grafana 把新鲜度放在 Top 10 明细表）。两级都能折叠，支持一键展开/收起和全文搜索（路径、微服务、大类、描述）。
+
+截图当时目录共 181 项：前端 65 项 7 大类，后端 116 项 8 大类。
+
+:::table
+标识|前端大类|条目
+`fe-portal`|产品、服务与门户|16
+`fe-panel`|平台运维与控制台|13
+`fe-support`|客户支持与服务条款|10
+`fe-docs`|知识库、文档与博客|8
+`fe-auth`|统一身份认证与用户中心|7
+`fe-edge`|边缘套件与基础设施工具|7
+`fe-workspace`|智能体与工作空间|4
+:::
+
+:::table
+标识|后端大类|条目
+`be-auth`|身份认证与用户账户|26
+`be-admin`|平台治理与管理控制台|23
+`be-billing`|商业化、计费与订阅|17
+`be-ops`|运维监控与发布门禁|14
+`be-agent`|AI 智能体与工作空间|13
+`be-content`|文档检索、营销与集成服务|13
+`be-mfa`|MFA 多因素安全认证|6
+`be-edge`|边缘协同与互联网络|4
+:::
+
+**181 是生成结果，不是常量。** 目录从源码生成（页面路由文件 + API 路由文件，按 service + method + path 去重），新增页面后计数自然变化。一个实际教训：控制台截图只露出 6 个前端大类，标题却写 7 类 65 项；缺的那一类（智能体与工作空间，4 项）是从另一张截图和源码目录补齐的，而不是凭空猜一个名字填上。另一个缺口仍然开着：Accounts / Billing 目前只登记了健康与就绪探针，它们自己的业务 API 还没从各自仓库枚举。
+
+**▍静态目录 + 动态遥测 + 来源标签**
+
+:::table
+状态|含义|不能被当成
+`PASS` / `FAIL`|来自真实遥测的判定|—
+`NO DATA`|该资产没有有效观测|PASS，也不是 FAIL
+`NOT PROBED`|POST/PUT/DELETE、退出登录、退订、动态模板路径：只登记不探测|缺陷
+`—`|单元格不适用（别的服务的端点）|失败
+`mock` / `preview`|设计样例数据|发布依据；门禁只显示 PREVIEW，永远不出 ALLOWED
+:::
+
+三条容易踩的坑：其一，资产采集不等于对每个 API 发请求，为了「发现接口」去调 DELETE 或 `/logout` 是事故；其二，`probe_success` 是 gauge，对它做 `increase` 得不到请求数，候选样本要来自真正的请求计数器；其三，只有 `probe_duration_seconds` 这种 gauge 时算不出 p95，界面上要老实写「最近一次耗时」。
+
+### 18.8 实践变化 2　Flux + GitOps + Flagger + Traefik：一条链，四份证据
+
+来源：platform-delivery 下的架构、Vault 工作负载身份契约（记录了入口流量割接到 Traefik）与上述白皮书。第 6.8、6.9 节讲了工具，这里讲它们在一次真实发布里怎么分工。
+
+`Git 期望状态 → Flux 调谐 → Flagger 渐进分析 → Traefik 加权路由 → 探针与指标 → 控制台 / Grafana 只读展示`
+
+:::table
+环节|证据|它证明不了什么
+Git / PR 合并|commit SHA、评审记录|集群已经收敛
+Flux 调谐|Kustomization / HelmRelease Ready 与 revision|新版本健康
+Flagger 分析|Canary Phase、当前权重、分析指标|入口真的按比例分流
+Traefik 加权路由|入口权重配置与入口侧请求计数|业务验收通过
+看板展示|只读汇总|它不向控制器下发放行指令
+:::
+
+四份证据各自独立，**不能合并成一个绿灯**。看板里也没有为了「体现 Flux / Traefik」去虚构业务 API：相关的运维与发布门禁接口都已在 `be-ops` 大类里登记。
+
+**▍证据冲突要保留，不要挑一个赢家**
+
+同一天的三份材料对金丝雀状态说法不一：
+
+:::table
+来源|Console|Accounts|Billing
+白皮书|Progressing|Progressing|Not configured（空权重）
+控制台截图|Progressing 20%|Succeeded 0%|Succeeded 0%
+Grafana 截图|Progressing 20%|Progressing 10%|Progressing 10%
+:::
+
+源码里能找到一个可能的解释：BFF 拿不到 Flagger 指标时会按环境给出默认降级值（PROD 视为 Succeeded 0%、SIT 视为 Progressing），这会让「遥测缺失」看起来像「已成功」。正确的做法是把四种状态分开：**确认未配置**、**进行中**、**已成功**、**遥测缺失（Unknown）**；最终以集群里的 Canary 资源和 Flagger 指标核实，再回头修文档。
+
+**▍门禁规则**
+
+任一端点失败、数据过期、缺少样本（NO DATA），或候选请求样本不足（下限 10,000），发布即 BLOCKED。mock 或降级数据不能产生 ALLOWED；缺样本时宁可显示 UNKNOWN 并阻断。
+
+### 18.9 实践变化 3　platform-delivery 其他新增材料（摘要）
+
+18.1–18.6 收录于 2026-11-01。之后 platform-delivery 新增或更新了下列文档。它们多为规划或某一时刻的验收记录，这里只摘结论和边界；状态一律按「规划 / 已合并 / 已交付 / 已验收」分开读。
+
+:::table
+主题|文档状态|要点
+双轨可观测：VictoriaMetrics 权威源 + 商业 SaaS（MetricMap 映射）|SIT 验收记录|权威源零扰动；双写分路由；指标名映射集中维护
+DataKit 跨云采集与 OpenTelemetry 数据网关|交付白皮书|K3s、Serverless、边缘节点统一经网关出口；自建留存与 SaaS APM 各取所长
+Grafana 独立数据库与 GitOps 持久化|目标架构，未迁移|共用 PostgreSQL 实例、独立 `grafana` 库与专用账户；删 Pod/namespace 不得连带删库；外置数据库不等于高可用
+Grafana 租户隔离与 Portal 嵌入|待实现|Portal 权益 → Grafana Organization → 查询授权三层；Dashboard 变量不是权限边界
+Grafana 面板丢失排查与 21 面板数据流验收|恢复与验收记录|先分清「列表为空 / 组织错 / 无权限 / 无数据 / 插件缺失」；修复前后对面板模型做规范化校验和，零篡改
+通用 Vault 工作负载身份契约|设计，调用方未完成|每个集群独立的 JWT 认证挂载与最小权限 reader 角色；创建命令只作模板，不重跑覆盖
+SIT 模块化交付与特性泳道|规划|基础 / 服务 / 业务模块化组合，Playbook 引导节点底座，Flux 装配模块
+Agent 交付：本机 QMD 接力与 Knowledge 归档|规划与实践|任务状态放结构化存储，结论进 Knowledge PR，再重建索引；敏感现场证据只归档脱敏摘要
+Hand-Off 交付与交接报告|某次交接终态|三权分立审计身份只读核验 + 双轨采集拓扑；是当时的回执，不是今天的线上状态
+:::
+
+**▍多环境是交叉维度，不是一条直线**
+
+第 6.12 节已经说过：环境、分支、滚动发布、特性泳道是四个相互交叉的维度。上面的材料再次印证了这一点——SIT 独立节点用特性泳道单独验收某个功能，PROD 用 Flagger 小比例放量，两者并不排成 `SIT → UAT → PROD` 的唯一阶梯。
+
+:::table
+维度|可选取值|由谁决定
+环境|SIT、UAT、PROD，或某个客户专属空间|资源与数据隔离要求
+分支 / 版本|main、release、feature 分支对应的构件摘要|Git 与制品仓库
+发布方式|直接替换、滚动、金丝雀加权、指定测试人员|风险与样本量
+特性泳道|按功能开关或路由隔离的子流量|业务验收范围
+:::
+
+一次发布取各维度中需要的那一格组合起来：例如「feature 分支构件 + SIT 环境 + 指定测试人员 + 单一特性泳道」，或「release 构件 + PROD + 金丝雀 10% + 全量用户」。看板与资产矩阵按「环境 × 服务」展示，正是为了让任何一个组合都能被同一套证据检验。
