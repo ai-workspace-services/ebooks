@@ -8,7 +8,7 @@
 
 书里的案例不是虚构的。每章末尾都有一个「实践：ai-workspace-infra」框，对应这个开源组织里真实的仓库、工作流和已合并的 PR。你可以点开源码，对照着看。
 
-这是一本**活的书**。它跟着实践持续更新，像流动的水，不是图书馆里放旧了的教材。每出一个版本，都用同一个重建脚本出 PDF，版本号写在封面上。当前是 v0.9.17 预览版（「最佳实践参考」升为与上下篇平行的实践篇第 17 章，四个 case 编为 17.1–17.4；v0.9.16 Case C 发布解析补全为完整草案与检查清单；v0.9.15 新增最佳实践参考：OS 三身份、K3s role 依赖、发布解析、PROD-K3S 变更记录模版四个 case；v0.9.14 新增 10.2 五个仓库的职责分工表；v0.9.13 新增 5.11 Vault KV → ExternalSecret → chart Secret 的默认引用、5.12 容器与非容器 SaaS 的 OIDC 接入；v0.9.12 新增 5.10 主机与集群的三角色；v0.9.11 编排仓库更名为 Platform-Orchestrator；v0.9.10 新增 6.12 多环境 × 多分支 × 滚动发布 × 特性泳道）：全书分上篇、下篇和实践篇。上篇「经典平台工程」10 章，第 2–9 章各附一页快速开始；下篇「现代平台工程」由导言和第 11–16 章组成，第 11 章附快速开始；实践篇「最佳实践参考」为第 17 章，记录正在推进的真实 case。全书 17 章正文均已写成，之后按实践持续更新。
+这是一本**活的书**。它跟着实践持续更新，像流动的水，不是图书馆里放旧了的教材。每出一个版本，都用同一个重建脚本出 PDF，版本号写在封面上。当前是 v0.9.20 预览版（本版将原第 17、18 章按主题合并为实践篇第 17 章，案例摘要与完整草案成对编排，保留变更记录模版、冷启动归档和运维矩阵／渐进交付实践；v0.9.19 补入运维看板与 Routes & APIs 矩阵、Flux/GitOps/Flagger/Traefik 证据链及近期实践变化；v0.9.18 全文收录总体架构与五份专项参考；v0.9.17 「最佳实践参考」升为与上下篇平行的实践篇第 17 章，四个 case 编为 17.1–17.4；v0.9.16 Case C 发布解析补全为完整草案与检查清单；v0.9.15 新增最佳实践参考：OS 三身份、K3s role 依赖、发布解析、PROD-K3S 变更记录模版四个 case；v0.9.14 新增 10.2 五个仓库的职责分工表；v0.9.13 新增 5.11 Vault KV → ExternalSecret → chart Secret 的默认引用、5.12 容器与非容器 SaaS 的 OIDC 接入；v0.9.12 新增 5.10 主机与集群的三角色；v0.9.11 编排仓库更名为 Platform-Orchestrator；v0.9.10 新增 6.12 多环境 × 多分支 × 滚动发布 × 特性泳道）：全书分上篇、下篇和实践篇。上篇「经典平台工程」10 章，第 2–9 章各附一页快速开始；下篇「现代平台工程」由导言和第 11–16 章组成，第 11 章附快速开始；实践篇「最佳实践参考」为第 17 章，按主题汇集正在推进的真实 case、完整设计参考与近期实践变化。全书 17 章正文均已写成，之后按实践持续更新。
 
 作者 Haitao Pan ｜ XWork Technologies LLC 服务支持 · xworktech.com 开源平台方案
 
@@ -1399,196 +1399,17 @@ AI 值守|无|AI 只读查询|AI 预诊断并出 plan|完整闭环，复盘写�
 
 本书后续版本会继续补充各章的实践记录和快速开始。平台工程没有终点，但每一层、每一个回路，都可以从今天的一个 commit 开始。
 
-## 17 最佳实践参考：四个正在进行的 case
+## 17 最佳实践参考
+
+本章是持续更新的实践部分：把案例摘要与完整设计参考按主题放在一起，先看正在做什么，再看设计边界；最后补入运维矩阵与渐进交付的实践变化。案例摘要与完整草案保留各自的时间和状态，不把规划当作验收。
 
 上下两篇讲原则，这一章记**活的实践**：同一套平台在 2026-10-31 前后真实推进到哪一步。每条都分两档标注——**✅ 已合并**只说明代码或规范进了 main；**⏳ 待验收**说明还没有目标主机、目标集群上的运行回执。本章不宣称任何生产部署已完成。
 
-### 17.1 Case A　Linux OS 三类操作身份：最小实施
-
-5.10 给了三角色的原则，这里补实施细节。状态：OS 账户设计已收敛；`os_identity.yml` 与独立入口已实现（✅）；部署和真实账户验收以运行回执为准（⏳）。
-
-**职责边界。** `vhosts/common` 只管 Linux OS 基线：主机名与身份检查、用户/组、SSH 公钥授权、受控 sudo、目录与文件权限、OS 侧允许/拒绝验收。所有 Linux 节点用同一套用户名，不因装没装 Kubernetes 而改变。K3s/K8s 认证主体与 RBAC、数据库连接授权、Docker 运行时，分别由专业 role 实现，它们**消费** common 建好的 OS 用户，不在 common 里造集群凭据或数据库角色。
-
-:::table
-Linux 用户|固定角色|OS 职责与权限
-root|系统管理|初始化、安装、恢复与必要管理；不作业务进程身份；`PermitRootLogin prohibit-password`
-operator|日常运行操作|SSH 公钥登录；操作授权服务与工作目录，受控 sudo
-auditor|只读审计与分析|SSH 公钥登录；读授权状态与脱敏输出；无通用 sudo、无运行时 socket、无管理凭据
-:::
-
-三条要点：禁用密码认证，先验证 sshd 配置再 reload，保留旧管理入口直到新身份验收通过；`auditor` 的只读要靠有效组、文件权限、ACL、sudoers 和可执行入口逐项检查，不能凭用户名认定；`operator` 是通用保留名，接管前发现同名用户或未知 UID/GID 就停止，不改名、不重置。rootful Docker socket、`docker` 组和任意 sudo 都接近 root——授予之后不能再声称 operator 与 root 强制隔离。
-
-**环境级 Vault KV。** 每个环境三条 KV v2 记录，所有节点消费同一份角色公钥，不按节点复制。环境必须显式给出（`sit`/`uat`/`prod`），缺失就停，绝不回退到生产路径。
-
-:::table
-用途|KV CLI 路径|字段
-root SSH 公钥|kv/&lt;env&gt;/security/root|authorized_keys
-operator SSH 公钥|kv/&lt;env&gt;/security/operator|authorized_keys
-auditor SSH 公钥|kv/&lt;env&gt;/security/auditor|authorized_keys
-:::
-
-API/policy 路径形如 `kv/data/prod/security/root`。字段只放公钥，多把用换行分隔；暂时共用一把公钥时，持钥人能登录全部角色，不能算人员隔离。初始化用已认证的 Vault 管理终端跑 `scripts/bootstrap_os_identity_keys.py --environment <env>`：先查三个目标都不存在，再逐条 `cas=0` 创建；已有记录或状态不明就停。三次写入不是原子的，中途失败会报告已建路径，按 Vault owner 流程补齐，别盲目重跑。旧路径 `kv/prod/platform/prod-k3s-v6/ssh` 在消费者切换验收前不删、不复制。**新路径目前只代表规划与初始化工具，不代表已写入或已被 common 消费。**
-
-[[figP1]]
-
-**新节点接管五步。**
-
-1. 核实受信 host key、CMDB/inventory、OS、主机名和既有用户权限，记脱敏基线；
-2. 用 root 建立或核实 operator/auditor，配公钥、受控 sudo、工作目录与 SSH 策略；
-3. 检查父目录、ACL、sudoers、有效组与敏感文件，先验证配置再 reload SSH；
-4. 分别验证三用户的真实 SSH 登录与允许/拒绝，保留回执和恢复入口；
-5. OS 基线通过后，才进入运行时、K3s/K8s、迁移等专业 role。
-
-新接管入口须**显式启用**这套基线；通用 role 保留开关，避免老调用方升级后自动批量改账户。旧节点先盘点，再逐台变更。
-
-**专业 role 的执行身份。** 不按任务名自动提权：系统管理阶段用 root，并记调用者与范围；日常与迁移目标写入用 operator（不新增迁移专用用户）；只读检查与源端导出用 auditor，不得写。身份缺失或权限不足时停止，不静默回退 root；OS 用户选择也不自动赋予数据库或 Kubernetes 权限。
-
-### 17.2 Case B　K3s/K8s role：职责与依赖清单
-
-一个 role 一种能力。冷启动的依赖链如下：
-
-[[figP2]]
-
-RBAC 必须先就绪才能做真实身份验收；它不能反向依赖尚未签发的三身份凭据，也不能用「管理员 impersonation 成功」代替真实身份登录。主机名、Flux root 名、环境批次目录和 source path 各自独立，不按名字推断流程。
-
-:::table
-项目|当前状态（2026-10-31）|责任与缺口
-k3s_platform_bootstrap|✅ Playbooks #903 已合并|只编排子 role 与顺序
-k3s-cluster-server|✅ #903 已合并|控制面初始化、hostname 校验、API 就绪
-helm_cli / flux_controllers / flux_gitops / k3s_identity|✅ #903 已合并；⏳ 目标集群验收|真实身份、Vault writer 与 RBAC 待验
-k3s 旧安装器|✅ #905 已合并并移除|非默认 CNI 明确拒绝
-k3s_platform_addon、k3s-addon|✅ 已移除|插件改由 GitOps 按环境选择；Flux 接管待逐项验证
-cert-manager / reloader / APISIX / ExternalDNS / NGINX|✅ GitOps #681 已合并|模板未接入任何环境；ExternalDNS 默认 dry-run
-ESO、Caddy|✅ 已有 V6 HelmRelease；⏳ 调谐验收|不再经旧 addon 重复安装
-k3s-reset|⏳ 安全边界待修|破坏性入口，旧默认值需收敛
-三身份与 Flux RBAC|✅ GitOps #682、Playbooks #906 已合并；⏳ 集群验收|kubeconfig 用节点 loopback，远程另设计
-Orchestrator → Playbooks|⏳ 参数交接未贯通|需传 GitOps SHA、资源路径、CMDB SHA、回执路径
-Vault writer 与真实身份|⏳ 未完成|短期身份写三精确路径后，用真实账户验证
-Flux 接管与服务部署|⏳ 无完整运行证据|不得据源码或静态测试宣称完成
-:::
-
-清单本身已随 Playbooks #904 迁入对应目录。主线 role 的输入输出合同：
-
-:::table
-Role|唯一能力|输出/验收
-vhosts/common node_bootstrap.yml|校验节点身份、建 OS 三账户|COMMON_NODE_VERIFIED，只覆盖身份与账户探针
-web_saas_data_volume|核验并准备独立文件系统|挂载点、UUID 证据；不自动重格式化
-k3s-cluster-server|单节点控制面初始化|服务启动与 /readyz；既有安装跳过 ≠ 已升级
-k3s_platform_bootstrap|按依赖编排子 role|失败即停；不代表业务验收
-helm_cli|Helm 客户端|不部署 chart
-flux_controllers|Flux CLI 与控制器|controller rollout 就绪
-flux_gitops|source/root 交接|交接回执，不声称业务 Ready
-k3s_identity|三身份生命周期|独立凭据、KV CAS 归档、真实允许/拒绝
-:::
-
-### 17.3 Case C　环境与业务发布解析：最小实施（目标草案）
-
-> 状态：**目标草案，2026-10-31**。本节描述期望契约，现有工作流尚未全部实现，**不作为部署或验收回执**。✅ 表示已从当前声明或代码核对；⏳ 表示仍需实施或取得真实验收证据。
-
-**1. 目标与职责。** 基础仓库默认选择 `main`，运行时各自解析一次 commit SHA 并传给下游；业务发布记录固定制品版本和 digest。业务发布 tag、工作流运行 ref、节点名和 state 身份是四个独立字段，不因字符串相同就自动绑定。
-
-:::table
-仓库|职责|tag / 版本引用
-GitOps|环境、业务目标、资源、身份目标和 Flux 声明；保存非敏感引用|默认 main，记录本次解析的 commit SHA；可按需显式选 tag
-IaC|云资源、DNS、state、云事实及 CMDB|默认 main，记录本次解析的 commit SHA；可按需显式选 tag
-Playbooks|主机、K3s、身份、服务、数据库、备份恢复和迁移执行|默认 main，记录本次解析的 commit SHA；可按需显式选 tag
-Platform-Orchestrator|输入、授权、DAG、派发、等待及回执汇总|默认 main，记录本次工作流 commit SHA；运行 ref 的 Vault OIDC 授权单独校验
-Artifacts|构建、镜像、Chart、制品打包与发布|构建配置默认 main 并记录 SHA；业务制品用发布 tag + 核对后的不可变 digest
-:::
-
-**2. 发布解析链。**
-
-[[figP3]]
-
-- **1）发布 tag**：解析出环境、业务范围及 chart/镜像版本或 digest。现有 PROD Vault role 接受工作流 `v*` tag / `release/v*` 分支，优先用不可变 tag；基础仓库默认 `main` 的授权差异见 3.1 检查清单。
-- **2）环境与业务**：解析结果形成不可变运行记录；dispatch 输入若也给了环境或业务，只做一致性校验，冲突即停止。
-- **3）GitOps 目标声明**：用环境、业务、provider、account 和声明中的目标标识查找**唯一**目标；找不到或匹配多个都停止。
-- **4）IaC**：消费声明中的资源路径、workspace 和 state key，输出节点名、地址、数据盘等 CMDB 事实；tag 不直接拼接 state key。
-- **5）Playbooks/K3s**：使用本次解析的 GitOps commit 和 IaC CMDB，从声明读取节点名、K3s 配置和 Flux root/path，不按 `prod-v6` 分支判断。
-- **6）Flux**：接管声明中的 source、Kustomization 和 HelmRelease，使用发布记录明确的业务制品版本。
-
-`v*` tag 能表明「这是 PROD 发布」，但 tag 字符串本身**不能唯一确定** `web-saas` 和 GitOps 目标。需要补一份可审阅的**发布记录**，把 tag 关联到环境、业务和制品，再由 GitOps 声明确定节点及 state。发布记录应包含来源仓库/commit、镜像 digest、Chart 版本或 digest、配置版本及候选指纹；它的 owner、schema 与消费方式 ⏳ 仍待实现。基础仓库无需同步创建同名 tag。
-
-**3. SIT、UAT、PROD。**
-
-:::table
-环境|目标发布规则|当前 Vault role ref（GitOps main d9ddcf56）|待统一
-SIT|仅接受 Feature ID 关联的 GitHub task/issue 和制品 tag；固定 PR head、基础分支 SHA、完整构件和数据基线，部署独立 SIT namespace；排除 daily-build-*|refs/pull/*/merge、refs/heads/*|由受信编排器校验 task/issue、feature、制品 tag、仓库、workflow、候选、目标及 SIT 角色；ref 本身不代表部署授权
-UAT|默认用合并后的固定候选；明确选合并前 UAT 时用冻结候选；候选或配置变化按影响重验|refs/heads/main、release/*、bugfix/*、daily-build-*（分支）、refs/tags/daily-build-*|目标：排除 refs/heads/release/*，其余保留；Vault role 与调用链 ⏳ 待改并验收
-PROD|业务用经审查的不可变版本或 digest，tag 关联明确业务与目标；状态变更按独立集群方案|refs/tags/v*、refs/heads/release/v*|基础工作流默认 main 与现有 PROD role ref 不一致；需在受审查的认证契约中解决并做允许/拒绝验收
-:::
-
-默认流程是 **PR → SIT → 合并 → UAT → PROD 受控滚动升级**；用户明确选择时可走合并前 UAT。UAT 通过后，核对发布记录、业务范围、不可变制品和生产目标，按已有授权与发布门禁进入 PROD；部署后验证实际运行版本和关键业务流程。候选、配置或数据基线变化时按影响重新验收。**CI 成功不是运行验收**；SIT/UAT 与生产凭据隔离，公共证书等共享来源逐项审查授权。
-
-PROD 滚动方式按变更类型选：纯展示的无状态 UI、向后兼容且无需 SQL schema 变更的小型 API 修复，可在所属单元原地滚动，保留旧制品并验证回退路径。PostgreSQL、Vault Raft、监控存储及其他持久卷工作负载的版本验证，以及 SQL schema 变化或数据迁移，**必须用新集群和独立存储**；数据库迁移使用空目标库并先验证备份恢复，写入切换另行评审。**代码回退不等于数据回滚。**
-
-**3.1 应用 tag 与 Vault OIDC 检查清单。** 代码快照为 Orchestrator `main` `2e25af0f`、GitOps `main` `d9ddcf56`，后续运行须重新核对。
-
-:::table
-状态|应用制品与候选
-✅|当前 selfhost 函数在 SIT/UAT 拒绝 v* 和 prod-v*，提示改用 daily-build-* 或 uat-daily-build-*
-⏳|实现 SIT 正向候选校验：仅接受 Feature ID 关联的 task/issue 与制品 tag，拒绝 daily-build-*；tag 必须解析到已核对的不可变 digest（当前函数尚未实现）
-⏳|定义并实现 UAT 完整正向 tag 白名单；当前没有完整白名单，未明确拒绝的格式可能通过
-✅|当前函数允许 PROD 使用 v* 及部分 prod-v<数字>-* 格式；基础设施专用操作可省略应用 tag
-⏳|按统一规范审查 PROD 格式，清理仅以批次名字驱动运行逻辑的专用规则；不把现状当最终规范
-⏳|SIT 的 Feature ID、GitHub task/issue、制品 tag 与候选的关联校验（受信编排器侧）
-:::
-
-:::table
-状态|工作流 ref 与 Vault 身份
-⏳|基础仓库默认 main 的运行 ref 与各环境 Vault role 允许范围对齐；检查跨环境 ref 范围重叠，工作流 ref 不匹配时停止
-⏳|Vault role 限定仓库、workflow、环境、audience 和有效期；分别验证目标身份允许访问、跨环境/相邻路径及不匹配 ref/workflow 被拒绝，记录脱敏证据
-⏳|检查应用 tag、发布记录、目标环境、GitHub Environment 和 Vault role 一致，不存在静默跨环境回退
-:::
-
-:::table
-状态|验收记录
-⏳|保存候选指纹、各基础仓库解析的 commit SHA、工作流 ref、应用 tag、目标声明及运行回执；只读配置核对不能代替真实身份或服务验收
-:::
-
-**4. 目标、节点和 state。** GitOps 目标声明提供环境、业务、provider、account、资源 manifest、节点名与 state 身份；IaC 只消费经核对的目标并产出云事实；Playbooks 根据本次 CMDB 和声明执行通用 role。节点名由声明决定；tag 选择发布内容，不能单靠名字判断资源所有权。`prod-k3s-v6` 是当前**节点名**，`PROD-K3S-V6` 是**集群名**，它们不应成为通用代码里的条件分支。既有 state/workspace 与资源的一一对应必须保留，换发布 tag 不自动生成新 state 或替换资源；新集群和独立存储须有各自明确声明。Flux 根名和 source path 分别声明，不能推断必须等于节点名。
-
-**5. 验证与交付边界。**
-
-:::table
-项目|状态
-五仓职责与 main 默认规则|✅ 已确定；⏳ 运行时 SHA 记录与 caller 链路按实际运行验收
-SIT 功能泳道候选契约|✅ 规范已确定；⏳ 与 selfhost tag 路由及 Vault 身份的端到端交接待实施验收
-环境与业务发布记录|⏳ schema、owner、tag→业务映射及消费链待交付
-目标与 state 通用解析|⏳ 现有代码仍含 prod-v* 特判；需 owner 实现、caller 切换与验证
-PROD main 工作流 Vault 授权|⏳ 当前声明只允许 v* tag 和 release/v* 分支；修改需绑定受控身份并验证允许及跨环境拒绝
-:::
-
-关联：Case A（OS 三身份）、Case B（K3s role 依赖）、Case D（变更记录模版）；功能泳道遵循 6.12。现有状态以实际运行回执为准。
-
-### 17.4 Case D　PROD-K3S 变更记录模版
-
-每次动生产集群，都留一份同样结构的变更记录。下面的模版从 2026-10-30 的 PROD-K3S-V6 独立节点冷启动归档里抽出来，可以直接套用。它是**归档**，不是实时巡检：记录里的 ✅ 只说明当时有证据，不替代新节点、新批次的验收。
-
-:::table
-栏目|填什么|示例 / 约束
-状态标记|✅ 已验收（附回执）· ⏳ 待验收 · ❌ 阻断 · — 不适用|只有带证据的才打 ✅
-目标|这次变更要达到的唯一结果|「新建独立 V6 节点并完成 K3s 冷启动」
-规划基线|依赖的 IaC/GitOps/Playbooks SHA、CMDB 节点与卷|全部写 commit SHA，不写分支名
-规格|节点规格、OS、数据盘、K3s 版本、CNI|与 CMDB 声明逐项一致
-证据时间|每条证据的采集时间与时区|过期证据不能拿来证明今天的状态
-DNS 边界|dns_mode 与切换计划|如 dns_mode=none：本次不切流量，DNS 另走流程
-节点边界|新增、保留、回收哪些节点|如：V5 保留，不因 V6 上线而回收
-验收边界|哪些已验、哪些明确未验|role 回执 ≠ 业务验收；未验项列出责任人
-后续|待办、回滚入口、归档全文链接|归档链接回填到任务源头
-:::
-
-**冷启动归档本身**作为这份模版的第一份实例保存在仓库文档里；本节只引用其结构，细节以归档全文为准。
-
-**这一节怎么用。** 照抄的不是路径和 PR 号，而是三个习惯：每个 role 只做一件事并写清前置与回执；所有秘密路径按环境显式给出、缺失就停；文档里的「已合并」和「已验收」永远分两列写。
-
-## 18 最佳实践设计参考：platform-delivery 全文收录
-
-本章**全文收录** `ai-workspace-services/knowledge` 仓库 `docs/reference/platform-delivery/` 下的一份总体架构与五份专项参考（main @ `53492be`，2026-11-01 10:46 北京时间）。第 17 章是摘要式的 case，这里是原文：先总体架构，再专项参考 1–5。18.7–18.9 是 2026-11-08 补入的实践变化（运维看板与资产矩阵、Flux/GitOps/Flagger/Traefik 证据链、后续新增文档摘要），为改写摘要而非全文。原文标题层级已压平为本书排版，表格与代码块保持原样。
+本章**全文收录** `ai-workspace-services/knowledge` 仓库 `docs/reference/platform-delivery/` 下的一份总体架构与五份专项参考（main @ `53492be`，2026-11-01 10:46 北京时间）。各主题先列案例摘要，再接对应的完整草案；总体架构与流水线草案独立成节。17.7–17.9 是 2026-11-08 补入的实践变化（运维看板与资产矩阵、Flux/GitOps/Flagger/Traefik 证据链、后续新增文档摘要），为改写摘要而非全文。原文标题层级已压平为本书排版，表格与代码块保持原样。
 
 **诚实标注。** 这些文档大多是**规划草案或状态归档**：草案描述目标设计，不代表代码已实现；归档中的 ✅ 只代表当时的证据，不代表今天的线上状态，也不替代业务验收。读的时候请保持「规划 → 代码与契约验证 → 已合并 → 授权后实际交付 → 真实身份与业务验收」五档分开。
 
-### 18.1 总体架构　OpenplatForm Delivery Architecture
+### 17.1 总体架构　OpenplatForm Delivery Architecture
 
 来源：`knowledge/docs/reference/platform-delivery/OpenplatForm-Delivery-Architecture.md`（53492be），全文收录。
 
@@ -1845,7 +1666,458 @@ V6 现况以 [PROD-K3S-V6 状态归档](PROD-K3S-V6-规划与部署状态归档.
 
 1. [环境与业务发布解析：最小实施草案](环境与业务发布解析-最小实施草案.md) — 五仓职责、候选/tag 与环境、Vault OIDC、目标/state 解析和发布验收缺口。  2. [GitHub Actions 流水线实施草案](GitHub-Actions流水线实施草案.md) — 编排职责、workflow DAG、owner 调用迁移、逐目标回执和 CI 边界。  3. [Linux OS 三类操作身份：最小实施草案](Linux-OS三类操作身份-最小实施草案.md) — Linux 管理、运行操作、审计身份和 OS 验收约束。  4. [K3s role 职责与依赖清单](K3s-role职责与依赖清单.md) — K3s bootstrap、Flux 交接、RBAC、role owner 与当前验收缺口。  5. [PROD-K3S-V6 独立节点、集群冷启动规划与部署状态归档](PROD-K3S-V6-规划与部署状态归档.md) — V6 节点、容量、GitOps 目标图及最新部署实况。
 
-### 18.2 专项参考 1　环境与业务发布解析：最小实施草案
+### 17.2 Linux OS 三类操作身份
+
+**案例摘要｜Case A　Linux OS 三类操作身份：最小实施**
+
+5.10 给了三角色的原则，这里补实施细节。状态：OS 账户设计已收敛；`os_identity.yml` 与独立入口已实现（✅）；部署和真实账户验收以运行回执为准（⏳）。
+
+**职责边界。** `vhosts/common` 只管 Linux OS 基线：主机名与身份检查、用户/组、SSH 公钥授权、受控 sudo、目录与文件权限、OS 侧允许/拒绝验收。所有 Linux 节点用同一套用户名，不因装没装 Kubernetes 而改变。K3s/K8s 认证主体与 RBAC、数据库连接授权、Docker 运行时，分别由专业 role 实现，它们**消费** common 建好的 OS 用户，不在 common 里造集群凭据或数据库角色。
+
+:::table
+Linux 用户|固定角色|OS 职责与权限
+root|系统管理|初始化、安装、恢复与必要管理；不作业务进程身份；`PermitRootLogin prohibit-password`
+operator|日常运行操作|SSH 公钥登录；操作授权服务与工作目录，受控 sudo
+auditor|只读审计与分析|SSH 公钥登录；读授权状态与脱敏输出；无通用 sudo、无运行时 socket、无管理凭据
+:::
+
+三条要点：禁用密码认证，先验证 sshd 配置再 reload，保留旧管理入口直到新身份验收通过；`auditor` 的只读要靠有效组、文件权限、ACL、sudoers 和可执行入口逐项检查，不能凭用户名认定；`operator` 是通用保留名，接管前发现同名用户或未知 UID/GID 就停止，不改名、不重置。rootful Docker socket、`docker` 组和任意 sudo 都接近 root——授予之后不能再声称 operator 与 root 强制隔离。
+
+**环境级 Vault KV。** 每个环境三条 KV v2 记录，所有节点消费同一份角色公钥，不按节点复制。环境必须显式给出（`sit`/`uat`/`prod`），缺失就停，绝不回退到生产路径。
+
+:::table
+用途|KV CLI 路径|字段
+root SSH 公钥|kv/&lt;env&gt;/security/root|authorized_keys
+operator SSH 公钥|kv/&lt;env&gt;/security/operator|authorized_keys
+auditor SSH 公钥|kv/&lt;env&gt;/security/auditor|authorized_keys
+:::
+
+API/policy 路径形如 `kv/data/prod/security/root`。字段只放公钥，多把用换行分隔；暂时共用一把公钥时，持钥人能登录全部角色，不能算人员隔离。初始化用已认证的 Vault 管理终端跑 `scripts/bootstrap_os_identity_keys.py --environment <env>`：先查三个目标都不存在，再逐条 `cas=0` 创建；已有记录或状态不明就停。三次写入不是原子的，中途失败会报告已建路径，按 Vault owner 流程补齐，别盲目重跑。旧路径 `kv/prod/platform/prod-k3s-v6/ssh` 在消费者切换验收前不删、不复制。**新路径目前只代表规划与初始化工具，不代表已写入或已被 common 消费。**
+
+[[figP1]]
+
+**新节点接管五步。**
+
+1. 核实受信 host key、CMDB/inventory、OS、主机名和既有用户权限，记脱敏基线；
+2. 用 root 建立或核实 operator/auditor，配公钥、受控 sudo、工作目录与 SSH 策略；
+3. 检查父目录、ACL、sudoers、有效组与敏感文件，先验证配置再 reload SSH；
+4. 分别验证三用户的真实 SSH 登录与允许/拒绝，保留回执和恢复入口；
+5. OS 基线通过后，才进入运行时、K3s/K8s、迁移等专业 role。
+
+新接管入口须**显式启用**这套基线；通用 role 保留开关，避免老调用方升级后自动批量改账户。旧节点先盘点，再逐台变更。
+
+**专业 role 的执行身份。** 不按任务名自动提权：系统管理阶段用 root，并记调用者与范围；日常与迁移目标写入用 operator（不新增迁移专用用户）；只读检查与源端导出用 auditor，不得写。身份缺失或权限不足时停止，不静默回退 root；OS 用户选择也不自动赋予数据库或 Kubernetes 权限。
+
+**完整草案｜专项参考 3　Linux OS 三类操作身份：最小实施草案**
+
+来源：`knowledge/docs/reference/platform-delivery/Linux-OS三类操作身份-最小实施草案.md`（53492be），全文收录。
+
+> 来源：Playbooks `main` commit `7b7f44164ef1429dc86c01582393e704257ac386` 的 `roles/vhosts/common/three-role-design.md`；此为归档副本，运行状态需以最新回执为准。
+
+状态：OS 账户设计已收敛；`os_identity.yml` 和独立入口已实现，部署和真实账户验收以运行回执为准。
+
+**▍1. 职责边界**
+
+`vhosts/common` 仅负责 Linux OS 基线：主机名与身份检查、用户/组、SSH 公钥授权、受控 sudo、目录与文件权限，以及 OS 侧允许/拒绝验收。
+
+所有 Linux 节点采用同一套用户名，不因是否安装 Kubernetes 而改变。
+
+- K3s/K8s 的认证主体、kubeconfig、RBAC 和集群权限验收由对应集群 role 实现。
+- Linux OS 用户与 Kubernetes 主体的映射、各自 kubeconfig 的生成/交付，以及指定用户的默认 `~/.kube/config` 均由 K3s role 实现；`k3s_platform_bootstrap` 只编排对应子 role。common 不写入 kubeconfig，也不授予集群权限。
+- 数据迁移及数据库连接授权由对应迁移/数据库 role 实现，调用方显式选择执行角色。
+- Docker 安装和运行配置由对应运行时 role 实现；common 仅负责 OS 账户和权限边界。
+
+上述专业 role 消费 common 已建立的 OS 用户，不在 common 中创建集群凭据、数据库角色或迁移连接。
+
+**▍2. 统一用户名与 SSH 登录**
+
+:::table
+Linux 用户|固定角色|OS 职责与权限
+`root`|系统管理|保留现有 root；用于初始化、安装、恢复和必要管理，平时不用作业务进程身份
+`operator`|日常运行操作|通用操作账户，可 SSH 公钥登录并使用交互 shell；操作被授权的服务和工作目录，通过受控 sudo 执行必要运行操作
+`auditor`|只读审计与分析|可 SSH 公钥登录；读取授权系统状态及脱敏输出；无通用 sudo、系统配置写权限、运行时 socket 或管理凭据访问权限
+:::
+
+三者通过受信管理网络使用独立公钥/证书授权，禁用密码认证；root 使用 `PermitRootLogin prohibit-password`。保留现有管理入口直至新身份登录及权限验收通过；先验证 sshd 配置，再 reload。密码锁定与公钥登录须在实际 OS/PAM 配置下验证。
+
+`auditor` 的只读针对系统配置和业务状态，允许在自己的受控工作目录保存报告或授权导出文件。不能仅凭用户名、默认无 sudo 或脚本自律认定只读；需检查有效组、文件权限、ACL、sudoers 和可执行入口。
+
+`operator` 为通用保留名：接管前检查现有用户、UID/GID、文件归属和组；发现同名用户或未知权限时停止，不直接接管、改名或重置。
+
+日常运行操作员是人或自动化操作身份；实际应用进程另用非 root 服务身份，不继承操作员的 sudo 或管理权限。K3s 节点上的 OS `operator` 使用普通交互 shell 执行客户端命令；K3s 安装、独立 kubeconfig、认证与 RBAC 由 K3s role 管理。普通 `kubectl` 调用不需要宿主机 root、Docker/containerd 组或 root 管理 kubeconfig。rootful Docker socket、`docker` 组和任意 sudo 都具备接近 root 的主机管理能力；不得在授予这些权限后声称 operator 与 root 强制隔离。确需这些能力时按显式系统管理阶段处理，审计账户不得获得。
+
+**▍3. 环境级 Vault KV 记录**
+
+各环境按角色保存三条 KV v2 记录，所有节点消费相同角色公钥授权，不按节点复制配置。调用方必须显式指定 `<environment>`，允许 `sit`、`uat`、`prod`，缺失或不支持时停止，不回退到生产路径。
+
+:::table
+用途|KV CLI 路径|字段
+root SSH 公钥授权|`kv/<environment>/security/root`|`authorized_keys`：root 公钥文本
+operator SSH 公钥授权|`kv/<environment>/security/operator`|`authorized_keys`：operator 公钥文本
+auditor SSH 公钥授权|`kv/<environment>/security/auditor`|`authorized_keys`：auditor 公钥文本
+:::
+
+例如 root 生产路径为 `kv/prod/security/root`，KV v2 API/policy 路径为 `kv/data/prod/security/root`，其他两角色各有独立路径。字段为公钥，不存放 SSH 私钥；多把公钥以换行分隔。暂时允许使用同一公钥，后续应轮换为独立公钥。持有该私钥的人能登录所有获此公钥授权的角色，因此不能声称这些角色在人员身份层面相互隔离。读取授权按消费者和具体记录划分，由 Vault owner 管理。
+
+使用已认证 Vault 管理终端手动初始化：
+
+:::code
+export VAULT_ADDR=https://vault.svc.plus
+python3 scripts/bootstrap_os_identity_keys.py --environment prod \
+  --root-public-keys /path/to/root.pub \
+  --operator-public-keys /path/to/operator.pub \
+  --auditor-public-keys /path/to/auditor.pub
+:::
+
+每个文件可包含多行 SSH 公钥。脚本先检查三个目标均不存在，复用公钥时输出权限边界提示，逐条使用 KV v2 `cas=0` 创建；已有记录或无法确认状态时停止，不能覆盖。三次写入不是原子操作：中途失败会报告已创建路径，应先检查各路径再按 Vault owner 的受控流程完成，不能盲目重跑。已有记录的更新和轮换另按 Vault owner 的受控流程执行。脚本不会生成私钥或将数据写入 Git。`prod` 是示例，目标环境必须明确指定。也可使用 `bash scripts/bootstrap_os_identity_keys.sh`，参数与 Python 入口相同。
+
+旧 `kv/prod/platform/prod-k3s-v6/ssh` 保持原有调用方使用，消费者切换验收前不删除、不复制秘密到新路径。当前新路径只代表规划及初始化工具，不代表已写入或 common 已消费。
+
+**▍4. 新 OS 节点接管顺序**
+
+以后每次接管新 Linux 节点，标准入口先执行 `vhosts/common`：
+
+1. 核实受信 host key、CMDB/inventory、OS、主机名和既有用户/权限，记录脱敏基线。  2. 使用 root 建立或核实 operator/auditor，配置各自公钥、可交互登录 shell、受控 sudo、工作目录和 SSH 策略。  3. 检查父目录、ACL、sudoers、有效组和敏感文件访问；先验证配置，再 reload SSH。  4. 分别验证三用户实际 SSH 登录、OS 允许/拒绝和必要运行操作，保留回执及管理恢复入口。  5. OS 基线通过后，由调用方进入服务、运行时、K3s/K8s 或迁移等对应 role。
+
+新接管入口必须显式启用此基线；通用 role 保留参数开关，避免已有 common 调用方升级后自动批量改账户。接管旧节点先盘点，再逐节点变更。
+
+**▍5. 专业 role 的执行身份选择**
+
+专业 role 执行时显式选择或通过参数指定以下角色，不根据任务名称自动提权：
+
+:::table
+角色选择|OS 用户|调用原则
+系统管理|`root`|初始化、安装、恢复及确需管理能力的步骤；记录调用者、授权范围和结果
+日常运行操作|`operator`|授权范围内的运行操作；目标迁移写入复用 operator，不新增迁移 Linux 用户
+只读审计|`auditor`|只读检查、分析及授权源端导出/比对；不能用于系统或业务状态写入
+:::
+
+迁移调用方分别显式指定源、目标和每个步骤的执行角色；身份缺失或权限不满足时停止，不静默回退到 root。需要更高权限时显式切换系统管理阶段，完成后返回普通操作权限。OS 用户选择不自动赋予数据库或 Kubernetes 权限，由对应 role 校验授权。
+
+本节仅约定跨 role 的身份选择边界，common 不执行迁移、不读取迁移连接，也不实现集群授权。
+
+**▍6. 新节点身份**
+
+新节点统一使用 `root`、`operator` 和 `auditor`。历史节点的账号和数据不由新节点初始化清理；历史回执保留实际身份，不能改写为新身份验收。
+
+**▍7. 最小实现与 OS 验收**
+
+:::table
+检查|通过条件
+显式启用|默认不影响已有调用方；新接管入口显式启用；目标身份和变量缺失时停止
+root|现有管理员仍可 SSH 登录和执行必要管理，避免锁死；日常业务进程不使用其身份
+operator|可 SSH 登录、访问授权工作目录及执行规定运行命令；越权 sudo 和管理秘密读取被拒绝
+auditor|可 SSH 登录并读取授权 OS 状态；实际拒绝系统/业务状态写入、管理秘密读取和提权；允许个人受控目录写入
+SSH 与 sudo|语法校验通过、用户独立授权、父目录/ACL/组及实际访问符合预期；配置变更才 reload
+幂等与恢复|重跑不重建用户或无故重启；保留老管理入口；新增访问可独立撤销，不删除未知配置
+:::
+
+`vhosts/common/tasks/node_bootstrap.yml` 在 hostname 检查之后调用 `os_identity.yml`，完成三用户 OS 身份检查后才输出 common 回执；真实 SSH 验收、主机安全基线和集群身份另行记录。
+
+### 17.3 K3s/K8s role：职责与依赖清单
+
+**案例摘要｜Case B　K3s/K8s role：职责与依赖清单**
+
+一个 role 一种能力。冷启动的依赖链如下：
+
+[[figP2]]
+
+RBAC 必须先就绪才能做真实身份验收；它不能反向依赖尚未签发的三身份凭据，也不能用「管理员 impersonation 成功」代替真实身份登录。主机名、Flux root 名、环境批次目录和 source path 各自独立，不按名字推断流程。
+
+:::table
+项目|当前状态（2026-10-31）|责任与缺口
+k3s_platform_bootstrap|✅ Playbooks #903 已合并|只编排子 role 与顺序
+k3s-cluster-server|✅ #903 已合并|控制面初始化、hostname 校验、API 就绪
+helm_cli / flux_controllers / flux_gitops / k3s_identity|✅ #903 已合并；⏳ 目标集群验收|真实身份、Vault writer 与 RBAC 待验
+k3s 旧安装器|✅ #905 已合并并移除|非默认 CNI 明确拒绝
+k3s_platform_addon、k3s-addon|✅ 已移除|插件改由 GitOps 按环境选择；Flux 接管待逐项验证
+cert-manager / reloader / APISIX / ExternalDNS / NGINX|✅ GitOps #681 已合并|模板未接入任何环境；ExternalDNS 默认 dry-run
+ESO、Caddy|✅ 已有 V6 HelmRelease；⏳ 调谐验收|不再经旧 addon 重复安装
+k3s-reset|⏳ 安全边界待修|破坏性入口，旧默认值需收敛
+三身份与 Flux RBAC|✅ GitOps #682、Playbooks #906 已合并；⏳ 集群验收|kubeconfig 用节点 loopback，远程另设计
+Orchestrator → Playbooks|⏳ 参数交接未贯通|需传 GitOps SHA、资源路径、CMDB SHA、回执路径
+Vault writer 与真实身份|⏳ 未完成|短期身份写三精确路径后，用真实账户验证
+Flux 接管与服务部署|⏳ 无完整运行证据|不得据源码或静态测试宣称完成
+:::
+
+清单本身已随 Playbooks #904 迁入对应目录。主线 role 的输入输出合同：
+
+:::table
+Role|唯一能力|输出/验收
+vhosts/common node_bootstrap.yml|校验节点身份、建 OS 三账户|COMMON_NODE_VERIFIED，只覆盖身份与账户探针
+web_saas_data_volume|核验并准备独立文件系统|挂载点、UUID 证据；不自动重格式化
+k3s-cluster-server|单节点控制面初始化|服务启动与 /readyz；既有安装跳过 ≠ 已升级
+k3s_platform_bootstrap|按依赖编排子 role|失败即停；不代表业务验收
+helm_cli|Helm 客户端|不部署 chart
+flux_controllers|Flux CLI 与控制器|controller rollout 就绪
+flux_gitops|source/root 交接|交接回执，不声称业务 Ready
+k3s_identity|三身份生命周期|独立凭据、KV CAS 归档、真实允许/拒绝
+:::
+
+**完整草案｜专项参考 4　K3s role 职责与依赖清单**
+
+来源：`knowledge/docs/reference/platform-delivery/K3s-role职责与依赖清单.md`（53492be），全文收录。
+
+> 归档说明：本文保留原有 role 清单与各时点证据；当前 V6 的实际状态请以 [V6 规划与部署状态归档](PROD-K3S-V6-规划与部署状态归档.md) 顶部最新条目为准，勿将历史运行记录视为当前验收。
+
+> 来源：Playbooks `main` commit `7b7f44164ef1429dc86c01582393e704257ac386` 的 `roles/vhosts/k3s_platform_bootstrap/k3s-role-map.md`；此为归档副本，运行状态需以最新回执为准。
+
+**▍最新调用链核对（2026-10-31）**
+
+:::table
+环节|现状和重构项
+Orchestrator → Playbooks|运行 [41200258539](https://github.com/ai-workspace-infra/Platform-Orchestrator/actions/runs/41200258539) 的 Resolve、IaC/Provision 成功；[Deploy 子运行 41200534051](https://github.com/ai-workspace-infra/Platform-Orchestrator/actions/runs/41200534051) 从 CMDB 和 GitOps 选中节点后调用 Playbooks。Deploy job 仍混有原生 Web SaaS 变量及逻辑，应逐项迁移至对应 owner，先建立调用链再移除旧实现。
+common / OS 身份|operator 登录检查因 Ansible 参数提前展开 `$HOME` 失败；[Playbooks #927](https://github.com/ai-workspace-infra/playbooks/pull/927) 已提出修复并拆分诊断，尚待合并。只读复现和修正后的三项检查均有 `changed=0` 的现场证据。
+主机安全基线|`k3s_platform_bootstrap.yml` 使用 `vhosts/common` 的 `node_bootstrap.yml` 入口；该入口执行 hostname、OS 身份和数据盘，但未调用 `common/tasks/main.yml` 中的 SSH、fail2ban、limits 和防火墙任务，不能据此宣称完整基线完成。应审查可复用的基线任务和 SSH/K3s 网络规则，补齐调用及真实回执，避免直接套用会重写 hostname/hosts 的旧入口。
+数据盘、K3s、Flux|本次在身份检查处停止；auditor 复核 `/dev/sdc` 100 GB 未格式化/挂载，K3s 未运行。后续步骤与真实身份/RBAC、服务验收均无成功回执。
+:::
+
+上表是实际运行状态；下方带日期的条目保留历史快照。不得因角色存在、代码合并或先前 CI 通过而标记当前节点已验收。
+
+**· 工作流 DAG 与矩阵重构目标**
+
+控制面工作流的最长 `needs` 串联链控制在 3–5 个 job；矩阵的同层副本按一个阶段计数。根工作流当前已有 Resolve → IaC/Provision → Deploy → Migrate/Configure → Verify 五个阶段；Deploy 子工作流仍包含多条混合的旧服务链，需要按实际依赖重构，不能通过隐藏依赖或把执行代码塞进编排器来缩短图。
+
+在 Orchestrator `main` `2e25af0f` 静态核对，`selfhost-stage-deploy.yml` 的最长链为 **10 个 job**：
+
+:::code
+parent-gate → provision → capture_web_saas_baseline → update_gitops_tags
+→ initialize_empty_web_saas → deploy_web_saas → accept_web_saas_upgrade
+→ deploy_agent_proxy_non_iac → deploy_monitor_agent → stage-output
+:::
+
+仓库深度策略目前对该文件保留 10 层历史例外；目标是在真实 owner 调用和回执完整的前提下逐步降至最多 5 层，并删除例外。历史依赖不能仅因图表过长而删除；涉及数据初始化、变更、代理和监控的路径需分别确认其实际顺序与影响。
+
+:::table
+阶段|责任与矩阵|输出和失败传播
+1 Resolve|控制面解析输入、固定基础仓库 SHA、核对发布记录与 GitOps 唯一目标|输出目标清单和作用域；不匹配即失败
+2 IaC|按声明的 provider/account/namespace 矩阵派发 IaC owner；相同 state 必须串行|各目标独立 state 与 CMDB 回执；失败目标不得进入部署
+3 Bootstrap / Deploy|按 CMDB 节点矩阵调用 Playbooks owner：common、数据盘、K3s、身份和 Flux；Flux 管理插件及业务资源|验证节点、身份和 Flux 交接回执；节点失败不得冒充成功
+4 Migrate / Configure|仅对应明确选择的迁移或配置操作派发 owner；`deploy` 不隐式执行数据迁移|按目标收集结果；跳过必须可区分于成功
+5 Verify / Report|汇总各 owner 和矩阵项回执，按实际执行范围调用只读验收|缺失、失败、跳过和未运行分别记录；CI 成功不能代替真实身份/业务验收
+:::
+
+矩阵输入来自本次固定的 GitOps 声明和 IaC CMDB，不能依据节点名或批次拼接拓扑；矩阵输出须逐目标关联，避免只保留最后一个输出。需要不同权限、审批或 runner 的工作保留独立 job，实际顺序由 owner 或 Flux 依赖表达。拆分前记录现有调用方和操作语义，按 owner 实现 → 切换 caller → 验证回执 → 删除旧副本推进；本节为目标设计，尚无对应重构完成回执。
+
+**▍当前主线与依赖**
+
+:::code
+IaC CMDB + 本次解析到 commit 的 GitOps 期望配置
+  → 入口绑定目标
+  → common：hostname、OS 三账户/组，并调用 web_saas_data_volume 准备独立数据盘
+  → k3s_platform_bootstrap（只编排）
+      → flux_gitops / k3s_identity：输入预检
+      → k3s-cluster-server：控制面初始化及 API 就绪
+      → helm_cli：Helm 客户端
+      → flux_controllers：Flux 控制器及 rollout
+      → flux_gitops：source/root 交接及独立回执
+      → k3s_identity：三套认证凭据交付及真实允许/拒绝
+      → flux_workload_readiness：声明的 source、Kustomization 和 HelmRelease 就绪证据
+  → Flux 按 GitOps 依赖调谐 RBAC、ESO/TLS、Vault、DB、监控和业务资源
+:::
+
+RBAC 必须先就绪才能执行真实身份权限验收；不能让它反向依赖尚未签发的  三身份凭据，也不能用“管理员 impersonation 成功”替代真实身份登录。  主机名、Flux root 名、环境批次目录和 source path 各自独立，不按名字推断流程。
+
+**▍当前相关 role 列表（2026-10-31）**
+
+以下状态区分仓库 `main`、待合并候选和生产实际验收。Role 存在或 CI 通过不等于目标集群已完成部署。
+
+:::table
+项目|当前状态|当前责任与缺口
+`vhosts/common` 与独立数据盘|✅ [Playbooks #916](https://github.com/ai-workspace-infra/playbooks/pull/916) 已合并；❌ 目标节点盘就绪待验收|通用 K3s 入口由 common 调用数据盘 role，挂载及 UUID 验证通过后才发出 common 回执；此前节点的 100 GB 盘未挂载、无文件系统，需实际执行后重新核验
+PROD-K3S-V6 当前节点只读观察|❌ 2026-10-31 18:16 Asia/Shanghai SSH 现场检查；非流水线回执|hostname `prod-k3s-v6`、Debian 13、2 vCPU/约 3.8 GiB；root/operator/auditor 均成功 SSH 登录。operator `/bin/bash` 且 home 可写，sudo 仅限 `systemctl is-system-running`；auditor 不能读 `/etc/shadow`、写 `/etc` 或使用 sudo。`/dev/sdc` 100 GB 无文件系统/挂载；K3s/kubectl 和 operator kubeconfig 不存在；`fail2ban`、`auditd`、`ufw` inactive。云防火墙需由 IaC 核验。检查只读，未改变生产状态
+`k3s_platform_bootstrap`|✅ Playbooks #903 已合并|只编排子 role 及依赖顺序
+`k3s-cluster-server`|✅ #903 已合并|K3s 控制面初始化、hostname 校验、API 就绪；不承担插件发布
+`k3s-cluster`|✅ #903 已删除旧实现|两个安装入口已切换到 `k3s-cluster-server`
+`helm_cli`、`flux_controllers`、`flux_gitops`、`k3s_identity`|✅ #903 已合并|分别负责 Helm 客户端、Flux 控制器、声明交接、三身份交付和验证；真实身份、Vault writer 与 RBAC 仍需目标集群验收
+`k3s` 旧安装器|✅ [Playbooks #905](https://github.com/ai-workspace-infra/playbooks/pull/905) 已合并并移除旧实现|安装由 server 负责；非默认 CNI 明确拒绝，需另行交付独立的 CNI 能力
+`k3s_platform_addon`、`k3s-addon`|✅ 已从当前代码及调用方移除|平台插件由 GitOps 按环境显式选择；现有发布的 Flux 接管与运行验收仍需逐项验证
+cert-manager、reloader、APISIX、ExternalDNS、NGINX Ingress|✅ [GitOps #681](https://github.com/ai-workspace-infra/gitops/pull/681) 已合并|已提供可独立选择的 Flux 模板，未接入任何环境；ExternalDNS 默认 dry-run
+ESO、Caddy|✅ GitOps 已有 V6 HelmRelease 声明；❌ 实际调谐及服务验收待核验|不再通过旧 addon role 重复安装
+`k3s-reset`|❌ 安全边界待修复；[Playbooks #915](https://github.com/ai-workspace-infra/playbooks/pull/915) 待合并|空节点无操作修复已在目标节点验证；已安装集群的重置仍需单独验证，不属于初始化依赖
+`k3s_runtime_secret_sync`|✅ 独立运维入口|不属于 bootstrap；通用 KV 同步与环境专用投影仍需梳理
+OS operator 与 K3s 客户端前置|✅ Playbooks [#925](https://github.com/ai-workspace-infra/playbooks/pull/925) 已合并；❌ 目标节点 common 正式回执待执行|common 在创建时配置并检查 operator 交互 shell。现场 SSH 已证明 shell/home 可用，但 `kubectl`/`k3s` 未安装；common 不交付 kubeconfig/RBAC，也不增加 sudo 或 runtime socket 权限
+operator kubeconfig 与 RBAC|⚠️ Playbooks [#924](https://github.com/ai-workspace-infra/playbooks/pull/924)、GitOps [#686](https://github.com/ai-workspace-infra/gitops/pull/686) 检查通过、待合并|`k3s_platform_bootstrap` 编排 K3s identity role 为 operator 交付默认 kubeconfig；GitOps RBAC 声明限定业务 namespace 读取 Pods/ReplicaSets/Events 与 Deployment scale-only。现场 K3s 未安装、无 kubeconfig，真实身份 allow/deny 未运行
+三身份与 Flux RBAC|✅ [GitOps #682](https://github.com/ai-workspace-infra/gitops/pull/682)、[Playbooks #906](https://github.com/ai-workspace-infra/playbooks/pull/906) 已合并；❌ 目标集群验收待执行|三身份及 RBAC 基础声明已在 main；operator 的额外运行态读取由待合并 #686 补充。operator 默认 kubeconfig 由 K3s identity role 管理，不能由 common 映射。真实认证、权限允许/拒绝仍待目标集群运行
+Orchestrator → IaC CMDB → Playbooks|⚠️ 参数选择与调用入口已合并；生产端到端执行未验收|[Orchestrator #1585](https://github.com/ai-workspace-infra/Platform-Orchestrator/pull/1585) 已合并：根据 IaC CMDB catalog 精确选择目标声明，并支持从 GitOps host vars 解析 K3s bootstrap reader、SSH Vault 字段与三身份 writer 参数。GitOps [#684](https://github.com/ai-workspace-infra/gitops/pull/684) 与 Playbooks [#920](https://github.com/ai-workspace-infra/playbooks/pull/920) 已合并，但生产 reader 认证与目标路径 allow/deny 尚无新回执。最近 apply [#41187083044](https://github.com/ai-workspace-infra/Platform-Orchestrator/actions/runs/41187083044) 使用合并前版本，在旧 Vault `ref` claim 处停止，common、数据盘、K3s/Flux 均未运行；必须从当前 main 重新验收完整调用链
+Vault writer 与真实身份验收|❌ 运行验收未完成；[Playbooks #918](https://github.com/ai-workspace-infra/playbooks/pull/918)、[GitOps #683](https://github.com/ai-workspace-infra/gitops/pull/683) 已合并|K3s identity writer policy/role 已定向应用，精确授权三条 create/read 路径并绑定受保护 PROD Deploy 身份；该身份负责签发凭据归档，不负责节点 SSH 登录或 common 公钥读取。真实 JWT 登录、相邻路径拒绝和三账户 RBAC 尚待验证
+common Vault 公钥 reader|✅ GitOps [#684](https://github.com/ai-workspace-infra/gitops/pull/684)、Playbooks [#920](https://github.com/ai-workspace-infra/playbooks/pull/920) 已合并；❌ 生产认证与路径拒绝未验收|声明和 HTTPS KV v2 reader 实现已在 main；仍需实际认证验证只允许三条 OS 公钥记录并拒绝相邻路径
+Verify 阶段前置条件|✅ [Orchestrator #1587](https://github.com/ai-workspace-infra/Platform-Orchestrator/pull/1587) 已合并；⚠️ [#1589](https://github.com/ai-workspace-infra/Platform-Orchestrator/pull/1589) owner-contract 修复待合并|Verify 要求 Resolve、IaC/Provision、Deploy 成功后才执行；#1589 的 workflow 检查已通过但仍 OPEN
+Flux 接管和服务部署|❌ 尚无完整运行验收证据|最近 apply 在 Provision 阶段失败，Deploy/Migrate/Verify 均跳过；最近只有 push/PR CI，无后续生产 `workflow_dispatch`。没有 common、数据盘、OS/K3s 身份、K3s/Flux、Vault、PostgreSQL、Observability、Web SaaS、Ingress 的本次运行就绪证据。待相关 PR 合并后从当前 main 重派并记录真实回执
+:::
+
+**· 可选检查项：Vault OIDC**
+
+按本次部署或工作流实际使用的身份提供方选择检查；这两项不是每次 K3s  初始化或服务部署的必选门禁。选中后，核对本次固定 GitOps commit 中的声明、  Vault role 的精确身份绑定、所引用策略的最小路径和能力，并通过实际认证验证  授权路径允许、相邻路径拒绝。未选择时标记“不适用”，不能据此推断已配置或已验收。
+
+:::table
+可选检查项|适用范围|核对内容|状态记录规则
+`vault_github_oidc`|使用 GitHub Actions OIDC 向 Vault 认证的任务|仓库、workflow、ref/environment claims；GitOps policy 引用；最小路径授权及允许/拒绝结果|仅按需检查；本项不代表 Vault role 或运行身份已验收
+`vault_google_oidc`|使用 Google OIDC 向 Vault 认证的任务|issuer、audience、subject claims；GitOps policy 引用；最小路径授权及允许/拒绝结果|仅按需检查；本项不代表 Vault role 或运行身份已验收
+:::
+
+OIDC 可选检查不替代 K3s `root`、`operator`、`auditor` 的独立 Kubernetes  认证和 RBAC 验收，也不自动授权修改 Vault auth mount、role 或 policy。  上述 SSH 状态是指定时刻的人工现场观察，不构成 `COMMON_NODE_VERIFIED`、  K3s/Flux bootstrap 或正式流水线回执；完整安全基线、数据盘 UUID/挂载证据和  云防火墙状态仍须由各自 owner 执行并验收。
+
+当前清单文件迁入本目录的 [Playbooks #904](https://github.com/ai-workspace-infra/playbooks/pull/904) 已合并。所有角色遵循 `AGENTS.md` 的单一职责规则。
+
+**▍主线执行 role**
+
+:::table
+Role|唯一能力|前置条件|输出/验收
+`vhosts/common` 的 `node_bootstrap.yml`|校验节点身份、建立 OS 三账户并串联声明的独立盘准备|CMDB 精确节点、受控 SSH 公钥；既有节点和 PV 亲和性检查|主线要求盘挂载及 UUID 证据后才产生 `COMMON_NODE_VERIFIED`；不代表完整主机安全基线
+`vhosts/common` 的 OS Vault reader|以受控 Vault 会话读取三账户公钥|明确的 HTTPS Vault、目标环境和只读会话；证书严格校验；分别依赖 GitOps reader 声明和精确只读 Vault role|#920 候选使用 KV v2 HTTPS 接口，无需在 runner 安装 Vault CLI；缺失或拒绝读取时失败；目前没有 V6 实际调用回执
+`web_saas_data_volume`|核验并准备声明的独立文件系统|CMDB 实例、卷及设备匹配；空盘初始化需显式授权|挂载点、UUID、文件系统证据；不自动重格式化已有文件系统
+`k3s-cluster-server`|初始化单节点 K3s 控制面|common 已设置 hostname；要求独立盘时卷证据已通过|K3s 服务启动及 API `/readyz`；既有安装跳过安装器，不等于已升级
+`k3s_platform_bootstrap`|按依赖顺序编排子 role|已完成入口绑定、common 和数据盘角色|子 role 顺序执行；失败停止后续执行，不代表业务服务验收
+`helm_cli`|Helm 客户端准备|主机包/CA/网络|现有客户端或安装成功，不部署 chart
+`flux_controllers`|Flux CLI 与控制器初始化|K3s API、私有 admin kubeconfig|controller rollout 就绪
+`flux_gitops`|经审查的 source/root 交接|解析过 commit 的 GitOps 配置与 ready Flux|Flux 交接回执，不声称业务 Ready
+`k3s_identity`|OS 用户到 Kubernetes 主体的映射及三身份生命周期|common 已建立 OS 三账户、实际 CA/UID、GitOps RBAC、受控 Vault writer|独立密钥/证书/私有 kubeconfig；当前仅 `operator` 的 `~/.kube/config` 指向其受限身份配置；KV CAS 归档、真实认证与允许/拒绝
+`flux_workload_readiness`|只读观察声明的 Flux 对象|三身份任务完成且 GitOps 提供待观察对象|独立 `FLUX_OBJECTS_READY` 回执；记录各对象 revision，不替代应用接口、数据和用户流程验收；候选随 #918，未生产验证
+:::
+
+生成器、模板、默认值及验收脚本随能力移动；没有复制第二套实现。  现有 `k3s_platform_*` 和 `k3s_identity_*` 为调用合同，未增加环境专用别名。
+
+**▍输入、证据与重复执行边界**
+
+:::table
+阶段|必要输入与失败条件|可记录证据和重复执行边界
+入口选择|`MATRIX_HOST`、CMDB 文件及 SHA、固定 GitOps checkout/SHA、仓库内资源声明路径和新的回执路径；目标/区域/实例/盘不匹配即失败|本次 GitOps/Playbooks SHA、CMDB SHA 和实例 ID；当前入口仍校验 Linode 字段，跨 provider 不可假定已支持
+common|节点名称、OS 身份和声明的独立盘输入；已有节点/PV 亲和性冲突或磁盘未就绪即停止|主线的 `COMMON_NODE_VERIFIED` 包含节点、OS 身份、实例 ID 和挂载证据；不表示 fail2ban、auditd、UFW 或云防火墙通过
+独立盘|精确卷 ID、设备、挂载目标及文件系统；他处挂载、未知签名或目标已有文件时停止|记录真实 UUID 和挂载结果；已挂载时核对同一设备并保留数据；仅无签名空盘可在显式授权下初始化
+控制面及 Flux|hostname、K3s 版本、私有管理 kubeconfig、声明的 source/root/path；声明或实际节点/版本/磁盘不匹配时失败|`FLUX_HANDOVER_VERIFIED` 记录 source/applied revision 与集群和节点标记；不表示 RBAC、身份或业务就绪。当前 active 验证器约束单节点及 ext4
+三身份|声明的 RBAC Kustomization 当前 generation Ready 且应用所选 commit；独立短期 Vault writer、实际 CA、UID 和 allow/deny 清单|master 签发独立凭据、验证信任链并以 KV v2 CAS=0 写入，CA 私钥留在 master；不同记录、部分签发或过期证书失败，不以删除数据强制重试
+服务与 DNS|GitOps 依赖图、服务所需的受控凭据与制品、目标环境声明|分别记录各服务健康、接口和数据证据；DNS 变更必须符合单独声明与授权，Flux 交接回执不是流量切换或服务验收
+:::
+
+**回执时序：** 当前 `flux_gitops` 在 `k3s_identity` 运行之前写入交接回执。  身份任务失败时该文件仍可能存在；消费者必须同时检查整个 playbook/owner 进程退出状态及真实身份验收，不能仅凭文件或 `FLUX_HANDOVER_VERIFIED` 判定整条主线成功。
+
+入口的身份字段断言在 common 和数据盘之前；`flux_gitops` 与 `k3s_identity` 的完整 role 预检则在两者之后。因而缺少某些 Flux 输入时，不能声称所有主机或数据盘操作都尚未发生；应先在 caller 补足前置检查。
+
+匹配已有挂载和受保护的身份状态可支持部分重试；当前没有目标节点的完整重复运行证据。数据库版本、SQL schema、Vault Raft、监控存储及其他持久卷的升级或迁移仍按新集群和独立存储处理；代码或回执的回退不等于数据回滚。
+
+**▍验证和发布边界**
+
+本次同步受影响的 Python 包装器、测试导入、Ansible 入口和 CI 路径过滤。  契约测试检查编排器没有直接副作用、独立 role 可解析、前置失败不会进入  安装，以及真实身份生成器的证书/目标绑定/CAS 行为。生产验证必须另记  实际 GitOps/Playbooks SHA、CMDB 实例、运行 ID 与真实身份/服务结果。
+
+本次已合并的拆分未执行卸载、原地升级、删盘、数据迁移、DNS 更新或凭据轮换。  回退 PR 只恢复代码调用路径，不回滚数据，也不撤销已签发证书。
+
+**▍历史 role 与迁移记录**
+
+以下表格记录 #903 完成时的旧实现与处理；后续变化以文首状态表和对应 PR 为准。
+
+:::table
+原 role|实际职责/问题|本次处理与后续边界
+`k3s_platform_bootstrap`|原来混合 K3s、Helm、Flux、交接、凭据生成与验收；README 含暂停式旧描述|改为仅调用子 role 的编排器；执行实现全部归对应子 role
+`k3s-cluster-server`|原 bootstrap 同时安装 K3s/Flux/ESO，写业务 namespace/Vault token Secret；静态 vars 写死目标；其余五个 action 文件为空|保留为唯一主线控制面安装 role；替换旧混合 bootstrap，删除空 action、静态 vars、无调用模板与旧生成脚本。只实现初始化，非 bootstrap 的 action 明确拒绝
+`k3s-cluster`|脚本安装 K3s，随后隐式装 nerdctl/CNI、本地 Registry 和自签 CA；重复安装且夹带额外资源|合并控制面能力到 `k3s-cluster-server`；更新两个 playbook 调用方后删除目录。新主线不隐式创建 Registry；此行为变化必须在审查中确认
+`k3s`|旧脚本混合 K3s/Helm/CNI；meta 自动依赖 common；含固定域名和忽略错误|K3s 安装统一到 server，调用方切换，旧实现删除。非默认 CNI 明确拒绝，需由独立 GitOps 声明与执行链另行交付
+`k3s_platform_addon`|直接 Helm 管理 cert-manager/ESO/reloader/Caddy/APISIX/external-dns，默认含业务路由与域名；与 GitOps 资源 owner 重叠|旧实现及入口已移除；环境按需选择 Flux 模板，现有发布的接管另行验证
+`k3s-addon`|脚本管理 ingress/DNS，meta 自动安装 cert-manager，存在忽略错误与销毁操作|旧实现及调用方已移除；Ingress 和 DNS 由经审查的 GitOps/IaC 交付
+`k3s-reset`|调用重置脚本，旧默认 `cluster_reset=enable`；属于破坏性恢复|独立保留，不列入初始化依赖。本次未执行；显式确认、精确范围、备份和恢复验证等防护仍需另行收敛
+`k3s_runtime_secret_sync`|Vault KV 字段 CAS 同步，并包含 dev-registry 投影模式；不是 K3s 安装/RBAC|保留独立运维入口，不进入 bootstrap。后续拆分通用 KV 同步与环境投影；不能自动扩大路径权限或覆盖业务记录
+:::
+
+这些历史 role 的问题是盘点结论；本次未对所有旧实现逐一改造，不能将  “本次主线不调用”写成“全仓陈旧代码已清理”。
+
+**· 入口与历史调用迁移**
+
+:::table
+入口|调用路径|范围
+`k3s_platform_bootstrap.yml` / `scripts/pipeline/bootstrap-k3s.sh`|CMDB → common（调用独立盘 role）→ bootstrap 子 role DAG|正常 IaC 交付
+`k3s_platform_bootstrap_with_gitops.yml`|bootstrap 子 role DAG|调用方先完成 common/存储及非敏感输入绑定
+`k3s_identity_bootstrap.yml`|直接 `k3s_identity`|已有 master 的独立身份初始化，不重装集群
+`k3s-cluster.yaml`、`setup-k3s-node.yaml`、`init_k3s_cluster_server`|直接 `k3s-cluster-server`|仅初始化控制面，目标组统一 `k3s`；不再隐式部署 Registry/Flux/ESO
+`k3s_reset.yml`、`reconcile_k3s_runtime_secrets.yml`|保持独立旧入口|非新 bootstrap 的依赖，不自动执行
+:::
+
+空的 worker role 和入口已移除。独立脚本模拟安装 Flux/ESO 不是本 DAG 验收；  OrbStack 历史模拟探针不构成拆分后调用链或幂等性的证据。
+
+旧 Dev reusable workflow 仍固定 checkout 历史 Playbooks SHA，不会自动采用本次  拆分；其专用 adapter 仍依赖旧 source/root 默认值且未提供完整身份合同。  它不属于已接通的新入口，更新该消费者前需从所选 GitOps 声明补齐配置与  common 前置，不能仅移动 checkout SHA 或据其旧回执宣称本次部署通过。
+
+### 17.4 环境与业务发布解析：最小实施
+
+**案例摘要｜Case C　环境与业务发布解析：最小实施（目标草案）**
+
+> 状态：**目标草案，2026-10-31**。本节描述期望契约，现有工作流尚未全部实现，**不作为部署或验收回执**。✅ 表示已从当前声明或代码核对；⏳ 表示仍需实施或取得真实验收证据。
+
+**1. 目标与职责。** 基础仓库默认选择 `main`，运行时各自解析一次 commit SHA 并传给下游；业务发布记录固定制品版本和 digest。业务发布 tag、工作流运行 ref、节点名和 state 身份是四个独立字段，不因字符串相同就自动绑定。
+
+:::table
+仓库|职责|tag / 版本引用
+GitOps|环境、业务目标、资源、身份目标和 Flux 声明；保存非敏感引用|默认 main，记录本次解析的 commit SHA；可按需显式选 tag
+IaC|云资源、DNS、state、云事实及 CMDB|默认 main，记录本次解析的 commit SHA；可按需显式选 tag
+Playbooks|主机、K3s、身份、服务、数据库、备份恢复和迁移执行|默认 main，记录本次解析的 commit SHA；可按需显式选 tag
+Platform-Orchestrator|输入、授权、DAG、派发、等待及回执汇总|默认 main，记录本次工作流 commit SHA；运行 ref 的 Vault OIDC 授权单独校验
+Artifacts|构建、镜像、Chart、制品打包与发布|构建配置默认 main 并记录 SHA；业务制品用发布 tag + 核对后的不可变 digest
+:::
+
+**2. 发布解析链。**
+
+[[figP3]]
+
+- **1）发布 tag**：解析出环境、业务范围及 chart/镜像版本或 digest。现有 PROD Vault role 接受工作流 `v*` tag / `release/v*` 分支，优先用不可变 tag；基础仓库默认 `main` 的授权差异见 3.1 检查清单。
+- **2）环境与业务**：解析结果形成不可变运行记录；dispatch 输入若也给了环境或业务，只做一致性校验，冲突即停止。
+- **3）GitOps 目标声明**：用环境、业务、provider、account 和声明中的目标标识查找**唯一**目标；找不到或匹配多个都停止。
+- **4）IaC**：消费声明中的资源路径、workspace 和 state key，输出节点名、地址、数据盘等 CMDB 事实；tag 不直接拼接 state key。
+- **5）Playbooks/K3s**：使用本次解析的 GitOps commit 和 IaC CMDB，从声明读取节点名、K3s 配置和 Flux root/path，不按 `prod-v6` 分支判断。
+- **6）Flux**：接管声明中的 source、Kustomization 和 HelmRelease，使用发布记录明确的业务制品版本。
+
+`v*` tag 能表明「这是 PROD 发布」，但 tag 字符串本身**不能唯一确定** `web-saas` 和 GitOps 目标。需要补一份可审阅的**发布记录**，把 tag 关联到环境、业务和制品，再由 GitOps 声明确定节点及 state。发布记录应包含来源仓库/commit、镜像 digest、Chart 版本或 digest、配置版本及候选指纹；它的 owner、schema 与消费方式 ⏳ 仍待实现。基础仓库无需同步创建同名 tag。
+
+**3. SIT、UAT、PROD。**
+
+:::table
+环境|目标发布规则|当前 Vault role ref（GitOps main d9ddcf56）|待统一
+SIT|仅接受 Feature ID 关联的 GitHub task/issue 和制品 tag；固定 PR head、基础分支 SHA、完整构件和数据基线，部署独立 SIT namespace；排除 daily-build-*|refs/pull/*/merge、refs/heads/*|由受信编排器校验 task/issue、feature、制品 tag、仓库、workflow、候选、目标及 SIT 角色；ref 本身不代表部署授权
+UAT|默认用合并后的固定候选；明确选合并前 UAT 时用冻结候选；候选或配置变化按影响重验|refs/heads/main、release/*、bugfix/*、daily-build-*（分支）、refs/tags/daily-build-*|目标：排除 refs/heads/release/*，其余保留；Vault role 与调用链 ⏳ 待改并验收
+PROD|业务用经审查的不可变版本或 digest，tag 关联明确业务与目标；状态变更按独立集群方案|refs/tags/v*、refs/heads/release/v*|基础工作流默认 main 与现有 PROD role ref 不一致；需在受审查的认证契约中解决并做允许/拒绝验收
+:::
+
+默认流程是 **PR → SIT → 合并 → UAT → PROD 受控滚动升级**；用户明确选择时可走合并前 UAT。UAT 通过后，核对发布记录、业务范围、不可变制品和生产目标，按已有授权与发布门禁进入 PROD；部署后验证实际运行版本和关键业务流程。候选、配置或数据基线变化时按影响重新验收。**CI 成功不是运行验收**；SIT/UAT 与生产凭据隔离，公共证书等共享来源逐项审查授权。
+
+PROD 滚动方式按变更类型选：纯展示的无状态 UI、向后兼容且无需 SQL schema 变更的小型 API 修复，可在所属单元原地滚动，保留旧制品并验证回退路径。PostgreSQL、Vault Raft、监控存储及其他持久卷工作负载的版本验证，以及 SQL schema 变化或数据迁移，**必须用新集群和独立存储**；数据库迁移使用空目标库并先验证备份恢复，写入切换另行评审。**代码回退不等于数据回滚。**
+
+**3.1 应用 tag 与 Vault OIDC 检查清单。** 代码快照为 Orchestrator `main` `2e25af0f`、GitOps `main` `d9ddcf56`，后续运行须重新核对。
+
+:::table
+状态|应用制品与候选
+✅|当前 selfhost 函数在 SIT/UAT 拒绝 v* 和 prod-v*，提示改用 daily-build-* 或 uat-daily-build-*
+⏳|实现 SIT 正向候选校验：仅接受 Feature ID 关联的 task/issue 与制品 tag，拒绝 daily-build-*；tag 必须解析到已核对的不可变 digest（当前函数尚未实现）
+⏳|定义并实现 UAT 完整正向 tag 白名单；当前没有完整白名单，未明确拒绝的格式可能通过
+✅|当前函数允许 PROD 使用 v* 及部分 prod-v<数字>-* 格式；基础设施专用操作可省略应用 tag
+⏳|按统一规范审查 PROD 格式，清理仅以批次名字驱动运行逻辑的专用规则；不把现状当最终规范
+⏳|SIT 的 Feature ID、GitHub task/issue、制品 tag 与候选的关联校验（受信编排器侧）
+:::
+
+:::table
+状态|工作流 ref 与 Vault 身份
+⏳|基础仓库默认 main 的运行 ref 与各环境 Vault role 允许范围对齐；检查跨环境 ref 范围重叠，工作流 ref 不匹配时停止
+⏳|Vault role 限定仓库、workflow、环境、audience 和有效期；分别验证目标身份允许访问、跨环境/相邻路径及不匹配 ref/workflow 被拒绝，记录脱敏证据
+⏳|检查应用 tag、发布记录、目标环境、GitHub Environment 和 Vault role 一致，不存在静默跨环境回退
+:::
+
+:::table
+状态|验收记录
+⏳|保存候选指纹、各基础仓库解析的 commit SHA、工作流 ref、应用 tag、目标声明及运行回执；只读配置核对不能代替真实身份或服务验收
+:::
+
+**4. 目标、节点和 state。** GitOps 目标声明提供环境、业务、provider、account、资源 manifest、节点名与 state 身份；IaC 只消费经核对的目标并产出云事实；Playbooks 根据本次 CMDB 和声明执行通用 role。节点名由声明决定；tag 选择发布内容，不能单靠名字判断资源所有权。`prod-k3s-v6` 是当前**节点名**，`PROD-K3S-V6` 是**集群名**，它们不应成为通用代码里的条件分支。既有 state/workspace 与资源的一一对应必须保留，换发布 tag 不自动生成新 state 或替换资源；新集群和独立存储须有各自明确声明。Flux 根名和 source path 分别声明，不能推断必须等于节点名。
+
+**5. 验证与交付边界。**
+
+:::table
+项目|状态
+五仓职责与 main 默认规则|✅ 已确定；⏳ 运行时 SHA 记录与 caller 链路按实际运行验收
+SIT 功能泳道候选契约|✅ 规范已确定；⏳ 与 selfhost tag 路由及 Vault 身份的端到端交接待实施验收
+环境与业务发布记录|⏳ schema、owner、tag→业务映射及消费链待交付
+目标与 state 通用解析|⏳ 现有代码仍含 prod-v* 特判；需 owner 实现、caller 切换与验证
+PROD main 工作流 Vault 授权|⏳ 当前声明只允许 v* tag 和 release/v* 分支；修改需绑定受控身份并验证允许及跨环境拒绝
+:::
+
+关联：Case A（OS 三身份）、Case B（K3s role 依赖）、Case D（变更记录模版）；功能泳道遵循 6.12。现有状态以实际运行回执为准。
+
+**完整草案｜专项参考 1　环境与业务发布解析：最小实施草案**
 
 来源：`knowledge/docs/reference/platform-delivery/环境与业务发布解析-最小实施草案.md`（53492be），全文收录。
 
@@ -1943,7 +2215,7 @@ PROD `main` 工作流 Vault 授权|❌ 当前声明只允许 `v*` tag 和 `relea
 
 关联文档：[V6 冷启动规划与部署状态归档](PROD-K3S-V6-规划与部署状态归档.md)；[Linux OS 三类操作身份](Linux-OS三类操作身份-最小实施草案.md)；[K3s role 职责与依赖清单](K3s-role职责与依赖清单.md)。功能泳道遵循 `feature-lane-release-workflow`；现有状态以实际运行回执为准。
 
-### 18.3 专项参考 2　GitHub Actions 流水线实施草案
+### 17.5 GitHub Actions 流水线实施草案
 
 来源：`knowledge/docs/reference/platform-delivery/GitHub-Actions流水线实施草案.md`（53492be），全文收录。
 
@@ -2168,294 +2440,30 @@ daily-main-snapshot.yaml           制品快照与选择环境派发
 
 因此，**现状不是 Daily → IaC → Hybrid → Selfhost/Serverless 的串行父子链**；特别是现有 Selfhost 的 Infra 阶段调用 IaC，方向与分组缩进相反。若未来要使 IaC 成为 Hybrid 的上层调用者，必须先单独设计无循环的职责和调用切换，不能在保持现有父流水线 job 与 `needs` 不变的前提下假定已实现。保持当前父入口的方案是将 IaC 作为可复用资源交付能力，由声明驱动的目标入口按需调用。
 
-### 18.4 专项参考 3　Linux OS 三类操作身份：最小实施草案
+### 17.6 PROD-K3S 变更记录与冷启动规划
 
-来源：`knowledge/docs/reference/platform-delivery/Linux-OS三类操作身份-最小实施草案.md`（53492be），全文收录。
+**案例摘要｜Case D　PROD-K3S 变更记录模版**
 
-> 来源：Playbooks `main` commit `7b7f44164ef1429dc86c01582393e704257ac386` 的 `roles/vhosts/common/three-role-design.md`；此为归档副本，运行状态需以最新回执为准。
-
-状态：OS 账户设计已收敛；`os_identity.yml` 和独立入口已实现，部署和真实账户验收以运行回执为准。
-
-**▍1. 职责边界**
-
-`vhosts/common` 仅负责 Linux OS 基线：主机名与身份检查、用户/组、SSH 公钥授权、受控 sudo、目录与文件权限，以及 OS 侧允许/拒绝验收。
-
-所有 Linux 节点采用同一套用户名，不因是否安装 Kubernetes 而改变。
-
-- K3s/K8s 的认证主体、kubeconfig、RBAC 和集群权限验收由对应集群 role 实现。
-- Linux OS 用户与 Kubernetes 主体的映射、各自 kubeconfig 的生成/交付，以及指定用户的默认 `~/.kube/config` 均由 K3s role 实现；`k3s_platform_bootstrap` 只编排对应子 role。common 不写入 kubeconfig，也不授予集群权限。
-- 数据迁移及数据库连接授权由对应迁移/数据库 role 实现，调用方显式选择执行角色。
-- Docker 安装和运行配置由对应运行时 role 实现；common 仅负责 OS 账户和权限边界。
-
-上述专业 role 消费 common 已建立的 OS 用户，不在 common 中创建集群凭据、数据库角色或迁移连接。
-
-**▍2. 统一用户名与 SSH 登录**
+每次动生产集群，都留一份同样结构的变更记录。下面的模版从 2026-10-30 的 PROD-K3S-V6 独立节点冷启动归档里抽出来，可以直接套用。它是**归档**，不是实时巡检：记录里的 ✅ 只说明当时有证据，不替代新节点、新批次的验收。
 
 :::table
-Linux 用户|固定角色|OS 职责与权限
-`root`|系统管理|保留现有 root；用于初始化、安装、恢复和必要管理，平时不用作业务进程身份
-`operator`|日常运行操作|通用操作账户，可 SSH 公钥登录并使用交互 shell；操作被授权的服务和工作目录，通过受控 sudo 执行必要运行操作
-`auditor`|只读审计与分析|可 SSH 公钥登录；读取授权系统状态及脱敏输出；无通用 sudo、系统配置写权限、运行时 socket 或管理凭据访问权限
+栏目|填什么|示例 / 约束
+状态标记|✅ 已验收（附回执）· ⏳ 待验收 · ❌ 阻断 · — 不适用|只有带证据的才打 ✅
+目标|这次变更要达到的唯一结果|「新建独立 V6 节点并完成 K3s 冷启动」
+规划基线|依赖的 IaC/GitOps/Playbooks SHA、CMDB 节点与卷|全部写 commit SHA，不写分支名
+规格|节点规格、OS、数据盘、K3s 版本、CNI|与 CMDB 声明逐项一致
+证据时间|每条证据的采集时间与时区|过期证据不能拿来证明今天的状态
+DNS 边界|dns_mode 与切换计划|如 dns_mode=none：本次不切流量，DNS 另走流程
+节点边界|新增、保留、回收哪些节点|如：V5 保留，不因 V6 上线而回收
+验收边界|哪些已验、哪些明确未验|role 回执 ≠ 业务验收；未验项列出责任人
+后续|待办、回滚入口、归档全文链接|归档链接回填到任务源头
 :::
 
-三者通过受信管理网络使用独立公钥/证书授权，禁用密码认证；root 使用 `PermitRootLogin prohibit-password`。保留现有管理入口直至新身份登录及权限验收通过；先验证 sshd 配置，再 reload。密码锁定与公钥登录须在实际 OS/PAM 配置下验证。
+**冷启动归档本身**作为这份模版的第一份实例保存在仓库文档里；本节只引用其结构，细节以归档全文为准。
 
-`auditor` 的只读针对系统配置和业务状态，允许在自己的受控工作目录保存报告或授权导出文件。不能仅凭用户名、默认无 sudo 或脚本自律认定只读；需检查有效组、文件权限、ACL、sudoers 和可执行入口。
+**这一节怎么用。** 照抄的不是路径和 PR 号，而是三个习惯：每个 role 只做一件事并写清前置与回执；所有秘密路径按环境显式给出、缺失就停；文档里的「已合并」和「已验收」永远分两列写。
 
-`operator` 为通用保留名：接管前检查现有用户、UID/GID、文件归属和组；发现同名用户或未知权限时停止，不直接接管、改名或重置。
-
-日常运行操作员是人或自动化操作身份；实际应用进程另用非 root 服务身份，不继承操作员的 sudo 或管理权限。K3s 节点上的 OS `operator` 使用普通交互 shell 执行客户端命令；K3s 安装、独立 kubeconfig、认证与 RBAC 由 K3s role 管理。普通 `kubectl` 调用不需要宿主机 root、Docker/containerd 组或 root 管理 kubeconfig。rootful Docker socket、`docker` 组和任意 sudo 都具备接近 root 的主机管理能力；不得在授予这些权限后声称 operator 与 root 强制隔离。确需这些能力时按显式系统管理阶段处理，审计账户不得获得。
-
-**▍3. 环境级 Vault KV 记录**
-
-各环境按角色保存三条 KV v2 记录，所有节点消费相同角色公钥授权，不按节点复制配置。调用方必须显式指定 `<environment>`，允许 `sit`、`uat`、`prod`，缺失或不支持时停止，不回退到生产路径。
-
-:::table
-用途|KV CLI 路径|字段
-root SSH 公钥授权|`kv/<environment>/security/root`|`authorized_keys`：root 公钥文本
-operator SSH 公钥授权|`kv/<environment>/security/operator`|`authorized_keys`：operator 公钥文本
-auditor SSH 公钥授权|`kv/<environment>/security/auditor`|`authorized_keys`：auditor 公钥文本
-:::
-
-例如 root 生产路径为 `kv/prod/security/root`，KV v2 API/policy 路径为 `kv/data/prod/security/root`，其他两角色各有独立路径。字段为公钥，不存放 SSH 私钥；多把公钥以换行分隔。暂时允许使用同一公钥，后续应轮换为独立公钥。持有该私钥的人能登录所有获此公钥授权的角色，因此不能声称这些角色在人员身份层面相互隔离。读取授权按消费者和具体记录划分，由 Vault owner 管理。
-
-使用已认证 Vault 管理终端手动初始化：
-
-:::code
-export VAULT_ADDR=https://vault.svc.plus
-python3 scripts/bootstrap_os_identity_keys.py --environment prod \
-  --root-public-keys /path/to/root.pub \
-  --operator-public-keys /path/to/operator.pub \
-  --auditor-public-keys /path/to/auditor.pub
-:::
-
-每个文件可包含多行 SSH 公钥。脚本先检查三个目标均不存在，复用公钥时输出权限边界提示，逐条使用 KV v2 `cas=0` 创建；已有记录或无法确认状态时停止，不能覆盖。三次写入不是原子操作：中途失败会报告已创建路径，应先检查各路径再按 Vault owner 的受控流程完成，不能盲目重跑。已有记录的更新和轮换另按 Vault owner 的受控流程执行。脚本不会生成私钥或将数据写入 Git。`prod` 是示例，目标环境必须明确指定。也可使用 `bash scripts/bootstrap_os_identity_keys.sh`，参数与 Python 入口相同。
-
-旧 `kv/prod/platform/prod-k3s-v6/ssh` 保持原有调用方使用，消费者切换验收前不删除、不复制秘密到新路径。当前新路径只代表规划及初始化工具，不代表已写入或 common 已消费。
-
-**▍4. 新 OS 节点接管顺序**
-
-以后每次接管新 Linux 节点，标准入口先执行 `vhosts/common`：
-
-1. 核实受信 host key、CMDB/inventory、OS、主机名和既有用户/权限，记录脱敏基线。  2. 使用 root 建立或核实 operator/auditor，配置各自公钥、可交互登录 shell、受控 sudo、工作目录和 SSH 策略。  3. 检查父目录、ACL、sudoers、有效组和敏感文件访问；先验证配置，再 reload SSH。  4. 分别验证三用户实际 SSH 登录、OS 允许/拒绝和必要运行操作，保留回执及管理恢复入口。  5. OS 基线通过后，由调用方进入服务、运行时、K3s/K8s 或迁移等对应 role。
-
-新接管入口必须显式启用此基线；通用 role 保留参数开关，避免已有 common 调用方升级后自动批量改账户。接管旧节点先盘点，再逐节点变更。
-
-**▍5. 专业 role 的执行身份选择**
-
-专业 role 执行时显式选择或通过参数指定以下角色，不根据任务名称自动提权：
-
-:::table
-角色选择|OS 用户|调用原则
-系统管理|`root`|初始化、安装、恢复及确需管理能力的步骤；记录调用者、授权范围和结果
-日常运行操作|`operator`|授权范围内的运行操作；目标迁移写入复用 operator，不新增迁移 Linux 用户
-只读审计|`auditor`|只读检查、分析及授权源端导出/比对；不能用于系统或业务状态写入
-:::
-
-迁移调用方分别显式指定源、目标和每个步骤的执行角色；身份缺失或权限不满足时停止，不静默回退到 root。需要更高权限时显式切换系统管理阶段，完成后返回普通操作权限。OS 用户选择不自动赋予数据库或 Kubernetes 权限，由对应 role 校验授权。
-
-本节仅约定跨 role 的身份选择边界，common 不执行迁移、不读取迁移连接，也不实现集群授权。
-
-**▍6. 新节点身份**
-
-新节点统一使用 `root`、`operator` 和 `auditor`。历史节点的账号和数据不由新节点初始化清理；历史回执保留实际身份，不能改写为新身份验收。
-
-**▍7. 最小实现与 OS 验收**
-
-:::table
-检查|通过条件
-显式启用|默认不影响已有调用方；新接管入口显式启用；目标身份和变量缺失时停止
-root|现有管理员仍可 SSH 登录和执行必要管理，避免锁死；日常业务进程不使用其身份
-operator|可 SSH 登录、访问授权工作目录及执行规定运行命令；越权 sudo 和管理秘密读取被拒绝
-auditor|可 SSH 登录并读取授权 OS 状态；实际拒绝系统/业务状态写入、管理秘密读取和提权；允许个人受控目录写入
-SSH 与 sudo|语法校验通过、用户独立授权、父目录/ACL/组及实际访问符合预期；配置变更才 reload
-幂等与恢复|重跑不重建用户或无故重启；保留老管理入口；新增访问可独立撤销，不删除未知配置
-:::
-
-`vhosts/common/tasks/node_bootstrap.yml` 在 hostname 检查之后调用 `os_identity.yml`，完成三用户 OS 身份检查后才输出 common 回执；真实 SSH 验收、主机安全基线和集群身份另行记录。
-
-### 18.5 专项参考 4　K3s role 职责与依赖清单
-
-来源：`knowledge/docs/reference/platform-delivery/K3s-role职责与依赖清单.md`（53492be），全文收录。
-
-> 归档说明：本文保留原有 role 清单与各时点证据；当前 V6 的实际状态请以 [V6 规划与部署状态归档](PROD-K3S-V6-规划与部署状态归档.md) 顶部最新条目为准，勿将历史运行记录视为当前验收。
-
-> 来源：Playbooks `main` commit `7b7f44164ef1429dc86c01582393e704257ac386` 的 `roles/vhosts/k3s_platform_bootstrap/k3s-role-map.md`；此为归档副本，运行状态需以最新回执为准。
-
-**▍最新调用链核对（2026-10-31）**
-
-:::table
-环节|现状和重构项
-Orchestrator → Playbooks|运行 [41200258539](https://github.com/ai-workspace-infra/Platform-Orchestrator/actions/runs/41200258539) 的 Resolve、IaC/Provision 成功；[Deploy 子运行 41200534051](https://github.com/ai-workspace-infra/Platform-Orchestrator/actions/runs/41200534051) 从 CMDB 和 GitOps 选中节点后调用 Playbooks。Deploy job 仍混有原生 Web SaaS 变量及逻辑，应逐项迁移至对应 owner，先建立调用链再移除旧实现。
-common / OS 身份|operator 登录检查因 Ansible 参数提前展开 `$HOME` 失败；[Playbooks #927](https://github.com/ai-workspace-infra/playbooks/pull/927) 已提出修复并拆分诊断，尚待合并。只读复现和修正后的三项检查均有 `changed=0` 的现场证据。
-主机安全基线|`k3s_platform_bootstrap.yml` 使用 `vhosts/common` 的 `node_bootstrap.yml` 入口；该入口执行 hostname、OS 身份和数据盘，但未调用 `common/tasks/main.yml` 中的 SSH、fail2ban、limits 和防火墙任务，不能据此宣称完整基线完成。应审查可复用的基线任务和 SSH/K3s 网络规则，补齐调用及真实回执，避免直接套用会重写 hostname/hosts 的旧入口。
-数据盘、K3s、Flux|本次在身份检查处停止；auditor 复核 `/dev/sdc` 100 GB 未格式化/挂载，K3s 未运行。后续步骤与真实身份/RBAC、服务验收均无成功回执。
-:::
-
-上表是实际运行状态；下方带日期的条目保留历史快照。不得因角色存在、代码合并或先前 CI 通过而标记当前节点已验收。
-
-**· 工作流 DAG 与矩阵重构目标**
-
-控制面工作流的最长 `needs` 串联链控制在 3–5 个 job；矩阵的同层副本按一个阶段计数。根工作流当前已有 Resolve → IaC/Provision → Deploy → Migrate/Configure → Verify 五个阶段；Deploy 子工作流仍包含多条混合的旧服务链，需要按实际依赖重构，不能通过隐藏依赖或把执行代码塞进编排器来缩短图。
-
-在 Orchestrator `main` `2e25af0f` 静态核对，`selfhost-stage-deploy.yml` 的最长链为 **10 个 job**：
-
-:::code
-parent-gate → provision → capture_web_saas_baseline → update_gitops_tags
-→ initialize_empty_web_saas → deploy_web_saas → accept_web_saas_upgrade
-→ deploy_agent_proxy_non_iac → deploy_monitor_agent → stage-output
-:::
-
-仓库深度策略目前对该文件保留 10 层历史例外；目标是在真实 owner 调用和回执完整的前提下逐步降至最多 5 层，并删除例外。历史依赖不能仅因图表过长而删除；涉及数据初始化、变更、代理和监控的路径需分别确认其实际顺序与影响。
-
-:::table
-阶段|责任与矩阵|输出和失败传播
-1 Resolve|控制面解析输入、固定基础仓库 SHA、核对发布记录与 GitOps 唯一目标|输出目标清单和作用域；不匹配即失败
-2 IaC|按声明的 provider/account/namespace 矩阵派发 IaC owner；相同 state 必须串行|各目标独立 state 与 CMDB 回执；失败目标不得进入部署
-3 Bootstrap / Deploy|按 CMDB 节点矩阵调用 Playbooks owner：common、数据盘、K3s、身份和 Flux；Flux 管理插件及业务资源|验证节点、身份和 Flux 交接回执；节点失败不得冒充成功
-4 Migrate / Configure|仅对应明确选择的迁移或配置操作派发 owner；`deploy` 不隐式执行数据迁移|按目标收集结果；跳过必须可区分于成功
-5 Verify / Report|汇总各 owner 和矩阵项回执，按实际执行范围调用只读验收|缺失、失败、跳过和未运行分别记录；CI 成功不能代替真实身份/业务验收
-:::
-
-矩阵输入来自本次固定的 GitOps 声明和 IaC CMDB，不能依据节点名或批次拼接拓扑；矩阵输出须逐目标关联，避免只保留最后一个输出。需要不同权限、审批或 runner 的工作保留独立 job，实际顺序由 owner 或 Flux 依赖表达。拆分前记录现有调用方和操作语义，按 owner 实现 → 切换 caller → 验证回执 → 删除旧副本推进；本节为目标设计，尚无对应重构完成回执。
-
-**▍当前主线与依赖**
-
-:::code
-IaC CMDB + 本次解析到 commit 的 GitOps 期望配置
-  → 入口绑定目标
-  → common：hostname、OS 三账户/组，并调用 web_saas_data_volume 准备独立数据盘
-  → k3s_platform_bootstrap（只编排）
-      → flux_gitops / k3s_identity：输入预检
-      → k3s-cluster-server：控制面初始化及 API 就绪
-      → helm_cli：Helm 客户端
-      → flux_controllers：Flux 控制器及 rollout
-      → flux_gitops：source/root 交接及独立回执
-      → k3s_identity：三套认证凭据交付及真实允许/拒绝
-      → flux_workload_readiness：声明的 source、Kustomization 和 HelmRelease 就绪证据
-  → Flux 按 GitOps 依赖调谐 RBAC、ESO/TLS、Vault、DB、监控和业务资源
-:::
-
-RBAC 必须先就绪才能执行真实身份权限验收；不能让它反向依赖尚未签发的  三身份凭据，也不能用“管理员 impersonation 成功”替代真实身份登录。  主机名、Flux root 名、环境批次目录和 source path 各自独立，不按名字推断流程。
-
-**▍当前相关 role 列表（2026-10-31）**
-
-以下状态区分仓库 `main`、待合并候选和生产实际验收。Role 存在或 CI 通过不等于目标集群已完成部署。
-
-:::table
-项目|当前状态|当前责任与缺口
-`vhosts/common` 与独立数据盘|✅ [Playbooks #916](https://github.com/ai-workspace-infra/playbooks/pull/916) 已合并；❌ 目标节点盘就绪待验收|通用 K3s 入口由 common 调用数据盘 role，挂载及 UUID 验证通过后才发出 common 回执；此前节点的 100 GB 盘未挂载、无文件系统，需实际执行后重新核验
-PROD-K3S-V6 当前节点只读观察|❌ 2026-10-31 18:16 Asia/Shanghai SSH 现场检查；非流水线回执|hostname `prod-k3s-v6`、Debian 13、2 vCPU/约 3.8 GiB；root/operator/auditor 均成功 SSH 登录。operator `/bin/bash` 且 home 可写，sudo 仅限 `systemctl is-system-running`；auditor 不能读 `/etc/shadow`、写 `/etc` 或使用 sudo。`/dev/sdc` 100 GB 无文件系统/挂载；K3s/kubectl 和 operator kubeconfig 不存在；`fail2ban`、`auditd`、`ufw` inactive。云防火墙需由 IaC 核验。检查只读，未改变生产状态
-`k3s_platform_bootstrap`|✅ Playbooks #903 已合并|只编排子 role 及依赖顺序
-`k3s-cluster-server`|✅ #903 已合并|K3s 控制面初始化、hostname 校验、API 就绪；不承担插件发布
-`k3s-cluster`|✅ #903 已删除旧实现|两个安装入口已切换到 `k3s-cluster-server`
-`helm_cli`、`flux_controllers`、`flux_gitops`、`k3s_identity`|✅ #903 已合并|分别负责 Helm 客户端、Flux 控制器、声明交接、三身份交付和验证；真实身份、Vault writer 与 RBAC 仍需目标集群验收
-`k3s` 旧安装器|✅ [Playbooks #905](https://github.com/ai-workspace-infra/playbooks/pull/905) 已合并并移除旧实现|安装由 server 负责；非默认 CNI 明确拒绝，需另行交付独立的 CNI 能力
-`k3s_platform_addon`、`k3s-addon`|✅ 已从当前代码及调用方移除|平台插件由 GitOps 按环境显式选择；现有发布的 Flux 接管与运行验收仍需逐项验证
-cert-manager、reloader、APISIX、ExternalDNS、NGINX Ingress|✅ [GitOps #681](https://github.com/ai-workspace-infra/gitops/pull/681) 已合并|已提供可独立选择的 Flux 模板，未接入任何环境；ExternalDNS 默认 dry-run
-ESO、Caddy|✅ GitOps 已有 V6 HelmRelease 声明；❌ 实际调谐及服务验收待核验|不再通过旧 addon role 重复安装
-`k3s-reset`|❌ 安全边界待修复；[Playbooks #915](https://github.com/ai-workspace-infra/playbooks/pull/915) 待合并|空节点无操作修复已在目标节点验证；已安装集群的重置仍需单独验证，不属于初始化依赖
-`k3s_runtime_secret_sync`|✅ 独立运维入口|不属于 bootstrap；通用 KV 同步与环境专用投影仍需梳理
-OS operator 与 K3s 客户端前置|✅ Playbooks [#925](https://github.com/ai-workspace-infra/playbooks/pull/925) 已合并；❌ 目标节点 common 正式回执待执行|common 在创建时配置并检查 operator 交互 shell。现场 SSH 已证明 shell/home 可用，但 `kubectl`/`k3s` 未安装；common 不交付 kubeconfig/RBAC，也不增加 sudo 或 runtime socket 权限
-operator kubeconfig 与 RBAC|⚠️ Playbooks [#924](https://github.com/ai-workspace-infra/playbooks/pull/924)、GitOps [#686](https://github.com/ai-workspace-infra/gitops/pull/686) 检查通过、待合并|`k3s_platform_bootstrap` 编排 K3s identity role 为 operator 交付默认 kubeconfig；GitOps RBAC 声明限定业务 namespace 读取 Pods/ReplicaSets/Events 与 Deployment scale-only。现场 K3s 未安装、无 kubeconfig，真实身份 allow/deny 未运行
-三身份与 Flux RBAC|✅ [GitOps #682](https://github.com/ai-workspace-infra/gitops/pull/682)、[Playbooks #906](https://github.com/ai-workspace-infra/playbooks/pull/906) 已合并；❌ 目标集群验收待执行|三身份及 RBAC 基础声明已在 main；operator 的额外运行态读取由待合并 #686 补充。operator 默认 kubeconfig 由 K3s identity role 管理，不能由 common 映射。真实认证、权限允许/拒绝仍待目标集群运行
-Orchestrator → IaC CMDB → Playbooks|⚠️ 参数选择与调用入口已合并；生产端到端执行未验收|[Orchestrator #1585](https://github.com/ai-workspace-infra/Platform-Orchestrator/pull/1585) 已合并：根据 IaC CMDB catalog 精确选择目标声明，并支持从 GitOps host vars 解析 K3s bootstrap reader、SSH Vault 字段与三身份 writer 参数。GitOps [#684](https://github.com/ai-workspace-infra/gitops/pull/684) 与 Playbooks [#920](https://github.com/ai-workspace-infra/playbooks/pull/920) 已合并，但生产 reader 认证与目标路径 allow/deny 尚无新回执。最近 apply [#41187083044](https://github.com/ai-workspace-infra/Platform-Orchestrator/actions/runs/41187083044) 使用合并前版本，在旧 Vault `ref` claim 处停止，common、数据盘、K3s/Flux 均未运行；必须从当前 main 重新验收完整调用链
-Vault writer 与真实身份验收|❌ 运行验收未完成；[Playbooks #918](https://github.com/ai-workspace-infra/playbooks/pull/918)、[GitOps #683](https://github.com/ai-workspace-infra/gitops/pull/683) 已合并|K3s identity writer policy/role 已定向应用，精确授权三条 create/read 路径并绑定受保护 PROD Deploy 身份；该身份负责签发凭据归档，不负责节点 SSH 登录或 common 公钥读取。真实 JWT 登录、相邻路径拒绝和三账户 RBAC 尚待验证
-common Vault 公钥 reader|✅ GitOps [#684](https://github.com/ai-workspace-infra/gitops/pull/684)、Playbooks [#920](https://github.com/ai-workspace-infra/playbooks/pull/920) 已合并；❌ 生产认证与路径拒绝未验收|声明和 HTTPS KV v2 reader 实现已在 main；仍需实际认证验证只允许三条 OS 公钥记录并拒绝相邻路径
-Verify 阶段前置条件|✅ [Orchestrator #1587](https://github.com/ai-workspace-infra/Platform-Orchestrator/pull/1587) 已合并；⚠️ [#1589](https://github.com/ai-workspace-infra/Platform-Orchestrator/pull/1589) owner-contract 修复待合并|Verify 要求 Resolve、IaC/Provision、Deploy 成功后才执行；#1589 的 workflow 检查已通过但仍 OPEN
-Flux 接管和服务部署|❌ 尚无完整运行验收证据|最近 apply 在 Provision 阶段失败，Deploy/Migrate/Verify 均跳过；最近只有 push/PR CI，无后续生产 `workflow_dispatch`。没有 common、数据盘、OS/K3s 身份、K3s/Flux、Vault、PostgreSQL、Observability、Web SaaS、Ingress 的本次运行就绪证据。待相关 PR 合并后从当前 main 重派并记录真实回执
-:::
-
-**· 可选检查项：Vault OIDC**
-
-按本次部署或工作流实际使用的身份提供方选择检查；这两项不是每次 K3s  初始化或服务部署的必选门禁。选中后，核对本次固定 GitOps commit 中的声明、  Vault role 的精确身份绑定、所引用策略的最小路径和能力，并通过实际认证验证  授权路径允许、相邻路径拒绝。未选择时标记“不适用”，不能据此推断已配置或已验收。
-
-:::table
-可选检查项|适用范围|核对内容|状态记录规则
-`vault_github_oidc`|使用 GitHub Actions OIDC 向 Vault 认证的任务|仓库、workflow、ref/environment claims；GitOps policy 引用；最小路径授权及允许/拒绝结果|仅按需检查；本项不代表 Vault role 或运行身份已验收
-`vault_google_oidc`|使用 Google OIDC 向 Vault 认证的任务|issuer、audience、subject claims；GitOps policy 引用；最小路径授权及允许/拒绝结果|仅按需检查；本项不代表 Vault role 或运行身份已验收
-:::
-
-OIDC 可选检查不替代 K3s `root`、`operator`、`auditor` 的独立 Kubernetes  认证和 RBAC 验收，也不自动授权修改 Vault auth mount、role 或 policy。  上述 SSH 状态是指定时刻的人工现场观察，不构成 `COMMON_NODE_VERIFIED`、  K3s/Flux bootstrap 或正式流水线回执；完整安全基线、数据盘 UUID/挂载证据和  云防火墙状态仍须由各自 owner 执行并验收。
-
-当前清单文件迁入本目录的 [Playbooks #904](https://github.com/ai-workspace-infra/playbooks/pull/904) 已合并。所有角色遵循 `AGENTS.md` 的单一职责规则。
-
-**▍主线执行 role**
-
-:::table
-Role|唯一能力|前置条件|输出/验收
-`vhosts/common` 的 `node_bootstrap.yml`|校验节点身份、建立 OS 三账户并串联声明的独立盘准备|CMDB 精确节点、受控 SSH 公钥；既有节点和 PV 亲和性检查|主线要求盘挂载及 UUID 证据后才产生 `COMMON_NODE_VERIFIED`；不代表完整主机安全基线
-`vhosts/common` 的 OS Vault reader|以受控 Vault 会话读取三账户公钥|明确的 HTTPS Vault、目标环境和只读会话；证书严格校验；分别依赖 GitOps reader 声明和精确只读 Vault role|#920 候选使用 KV v2 HTTPS 接口，无需在 runner 安装 Vault CLI；缺失或拒绝读取时失败；目前没有 V6 实际调用回执
-`web_saas_data_volume`|核验并准备声明的独立文件系统|CMDB 实例、卷及设备匹配；空盘初始化需显式授权|挂载点、UUID、文件系统证据；不自动重格式化已有文件系统
-`k3s-cluster-server`|初始化单节点 K3s 控制面|common 已设置 hostname；要求独立盘时卷证据已通过|K3s 服务启动及 API `/readyz`；既有安装跳过安装器，不等于已升级
-`k3s_platform_bootstrap`|按依赖顺序编排子 role|已完成入口绑定、common 和数据盘角色|子 role 顺序执行；失败停止后续执行，不代表业务服务验收
-`helm_cli`|Helm 客户端准备|主机包/CA/网络|现有客户端或安装成功，不部署 chart
-`flux_controllers`|Flux CLI 与控制器初始化|K3s API、私有 admin kubeconfig|controller rollout 就绪
-`flux_gitops`|经审查的 source/root 交接|解析过 commit 的 GitOps 配置与 ready Flux|Flux 交接回执，不声称业务 Ready
-`k3s_identity`|OS 用户到 Kubernetes 主体的映射及三身份生命周期|common 已建立 OS 三账户、实际 CA/UID、GitOps RBAC、受控 Vault writer|独立密钥/证书/私有 kubeconfig；当前仅 `operator` 的 `~/.kube/config` 指向其受限身份配置；KV CAS 归档、真实认证与允许/拒绝
-`flux_workload_readiness`|只读观察声明的 Flux 对象|三身份任务完成且 GitOps 提供待观察对象|独立 `FLUX_OBJECTS_READY` 回执；记录各对象 revision，不替代应用接口、数据和用户流程验收；候选随 #918，未生产验证
-:::
-
-生成器、模板、默认值及验收脚本随能力移动；没有复制第二套实现。  现有 `k3s_platform_*` 和 `k3s_identity_*` 为调用合同，未增加环境专用别名。
-
-**▍输入、证据与重复执行边界**
-
-:::table
-阶段|必要输入与失败条件|可记录证据和重复执行边界
-入口选择|`MATRIX_HOST`、CMDB 文件及 SHA、固定 GitOps checkout/SHA、仓库内资源声明路径和新的回执路径；目标/区域/实例/盘不匹配即失败|本次 GitOps/Playbooks SHA、CMDB SHA 和实例 ID；当前入口仍校验 Linode 字段，跨 provider 不可假定已支持
-common|节点名称、OS 身份和声明的独立盘输入；已有节点/PV 亲和性冲突或磁盘未就绪即停止|主线的 `COMMON_NODE_VERIFIED` 包含节点、OS 身份、实例 ID 和挂载证据；不表示 fail2ban、auditd、UFW 或云防火墙通过
-独立盘|精确卷 ID、设备、挂载目标及文件系统；他处挂载、未知签名或目标已有文件时停止|记录真实 UUID 和挂载结果；已挂载时核对同一设备并保留数据；仅无签名空盘可在显式授权下初始化
-控制面及 Flux|hostname、K3s 版本、私有管理 kubeconfig、声明的 source/root/path；声明或实际节点/版本/磁盘不匹配时失败|`FLUX_HANDOVER_VERIFIED` 记录 source/applied revision 与集群和节点标记；不表示 RBAC、身份或业务就绪。当前 active 验证器约束单节点及 ext4
-三身份|声明的 RBAC Kustomization 当前 generation Ready 且应用所选 commit；独立短期 Vault writer、实际 CA、UID 和 allow/deny 清单|master 签发独立凭据、验证信任链并以 KV v2 CAS=0 写入，CA 私钥留在 master；不同记录、部分签发或过期证书失败，不以删除数据强制重试
-服务与 DNS|GitOps 依赖图、服务所需的受控凭据与制品、目标环境声明|分别记录各服务健康、接口和数据证据；DNS 变更必须符合单独声明与授权，Flux 交接回执不是流量切换或服务验收
-:::
-
-**回执时序：** 当前 `flux_gitops` 在 `k3s_identity` 运行之前写入交接回执。  身份任务失败时该文件仍可能存在；消费者必须同时检查整个 playbook/owner 进程退出状态及真实身份验收，不能仅凭文件或 `FLUX_HANDOVER_VERIFIED` 判定整条主线成功。
-
-入口的身份字段断言在 common 和数据盘之前；`flux_gitops` 与 `k3s_identity` 的完整 role 预检则在两者之后。因而缺少某些 Flux 输入时，不能声称所有主机或数据盘操作都尚未发生；应先在 caller 补足前置检查。
-
-匹配已有挂载和受保护的身份状态可支持部分重试；当前没有目标节点的完整重复运行证据。数据库版本、SQL schema、Vault Raft、监控存储及其他持久卷的升级或迁移仍按新集群和独立存储处理；代码或回执的回退不等于数据回滚。
-
-**▍验证和发布边界**
-
-本次同步受影响的 Python 包装器、测试导入、Ansible 入口和 CI 路径过滤。  契约测试检查编排器没有直接副作用、独立 role 可解析、前置失败不会进入  安装，以及真实身份生成器的证书/目标绑定/CAS 行为。生产验证必须另记  实际 GitOps/Playbooks SHA、CMDB 实例、运行 ID 与真实身份/服务结果。
-
-本次已合并的拆分未执行卸载、原地升级、删盘、数据迁移、DNS 更新或凭据轮换。  回退 PR 只恢复代码调用路径，不回滚数据，也不撤销已签发证书。
-
-**▍历史 role 与迁移记录**
-
-以下表格记录 #903 完成时的旧实现与处理；后续变化以文首状态表和对应 PR 为准。
-
-:::table
-原 role|实际职责/问题|本次处理与后续边界
-`k3s_platform_bootstrap`|原来混合 K3s、Helm、Flux、交接、凭据生成与验收；README 含暂停式旧描述|改为仅调用子 role 的编排器；执行实现全部归对应子 role
-`k3s-cluster-server`|原 bootstrap 同时安装 K3s/Flux/ESO，写业务 namespace/Vault token Secret；静态 vars 写死目标；其余五个 action 文件为空|保留为唯一主线控制面安装 role；替换旧混合 bootstrap，删除空 action、静态 vars、无调用模板与旧生成脚本。只实现初始化，非 bootstrap 的 action 明确拒绝
-`k3s-cluster`|脚本安装 K3s，随后隐式装 nerdctl/CNI、本地 Registry 和自签 CA；重复安装且夹带额外资源|合并控制面能力到 `k3s-cluster-server`；更新两个 playbook 调用方后删除目录。新主线不隐式创建 Registry；此行为变化必须在审查中确认
-`k3s`|旧脚本混合 K3s/Helm/CNI；meta 自动依赖 common；含固定域名和忽略错误|K3s 安装统一到 server，调用方切换，旧实现删除。非默认 CNI 明确拒绝，需由独立 GitOps 声明与执行链另行交付
-`k3s_platform_addon`|直接 Helm 管理 cert-manager/ESO/reloader/Caddy/APISIX/external-dns，默认含业务路由与域名；与 GitOps 资源 owner 重叠|旧实现及入口已移除；环境按需选择 Flux 模板，现有发布的接管另行验证
-`k3s-addon`|脚本管理 ingress/DNS，meta 自动安装 cert-manager，存在忽略错误与销毁操作|旧实现及调用方已移除；Ingress 和 DNS 由经审查的 GitOps/IaC 交付
-`k3s-reset`|调用重置脚本，旧默认 `cluster_reset=enable`；属于破坏性恢复|独立保留，不列入初始化依赖。本次未执行；显式确认、精确范围、备份和恢复验证等防护仍需另行收敛
-`k3s_runtime_secret_sync`|Vault KV 字段 CAS 同步，并包含 dev-registry 投影模式；不是 K3s 安装/RBAC|保留独立运维入口，不进入 bootstrap。后续拆分通用 KV 同步与环境投影；不能自动扩大路径权限或覆盖业务记录
-:::
-
-这些历史 role 的问题是盘点结论；本次未对所有旧实现逐一改造，不能将  “本次主线不调用”写成“全仓陈旧代码已清理”。
-
-**· 入口与历史调用迁移**
-
-:::table
-入口|调用路径|范围
-`k3s_platform_bootstrap.yml` / `scripts/pipeline/bootstrap-k3s.sh`|CMDB → common（调用独立盘 role）→ bootstrap 子 role DAG|正常 IaC 交付
-`k3s_platform_bootstrap_with_gitops.yml`|bootstrap 子 role DAG|调用方先完成 common/存储及非敏感输入绑定
-`k3s_identity_bootstrap.yml`|直接 `k3s_identity`|已有 master 的独立身份初始化，不重装集群
-`k3s-cluster.yaml`、`setup-k3s-node.yaml`、`init_k3s_cluster_server`|直接 `k3s-cluster-server`|仅初始化控制面，目标组统一 `k3s`；不再隐式部署 Registry/Flux/ESO
-`k3s_reset.yml`、`reconcile_k3s_runtime_secrets.yml`|保持独立旧入口|非新 bootstrap 的依赖，不自动执行
-:::
-
-空的 worker role 和入口已移除。独立脚本模拟安装 Flux/ESO 不是本 DAG 验收；  OrbStack 历史模拟探针不构成拆分后调用链或幂等性的证据。
-
-旧 Dev reusable workflow 仍固定 checkout 历史 Playbooks SHA，不会自动采用本次  拆分；其专用 adapter 仍依赖旧 source/root 默认值且未提供完整身份合同。  它不属于已接通的新入口，更新该消费者前需从所选 GitOps 声明补齐配置与  common 前置，不能仅移动 checkout SHA 或据其旧回执宣称本次部署通过。
-
-### 18.6 专项参考 5　PROD-K3S-V6 独立节点、集群冷启动规划与部署状态归档
+**完整草案｜专项参考 5　PROD-K3S-V6 独立节点、集群冷启动规划与部署状态归档**
 
 来源：`knowledge/docs/reference/platform-delivery/PROD-K3S-V6-规划与部署状态归档.md`（53492be），全文收录。
 
@@ -2892,7 +2900,7 @@ V5 K3s 的业务 SecretStore 声明指向 `https://vault-raft.platform-vault.svc
 
 GitOps [草稿 PR #673](https://github.com/ai-workspace-infra/gitops/pull/673) 正在清理 V6 混合暂停状态和已删除节点的旧回执引用。完整冷启动 DAG、三身份交付、ESO 字段映射及服务验收仍在配套实现，不能将本节确认写成部署完成。
 
-### 18.7 实践变化 1　运维看板与全量 Routes & APIs 资产矩阵
+### 17.7 运维看板与全量 Routes & APIs 资产矩阵
 
 来源：`knowledge/docs/reference/platform-delivery/Web-Console-前端全量路由与后端微服务-API-目录统计白皮书.md` 及 2026-11-08（北京时间）的控制台与 Grafana 截图观察。本节是摘要式改写，不全文收录；截图数字只代表当时界面，不是独立验收，也不是发布授权。示例地址统一用 `console.example.com`、`accounts.example.com`、`billing.example.com`。
 
@@ -2951,7 +2959,7 @@ Routes & APIs 三级树|我们到底有哪些页面和接口，各自状态如�
 
 三条容易踩的坑：其一，资产采集不等于对每个 API 发请求，为了「发现接口」去调 DELETE 或 `/logout` 是事故；其二，`probe_success` 是 gauge，对它做 `increase` 得不到请求数，候选样本要来自真正的请求计数器；其三，只有 `probe_duration_seconds` 这种 gauge 时算不出 p95，界面上要老实写「最近一次耗时」。
 
-### 18.8 实践变化 2　Flux + GitOps + Flagger + Traefik：一条链，四份证据
+### 17.8 Flux → GitOps → Flagger → Traefik：一条链，四份证据
 
 来源：platform-delivery 下的架构、Vault 工作负载身份契约（记录了入口流量割接到 Traefik）与上述白皮书。第 6.8、6.9 节讲了工具，这里讲它们在一次真实发布里怎么分工。
 
@@ -2985,9 +2993,9 @@ Grafana 截图|Progressing 20%|Progressing 10%|Progressing 10%
 
 任一端点失败、数据过期、缺少样本（NO DATA），或候选请求样本不足（下限 10,000），发布即 BLOCKED。mock 或降级数据不能产生 ALLOWED；缺样本时宁可显示 UNKNOWN 并阻断。
 
-### 18.9 实践变化 3　platform-delivery 其他新增材料（摘要）
+### 17.9 近期 platform-delivery 实践变化（摘要）
 
-18.1–18.6 收录于 2026-11-01。之后 platform-delivery 新增或更新了下列文档。它们多为规划或某一时刻的验收记录，这里只摘结论和边界；状态一律按「规划 / 已合并 / 已交付 / 已验收」分开读。
+17.1–17.6 的完整设计参考收录于 2026-11-01。之后 platform-delivery 新增或更新了下列文档。它们多为规划或某一时刻的验收记录，这里只摘结论和边界；状态一律按「规划 / 已合并 / 已交付 / 已验收」分开读。
 
 :::table
 主题|文档状态|要点

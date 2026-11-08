@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 python3 src/quickstart.py
 python3 src/build.py
-V="${BOOK_VERSION:-v0.9.18}"; PDF="dist/图解平台工程-云中立实践-${V}.pdf"
+V="${BOOK_VERSION:-$(cat VERSION)}"; PDF="dist/图解平台工程-云中立实践-${V}.pdf"
 mkdir -p preview
 pdftoppm -png -r 110 -f 1 -l 1 -singlefile "$PDF" preview/cover
 P=$(python3 -c "import json;print(json.load(open('dist/build-info.json'))['anchors']['ch5'])")
