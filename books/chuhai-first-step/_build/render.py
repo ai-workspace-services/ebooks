@@ -162,6 +162,13 @@ h1 .sn { color: var(--a); margin-right: 18px; }
 .fxm .ok { background:#e3f1e8; color:#1e5e51; } .fxm .wt { background:#fbf1dc; color:#8a5a1f; } .fxm .no { background:#fbe3e0; color:#9e3e2e; }
 .fxm .st { margin-left:auto; font-weight:700; white-space:nowrap; }
 .fxm .x { text-decoration: line-through; text-decoration-thickness: 3px; font-weight:700; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; margin: 4px 0 22px; font-size:24px; line-height:1.45; }
+.tbl th { background: var(--a); color:#fff; font-weight:800; text-align:left; padding:12px 14px; }
+.tbl th:first-child { border-radius:14px 0 0 0; } .tbl th:last-child { border-radius:0 14px 0 0; }
+.tbl td { padding:12px 14px; border-bottom:2px solid #e6eaec; vertical-align:top; color:#2b3a44; }
+.tbl tr:nth-child(even) td { background:#f7f9fa; }
+.tbl td:first-child { font-weight:800; color:var(--c); white-space:nowrap; width:22%; }
+.tbl td:nth-child(2) { width:40%; } .tbl td:nth-child(3) { width:38%; color:#45555f; }
 /* divider */
 .dv .big { font-size: 150px; font-weight: 900; color: var(--l); line-height: 1; margin-top: 10px; }
 .dv .cap { font-size: 26px; font-weight: 800; color: var(--a); letter-spacing: 6px; margin-top: -18px; }
@@ -253,6 +260,12 @@ def blk(b, ch):
     if t == 'check': return checklist(v)
     if t == 'fxmap': return FXMAP_XHS if os.environ.get('XHS') else FXMAP
     if t == 'handoff': return handoff(v)
+    if t == 'table':
+        headers = v.get('headers') or []
+        rows = v.get('rows') or []
+        thead = '<tr>' + ''.join(f'<th>{md(h)}</th>' for h in headers) + '</tr>'
+        body = ''.join('<tr>' + ''.join(f'<td>{md(c)}</td>' for c in row) + '</tr>' for row in rows)
+        return f'<table class="tbl"><thead>{thead}</thead><tbody>{body}</tbody></table>'
     raise ValueError(t)
 
 def checklist(items):
@@ -314,14 +327,14 @@ def chap_range(k):
 def cover(n):
     nodes = []
     icons = {'llc': 'building', 'ein': 'doc', 'mercury': 'bank', 'ms': 'monitor', 'apple': 'phone', 'gp': 'phone', 'fx': 'bank', 'final': 'check'}
-    subs = {'llc': '成立文件', 'ein': '税务身份', 'mercury': '企业账户', 'ms': '公司开发者号', 'apple': '组织号', 'gp': '组织号', 'fx': '大陆·香港·美国', 'final': '时间线 · 总清单'}
+    subs = {'llc': '成立文件', 'ein': '税务身份', 'mercury': '企业账户', 'ms': '公司开发者号', 'apple': '组织号', 'gp': '组织号', 'fx': '合规 · 汇丰电汇', 'final': '时间线 · 总清单'}
     for i, c in enumerate(CH):
         nodes.append(f'<a href="#p{ANCHOR[c["key"]]}" style="background:{c["l"]};color:{c["c"]}">{icon(icons[c["key"]], c["c"], 56)}'
                      f'<div class="t">{c["no"]} {c["nav"]}</div><div class="s">{subs[c["key"]]}</div></a>')
     nodes.append(f'<a href="#p2" style="background:#20384a;color:#fff">{icon("search", "#fff", 56)}<div class="t">目录索引</div><div class="s">点击跳转 · P2</div></a>')
     inner = (f'<div><span class="chip" style="background:#df654e;color:#fff">合集版</span><span class="chip" style="background:#eef2f4;color:#3b5a70">核对日期：{CHECKED}</span><span class="chip" style="background:#eef2f4;color:#3b5a70">版本 {VERSION}</span></div>'
              f'<h1 style="margin-top:34px">出海第一步<br>一人公司合规全流程</h1><div class="sub">{SUBTITLE}</div>'
-             f'<p class="para">一条真实走过的路：8 月 5 日成立公司，10 月 8 日拿到 147C，截至 10 月 10 日，Mercury 企业账户已建立；再把 Microsoft、Apple、Google 三家公司开发者账号的攻略模板接在后面。按顺序看，每一站都写清楚“下一站需要什么”。</p>'
+             f'<p class="para">一条真实走过的路：8 月 5 日成立公司，10 月 8 日拿到 147C，截至 10 月 10 日，Mercury 企业账户已建立；再把 Microsoft、Apple、Google 三家公司开发者账号的攻略模板接在后面；第 07 章补全汇丰香港「全球转账」操作步骤。按顺序看，每一站都写清楚“下一站需要什么”。</p>'
              f'<div class="route">{"".join(nodes)}</div>'
              f'<div class="note" style="--a:#3b5a70">个人经历分享 + 官方公开资料整理，不构成法律或税务意见；平台规则以官方页面为准。</div>'
              f'<div class="tags">' + ''.join(f'<span>#{t}</span>' for t in ['独立开发者', '出海', '美国LLC', 'EIN', 'Mercury', 'DUNS', '开发者账号']) + '</div>')
@@ -388,7 +401,7 @@ FXMAP = ('<div class="fxm">'
   '<div class="bx">大陆个人账户<small>购汇 · 用途申报</small></div><div class="bx">本人香港个人账户<small>汇丰（HSBC）</small></div><div class="bx">LLC 海外公户<small>Mercury</small></div>'
   '<div class="ar no">✕ <span class="x">大陆个人账户 ⇄ 海外公户（LLC）</span><span class="st">禁止 · 双向</span></div>'
   '<div class="ar wt">① 大陆 → 香港：本人购汇 / 汇款，如实申报用途（外汇局规则已核对）<span class="st">按规则办理</span></div>'
-  '<div class="ar wt">② 香港汇出端：汇丰个人户汇出要求<span class="st">待确认</span></div>'
+  '<div class="ar wt">② 香港汇出端：汇丰网上理财「全球转账」操作步骤已整理（限额 / 费用仍待核实）<span class="st">步骤已整理</span></div>'
   '<div class="ar ok">③ 成员出资 → Mercury 收款端（书面答复）<span class="st">已确认</span></div>'
   '<div class="ar wt">④ 分红 / 利润分配 → 本人香港个人户<span class="st">待确认</span></div>'
   '<div class="ar wt">⑤ 税务处理（大陆 / 香港 / 美国）<span class="st">待确认</span></div>'
