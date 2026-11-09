@@ -113,7 +113,7 @@ def ch11():
     b+=DASH([(600,570),(600,660)],OR,4)+HEX(600,730,85)+BADGE(600,720,38,'search')+LBL(600,782,'STATE INDEX',15)
     b+=BADGE(600,120,40,'lock')+DASH([(600,160),(600,230)])
     return b
-ART={'11':ch11,'12':ch12,'13':ch13,'14':ch14,'15':ch15,'16':ch16,'17':ch16,'18':ch16}
+ART={'11':ch11,'12':ch12,'13':ch13,'14':ch14,'15':ch15,'16':ch16,'17':ch16}
 def render(n,path):
     with tempfile.NamedTemporaryFile('w',suffix='.html',delete=False) as f:
         f.write(f'<html><body style="margin:0">{frame(ART[n]())}</body></html>'); h=f.name

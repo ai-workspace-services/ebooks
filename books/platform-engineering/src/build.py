@@ -15,7 +15,7 @@ FIGS['figX1']=('图 6-10 四个维度交叉：多环境、多分支、滚动发�
 FIGS['figX2']=('图 6-11 一个需求一条泳道：PR 拉起 SIT 泳道，合并 main 进 UAT，签发 Release 后受控进 PROD',_png('feature-lane-pipeline-1080-final.jpg'))
 FIGS['figX3']=('图 6-12 SIT / UAT / PROD 多环境分层与生命周期矩阵',_png('matrix.jpg'))
 
-VERSION=os.environ.get('BOOK_VERSION','v0.9.18')
+VERSION=os.environ.get('BOOK_VERSION',open(os.path.join(ROOT,'VERSION')).read().strip())
 TITLE='图解平台工程 · 云中立实践'; AUTHOR='Haitao Pan'
 FOOT1='Haitao Pan | XWork Technologies LLC 服务支持'; FOOT2='xworktech.com 开源平台方案'
 PROMO='XWork Technologies LLC 服务支持 / xworktech.com 开源平台方案'
@@ -25,8 +25,8 @@ CHAPTERS=[('1','从自由软件到平台工程',['1.1 自由软件','1.2 开源�
 ('5','安全与身份：没有共享账号，没有固定密码',None),('6','环境治理：SIT → UAT → PROD',[]),('7','云中立：一套配置，任意部署',[]),
 ('8','可观测：平台的眼睛和手',[]),('9','能恢复才算稳定',[]),('10','七层拧成 Open Platform',[]),('11','AI 接入平台：模型也是基础设施',[]),
  *[(k,v[0],[]) for k,v in __import__('outline').SK.items()]]
-SAMPLES=[str(i) for i in range(1,19)]
-PART1='上篇 经典平台工程：七层云中立实践'; PART2='下篇 现代平台工程：AI 时代与平台工程'; INTRO2='下篇导言：从经典回路到现代闭环'; PART3='实践篇 最佳实践参考：正在进行的 case'
+SAMPLES=[str(i) for i in range(1,18)]
+PART1='上篇 经典平台工程：七层云中立实践'; PART2='下篇 现代平台工程：AI 时代与平台工程'; INTRO2='下篇导言：从经典回路到现代闭环'; PART3='实践篇 最佳实践参考'
 import outline; SAMPLE='5'
 md=open(os.path.join(HERE,'book.md'),encoding='utf-8').read()
 def inline(s):
@@ -42,13 +42,13 @@ WORDS=wc(md)+wc(fig_text)+wc(' '.join(a+' '+' '.join(b)+' '+c for k,(a,b,c) in _
 pre_md,ch_md=md.split('\n## ',1); ch_md='## '+ch_md
 CHSECS={}
 from xhs_cover import cover as _cov, MAP as _MAP
-_MAP.update({'12':['center','sec'],'13':['title','git','chain'],'14':['iac','auto','sec','identity'],'15':['obs','observable','ops','recov'],'16':['title','center','chain'],'17':['iac','sec','chain'],'18':['iac','chain','sec'],'X10':list(_MAP['11']),'X11':list(_MAP['10'])}); _MAP['10']=_MAP['X10']; _MAP['11']=_MAP['X11']
+_MAP.update({'12':['center','sec'],'13':['title','git','chain'],'14':['iac','auto','sec','identity'],'15':['obs','observable','ops','recov'],'16':['title','center','chain'],'17':['iac','sec','chain'],'X10':list(_MAP['11']),'X11':list(_MAP['10'])}); _MAP['10']=_MAP['X10']; _MAP['11']=_MAP['X11']
 for _k,(_c,_v) in list(FIGS.items()):
     if re.match(r'fig1[01]\d$',_k): FIGS[_k]=(re.sub(r'^图 1([01])-',lambda m:'图 1'+('1' if m.group(1)=='0' else '0')+'-',_c),_v)
 def chimg(n):
     d=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'dist','_cov'); os.makedirs(d,exist_ok=True)
     p=os.path.join(d,f'ch{n}.png')
-    if n in ('11','12','13','14','15','16','17','18'): import openers; openers.render(n,p)
+    if n in ('11','12','13','14','15','16','17'): import openers; openers.render(n,p)
     else: _cov(n,p)
     return f'<img class="chov" src="file://{p}">'
 def render_body(src):
@@ -144,7 +144,7 @@ def intro2():
 def chapters_html():
     D={'1':divider('part1',PART1,'用开源软件与开放标准，把平台的每一层写成代码：入口、资源、交付、安全、环境、云中立、可观测、可恢复，最后拧成一个 Open Platform。',[str(i) for i in range(1,11)]),
        '11':divider('part2',PART2,'上篇把平台写成了代码；再加上向量化，平台状态变得可观测、可检索。下篇讨论在规范与安全边界之内，让 AI 参与平台的控制闭环。',[str(i) for i in range(11,17)])+intro2(),
-       '17':divider('part3',PART3,'上下两篇讲原则；实践篇记录同一套平台此刻真实推进到哪一步。每个 case 区分 ✅ 已合并与 ⏳ 待验收，不宣称任何生产部署已完成。',['17','18'])}
+       '17':divider('part3',PART3,'上下两篇讲原则；实践篇记录同一套平台此刻真实推进到哪一步。案例摘要与完整草案按主题并排保留，区分 ✅ 已合并与 ⏳ 待验收，不宣称任何生产部署已完成。',['17'])}
     return ''.join(D.get(n,'')+(f'<section class="flow ch">{CHHTML[n]}</section>' if n in CHHTML else opener(n,t))+(qs_page(QSN[n]) if n in QSN else '') for n,t,_ in CHAPTERS)
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
 def doc(pages):
