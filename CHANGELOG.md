@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 · 出海第一步 v1.3
+- 《出海第一步 · 一人公司合规全流程》升至 v1.3：第 07 章补全「汇丰香港国际电汇（全球转账）」操作步骤、特殊填写提示与提交前检查；更新资金路径图、Mercury 入金闭环与总清单中对应待确认项（限额 / 费用 / 税务仍标待确认）。
+- 核对日期改为 2026-11-09；版式新增简易三列表格块。
+- 版式修复：页脚改为文档流布局；卡片正文与「本站产出→下一站」手递区分开，FIT 只缩放正文，避免手递区与页脚重叠。
+
+
 ## 2026-11-03 · designed covers
 - agent-skills-spec & cny-overseas-card-routes: new light/dark covers in the xworktech.com/docs style (Drive `books/<slug>/assets`), used on the PDF cover page via `assets.manifest.json` + `fetch-assets.sh` (HTML cover kept as fallback); README uses Drive lh3 direct-render URLs with `<picture>` light/dark.
 
