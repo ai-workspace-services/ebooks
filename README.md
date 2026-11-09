@@ -11,7 +11,7 @@
 <td align="center" width="33%"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="200" alt="cover"></picture></a><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.2</code></td>
+<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.3</code></td>
 <td align="center" width="33%"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="200" alt="cover"></picture></a><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.5</code></td>
 <td align="center" width="33%"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="200" alt="cover"></picture></a><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
 </tr>
@@ -56,9 +56,9 @@
 
 <table><tr><td width="130" valign="top"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 出海第一步 · 一人公司合规全流程 · `v1.2`
+### 出海第一步 · 一人公司合规全流程 · `v1.3`
 
-从 LLC 到 EIN，再到银行和应用商店账户：美国 LLC 设立、EIN 与 147C、Mercury 企业账户，Microsoft、Apple、Google Play 三家公司开发者号，最后理清大陆、香港、美国三段资金合规。都是作者自己一步步走过的真实顺序，适合想用一人公司把产品卖向全球的独立开发者。
+从 LLC 到 EIN，再到银行、应用商店与跨境电汇：美国 LLC 设立、EIN 与 147C、Mercury 企业账户，Microsoft、Apple、Google Play 三家公司开发者号，大陆、香港、美国三段资金合规，以及汇丰香港「全球转账」操作步骤。都是作者自己一步步走过的真实顺序，适合想用一人公司把产品卖向全球的独立开发者。
 
 40 页 · [源码](books/chuhai-first-step/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/chuhai-first-step-v1.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
 
@@ -121,7 +121,7 @@
 | 图解平台工程 · 云中立实践 | `v0.9.18` | `make platform-engineering` | Drive | [docs](https://xworktech.com/docs) |
 | 图解 IT 简史 | `v4.9.1` | `make it-history` | Drive | [docs](https://xworktech.com/docs) |
 | 趣谈数据基础设施 · AI 时代 | `v5.1` | `make data-infra` | Drive | [docs](https://xworktech.com/docs) |
-| 出海第一步 · 一人公司合规全流程 | `v1.2` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
+| 出海第一步 · 一人公司合规全流程 | `v1.3` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
 | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.5` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
 | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
 | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |

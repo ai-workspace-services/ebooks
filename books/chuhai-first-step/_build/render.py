@@ -87,7 +87,7 @@ html, body { width: 1080px; }
 body { font-family: 'Noto Sans CJK SC', sans-serif; color: #24323c; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 a { color: inherit; text-decoration: none; }
 .page { width: 1080px; height: 1440px; position: relative; overflow: hidden; break-after: page; background: #fff;
-  padding: 36px 60px 96px; display: flex; flex-direction: column; }
+  padding: 36px 60px 34px; display: flex; flex-direction: column; }
 .page:last-child { break-after: auto; }
 .nav { display: flex; align-items: center; gap: 12px; }
 .pills { flex: 1; display: flex; gap: 8px; }
@@ -97,7 +97,8 @@ a { color: inherit; text-decoration: none; }
 .home { font-size: 22px; font-weight: 800; color: #fff; background: #20384a; border-radius: 999px; padding: 8px 20px; white-space: nowrap; }
 .prog { height: 6px; background: #eceff1; border-radius: 3px; margin: 14px 0 0; overflow: hidden; }
 .prog div { height: 100%; background: var(--a); border-radius: 3px; }
-.z { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: 40px; }
+.z { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-top: 40px; overflow: hidden; }
+.main { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
 .kicker { font-size: 26px; font-weight: 700; color: var(--a); letter-spacing: 1px; margin-bottom: 14px; }
 h1 { font-size: 58px; line-height: 1.22; font-weight: 800; color: #20384a; margin-bottom: 30px; }
 h1 .sn { color: var(--a); margin-right: 18px; }
@@ -106,7 +107,7 @@ h1 .sn { color: var(--a); margin-right: 18px; }
 .bl { list-style: none; margin-bottom: 22px; }
 .bl li { font-size: 32px; line-height: 1.55; padding: 10px 0 10px 34px; position: relative; color: #2b3a44; }
 .bl li::before { content: ''; position: absolute; left: 4px; top: 30px; width: 12px; height: 12px; border-radius: 50%; background: var(--a); }
-.note { font-size: 26px; line-height: 1.6; color: #5d6c75; background: #f5f7f8; border-left: 7px solid var(--a); border-radius: 10px; padding: 18px 24px; margin: 6px 0 22px; }
+.note { font-size: 25px; line-height: 1.55; color: #5d6c75; background: #f5f7f8; border-left: 7px solid var(--a); border-radius: 10px; padding: 14px 20px; margin: 4px 0 14px; }
 .quote { font-size: 34px; font-weight: 800; color: var(--c); background: var(--l); border-radius: 22px; padding: 26px 34px; margin: 6px 0 22px; line-height: 1.45; }
 .flow { background: var(--l); border-radius: 26px; padding: 30px 26px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
 .flow .nd { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -138,13 +139,13 @@ h1 .sn { color: var(--a); margin-right: 18px; }
 .pit .bad { font-size: 30px; font-weight: 800; color: #20384a; line-height: 1.4; }
 .pit .fix { font-size: 27px; color: #45555f; line-height: 1.5; margin-top: 4px; display: flex; gap: 8px; }
 .pit .fix i { flex: 0 0 auto; margin-top: 5px; }
-.chk { list-style: none; margin-bottom: 20px; }
-.chk li { font-size: 29px; line-height: 1.42; padding: 9px 0 9px 62px; position: relative; color: #2b3a44; }
-.chk li .bx { position: absolute; left: 0; top: 8px; width: 42px; height: 42px; border-radius: 12px; border: 4px solid var(--a); display: flex; align-items: center; justify-content: center; }
+.chk { list-style: none; margin-bottom: 14px; }
+.chk li { font-size: 27px; line-height: 1.38; padding: 7px 0 7px 58px; position: relative; color: #2b3a44; }
+.chk li .bx { position: absolute; left: 0; top: 6px; width: 38px; height: 38px; border-radius: 11px; border: 4px solid var(--a); display: flex; align-items: center; justify-content: center; }
 .chk li.done .bx { background: var(--a); }
 .chk li.wip .bx::after { content: ''; width: 16px; height: 16px; border-radius: 4px; background: var(--a); }
-.chk .grp { font-size: 26px; font-weight: 800; color: var(--a); margin: 14px 0 2px; letter-spacing: 1px; }
-.hand { margin-top: auto; border: 3px dashed var(--a); border-radius: 24px; padding: 22px 26px; display: flex; align-items: center; gap: 18px; }
+.chk .grp { font-size: 24px; font-weight: 800; color: var(--a); margin: 10px 0 2px; letter-spacing: 1px; }
+.hand { flex-shrink: 0; margin-top: 12px; margin-bottom: 4px; border: 3px dashed var(--a); border-radius: 24px; padding: 16px 20px; display: flex; align-items: center; gap: 14px; }
 .hand .side { flex: 1; }
 .hand .lb { font-size: 23px; font-weight: 800; color: #7c8a93; margin-bottom: 10px; }
 .hand .lb a { color: var(--na); }
@@ -152,7 +153,7 @@ h1 .sn { color: var(--a); margin-right: 18px; }
 .chips span { font-size: 23px; font-weight: 700; padding: 5px 14px; border-radius: 999px; }
 .hand .o span { background: var(--l); color: var(--c); }
 .hand .n span { background: var(--nl); color: var(--nc); }
-.footer { position: absolute; left: 60px; right: 60px; bottom: 34px; border-top: 2px solid #e6eaec; padding-top: 14px; display: flex; justify-content: space-between; font-size: 22px; color: #7c8a93; }
+.footer { flex-shrink: 0; margin-top: 18px; border-top: 2px solid #e6eaec; padding-top: 12px; display: flex; justify-content: space-between; font-size: 22px; color: #7c8a93; background: #fff; position: relative; z-index: 2; }
 .footer b { color: #20384a; }
 .footer .by { font-size: 19px; color: #4f5f69; } .footer .by2 { font-size: 17px; color: #9aa9b3; }
 .fxm { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px 18px; margin: 10px 0 16px; font-size: 24px; }
@@ -162,6 +163,13 @@ h1 .sn { color: var(--a); margin-right: 18px; }
 .fxm .ok { background:#e3f1e8; color:#1e5e51; } .fxm .wt { background:#fbf1dc; color:#8a5a1f; } .fxm .no { background:#fbe3e0; color:#9e3e2e; }
 .fxm .st { margin-left:auto; font-weight:700; white-space:nowrap; }
 .fxm .x { text-decoration: line-through; text-decoration-thickness: 3px; font-weight:700; }
+.tbl { width:100%; border-collapse:separate; border-spacing:0; margin: 2px 0 14px; font-size:22px; line-height:1.4; }
+.tbl th { background: var(--a); color:#fff; font-weight:800; text-align:left; padding:9px 12px; }
+.tbl th:first-child { border-radius:14px 0 0 0; } .tbl th:last-child { border-radius:0 14px 0 0; }
+.tbl td { padding:8px 12px; border-bottom:2px solid #e6eaec; vertical-align:top; color:#2b3a44; }
+.tbl tr:nth-child(even) td { background:#f7f9fa; }
+.tbl td:first-child { font-weight:800; color:var(--c); white-space:nowrap; width:22%; }
+.tbl td:nth-child(2) { width:40%; } .tbl td:nth-child(3) { width:38%; color:#45555f; }
 /* divider */
 .dv .big { font-size: 150px; font-weight: 900; color: var(--l); line-height: 1; margin-top: 10px; }
 .dv .cap { font-size: 26px; font-weight: 800; color: var(--a); letter-spacing: 6px; margin-top: -18px; }
@@ -214,8 +222,9 @@ h1 .sn { color: var(--a); margin-right: 18px; }
 FIT = '''<script>
 document.querySelectorAll('.page').forEach(function(pg){
   var z = pg.querySelector('.z'); if (!z) return;
-  var avail = z.clientHeight, h = z.scrollHeight;
-  if (h > avail + 1) { var r = avail / h; z.style.zoom = r; pg.setAttribute('data-zoom', r.toFixed(3)); }
+  var target = pg.querySelector('.main') || z;
+  var avail = target.clientHeight, h = target.scrollHeight;
+  if (h > avail + 8) { var r = avail / h; target.style.zoom = r; pg.setAttribute('data-zoom', r.toFixed(3)); }
 });
 </script>'''
 
@@ -253,6 +262,12 @@ def blk(b, ch):
     if t == 'check': return checklist(v)
     if t == 'fxmap': return FXMAP_XHS if os.environ.get('XHS') else FXMAP
     if t == 'handoff': return handoff(v)
+    if t == 'table':
+        headers = v.get('headers') or []
+        rows = v.get('rows') or []
+        thead = '<tr>' + ''.join(f'<th>{md(h)}</th>' for h in headers) + '</tr>'
+        body = ''.join('<tr>' + ''.join(f'<td>{md(c)}</td>' for c in row) + '</tr>' for row in rows)
+        return f'<table class="tbl"><thead>{thead}</thead><tbody>{body}</tbody></table>'
     raise ValueError(t)
 
 def checklist(items):
@@ -314,14 +329,14 @@ def chap_range(k):
 def cover(n):
     nodes = []
     icons = {'llc': 'building', 'ein': 'doc', 'mercury': 'bank', 'ms': 'monitor', 'apple': 'phone', 'gp': 'phone', 'fx': 'bank', 'final': 'check'}
-    subs = {'llc': '成立文件', 'ein': '税务身份', 'mercury': '企业账户', 'ms': '公司开发者号', 'apple': '组织号', 'gp': '组织号', 'fx': '大陆·香港·美国', 'final': '时间线 · 总清单'}
+    subs = {'llc': '成立文件', 'ein': '税务身份', 'mercury': '企业账户', 'ms': '公司开发者号', 'apple': '组织号', 'gp': '组织号', 'fx': '合规 · 汇丰电汇', 'final': '时间线 · 总清单'}
     for i, c in enumerate(CH):
         nodes.append(f'<a href="#p{ANCHOR[c["key"]]}" style="background:{c["l"]};color:{c["c"]}">{icon(icons[c["key"]], c["c"], 56)}'
                      f'<div class="t">{c["no"]} {c["nav"]}</div><div class="s">{subs[c["key"]]}</div></a>')
     nodes.append(f'<a href="#p2" style="background:#20384a;color:#fff">{icon("search", "#fff", 56)}<div class="t">目录索引</div><div class="s">点击跳转 · P2</div></a>')
     inner = (f'<div><span class="chip" style="background:#df654e;color:#fff">合集版</span><span class="chip" style="background:#eef2f4;color:#3b5a70">核对日期：{CHECKED}</span><span class="chip" style="background:#eef2f4;color:#3b5a70">版本 {VERSION}</span></div>'
              f'<h1 style="margin-top:34px">出海第一步<br>一人公司合规全流程</h1><div class="sub">{SUBTITLE}</div>'
-             f'<p class="para">一条真实走过的路：8 月 5 日成立公司，10 月 8 日拿到 147C，截至 10 月 10 日，Mercury 企业账户已建立；再把 Microsoft、Apple、Google 三家公司开发者账号的攻略模板接在后面。按顺序看，每一站都写清楚“下一站需要什么”。</p>'
+             f'<p class="para">一条真实走过的路：8 月 5 日成立公司，10 月 8 日拿到 147C，截至 10 月 10 日，Mercury 企业账户已建立；再把 Microsoft、Apple、Google 三家公司开发者账号的攻略模板接在后面；第 07 章补全汇丰香港「全球转账」操作步骤。按顺序看，每一站都写清楚“下一站需要什么”。</p>'
              f'<div class="route">{"".join(nodes)}</div>'
              f'<div class="note" style="--a:#3b5a70">个人经历分享 + 官方公开资料整理，不构成法律或税务意见；平台规则以官方页面为准。</div>'
              f'<div class="tags">' + ''.join(f'<span>#{t}</span>' for t in ['独立开发者', '出海', '美国LLC', 'EIN', 'Mercury', 'DUNS', '开发者账号']) + '</div>')
@@ -352,9 +367,14 @@ def divider(n, k):
 
 def card(n, k, i, cd):
     c = CHD[k]
-    body = ''.join(blk(b, c) for b in cd['blocks'])
-    inner = (f'<div class="kicker">第 {c["no"]} 章 · {md(c["name"])} · {i} / {len(CARDS[k])}</div>'
-             f'<h1><span class="sn">{i}</span>{md(cd["title"])}</h1>{body}')
+    main_blocks, hand = [], None
+    for b in cd['blocks']:
+        if b[0] == 'handoff': hand = b
+        else: main_blocks.append(b)
+    body = ''.join(blk(b, c) for b in main_blocks)
+    hand_html = blk(hand, c) if hand else ''
+    inner = (f'<div class="main"><div class="kicker">第 {c["no"]} 章 · {md(c["name"])} · {i} / {len(CARDS[k])}</div>'
+             f'<h1><span class="sn">{i}</span>{md(cd["title"])}</h1>{body}</div>{hand_html}')
     return wrap(n, inner, c, k, '', f'{c["no"]} {c["nav"]}')
 
 def timeline(n):
@@ -388,7 +408,7 @@ FXMAP = ('<div class="fxm">'
   '<div class="bx">大陆个人账户<small>购汇 · 用途申报</small></div><div class="bx">本人香港个人账户<small>汇丰（HSBC）</small></div><div class="bx">LLC 海外公户<small>Mercury</small></div>'
   '<div class="ar no">✕ <span class="x">大陆个人账户 ⇄ 海外公户（LLC）</span><span class="st">禁止 · 双向</span></div>'
   '<div class="ar wt">① 大陆 → 香港：本人购汇 / 汇款，如实申报用途（外汇局规则已核对）<span class="st">按规则办理</span></div>'
-  '<div class="ar wt">② 香港汇出端：汇丰个人户汇出要求<span class="st">待确认</span></div>'
+  '<div class="ar wt">② 香港汇出端：汇丰网上理财「全球转账」操作步骤已整理（限额 / 费用仍待核实）<span class="st">步骤已整理</span></div>'
   '<div class="ar ok">③ 成员出资 → Mercury 收款端（书面答复）<span class="st">已确认</span></div>'
   '<div class="ar wt">④ 分红 / 利润分配 → 本人香港个人户<span class="st">待确认</span></div>'
   '<div class="ar wt">⑤ 税务处理（大陆 / 香港 / 美国）<span class="st">待确认</span></div>'
