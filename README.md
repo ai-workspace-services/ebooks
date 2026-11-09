@@ -18,7 +18,7 @@
 <tr>
 <td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
 <td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.2</code></td>
-<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.1</code></td>
+<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.2</code></td>
 </tr>
 </table>
 
@@ -106,11 +106,11 @@
 
 <table><tr><td width="130" valign="top"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.1`
+### 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.2`
 
 只回答一个问题：人民币怎么进到海外卡，海外卡里的钱又怎么回到人民币。香港、菲律宾（DITO eSIM + Maya）、美国 Mercury 三条路线，各自讲清绕不开的前提。是个人经历加官方公开资料整理，适合要给海外 AI 订阅付款或收美元营收的朋友。
 
-15 页 · [源码](books/cny-overseas-card-routes/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/cny-overseas-card-routes-v1.1.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+16 页 · [源码](books/cny-overseas-card-routes/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/cny-overseas-card-routes-v1.1.zip) · [xworktech.com/docs](https://xworktech.com/docs)
 
 </td></tr></table>
 
@@ -126,7 +126,7 @@
 | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
 | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
 | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.2` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
-| 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.1` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
+| 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
 
 ## 用法
 
