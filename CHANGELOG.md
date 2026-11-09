@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-09 · 人民币海外卡 v1.2：汇丰全球转账细节专题
+- 新增「细节专题」第 06 章：汇丰香港网上理财国际电汇（全球转账）操作步骤、字段提示表、提交前检查与不可撤销提示。
+- 第 02、04 章与附录清单交叉引用该专题；限额、费用、用途证明材料仍标注待向汇丰核实。
+- 版本 `v1.2`；封面版本号同步；许可仍为 CC BY-SA 4.0，署名 Haitao Pan / XWork Technologies LLC。
+
+
 ## 2026-11-03 · designed covers
 - agent-skills-spec & cny-overseas-card-routes: new light/dark covers in the xworktech.com/docs style (Drive `books/<slug>/assets`), used on the PDF cover page via `assets.manifest.json` + `fetch-assets.sh` (HTML cover kept as fallback); README uses Drive lh3 direct-render URLs with `<picture>` light/dark.
 
