@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-13 · 图解经典设计模式 v0.1
+- 新增《图解经典设计模式 · 遇到 AI 时代》`v0.1`：不谈 Java 类继承教条，立足 Linux 容器原生、Next.js Portal、Go / Gin 与 PostgreSQL，辅以 Python CLI、GitHub Actions、HCL 与 Playbook。
+- 开篇直接讨论 AI 时代为何更需要设计模式：生成速度快，也更容易堆积「一本正经、整整齐齐的屎山」。先定位变化点或一致性问题，再用信号和代价决定是否引入模式；命名是沟通手段，实现落回函数、结构体、模块和框架原语。
+- 全量覆盖 18 个模式，按四个变化点组织（入口与协议边界、构造与组合、请求链与行为控制、数据一致性与可靠事件）。每个模式均给出适用信号、技术栈落点、AI 过度设计反例、轻量实现与验证边界。
+- 写入三个真实工程选型现场：Portal + Gin + PostgreSQL 订阅（资格规则在用例、约束与条件更新、显式事务与按需 Outbox）；GitHub Actions 的 reusable workflow / composite action / 所属仓 CLI；HCL 模块与 Playbook Role 以声明组合为默认。
+- 六张图解由 `diagrams.py` 在构建时生成内联 SVG，CI 不依赖 `GDRIVE_SA_JSON`，也不向仓库提交二进制图。
+- PDF 为 30 页 A5，目录两遍渲染，带页内锚点、实际页码与 `pypdf` 书签。仓库内另附 [`books/design-patterns-ai/index.md`](books/design-patterns-ai/index.md)。许可仍为内容 CC BY-SA 4.0，署名 Haitao Pan / XWork Technologies LLC；构建脚本与示例代码 MIT。
+
+
 ## 2026-11-13 · Agent Skills 工程规范 v0.3
 - 《XWorkspace Agent Skills 工程规范 · 开放方案》升至 `v0.3`：正文改为直接的工程实践表述，去掉故事化称呼；版本锚点对齐 `xworkspace-core-skills` 固定提交 `07c6e772`（2026-11-13，Asia/Shanghai，[#70](https://github.com/ai-workspace-lab/xworkspace-core-skills/pull/70) 合入主干，含 [#69](https://github.com/ai-workspace-lab/xworkspace-core-skills/pull/69) 开发规范）。
 - 新增第八章「七类开发规范：把“怎么写代码”也写成技能」，自研规范从工程、运维两类补齐为工程、运维、开发三类；诚实标签写清「已验收」与「设计契约」的边界。

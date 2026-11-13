@@ -20,6 +20,11 @@
 <td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.3</code></td>
 <td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.2</code></td>
 </tr>
+<tr>
+<td align="center" width="33%"><a href="books/design-patterns-ai/"><b>图解经典设计模式 · 遇到 AI 时代</b></a><br><code>v0.1</code></td>
+<td align="center" width="33%"></td>
+<td align="center" width="33%"></td>
+</tr>
 </table>
 
 ## 书目介绍
@@ -114,6 +119,16 @@
 
 </td></tr></table>
 
+<table><tr><td valign="top">
+
+### 图解经典设计模式 · 遇到 AI 时代 · `v0.1`
+
+到了 AI 时代，我们反而更需要思考设计模式。AI 能飞快写代码，也擅长飞快堆积一本正经、整整齐齐的屎山：接口齐、分层齐，一改就碎。本书不谈 Java 类继承教条，把十八个经典模式落回 Linux 容器原生、Next.js Portal、Go / Gin 与 PostgreSQL 的原语上。先找变化点或一致性问题，再用信号和代价决定是否引入模式。适合一边用 AI 写代码、一边要守住可修改性的工程师。
+
+30 页 · [源码](books/design-patterns-ai/) · [目录索引](books/design-patterns-ai/index.md) · [xworktech.com/docs](https://xworktech.com/docs)
+
+</td></tr></table>
+
 把书当仓库维护：每本书的 Markdown 正文、构建脚本和版本号在一起走版本，改版时章节和示例一起提交、一起评审。PDF 由 CI 构建，不入库。
 
 | 书 | 版本 | 构建 | 图片素材 | PDF |
@@ -127,6 +142,7 @@
 | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
 | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
 | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
+| 图解经典设计模式 · 遇到 AI 时代 | `v0.1` | `make design-patterns-ai` | 构建时内联 SVG | [docs](https://xworktech.com/docs) |
 
 ## 用法
 
