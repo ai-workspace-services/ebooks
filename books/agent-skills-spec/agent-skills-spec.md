@@ -1,25 +1,28 @@
-# 序章 · 一个人，十几个 Agent，和一座会说话的工具箱
+# 序章 · 统一规范与 Agent 技能体系
 
 > 代码开源 · 文档开源 · 开放方案。这本书只讲一件事：这些技能在真实的一天里怎么用。
 
-故事的主角叫小潘：一个独立开发者，手里有五个基础仓库（Platform-Orchestrator、IaC、GitOps、Artifacts、Playbooks）、一个要上线的 SaaS、一个每天要更的内容号，还有十几个同时在跑的 Agent。
+在多仓库协作与自动化交付场景下（涵盖 Platform-Orchestrator、IaC、GitOps、Artifacts、Playbooks 五个基础仓库，以及在线 SaaS 服务与日常技术内容管线），多个 Agent 并行工作时的核心瓶颈往往不是推理能力不足，而是 **每次任务都要重新向 Agent 说明团队的工程规范与边界**。
 
-他发现最大的问题不是 Agent 不够聪明，而是 **每个 Agent 都要重新被教一遍“我们家的规矩”**。于是他把规矩写成了技能（Skill）：每个技能是一个目录、一份 `SKILL.md`，Agent 在对的场景里自己加载。
+本方案将团队验证过的规范沉淀为可加载的技能（Skill）：每个技能对应一个目录与一份 `SKILL.md`，由 Agent 按场景按需读取执行。自研规范分为三类：工程规范负责构建与交付，运维规范负责运行与恢复，开发规范负责代码设计与实现。
 
 **本书版本锚点**
 
 | 项 | 值 |
 |---|---|
 | 仓库 | `xworkspace-core-skills` |
-| 固定提交 | `a545f5fa8717d7a764a8a06e8fcc6f08a7c71d4c` |
-| 许可 | MIT |
+| 本版固定提交 | `07c6e77200742af8f17780924730d2c7b5f5a051`（2026-11-13 11:18，Asia/Shanghai，[#70](https://github.com/ai-workspace-lab/xworkspace-core-skills/pull/70) 合入主干） |
+| 开发规范基础提交 | `d21acad9e7232483df8af69f79751ef5719a0d0a`（2026-11-13 10:01，Asia/Shanghai，[#69](https://github.com/ai-workspace-lab/xworkspace-core-skills/pull/69)） |
+| 许可 | 技能仓库 MIT；本书正文 CC BY-SA 4.0 |
 | 诚实标签 | **已验收**＝有运行证据；**设计契约**＝规范已写，尚待运行验收 |
 
-> 本书所有“怎么用”均以该提交下的 `SKILL.md` 为准。仓库后续变动请以新 SHA 重新核对。
+> 全书所有规范的“怎么用”均以固定提交 `07c6e772` 上的 `SKILL.md` 为准。工程与运维规范对应既有的 23 项 Author Verified 规范与协作设计契约，第八章的开发规范（含命名、可读性与轻量扩展清单）随 `#69` 与 `#70` 进入主干。
+>
+> 仓库自述：核心价值在于沉淀工程、运维与开发规范。既有工程与运维规范中有 23 项由仓库徽标列为 Author Verified。当前递归收录 94 个 Skill，分 11 个能力域。开发规范是第三类自研规范，不计入上述 23 项徽标。
 
 # 第一章 · 先立规矩：五仓分工的那个早晨
 
-**场景**：小潘让 Agent “把 Serverless 部署脚本整理一下”。Agent 很勤快——把 Terraform、Ansible、镜像构建全塞进了 Orchestrator 的 YAML 里。第二天，三个仓库都在执行同一件事。
+**场景**：向 Agent 下达“整理 Serverless 部署脚本”的任务时，Agent 将 Terraform、Ansible 与镜像构建全部写进了 Orchestrator 的 YAML 中，导致多个仓库同时承担同一项执行职责。
 
 **用到的技能**
 
@@ -36,11 +39,11 @@
 2. 目标与云事实只来自 IaC CMDB，期望配置只来自本次固定 SHA 的 GitOps 声明；缺输入就**明确失败**，不回退旧批次。
 3. 每个 owner 单独 PR，不顺手合到 main。
 
-**故事结局**：同样的“整理一下”，变成了四个干净的 owner PR，Orchestrator 只剩授权、矩阵、派发和收回执。
+**实施效果**：同一项整理需求收敛为四个边界清晰的 owner PR，Orchestrator 仅保留授权、矩阵调度、派发与回执收集。
 
 # 第二章 · 流水线不许太深：一张 9 层图的减肥记
 
-**场景**：`selfhost-stage-deploy.yml` 有 15 个 job、9 层 `needs`。每次失败，小潘要往下翻十分钟才知道是哪一步。
+**场景**：`selfhost-stage-deploy.yml` 包含 15 个 job、9 层 `needs`，每次执行失败都需要逐层排查才能定位具体环节。
 
 **用到的技能**
 
@@ -58,7 +61,7 @@
 
 # 第三章 · 三把钥匙：系统、业务、审计各管各的
 
-**场景**：一次巡检脚本用了 root，顺手读到了 kubeconfig 和 Vault token。没出事，但小潘一夜没睡。
+**场景**：巡检脚本以 root 身份执行，顺带读取了 kubeconfig 与 Vault token。权限未按职责隔离，带来了明显的越权风险。
 
 **用到的技能**
 
@@ -75,9 +78,11 @@
 3. 权限不足时**不**默认递归 `chown`、`chmod 777`；数据卷 UID/GID 先核对。
 4. 审计用户无通用 sudo、不进容器运行时组、读不到管理员凭据。
 
+> 诚实说明：三权分立规范来自实际权限审查；规范建立与校验通过，不代表生产业务降权、rootless 迁移和审计身份隔离已完成。
+
 # 第四章 · 不碰旧数据：升级、迁移与恢复的耐心
 
-**场景**：数据库要升大版本。Agent 的第一反应是“原地升级，失败就回滚”。小潘按住了它。
+**场景**：数据库需要升级大版本时，Agent 默认采取“原地升级、失败回滚”的方案，会直接威胁已有业务数据的安全。
 
 **用到的技能**
 
@@ -126,11 +131,55 @@
 
 **适合**：多功能并行验收。**不适合**：一行修复、热补丁。
 
-> 诚实说明：本章流程为规范层设计，截至 `a545f5fa` 未有完整生产运行证据。
+> 诚实说明：新增功能泳道规范为设计契约，尚无实际部署验收。截至固定提交 `07c6e772`，不要把它写成已经跑通的发布流水线。
 
-# 第八章 · 白天写代码，晚上做内容
+# 第八章 · 七类开发规范：把“怎么写代码”也写成技能
 
-**场景**：小潘把当天的工程实践变成一组图文、一条短视频和一本 PDF。
+**场景**：需要同时修改 Portal 计费面板、accounts 服务接口与 inventory 脚本。若缺少统一的编码约束，Agent 会在不同语言里各自引入新的命名和抽象风格，导致目录中同时出现 `BillingFacade.ts`、`DoCheckout.go` 与难以维护的一行式 Shell。
+
+**先分清边界**
+
+| 规范域 | 负责什么 | 不负责什么 |
+|---|---|---|
+| `development-standards/` | 代码结构、命名、实现和行为验证 | 发布门禁、生产变更授权 |
+| `engineering-standards/` | 构建、编译、工程约束与交付流程 | 函数怎么起名 |
+| `operations-management/` | 运行、权限、变更和恢复 | 业务代码的模块切分 |
+
+**用到的技能**
+
+| 开发场景 | 技能入口 | 适合 |
+|---|---|---|
+| Node.js / Next.js / TypeScript | `nodejs-nextjs-typescript` | Portal、frontend-router 等前端与 BFF |
+| Gin / Go | `gin-go` | accounts、Infrastructure-MCP-Server 等服务 |
+| PostgreSQL | `postgresql-development` | Schema、查询、事务与版本化迁移 |
+| Python / Shell / YAML | `python-shell` | Playbooks 脚本、inventory、渲染与 CLI |
+| IaC / HCL | `iac-hcl` | Terraform / OpenTofu 模块与 env 渲染 |
+| Ansible Playbook / Role | `ansible-playbook` | Role 与入口剧本开发 |
+| GitHub Actions | `github-actions` | workflow 结构、复用边界与结果判定 |
+| 范式、模式与命名 | `programming-paradigms` 及命名清单 | 选型、十二要素、可读性与轻量扩展 |
+
+**怎么用**
+
+1. 先加载对应语言的开发规范，再读 `programming-paradigms`。写新符号前对照命名、可读性与轻量扩展清单。
+2. 名称表达业务含义，不表达设计模式身份。Portal 组件文件用 PascalCase，工具文件默认 kebab-case 并跟随所在目录；Go 文件 snake_case，导出 PascalCase、未导出 camelCase；Python 与 Shell 函数 snake_case，YAML 键和下划线变量保持一致；HCL 块名必须稳定、合法。
+3. 同一目录不要混入第三种文件名风格。`playbooks` 里同时存在 `terraform_cmdb.py` 与 `bootstrap-pinned-xconnect.sh`，新文件跟随最近邻，不借机批量改名。
+4. 写清楚，少用晦涩语法：不要把多层判断压进一行，不要用 `eval` 拼命令，也不要在可批量编排的 env 里写 `for_each` / `count` / `dynamic`。循环放在既有的 Python + Jinja2 渲染器，让 HCL 保持扁平、可审计。
+5. 好扩展，但保持轻量：功能放到已有的 `src/modules`、`internal/service`、Role 或模块附近。只在出现真实复用、替换或所有权边界时再拆层，不为“以后可能用到”预建框架。
+
+**对照过的真实项目写法（举例）**
+
+- Portal 已有约定写在 `AGENTS.md` 与 `mcp/conventions.md`：`AccountGettingStarted.tsx`、`runtime-loader.ts`、常量 `API_BASE_URL`。`ops/planCatalog.ts` 所在目录已是 camelCase，新文件跟随该目录，而不是强行改名。
+- accounts 与 Infrastructure-MCP-Server：`cmd/accountsvc`、`referral_campaign.go`、`http_server.go`，未导出的 `handler`、`authMiddleware`，导出的 `NewHTTPServer`。方法用业务动词，例如 `stripeCheckout`、`claimTaskRun`。
+- playbooks：`load_cmdb`、`build_inventory`、`checkout_release`；Role 默认 `web_saas_data_backup` 这样的 snake_case。
+- iac_modules 的 `terraform-hcl-standard/AGENTS.md`：YAML 描述资源，Python 渲染出显式 `.tf` 块，禁止在 env 的 HCL 里做循环。
+
+**实施效果**：同一项功能扩展遵循现有目录命名与模块边界，只增量补充可测代码，避免引入冗余抽象层。
+
+> 诚实说明：开发规范已对照现有项目源码、CI 历史、版本接口、隔离 PostgreSQL 测试和既有 Playbook / IaC 契约测试做过校准；命名与可读性清单通过了仓库 10 项单元测试与 `git diff --check` 后随 `#70` 合入主干。未做生产部署。命名清单整理自上述仓库的既有约定，不宣称历史目录已经全部统一。
+
+# 第九章 · 白天写代码，晚上做内容
+
+**场景**：将工程实践沉淀为系列图文、短视频及 PDF 技术文档。
 
 | 技能组 | 代表技能 | 适合 |
 |---|---|---|
@@ -142,7 +191,7 @@
 
 **不适合**：需要真人出镜或真实界面却用概念图冒充——`store-and-startup-homepage-spec` 明确要求概念图标“预览”。
 
-# 第九章 · 工具箱的工具箱：办公、浏览器与装新技能
+# 第十章 · 工具箱的工具箱：办公、浏览器与装新技能
 
 | 技能 | 适合 | 注意 |
 |---|---|---|
@@ -153,7 +202,7 @@
 | `skill-vetter`、`skills-security-check` | 第三方技能安全审查 | **必须先跑** |
 | `store-and-startup-homepage-spec` | 官网与应用商店审核 | 品牌域名承载公开页 |
 
-# 第十章 · 一天的用法速查
+# 第十一章 · 一天的用法速查
 
 | 我现在要… | 加载 |
 |---|---|
@@ -164,12 +213,16 @@
 | 升级数据库 | `generation-upgrade-acceptance` + `backup-disaster-recovery-and-data-migration` |
 | 切域名 | `network-dns-tls-edge-management` |
 | 多 Agent 协作 | `ai-agent-collaboration-standard` + `issue-pr-traceability-standard`（Harness 为设计契约） |
-| 出内容 | 第八章技能组 |
+| 写前端或 BFF | `nodejs-nextjs-typescript` + 命名清单 |
+| 写 Go 服务 | `gin-go` + 命名清单 |
+| 写脚本或 inventory | `python-shell` + 命名清单 |
+| 写 Terraform 模块 | `iac-hcl` + 命名清单 |
+| 出内容 | 第九章技能组 |
 | 装别人的技能 | `skill-vetter` 先行 |
 
 # 尾声 · 规矩写下来，Agent 才能长大
 
-技能不是魔法，是把“我们家的规矩”写成 Agent 能读懂的文字。拉取 `a545f5fa`，挑一章的场景，今天就试一次。
+技能体系的核心在于将团队的工程与研发规范固化为结构化、可验证、可复用的文本契约，使不同 Agent 在同一套约束下稳定协作。所有章节均已对照固定提交 `07c6e772`；后续仓库有新调整时，按新的主干提交继续对齐。
 
 ---
 

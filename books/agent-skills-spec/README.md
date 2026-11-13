@@ -1,6 +1,6 @@
 # XWorkspace Agent Skills 工程规范 · 开放方案
 
-- 版本：`v0.2`（见 `VERSION`；升版只改这个文件）
+- 版本：`v0.3`（见 `VERSION`；升版只改这个文件）
 - 构建：`./build.sh` 或在仓库根目录 `make agent-skills-spec`，产物在 `dist/`（不入库）
 - 依赖：python3 + markdown, Chrome（Mermaid 走 CDN，需联网）
 - 正文是否为 Markdown：是（agent-skills-spec.md）

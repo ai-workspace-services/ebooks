@@ -15,7 +15,7 @@ pre{background:#f1f5f9;padding:8px;font-size:8pt;white-space:pre-wrap;border-rad
 .pb{page-break-after:always}.cover{height:178mm;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(160deg,#0f172a,#1e3a8a);color:#fff;margin:-16mm -14mm;padding:20mm;page-break-after:always}
 .cover h1{color:#fff;border:none;font-size:22pt}.mermaid{background:#fff;text-align:center}"""
 cover=f"""<div class="cover"><div style="font-size:11pt;opacity:.8">XWorkspace Core Skills</div><h1>XWorkspace Agent Skills<br>工程规范 · 开放方案</h1>
-<div style="font-size:12pt">代码开源 · 文档开源 · 开放方案</div><div style="margin-top:30mm;font-size:10pt">{v} · 2026-10-31 · skills@a545f5fa<br>Haitao Pan<br>XWork Technologies LLC 服务支持</div></div>"""
+<div style="font-size:12pt">代码开源 · 文档开源 · 开放方案</div><div style="margin-top:30mm;font-size:10pt">{v} · 2026-11-13 · skills@07c6e772<br>Haitao Pan<br>XWork Technologies LLC 服务支持</div></div>"""
 import os
 cv=os.path.abspath('assets/cover.png')
 if os.path.exists(cv):  # designed cover from Drive assets (assets.manifest.json)
