@@ -17,7 +17,7 @@
 </tr>
 <tr>
 <td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
-<td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.2</code></td>
+<td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.3</code></td>
 <td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.2</code></td>
 </tr>
 </table>
@@ -96,11 +96,11 @@
 
 <table><tr><td width="130" valign="top"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### XWorkspace Agent Skills 工程规范 · 开放方案 · `v0.2`
+### XWorkspace Agent Skills 工程规范 · 开放方案 · `v0.3`
 
-一个人，十几个 Agent，和一座会说话的工具箱。主角小潘发现最大的问题不是 Agent 不够聪明，而是每个 Agent 都要重新被教一遍“我们家的规矩”，于是把规矩写成了一个个 SKILL.md。这本书只讲一件事：这些技能在真实的一天里怎么用，适合同时带着一群 Agent 干活的人。
+在多仓库协作与自动化交付里，多个 Agent 一起干活时，瓶颈往往不是推理能力，而是每次任务都要重新说明团队的规范与边界。本书把已验证的规矩沉淀为可加载的 Skill（每个技能一份 `SKILL.md`），覆盖工程、运维与开发三类自研规范，只讲这些技能在真实的一天里怎么用。适合同时带着一群 Agent、在多仓库里协作交付的人。
 
-11 页 · [源码](books/agent-skills-spec/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/agent-skills-spec-v0.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+18 页 · [源码](books/agent-skills-spec/) · [目录索引](books/agent-skills-spec/index.md) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/agent-skills-spec-v0.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
 
 </td></tr></table>
 
@@ -125,7 +125,7 @@
 | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.5` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
 | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
 | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
-| XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.2` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
+| XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
 | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
 
 ## 用法
