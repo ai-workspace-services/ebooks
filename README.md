@@ -100,7 +100,7 @@
 
 在多仓库协作与自动化交付里，多个 Agent 一起干活时，瓶颈往往不是推理能力，而是每次任务都要重新说明团队的规范与边界。本书把已验证的规矩沉淀为可加载的 Skill（每个技能一份 `SKILL.md`），覆盖工程、运维与开发三类自研规范，只讲这些技能在真实的一天里怎么用。适合同时带着一群 Agent、在多仓库里协作交付的人。
 
-12 页 · [源码](books/agent-skills-spec/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/agent-skills-spec-v0.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+18 页 · [源码](books/agent-skills-spec/) · [目录索引](books/agent-skills-spec/index.md) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/agent-skills-spec-v0.2.zip) · [xworktech.com/docs](https://xworktech.com/docs)
 
 </td></tr></table>
 

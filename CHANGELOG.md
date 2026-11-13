@@ -3,7 +3,9 @@
 ## 2026-11-13 · Agent Skills 工程规范 v0.3
 - 《XWorkspace Agent Skills 工程规范 · 开放方案》升至 `v0.3`：正文改为直接的工程实践表述，去掉故事化称呼；版本锚点对齐 `xworkspace-core-skills` 固定提交 `07c6e772`（2026-11-13，Asia/Shanghai，[#70](https://github.com/ai-workspace-lab/xworkspace-core-skills/pull/70) 合入主干，含 [#69](https://github.com/ai-workspace-lab/xworkspace-core-skills/pull/69) 开发规范）。
 - 新增第八章「七类开发规范：把“怎么写代码”也写成技能」，自研规范从工程、运维两类补齐为工程、运维、开发三类；诚实标签写清「已验收」与「设计契约」的边界。
-- 页数为 12 页。许可仍为内容 CC BY-SA 4.0，署名 Haitao Pan / XWork Technologies LLC。
+- 补全「附录 · 全量 Skill 目录索引」：按 `skills/` 下 `SKILL.md` 递归计数，11 个能力域 92 项 + 2 项 vendored = 94；逐项给出 Skill ID、一句话用途、所在章节或适用场景，并标明 `agent-team-harness`、`harness-workflow`、`feature-lane-release-workflow` 为设计契约。
+- PDF 目录改为两遍渲染，列出全部 `<h1>` 与附录能力域 `<h2>`，带页内锚点与实际页码（`p.X`）；在 `pypdf` 可用时写入 PDF 书签。仓库内另附 [`books/agent-skills-spec/index.md`](books/agent-skills-spec/index.md)。
+- 页数为 18 页。许可仍为内容 CC BY-SA 4.0，署名 Haitao Pan / XWork Technologies LLC。
 
 
 ## 2026-11-09 · 人民币海外卡 v1.2：汇丰全球转账细节专题

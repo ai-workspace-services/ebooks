@@ -8,4 +8,5 @@ cp agent-skills-spec.md book.md
 V="$V" ./build-core.sh
 mkdir -p dist
 mv -f "$OUT.pdf" dist/
+[ -f build-info.json ] && mv -f build-info.json dist/
 rm -f "$OUT.md" book.md book.html
