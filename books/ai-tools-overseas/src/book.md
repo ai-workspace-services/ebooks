@@ -195,12 +195,9 @@ Claude Code 是 Anthropic 面向编程场景的开发工具。登录方式以官
 
 :::warn 注意事项：订阅支付与封禁（作者案例 · 核对日期 2026-11-20）
 作者曾用 **Google Pay**（支付方式）为 Claude 订阅付款，并在 **Claude Code** 场景下使用该订阅；账号随后被封禁后，**已支付的剩余订阅在该次经历中未能退款**。这是作者个人经历，不是所有用户、所有付款渠道的通用结论。
-
 与官方条款对照（2026-11-20 查阅）：Anthropic [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) 写明，若因违反条款终止访问且你持有订阅，**无权获得退款**；若 Anthropic 因其他原因终止订阅且你经官网购买，才有按比例退还未使用部分的表述。官方帮助中心 [Request a refund for a paid Claude plan](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan) 亦写明：除条款明示、法律要求或欺诈情形外，付款通常不可退。请注意区分：
-
 - **Google Pay**：钱包/支付方式，可能用于网页账单等扣款；
 - **Google Play**：Android 应用商店计费渠道，退款流程按商店与 Anthropic 帮助中心说明处理。
-
 本书不代你联系客服、不代办退款，也不记录具体订单号、扣款日期或套餐名称。若遇封禁，以 Claude 登录后的申诉入口与官方退款指引为准。
 :::
 
@@ -263,8 +260,88 @@ Agent 可能访问项目文件、执行终端命令或使用浏览器。不要�
 
 :::warn 注意事项：Antigravity App 地区选择（核对日期 2026-11-20）
 **Antigravity App 建议优先选择美区账户；实际可用范围和资格以官方最新说明为准。** 这是作者实操建议，不是「仅美区可用」的硬性结论，也不涉及伪造账号资料或绕过资格检查。
+官方 [Antigravity FAQ · geographical availability](https://antigravity.google/docs/faq/)（2026-11-20 查阅）列出多个国家/地区；资格通常看 Google 账号在 [Terms of Service](https://policies.google.com/terms) 上关联的国家是否在支持名单，并要求年满 18 岁。App / CLI / IDE 形态以你实际下载的客户端与登录页为准。社区答复亦强调：资格看的是账号关联国家，而不是单纯的 Google Play 国家、账单地址或当前 IP（见 [Google AI Developers Forum 讨论](https://discuss.ai.google.dev/t/antigravity-says-ineligible-not-available-in-your-location-despite-us-account-and-us-connection/191504)）。
+:::
 
-官方 [Antigravity FAQ · geographical availability](https://antigravity.google/docs/faq/)（2026-11-20 查阅）列出多个国家/地区；资格通常看 Google 账号在 [Terms of Service](https://policies.google.com/terms) 上关联的国家是否在支持名单，并要求年满 18 岁。App / CLI / IDE 形态以你实际下载的客户端与登录页为准。
+### 9.3 实操攻略：优先美区 Google 账号路径（核对日期 2026-11-20）
+
+**操作建议（作者推荐，写在前面）：准备 Antigravity App 时，优先使用已关联美区的个人 Google 账号；美国支付资料应与发卡行真实账单信息一致。** 这不等于官方写了「全球只能美区」——FAQ 支持名单覆盖多国/地区——而是作者在个人出海场景下的优先路径，用以降低「账号关联国家不在名单 / 支付资料不一致」带来的反复排查成本。
+
+[[fig:antigravity_regions]]
+
+#### 先分清四个「国家」字段（不要混成一个开关）
+
+:::table
+字段 | 大致管什么 | 能否随意改 | 与 Antigravity 资格的关系
+Google 账号 · Terms of Service 关联国家 | 账号在政策页显示的关联国家/地区 | 错误时可走 Google [国家关联申请表](https://policies.google.com/country-association-form)；结果以 Google 审核为准 | **官方 FAQ 明确：可用性看这里是否在支持名单**
+Google Payments 资料国家 | 付款资料的固定国家、地址、支付方式、收据与订阅 | **已有资料的国家不能改**；换国家需新建资料（[Payments Center 说明](https://support.google.com/paymentscenter/answer/9037801)） | 影响能否用某国支付方式付款；**不等于**自动改写 ToS 关联国家
+Google Play 国家/地区 | Play 商店内容与部分 App 内购 | 通常需人身在目标地区并有当地付款方式；变更常有至少 90 天间隔（[Play 帮助](https://support.google.com/googleplay/answer/7431675)） | 与 ToS 关联国家不是同一设置；论坛答复称资格不看 Play 国家
+Gmail 地址本身 | `@gmail.com` 登录标识 | 地址字符串不代表国家 | 个人 Gmail 可用于 Antigravity；**邮箱后缀≠地区资格**
+:::
+
+**不要假设：** 往 Payments 资料里加一张美国卡，就会自动把 ToS 关联国家、Play 国家一并切成美区，或保证一定能通过 Antigravity 资格检查。也不要伪造账单地址或电话；地址须与发卡行/资料要求一致。
+
+#### 作者反馈（2026-11-20，Asia/Shanghai）
+
+- 作者将 **两个旧 Google 账号** 的相关配置切到美区路径（文中用「旧 Google 账号」表述，不记录具体手机号；**不宣称**已改换号码所属国家）。
+- 流程对齐社群常见说法：生活/工作相关地区信息按本人真实情况整理后，**支付资料国家选择美国，并用美国卡绑定**；作者反馈 **本次已通过 Google 美区切换**。
+- 在此前提下，**Mercury 企业虚拟卡派上了用场**（账单信息与发卡行/卡详情一致）。
+- **本稿声称范围到此为止**：确认「美区切换通过」；**不声称** Antigravity 已激活成功、新订阅金额、或任意商户一律过风控。也不提供伪造住址/虚假居留的操作。
+
+#### 社区攻略对照（知乎 + X，非官方）
+
+公开检索知乎与 X 上「生活/工作地址 → 支付地址选美国 → 美国卡绑定 → Play/付款侧美区」一类攻略。**知乎全文页对抓取工具返回空壳/登录墙，未能完整打开原文 HTML**；下列知乎条目仅能依据检索摘要与可见标题、URL 引用，**不当作已通读全文的逐字转载**。X 帖文可用公开接口读到正文。
+
+**知乎（检索可见标题与 URL；日期以页面为准，摘要未提供稳定发布日则不编造）：**
+
+- [一文看懂：如何查看、修改谷歌账号地区？](https://www.zhihu.com/tardis/jm/art/2033242295370303038) — 摘要强调：Google 账号地区与 Google Play 地区可不同；Play 地区与绑定支付方式所选国家相关；查看 ToS / 国家关联表单；Play 改区常需对应国家付款资料。
+- [Google Play 商店地区切不了答案在这里](https://www.zhihu.com/tardis/jm/art/2027476106589021597) — 摘要强调：商店地区优先看账单地址；改区间隔限制（摘要写 90 天）；账单地址与发卡国不一定等同。
+- [Google Play 绑卡改美区全攻略：实操避坑指南](https://www.zhihu.com/tardis/jm/art/2028045624138821730) 与相近文 [国内用户实操避坑指南](https://www.zhihu.com/tardis/jm/art/2031310365234046134) — 摘要强调：绑卡时账单地址选美国、美国发行/虚拟卡路径、等待或在 Play「国家/地区」侧核对。摘要中出现的「地址生成器 / 第三方虚拟卡推广」**本书不背书**；地址须合法真实，禁止伪造。
+
+**X（已读正文）：**
+
+- [@dasungta_zhang · 2026-11-18](https://x.com/dasungta_zhang/status/2122937116468629965)：美区节点、支付地址、家庭地址、Play 地址都是美国，仍无法用 Antigravity；核对后发现 **账号关联地区仍是中国**。检查入口指向 [country-association-form](https://policies.google.com/country-association-form)。
+- [@WeiSumiqixai · 2026-11-18](https://x.com/WeiSumiqixai/status/2123142923898499543)：能订美区 Gemini Pro ≠ Antigravity 可用；IP/Play 账单/支付方式正常时，问题常在 **谷歌账号关联地区** 与 Play 支付资料地区相互独立。查看：`play.google.com/settings`、`policies.google.com/terms`；更改关联地区走 country-association-form。
+
+**对照结论（作者整理）：**
+
+1. 用户强调的「生活/工作地址 → **支付地址必须选美国** → 美国卡绑定」与知乎/X 上大量 **Play / 付款侧** 攻略同向，作者本次也反馈切换通过。
+2. 家庭/工作地址、Play 国家、Payments 资料 **都不能单独** 证明 Antigravity 资格；官方 FAQ 看的是 **ToS 关联国家**。
+3. 社群互相矛盾处（「只要账单地址」vs「必须美国发卡行」；改区间隔 90 天 vs 一年等）以 **当期 Google 帮助中心** 为准，不采信未核验的第三方文。
+
+[[fig:antigravity_us_checklist]]
+
+#### 官方验证链接速查（登录后按当前账号查看）
+
+:::table
+入口 | 查看字段 | 验证范围 | 不能证明什么 | 未登录时
+[policies.google.com/terms](https://policies.google.com/terms) | 页面显示的 Country version / 关联国家提示 | 与 Antigravity FAQ「地理可用性」对照的 **账号 ToS 关联国家** | 不证明 Play 已是美区、不证明付款一定成功 | 可打开条款正文；**国家显示依赖已登录账号**
+[policies.google.com/country-association-form](https://policies.google.com/country-association-form) | 关联地区申请/核对 | 认为 ToS 国家有误时提交更正（结果以 Google 审核为准） | 不保证通过；不自动改 Payments/Play | **需登录**（未登录落到 Google 登录页，已核实）
+[payments.google.com](https://payments.google.com) | 付款资料国家/地区、地址、支付方式 | 哪份 Payments 资料在扣款；国家字段 **不可改，只能新建**（[帮助中心](https://support.google.com/paymentscenter/answer/9037801)） | 不证明 ToS 关联国家；不证明 Antigravity 可用 | **需登录**
+[play.google.com/settings](https://play.google.com/settings) 或 Play App → 设置 → 账号和设备偏好设置 → 国家/地区 | Play 国家/资料 | 商店目录与部分 App 内购地区；改区规则见 [Play 帮助](https://support.google.com/googleplay/answer/7431675)（须在当地、有当地付款方式；通常至少间隔 90 天） | 不证明 ToS 关联国家；论坛亦称 Antigravity 不看 Play 国家 | **需登录**
+[myaccount.google.com](https://myaccount.google.com) / [年龄验证](https://myaccount.google.com/age-verification) | 个人资料、年龄验证入口 | 账号恢复信息、18+ 相关核验（Antigravity FAQ 要求年满 18） | 个人「家/工作」地址 **不是** 全产品统一地区开关 | **需登录**
+[antigravity.google/docs/faq](https://antigravity.google/docs/faq/) | 支持国家名单与登录失败原因 | 官方资格规则说明 | 页面本身不显示你的账号属于哪国 | 公开可读，无需登录
+:::
+
+**重要：** 打开以上链接时，务必确认浏览器右上角是 **目标 Google 账号**；多账号切换错误会导致「看起来切过了、实际查的是另一个号」。任一页面都 **不能** 单独证明「全部 Google 产品已美区」或「Antigravity 一定能登」。
+
+#### 清单：美区优先路径（可勾选）
+
+1. **先查 ToS 关联国家**（Antigravity 资格）：登录目标账号打开 [Terms](https://policies.google.com/terms)；有误且符合条件再走 [国家关联申请](https://policies.google.com/country-association-form)，结果以 Google 为准。
+2. 确认个人账号类型与 [年龄验证](https://myaccount.google.com/age-verification)（FAQ：18+）。家/工作地址可在账号中心整理，但**不等于**改写 ToS / Play / Payments。
+3. **支付资料**：在 [payments.google.com](https://payments.google.com) 确认资料**国家为美国**（或与目标一致）；国家不对就**新建**资料，不能改旧资料国家字段。
+4. **最后一步支付地址选美国**，绑定**美国卡**（作者路径用 Mercury 企业虚拟卡）；账单信息与发卡行/卡详情一致，**禁止伪造地址**。
+5. 在 [play.google.com/settings](https://play.google.com/settings) 或 Play App 核对 Play 国家；规则与间隔以 [官方帮助](https://support.google.com/googleplay/answer/7431675) 为准。
+6. 再登录 Antigravity；仍不合格则重置 onboarding 并复查步骤 1——**Play/付款美区通过 ≠ 自动过 Antigravity**。
+
+#### Mercury 虚拟卡：企业工具，不是人人可领的个人万能卡
+
+Mercury 面向在美国注册的企业客户提供支票账户与虚拟/实体卡等能力（见 [Mercury FAQ](https://mercury.com/faq)）。开户需公司成立文件、EIN、控制人身份证件等；客户须在美国或美属地区成立登记，并满足其现有/计划中的美国经营与地址要求。虚拟卡可在账户可用后创建；卡片账单地址一般对应公司**法定地址**，商户校验时需按卡详情准确填写（[查找卡详情](https://support.mercury.com/hc/en-us/articles/28779226316436-Find-your-Mercury-Business-card-details-in-the-dashboard-or-mobile-app)、[公司地址要求](https://support.mercury.com/hc/en-us/articles/28769699533588-Company-address-requirements)）。
+
+:::warn 边界
+- Mercury **不是**面向普通个人消费者的「谁都能办」的全球虚拟卡方案；需合法企业主体与授权使用。
+- **不保证**任何商户（含 Google）一律接受；风控与账单地址匹配失败时，卡会被拒。
+- 作者反馈：美区配置 + Mercury 虚拟卡后 **Google 美区切换已通过**；**仍不**等于 Antigravity 激活/付费订阅成功，也不等于可伪造地址绕过官方名单。
 :::
 
 Gemini 聊天、Antigravity 的 Agent 额度、Google Cloud API 用量可能属于不同计费路径。付款前确认：账号是否正确；购买的是哪类计划；入口是 Google One、Google Play、Google Cloud 还是组织管理员；自动续费与取消入口在哪里。
@@ -471,7 +548,7 @@ HarmonyOS NEXT | 不支持 | 改用电脑、Android 或 iOS 设备
 
 ### 官方资料（操作前请核对最新版本）
 
-Google 帮助中心：验证账号、Gemini Apps 使用与计划、Google Play 可用付款方式（菲律宾）、更改 Google Play 国家或地区；OpenAI 帮助中心：ChatGPT 支持地区、取消 ChatGPT 订阅；Anthropic 支持中心：注册 Claude Pro、取消 Claude 订阅、[付费计划退款说明](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan)；Anthropic [Consumer Terms](https://www.anthropic.com/legal/consumer-terms)；Google Antigravity 文档：入门、下载、方案说明、[FAQ 地区可用性](https://antigravity.google/docs/faq/)（2026-11-20 核对）；Apple 支持：菲律宾 Apple Account 支付方式、Apple Pay 参与银行和发卡机构。
+Google 帮助中心：验证账号、Gemini Apps 使用与计划、Google Play 可用付款方式（菲律宾）、更改 Google Play 国家或地区；OpenAI 帮助中心：ChatGPT 支持地区、取消 ChatGPT 订阅；Anthropic 支持中心：注册 Claude Pro、取消 Claude 订阅、[付费计划退款说明](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan)；Anthropic [Consumer Terms](https://www.anthropic.com/legal/consumer-terms)；Google Antigravity 文档：入门、下载、方案说明、[FAQ 地区可用性](https://antigravity.google/docs/faq/)（2026-11-20 核对）；Google [国家关联申请表](https://policies.google.com/country-association-form)；[Payments 资料国家说明](https://support.google.com/paymentscenter/answer/9037801)；[更改 Google Play 国家或地区](https://support.google.com/googleplay/answer/7431675)；Mercury：[FAQ](https://mercury.com/faq)、[公司地址要求](https://support.mercury.com/hc/en-us/articles/28769699533588-Company-address-requirements)、[卡详情与账单地址](https://support.mercury.com/hc/en-us/articles/28779226316436-Find-your-Mercury-Business-card-details-in-the-dashboard-or-mobile-app)；公开社区对照（非官方）：知乎检索摘要见 §9.3 所列 tardis 链接（全文抓取受限）；X [@dasungta_zhang](https://x.com/dasungta_zhang/status/2122937116468629965)、[@WeiSumiqixai](https://x.com/WeiSumiqixai/status/2123142923898499543)（2026-11-18）；验证入口另见 [play.google.com/settings](https://play.google.com/settings)、[payments.google.com](https://payments.google.com)、[myaccount.google.com](https://myaccount.google.com)；Apple 支持：菲律宾 Apple Account 支付方式、Apple Pay 参与银行和发卡机构。
 
 
 > 许可：本书内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans)（署名-相同方式共享 4.0 国际）。署名：Haitao Pan / XWork Technologies LLC。构建脚本采用 MIT。
