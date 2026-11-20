@@ -16,7 +16,7 @@
 <td align="center" width="33%"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="200" alt="cover"></picture></a><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
+<td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r6</code></td>
 <td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.3</code></td>
 <td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.2</code></td>
 </tr>
@@ -91,11 +91,11 @@
 
 <table><tr><td width="130" valign="top"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 独立开发观察者计划：AI × 可观测 SaaS 首季 · `v0.1-r5`
+### 独立开发观察者计划：AI × 可观测 SaaS 首季 · `v0.1-r6`
 
 本季主题：AI 如何帮一个个人 SaaS 被开发出来、被看懂、被持续运行。12 篇核心稿分三个月：接得上（接观测、搬面板、串 Trace）、看得懂 AI（告警、工具调用、Token、Agent 循环）、守得住退得出（发布对比、AI 排障、自监控、季度复盘）。适合一个人做 SaaS、又想把它看清楚的开发者。
 
-199 页 · [源码](books/indie-observer/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/indie-observer-v0.1-r5.zip) · [xworktech.com/docs](https://xworktech.com/docs)
+212 页 · [源码](books/indie-observer/) · [Release zip](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/indie-observer-v0.1-r5.zip) · [xworktech.com/docs](https://xworktech.com/docs)
 
 </td></tr></table>
 
@@ -139,7 +139,7 @@
 | 出海第一步 · 一人公司合规全流程 | `v1.3` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
 | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.7` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
 | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
-| 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
+| 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r6` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
 | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
 | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
 | 图解经典设计模式 · 遇到 AI 时代 | `v0.1` | `make design-patterns-ai` | 构建时内联 SVG | [docs](https://xworktech.com/docs) |
