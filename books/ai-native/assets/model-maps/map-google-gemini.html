@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  @font-face { font-family: 'NotoSansSC'; src: local('Noto Sans CJK SC'), local('Noto Sans SC'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1400px; height: 900px; background: #FFFEFA; color: #1A2332;
+    font-family: 'NotoSansSC', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
+    padding: 36px 40px 28px; position: relative;
+  }
+  .banner {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    border-bottom: 4px solid #4285F4; padding-bottom: 16px; margin-bottom: 22px;
+  }
+  .banner h1 { font-size: 34px; font-weight: 800; letter-spacing: 0.5px; color: #1A2332; }
+  .banner .sub { font-size: 16px; color: #3D4A5C; margin-top: 8px; font-weight: 600; }
+  .badge {
+    background: #4285F4; color: #fff; font-size: 13px; font-weight: 800;
+    padding: 8px 14px; border-radius: 999px; white-space: nowrap; margin-left: 16px;
+  }
+  .grid { display: flex; gap: 18px; align-items: stretch; }
+  .col { flex: 1; min-width: 0; }
+  .col-h {
+    font-size: 15px; font-weight: 800; color: #4285F4; text-transform: none;
+    margin-bottom: 10px; letter-spacing: 0.5px;
+  }
+  .card {
+    background: #FFFFFF; border: 1.5px solid #D8DEE8; border-left: 5px solid #4285F4;
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(26,35,50,0.06);
+  }
+  .name { font-size: 20px; font-weight: 800; color: #1A2332; }
+  .id { font-size: 13px; color: #3D4A5C; margin-top: 4px; }
+  .id code { background: #F1F4F9; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .meta { font-size: 14px; color: #3D4A5C; margin-top: 6px; font-weight: 600; }
+  .use { font-size: 15px; color: #1A2332; margin-top: 6px; font-weight: 600; }
+  .extras { margin-top: 14px; }
+  .extra {
+    background: #F7F9FC; border: 1px solid #D8DEE8; border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 8px; font-size: 14px; color: #1A2332; line-height: 1.45;
+  }
+  .extra b { color: #4285F4; }
+  .notes {
+    margin-top: 12px; background: #FFF; border: 1.5px solid #D8DEE8; border-radius: 12px;
+    padding: 12px 18px 12px 32px; font-size: 14px; color: #1A2332; line-height: 1.5;
+  }
+  .notes li { margin: 4px 0; }
+  .foot {
+    position: absolute; left: 40px; right: 40px; bottom: 18px;
+    display: flex; justify-content: space-between; font-size: 12px; color: #3D4A5C; font-weight: 600;
+  }
+</style></head><body>
+  <div class="banner">
+    <div>
+      <h1>Google · Gemini 模型族谱（核实版）</h1>
+      <div class="sub">Gemini API / AI Studio 模型码；≠ Google AI Plus/Pro 订阅档</div>
+    </div>
+    <div class="badge">核实 · 2026-11-20</div>
+  </div>
+  <div class="grid"><div class="col"><div class="col-h">Gemini 4</div>
+            <div class="card">
+              <div class="name">Carbon</div>
+              <div class="id"><code>gemini-4-carbon</code></div>
+              <div class="meta">1M · 最长输出 64K/1M</div>
+              <div class="use">最强推理 / Agent 编码</div>
+            </div>
+            <div class="card">
+              <div class="name">Neon</div>
+              <div class="id"><code>gemini-4-neon</code></div>
+              <div class="meta">1M · 64K/1M</div>
+              <div class="use">前沿智能 + 较快完成</div>
+            </div>
+            <div class="card">
+              <div class="name">Hydrogen</div>
+              <div class="id"><code>gemini-4-hydrogen</code></div>
+              <div class="meta">1M · 64K/1M</div>
+              <div class="use">日常编码与 Agent 效率</div>
+            </div>
+            <div class="card">
+              <div class="name">Argon</div>
+              <div class="id"><code>gemini-4-argon</code></div>
+              <div class="meta">1M · 64K/1M</div>
+              <div class="use">相对 Carbon 更省 token 的前沿推理</div>
+            </div></div><div class="col"><div class="col-h">Gemini 3 Flash / Live</div>
+            <div class="card">
+              <div class="name">3.8 Flash</div>
+              <div class="id"><code>gemini-3.8-flash</code></div>
+              <div class="meta">Flash 档</div>
+              <div class="use">长程工程与自主 Agent</div>
+            </div>
+            <div class="card">
+              <div class="name">3.8 Live</div>
+              <div class="id"><code>gemini-3.8-live</code></div>
+              <div class="meta">实时语音</div>
+              <div class="use">低延迟语音 Agent</div>
+            </div>
+            <div class="card">
+              <div class="name">3.6 Flash</div>
+              <div class="id"><code>gemini-3.6-flash</code></div>
+              <div class="meta">Flash 档</div>
+              <div class="use">速度与多模态平衡</div>
+            </div>
+            <div class="card">
+              <div class="name">3.5 Flash-Lite</div>
+              <div class="id"><code>gemini-3.5-flash-lite</code></div>
+              <div class="meta">高吞吐</div>
+              <div class="use">低成本子 Agent</div>
+            </div></div></div>
+  <div class="extras"><div class="extra"><b>生成媒体（摘录）</b> — Nano Banana 2.1 / 2 / Pro；Gemini Omni Flash；Genie 4；Lyria；TTS / Transcribe 等 — 见官方 models 页</div><div class="extra"><b>已弃用并路由（changelog）</b> — gemini-3.7-flash → 3.8-flash；gemini-3.5-flash → 3.6-flash — 请改模型字符串</div></div>
+  <ul class="notes"><li>官方「Latest」页以 Carbon 为最强推理；Argon 为更高效的前沿推理档。</li><li>稳定版示例：gemini-3.6-flash；preview / latest / experimental 命名约定见文档。</li><li>Antigravity / Jules / Deep Research 是产品或 Agent，不是模型族 ID。</li></ul>
+  <div class="foot">
+    <span>整理/重绘 · 参考用户提供的暗色族谱图版式 · 事实仅取官方目录</span>
+    <span>aistudio.google.com/docs/models · changelog · 访问 2026-11-20</span>
+  </div>
+</body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  @font-face { font-family: 'NotoSansSC'; src: local('Noto Sans CJK SC'), local('Noto Sans SC'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1400px; height: 900px; background: #FFFEFA; color: #1A2332;
+    font-family: 'NotoSansSC', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
+    padding: 36px 40px 28px; position: relative;
+  }
+  .banner {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    border-bottom: 4px solid #2563EB; padding-bottom: 16px; margin-bottom: 22px;
+  }
+  .banner h1 { font-size: 34px; font-weight: 800; letter-spacing: 0.5px; color: #1A2332; }
+  .banner .sub { font-size: 16px; color: #3D4A5C; margin-top: 8px; font-weight: 600; }
+  .badge {
+    background: #2563EB; color: #fff; font-size: 13px; font-weight: 800;
+    padding: 8px 14px; border-radius: 999px; white-space: nowrap; margin-left: 16px;
+  }
+  .grid { display: flex; gap: 18px; align-items: stretch; }
+  .col { flex: 1; min-width: 0; }
+  .col-h {
+    font-size: 15px; font-weight: 800; color: #2563EB; text-transform: none;
+    margin-bottom: 10px; letter-spacing: 0.5px;
+  }
+  .card {
+    background: #FFFFFF; border: 1.5px solid #D8DEE8; border-left: 5px solid #2563EB;
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(26,35,50,0.06);
+  }
+  .name { font-size: 20px; font-weight: 800; color: #1A2332; }
+  .id { font-size: 13px; color: #3D4A5C; margin-top: 4px; }
+  .id code { background: #F1F4F9; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .meta { font-size: 14px; color: #3D4A5C; margin-top: 6px; font-weight: 600; }
+  .use { font-size: 15px; color: #1A2332; margin-top: 6px; font-weight: 600; }
+  .extras { margin-top: 14px; }
+  .extra {
+    background: #F7F9FC; border: 1px solid #D8DEE8; border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 8px; font-size: 14px; color: #1A2332; line-height: 1.45;
+  }
+  .extra b { color: #2563EB; }
+  .notes {
+    margin-top: 12px; background: #FFF; border: 1.5px solid #D8DEE8; border-radius: 12px;
+    padding: 12px 18px 12px 32px; font-size: 14px; color: #1A2332; line-height: 1.5;
+  }
+  .notes li { margin: 4px 0; }
+  .foot {
+    position: absolute; left: 40px; right: 40px; bottom: 18px;
+    display: flex; justify-content: space-between; font-size: 12px; color: #3D4A5C; font-weight: 600;
+  }
+</style></head><body>
+  <div class="banner">
+    <div>
+      <h1>xAI · Grok 模型族谱（核实版）</h1>
+      <div class="sub">文本 API 定价表所列 ID；Imagine / Voice 为专用模态</div>
+    </div>
+    <div class="badge">核实 · 2026-11-20</div>
+  </div>
+  <div class="grid"><div class="col"><div class="col-h">文本旗舰</div>
+            <div class="card">
+              <div class="name">Grok 4.7</div>
+              <div class="id"><code>grok-4.7</code></div>
+              <div class="meta">500k 上下文</div>
+              <div class="use">官方推荐代码与通用任务</div>
+            </div>
+            <div class="card">
+              <div class="name">Grok 4.6</div>
+              <div class="id"><code>grok-4.6</code></div>
+              <div class="meta">500k 上下文</div>
+              <div class="use">同代次前一档</div>
+            </div>
+            <div class="card">
+              <div class="name">Grok 4.5</div>
+              <div class="id"><code>grok-4.5</code></div>
+              <div class="meta">500k 上下文</div>
+              <div class="use">同代次</div>
+            </div></div><div class="col"><div class="col-h">长上下文档</div>
+            <div class="card">
+              <div class="name">Grok 4.3</div>
+              <div class="id"><code>grok-4.3</code></div>
+              <div class="meta">1M 上下文</div>
+              <div class="use">更长上下文定价档</div>
+            </div>
+            <div class="card">
+              <div class="name">Grok 4.20 系列</div>
+              <div class="id"><code>grok-4.20-*-0309</code></div>
+              <div class="meta">1M 上下文</div>
+              <div class="use">reasoning / non-reasoning / multi-agent</div>
+            </div></div></div>
+  <div class="extras"><div class="extra"><b>图像 / 视频</b> — grok-imagine-image · grok-imagine-image-2.0 · grok-imagine-video · video-1.5 / 1.5-lite</div><div class="extra"><b>语音</b> — grok-voice-3.0（STS）；Voice 2.0 文档标注 Deprecated</div></div>
+  <ul class="notes"><li>选型页：Code / Chat → Grok 4.7；图像 → Image 2.0；视频 → Video 1.5；语音 → Voice API。</li><li>未开 Web/X Search 时无训练截止后的实时事件（知识截止：Grok 4.7 为 2026-05）。</li><li>Grok 产品 App / SuperGrok 订阅 ≠ API 模型 ID。</li></ul>
+  <div class="foot">
+    <span>整理/重绘 · 参考用户提供的暗色族谱图版式 · 事实仅取官方目录</span>
+    <span>docs.x.ai/developers/models · 访问 2026-11-20</span>
+  </div>
+</body></html>

@@ -132,17 +132,34 @@ cmp_=''.join(f'<tr><td><b>{E(a)}</b></td><td>{E(b)}</td><td>{E(c_)}</td><td>{E(d
 add(f'''<div class="kicker">第 03 章 · 装备库 · 阵营总览</div><h1>装备库：五大阵营对照表</h1>
 <div class="lead">装备 = 模型 + 编程工具。先看一张表认清各阵营的旗舰与快速档，再翻到 3.1–3.6 看每套装备的攻略卡。</div>
 <table class="lm mt2"><tr><th>厂商</th><th>旗舰</th><th>快速档</th><th>编程工具</th><th>适合职业</th></tr>{cmp_}</table>
-<div class="note"><b>信息截至 {VD.DATE}</b>：模型名与能力描述均摘自各厂商官方文档与更新日志（来源清单见源码包 sources/ch03-sources-20261023.md）。开源阵营的编程工具一栏是作者的统一推荐（OpenCode），小字为厂商官方工具。「适合职业」为编者按 L0–L5 的归类建议。</div>''','03 装备库 · 对照表',bm='　3.0 五大阵营对照表')
+<div class="note"><b>信息截至 {VD.DATE}</b>：模型名与能力描述均摘自各厂商官方文档与更新日志（来源清单见源码包 sources/ch03-sources-20261023.md / model-maps-evidence-20261120.md）。开源阵营的编程工具一栏是作者的统一推荐（OpenCode），小字为厂商官方工具。「适合职业」为编者按 L0–L5 的归类建议。</div>''','03 装备库 · 对照表',bm='　3.0 五大阵营对照表')
 def vend(sec,title,tagx,rows,pit,egg,tip):
     add(f'''<div class="kicker">{sec} · 装备套装：{E(tagx)}</div><h1>{sec} {E(title)}</h1>{its(rows)}'''+tips3(pit,egg,tip)+f'<div class="src">官方来源见源码包 sources/</div>',f'03 装备库 · {sec}',bm=f'　{sec} {title}')
-for v in VD.V[:3]: vend(*v)
-vend(*VD.V[3])
+# 明亮主题模型族谱图（核实版）：版式重绘自用户暗色参考图；事实见 sources/model-maps-evidence-20261120.md
+MAPS = {
+  '3.1': ('map-openai-gpt.png', '图 3.1-M：OpenAI GPT 模型族谱（明亮主题核实版）'),
+  '3.2': ('map-anthropic-claude.png', '图 3.2-M：Anthropic Claude 模型族谱（明亮主题核实版）'),
+  '3.3': ('map-xai-grok.png', '图 3.3-M：xAI Grok 模型族谱（明亮主题核实版）'),
+  '3.4': ('map-google-gemini.png', '图 3.4-M：Google Gemini 模型族谱（明亮主题核实版）'),
+  '3.6': ('map-open-weights.png', '图 3.6-M：开放权重阵营摘录（明亮主题核实版）'),
+}
+def vend_map(sec):
+    fn, caption = MAPS[sec]
+    img = (ROOT/'assets'/'model-maps'/fn)
+    add(f'''<div class="kicker">{sec} · 模型族谱</div><h1>{E(caption.split('：',1)[-1] if '：' in caption else caption)}</h1>
+<div class="lead">按任务选模型：旗舰留给 L3/L5 难推理；均衡档挂 L0/L2；Flash/Haiku/Luna 挂 L1。模型族 ≠ 产品订阅档；开放权重 ≠ 开源许可。</div>
+<img src="{img.as_uri()}" style="width:96%;display:block;margin:10px auto 0;border-radius:12px;border:1px solid #dde5f0;background:#fffef8">
+<div class="src" style="margin-top:10px">{E(caption)}。整理/重绘；事实仅取官方目录（sources/model-maps-evidence-20261120.md）。用户暗色原图仅作版式参考。</div>''',
+        f'03 装备库 · {sec} 族谱', bm=f'　{sec} 模型族谱图')
+for v in VD.V[:3]:
+    vend(*v); vend_map(v[0])
+vend(*VD.V[3]); vend_map(VD.V[3][0])
 su=''.join('<tr>'+''.join(f'<td>{"<b>"+E(c)+"</b>" if i==0 else E(c)}</td>' for i,c in enumerate(r))+'</tr>' for r in VD.SUITE)
 add(f'''<div class="kicker">3.5 · 装备图鉴：四家全家桶</div><h1>3.5 AI 全家桶：四家对比</h1>
 <div class="lead">同一类装备，四大阵营各出什么？按产品类别横向对照，只看能力。</div>
 <table class="lm mt2"><tr><th>类别</th><th>OpenAI</th><th>Anthropic</th><th>xAI</th><th>Google</th></tr>{su}</table>
 <div class="src">「—」表示官方页面未见对应主打产品；来源见源码包 sources/</div>''','03 装备库 · 3.5 全家桶',bm='　3.5 AI 全家桶：四家对比')
-vend(*VD.V[4])
+vend(*VD.V[4]); vend_map(VD.V[4][0])
 exec(open(ROOT / '_build' / 'opencode_page.py').read())
 lo=''.join(f'<tr><td><b>{E(a)}</b></td><td>{E(b)}</td><td>{E(c_)}</td></tr>' for a,b,c_ in VD.LOADOUT)
 add(f'''<div class="kicker">3.7 · 配装</div><h1>3.7 怎么配装：L0–L5 选型建议</h1>
