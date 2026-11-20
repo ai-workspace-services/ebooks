@@ -8,18 +8,20 @@
 
 ## 系列索引
 
-| 编号 | 系列 | slug | 最新 VERSION（main） | 构建脚本 |
+| 编号 | 系列 | slug | PDF 最新 | main 源码 VERSION | 构建脚本 |
 |---|---|---|---|---|
-| `XW-EB-01` | 图解 IT 简史 | `it-history` | `v4.9.1` | `books/it-history/build.sh` · `Makefile` · `scripts/build.py` |
-| `XW-EB-02` | 图解平台工程 · 云中立实践 | `platform-engineering` | `v0.9.20` | `books/platform-engineering/build.sh` → `build-core.sh` |
-| `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `data-infra` | `v5.1` | `books/data-infra/build.sh` → `book/build_book.py` |
-| `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `chuhai-first-step` | `v1.3` | `books/chuhai-first-step/build.sh` → `build.py` |
-| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `ai-tools-overseas` | `v0.2.7` | `books/ai-tools-overseas/build.sh` → `src/build.py` |
-| `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `ai-native` | `v0.9.6` | `books/ai-native/build.sh` → `build.py` |
-| `XW-EB-07` | XWorkspace Agent Skills 工程规范 | `agent-skills-spec` | `v0.3` | `books/agent-skills-spec/build.sh` → `build-core.sh` |
-| `XW-EB-08` | 人民币海外卡三条路线攻略 | `cny-overseas-card-routes` | `v1.2` | `books/cny-overseas-card-routes/build.sh` → `src/build.py` |
-| `XW-EB-09` | 独立开发观察者计划 | `indie-observer` | `v0.1-r5` | `books/indie-observer/build.sh` → `build-core.sh` |
-| `—` | 图解经典设计模式 · 遇到 AI 时代 | `design-patterns-ai` | `v0.1` | `books/design-patterns-ai/build.sh` → `build-core.sh` |
+| `XW-EB-01` | 图解 IT 简史 | `it-history` | `v4.9.1` | `v4.9.1` | `books/it-history/build.sh` · `Makefile` · `scripts/build.py` |
+| `XW-EB-02` | 图解平台工程 · 云中立实践 | `platform-engineering` | `v0.9.20` | `v0.9.20` | `books/platform-engineering/build.sh` → `build-core.sh` |
+| `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `data-infra` | `v5.1` | `v5.1` | `books/data-infra/build.sh` → `book/build_book.py` |
+| `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `chuhai-first-step` | `v1.4` | `v1.3` | `books/chuhai-first-step/build.sh` → `build.py` |
+| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `ai-tools-overseas` | `v0.2.6`† | `v0.2.7` | `books/ai-tools-overseas/build.sh` → `src/build.py` |
+| `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `ai-native` | `v0.9.6` | `v0.9.6` | `books/ai-native/build.sh` → `build.py` |
+| `XW-EB-07` | XWorkspace Agent Skills 工程规范 | `agent-skills-spec` | `v0.3` | `v0.3` | `books/agent-skills-spec/build.sh` → `build-core.sh` |
+| `XW-EB-08` | 人民币海外卡三条路线攻略 | `cny-overseas-card-routes` | `v1.3` | `v1.2` | `books/cny-overseas-card-routes/build.sh` → `src/build.py` |
+| `XW-EB-09` | 独立开发观察者计划 | `indie-observer` | `v0.1-r5` | `v0.1-r5` | `books/indie-observer/build.sh` → `build-core.sh` |
+| `—` | 图解经典设计模式 · 遇到 AI 时代 | `design-patterns-ai` | `v0.1` | `v0.1` | `books/design-patterns-ai/build.sh` → `build-core.sh` |
+
+† Drive 最新 PDF 仍为 `v0.2.6`；main 源码 `v0.2.7`。PDF 最新与 main 源码不一致时并列标注，不以源码静默覆盖 PDF 最新。
 
 ## 分册历史
 

@@ -11,14 +11,14 @@
 <td align="center" width="33%"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-03</code><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-04</code><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.3</code></td>
+<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-04</code><br><b>出海第一步 · 一人公司合规全流程</b><br><code>PDF v1.4</code><br><small>main 源码 <code>v1.3</code></small></td>
 <td align="center" width="33%"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-05</code><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.7</code></td>
 <td align="center" width="33%"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-06</code><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
 </tr>
 <tr>
 <td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-09</code><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
 <td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-07</code><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.3</code></td>
-<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-08</code><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.3</code></td>
+<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-08</code><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>PDF v1.3</code><br><small>main 源码 <code>v1.2</code></small></td>
 </tr>
 <tr>
 <td align="center" width="33%"><a href="books/design-patterns-ai/"><b>图解经典设计模式 · 遇到 AI 时代</b></a><br><code>v0.1</code><br><sub>未编内部编号</sub></td>
@@ -31,6 +31,8 @@
 ## 内部编号对照
 
 完整历史版本（含旧 PDF 与源码核对情况）见 [`docs/version-history.md`](docs/version-history.md)。
+
+> **版本两栏：**「PDF 最新」= Drive/发行侧当前最新 PDF；「main 源码」= 仓库 `VERSION`。二者不一致时并列写出（如出海第一步 PDF `v1.4` / 源码 `v1.3`；人民币卡 PDF `v1.3` / 源码 `v1.2`），**不要**用较低的源码版本覆盖 PDF 最新。
 
 系列编号 `XW-EB-xx` 固定不变，不随版本号递增。最新 PDF 以 Drive 为准；GitHub Release zip 仍指向已发布资产（部分书正文已升版但 zip 尚未重打）。
 
@@ -82,7 +84,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### XW-EB-04 · 出海第一步 · 一人公司合规全流程 · `v1.4`
+### XW-EB-04 · 出海第一步 · 一人公司合规全流程 · PDF `v1.4`（main 源码 `v1.3`）
 
 从 LLC 到 EIN，再到银行、应用商店与跨境电汇：美国 LLC 设立、EIN 与 147C、Mercury 企业账户，Microsoft、Apple、Google Play 三家公司开发者号，大陆、香港、美国三段资金合规，以及汇丰香港「全球转账」操作步骤。都是作者自己一步步走过的真实顺序，适合想用一人公司把产品卖向全球的独立开发者。
 
@@ -132,7 +134,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### XW-EB-08 · 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.3`
+### XW-EB-08 · 人民币 ⇄ 海外卡 · 三条路线攻略 · PDF `v1.3`（main 源码 `v1.2`）
 
 只回答一个问题：人民币怎么进到海外卡，海外卡里的钱又怎么回到人民币。香港、菲律宾（DITO eSIM + Maya）、美国 Mercury 三条路线，各自讲清绕不开的前提。是个人经历加官方公开资料整理，适合要给海外 AI 订阅付款或收美元营收的朋友。
 
@@ -152,18 +154,20 @@
 
 把书当仓库维护：每本书的 Markdown 正文、构建脚本和版本号在一起走版本，改版时章节和示例一起提交、一起评审。PDF 由 CI 构建，不入库。
 
-| 编号 | 书 | 版本 | 构建 | 图片素材 | PDF |
-|---|---|---|---|---|---|
-| `XW-EB-01` | 图解 IT 简史 | `v4.9.1` | `make it-history` | Drive | [docs](https://xworktech.com/docs) |
-| `XW-EB-02` | 图解平台工程 · 云中立实践 | `v0.9.20` | `make platform-engineering` | Drive | [docs](https://xworktech.com/docs) |
-| `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `v5.1` | `make data-infra` | Drive | [docs](https://xworktech.com/docs) |
-| `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `v1.3` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
-| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.7` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
-| `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
-| `XW-EB-07` | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
-| `XW-EB-08` | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
-| `XW-EB-09` | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
-| — | 图解经典设计模式 · 遇到 AI 时代 | `v0.1` | `make design-patterns-ai` | 构建时内联 SVG | [docs](https://xworktech.com/docs) |
+| 编号 | 书 | PDF 最新 | main 源码 | 构建 | 图片素材 | PDF |
+|---|---|---|---|---|---|---|
+| `XW-EB-01` | 图解 IT 简史 | `v4.9.1` | `v4.9.1` | `make it-history` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-02` | 图解平台工程 · 云中立实践 | `v0.9.20` | `v0.9.20` | `make platform-engineering` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `v5.1` | `v5.1` | `make data-infra` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `v1.4` | `v1.3` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.6`† | `v0.2.7` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-07` | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-08` | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.3` | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-09` | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
+| — | 图解经典设计模式 · 遇到 AI 时代 | `v0.1` | `v0.1` | `make design-patterns-ai` | 构建时内联 SVG | [docs](https://xworktech.com/docs) |
+
+† Drive 上最新入库 PDF 仍为 `v0.2.6`；`main` 源码已是 `v0.2.7`（PR #13），PDF 待另行入库。当 PDF 最新与 main 源码不一致时**并列标注**，不以源码版本静默覆盖 PDF 最新。
 
 ## 用法
 
