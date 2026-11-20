@@ -1,6 +1,6 @@
 # 独立开发观察者计划：AI × 可观测 SaaS 首季
 
-- 版本：`v0.1-r5`（见 `VERSION`；升版只改这个文件）
+- 版本：`v0.1-r6`（见 `VERSION`；升版只改这个文件）
 - 构建：`./build.sh` 或在仓库根目录 `make indie-observer`，产物在 `dist/`（不入库）
 - 依赖：python3 + markdown, Chrome, poppler
 - 正文是否为 Markdown：是（src/content/... series-v4 + articles，来自 knowledge main，含 #294）
