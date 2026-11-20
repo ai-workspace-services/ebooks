@@ -1,6 +1,8 @@
 # AI 工具出海通关 · 注册与订阅全流程
 
-- 版本：`v0.2.5`（见 `VERSION`；升版只改这个文件）
+- 内部编号：`XW-EB-05`（系列固定，不随版本变化）
+
+- 版本：`v0.2.7`（见 `VERSION`；升版只改这个文件）
 - 构建：`./build.sh` 或在仓库根目录 `make ai-tools-overseas`，产物在 `dist/`（不入库）
 - 依赖：python3 + PyMuPDF, Chrome, poppler
 - 正文是否为 Markdown：是（src/book.md, src/base.md）
