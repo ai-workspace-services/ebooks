@@ -30,6 +30,8 @@
 
 ## 内部编号对照
 
+完整历史版本（含旧 PDF 与源码核对情况）见 [`docs/version-history.md`](docs/version-history.md)。
+
 系列编号 `XW-EB-xx` 固定不变，不随版本号递增。最新 PDF 以 Drive 为准；GitHub Release zip 仍指向已发布资产（部分书正文已升版但 zip 尚未重打）。
 
 | 编号 | 系列 | 最新版本 | 最新 PDF（Drive） |
