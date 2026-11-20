@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-20 · AI 工具出海通关 v0.2.7（XW-EB-05）
+- 《AI 工具出海通关 · 注册与订阅全流程》升至 `v0.2.7`：纳入此前未合并的可选第 14 章（新加坡 Starry Blu / 汇丰全球转账到账确认，原 v0.2.6 工作区内容）。
+- 第 7.4 节补充作者案例注意事项：Claude Code 场景下经 **Google Pay** 支付的订阅，在账号封禁后该次经历中未能退款；对照 Anthropic Consumer Terms 与官方退款帮助页，并区分 Google Pay（支付方式）与 Google Play（商店计费）。
+- 第 9.2 节补充 Antigravity 地区资格注意事项：记录作者 2026-11-20 观察，同时引用官方 FAQ——Antigravity **并非**仅限美国，而以账号 ToS 关联国家是否在支持名单为准；区分 App / CLI / IDE 等形态。
+- 附录「官方资料」增加退款说明与 Antigravity FAQ 链接。系列内部编号：`XW-EB-05`。
+
+
 ## 2026-11-13 · 图解经典设计模式 v0.1
 - 新增《图解经典设计模式 · 遇到 AI 时代》`v0.1`：不谈 Java 类继承教条，立足 Linux 容器原生、Next.js Portal、Go / Gin 与 PostgreSQL，辅以 Python CLI、GitHub Actions、HCL 与 Playbook。
 - 开篇直接讨论 AI 时代为何更需要设计模式：生成速度快，也更容易堆积「一本正经、整整齐齐的屎山」。先定位变化点或一致性问题，再用信号和代价决定是否引入模式；命名是沟通手段，实现落回函数、结构体、模块和框架原语。

@@ -56,6 +56,7 @@ FIGS={
 'apple':('图 12-1 可选：App Store 应用内订阅',hflow([('Apple ID','地区=实际'),('双因素','认证'),('添加 Visa','3-D Secure'),('App 内订阅','确认方案'),('设置→订阅','核对续费')])),
 'play':('图 13-1 可选：Google Play 应用内订阅',hflow([('登录 Play','本人 Gmail'),('核对地区','所在地一致'),('付款方式','Visa / Maya'),('App 内订阅','核对账号'),('付款和订阅','保存订单号')])),
 'trouble':('图 附-1 先定位是哪一段出了问题',branch(('出问题了','先记录报错与时间'),[('打不开','网络 / DNS / 代理'),('收不到码','号码 / 短信 / 频率'),('登录报错','账号 / 组织策略'),('付款失败','地区 / 卡 / 重复订阅')])),
+'mercury':('图 14-1 Mercury Checking 到账确认（已打码）', '<img src="file:///workspace/ebooks/books/ai-tools-overseas/assets/mercury-arrival-redacted.png" alt="Mercury 到账截图（已打码）" style="width:100%;height:auto;border:1px solid #c9d6ee;border-radius:8px"/>'),
 }
 def inl(s):
     s=html.escape(s); s=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',s); return re.sub(r'`(.+?)`',r'<code>\1</code>',s)
@@ -95,7 +96,7 @@ h2,h3{break-after:avoid;page-break-after:avoid}.cdesc{font-size:8.5pt;color:#465
 h1.pre{color:#101c44;border-bottom:3px solid #4b43e8;padding-bottom:2mm}.toc{page-break-after:always}.toc a{color:#1b2340;text-decoration:none}.t1{font-weight:900;margin-top:3mm;color:#0058bd}.t2{padding-left:6mm;display:flex}.t2 a{flex:1}
 .part{page-break-before:always;page-break-after:always;padding-top:55mm;text-align:center}.pk{font-size:26pt;font-weight:900;color:#4b43e8}.pn{font-size:20pt;font-weight:700;color:#101c44}
 .chopen{page-break-before:always;border-left:6px solid #4b43e8;padding-left:4mm;margin-bottom:5mm}.chno{color:#4b43e8;font-weight:700}.chopen h1{margin:0;font-size:18pt;color:#101c44}
-h2{color:#0058bd;font-size:12pt;margin:5mm 0 2mm}figure{margin:3mm 0;page-break-inside:avoid;text-align:center}figure svg{width:100%}figcaption{font-size:8pt;color:#46506e}
+h2{color:#0058bd;font-size:12pt;margin:5mm 0 2mm}figure{margin:3mm 0;page-break-inside:avoid;text-align:center}figure svg,figure img{width:100%;height:auto}figcaption{font-size:8pt;color:#46506e}
 table{border-collapse:collapse;width:100%;font-size:8.3pt;margin:3mm 0;page-break-inside:avoid}th{background:#0058bd;color:#fff}th,td{border:1px solid #c9d6ee;padding:1.5mm;vertical-align:top}tr:nth-child(odd) td{background:#f3f7fd}
 .call{border-radius:8px;padding:2mm 4mm;margin:3mm 0;page-break-inside:avoid}.call p{margin:1mm 0}.warn{background:#fff4e5;border-left:4px solid #e8890c}.tip{background:#e8f0fb;border-left:4px solid #0058bd}code{background:#eef;padding:0 2px}'''
 doc=f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body>{cover}{tochtml}{"".join(body)}</body></html>'

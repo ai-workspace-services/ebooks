@@ -193,6 +193,17 @@ Claude Code 是 Anthropic 面向编程场景的开发工具。登录方式以官
 开发工具可能读写项目文件或执行终端命令。不要把密码、恢复码、API Token、私钥、`.env` 文件或支付资料放入可访问的工作区。
 :::
 
+:::warn 注意事项：订阅支付与封禁（作者案例 · 核对日期 2026-11-20）
+作者曾用 **Google Pay**（支付方式）为 Claude 订阅付款，并在 **Claude Code** 场景下使用该订阅；账号随后被封禁后，**已支付的剩余订阅在该次经历中未能退款**。这是作者个人经历，不是所有用户、所有付款渠道的通用结论。
+
+与官方条款对照（2026-11-20 查阅）：Anthropic [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) 写明，若因违反条款终止访问且你持有订阅，**无权获得退款**；若 Anthropic 因其他原因终止订阅且你经官网购买，才有按比例退还未使用部分的表述。官方帮助中心 [Request a refund for a paid Claude plan](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan) 亦写明：除条款明示、法律要求或欺诈情形外，付款通常不可退。请注意区分：
+
+- **Google Pay**：钱包/支付方式，可能用于网页账单等扣款；
+- **Google Play**：Android 应用商店计费渠道，退款流程按商店与 Anthropic 帮助中心说明处理。
+
+本书不代你联系客服、不代办退款，也不记录具体订单号、扣款日期或套餐名称。若遇封禁，以 Claude 登录后的申诉入口与官方退款指引为准。
+:::
+
 ## 08 Grok
 
 Grok 通常通过 X 账号进入，准备重点是 X 账号和它的验证能力。
@@ -248,6 +259,14 @@ Antigravity 是 Google 的 agent-first 开发平台，包含桌面应用、IDE /
 
 :::warn 安全边界
 Agent 可能访问项目文件、执行终端命令或使用浏览器。不要把密码、恢复码、API Token、私钥、`.env` 文件或支付资料放入可访问的工作区；不要使用来源不明的安装脚本、破解版本或共享账号。
+:::
+
+:::warn 注意事项：地区与账号资格（核对日期 2026-11-20）
+作者观察（2026-11-20，Asia/Shanghai）：在部分环境下，**Antigravity 客户端/App** 登录时更容易遇到「当前账号或地区不可用」一类提示；作者侧当时更接近「需要可用的美区关联账户」的体验。这是**有日期的作者观察**，**不能**据此写成「Antigravity 全球仅对美国账户开放」。
+
+官方公开说明（同日查阅 [Google Antigravity FAQ · geographical availability](https://antigravity.google/docs/faq/)）：Antigravity 在美洲、欧洲、非洲、亚洲、大洋洲等**多个国家/地区**可用，资格主要看 Google 账号在 [Google Terms of Service](https://policies.google.com/terms) 上关联的国家/地区是否在支持名单，并要求年满 18 岁；Workspace 账号与个人账号规则不同。官方文档同时区分 **Antigravity App、CLI、IDE / 扩展** 等形态，以你实际下载的客户端与登录页为准。
+
+操作建议：登录前先核对账号 ToS 国家；遇「not available in your location / not eligible」时，以 FAQ 与登录页提示为准，不要假设改 VPN 或改 Play 国家一定有效。名单与产品形态会变化，请以官方页面最新版为准。
 :::
 
 Gemini 聊天、Antigravity 的 Agent 额度、Google Cloud API 用量可能属于不同计费路径。付款前确认：账号是否正确；购买的是哪类计划；入口是 Google One、Google Play、Google Cloud 还是组织管理员；自动续费与取消入口在哪里。
@@ -350,6 +369,30 @@ App Store 订阅只能在 Apple 账号的「订阅」中管理；卸载 App 或�
 Google 规定，设置新的 Play 国家/地区时，用户应位于该地区并拥有该地区的付款方式；变更通常至少间隔 90 天，新支付资料也可能需要等待生效。
 :::
 
+## 14 可选：新加坡 Starry Blu 与汇丰全球转账到账
+
+本章是可选补充，不属于前面的 AI 账号注册主链路。记录作者已经开通的新加坡账户，以及用汇丰香港「全球转账」把成员出资转到美国 Mercury 并确认到账的事实。
+
+### 14.1 新加坡 Starry Blu（已开户）
+
+作者已完成新加坡 **Starry Blu** 开户。它与美国 Mercury、香港 ZA Bank / 汇丰 / 中银香港、菲律宾 Maya 一起，构成作者已开通的出海账户。
+
+详细注册步骤不在本版展开：整理时未能从既有底稿中核对到作者此前提供的逐步操作记录，故不编造步骤。步骤补齐后再更新。
+
+### 14.2 汇丰「全球转账」到账确认
+
+作者按汇丰香港网上理财「全球转账至其他账户」办理国际电汇（操作步骤与字段提示见《人民币海外卡三条路线攻略》细节专题，以及《出海第一步 · 一人公司合规全流程》第 07 章），并把这笔成员出资真正转出。收款端已确认：
+
+- 汇丰「全球转账至其他账户」已提交并汇出；
+- Mercury Checking 收到 **100 美元**；
+- 本笔手续费 **20 美元**（以当时页面为准，不作为汇丰固定费率）。
+
+[[fig:mercury]]
+
+:::tip 主链路状态
+**LLC → EIN → 开户 → 汇丰转出 → Mercury 到账** 已经闭环。州年报 / 年审仍待完成。限额和其他费用仍以汇丰当时页面为准。
+:::
+
 # 附录
 
 ## 附录 常见问题排查与案例
@@ -430,7 +473,7 @@ HarmonyOS NEXT | 不支持 | 改用电脑、Android 或 iOS 设备
 
 ### 官方资料（操作前请核对最新版本）
 
-Google 帮助中心：验证账号、Gemini Apps 使用与计划、Google Play 可用付款方式（菲律宾）、更改 Google Play 国家或地区；OpenAI 帮助中心：ChatGPT 支持地区、取消 ChatGPT 订阅；Anthropic 支持中心：注册 Claude Pro、取消 Claude 订阅；Google Antigravity 文档：入门、下载、方案说明；Apple 支持：菲律宾 Apple Account 支付方式、Apple Pay 参与银行和发卡机构。
+Google 帮助中心：验证账号、Gemini Apps 使用与计划、Google Play 可用付款方式（菲律宾）、更改 Google Play 国家或地区；OpenAI 帮助中心：ChatGPT 支持地区、取消 ChatGPT 订阅；Anthropic 支持中心：注册 Claude Pro、取消 Claude 订阅、[付费计划退款说明](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan)；Anthropic [Consumer Terms](https://www.anthropic.com/legal/consumer-terms)；Google Antigravity 文档：入门、下载、方案说明、[FAQ 地区可用性](https://antigravity.google/docs/faq/)（2026-11-20 核对）；Apple 支持：菲律宾 Apple Account 支付方式、Apple Pay 参与银行和发卡机构。
 
 
 > 许可：本书内容采用 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans)（署名-相同方式共享 4.0 国际）。署名：Haitao Pan / XWork Technologies LLC。构建脚本采用 MIT。
