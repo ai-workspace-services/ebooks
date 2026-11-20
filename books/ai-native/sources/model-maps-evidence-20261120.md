@@ -43,6 +43,6 @@
 用户于 2026-11-20 提供 5 张暗色族谱 PNG（Gemini / 开放阵营 / Grok / Claude / OpenAI）。子代理因私有附件权限未能重读像素；版式按「明亮主题卡片族谱」重绘。图中若有与官方目录不符的名称，**不以附图为准**。
 
 ## 图文件
-- 可编辑：`assets/model-maps/*.html`（生成脚本 `_build/gen_model_maps.py`）
-- 印刷 PNG：`assets/model-maps/map-*.png`
-- SVG 索引：`assets/model-maps/*.svg`（指向 HTML 源）
+- **可编辑源（唯一）：** `_build/gen_model_maps.py` + `assets/model-maps/*.html`
+- 印刷 PNG：`assets/model-maps/map-*.png`（由生成器渲染）
+- `*.svg`：**仅索引占位，不是可编辑矢量图**；勿当 SVG 画板编辑

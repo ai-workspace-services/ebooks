@@ -148,7 +148,7 @@ def vend_map(sec):
     img = (ROOT/'assets'/'model-maps'/fn)
     add(f'''<div class="kicker">{sec} · 模型族谱</div><h1>{E(caption.split('：',1)[-1] if '：' in caption else caption)}</h1>
 <div class="lead">按任务选模型：旗舰留给 L3/L5 难推理；均衡档挂 L0/L2；Flash/Haiku/Luna 挂 L1。模型族 ≠ 产品订阅档；开放权重 ≠ 开源许可。</div>
-<img src="{img.as_uri()}" style="width:96%;display:block;margin:10px auto 0;border-radius:12px;border:1px solid #dde5f0;background:#fffef8">
+<img src="{img.as_uri()}" style="width:96%;max-height:760px;height:auto;object-fit:contain;display:block;margin:10px auto 0;border-radius:12px;border:1px solid #dde5f0;background:#fffef8">
 <div class="src" style="margin-top:10px">{E(caption)}。整理/重绘；事实仅取官方目录（sources/model-maps-evidence-20261120.md）。用户暗色原图仅作版式参考。</div>''',
         f'03 装备库 · {sec} 族谱', bm=f'　{sec} 模型族谱图')
 for v in VD.V[:3]:

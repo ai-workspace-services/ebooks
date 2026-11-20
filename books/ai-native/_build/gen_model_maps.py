@@ -1,45 +1,41 @@
 #!/usr/bin/env python3
-"""Generate light-theme model-family maps (SVG + PNG) for AI-Native ch.03.
+"""Generate light-theme model-family maps (HTML → PNG) for AI-Native ch.03.
+
+Editable sources of truth: this generator + sibling *.html files.
+*.svg files are optional index stubs only — NOT editable vector artwork.
 
 Verified-only facts; evidence: sources/model-maps-evidence-20261120.md
-User-supplied dark infographics are reference layout only — redrawn, not claimed as original authorship.
+User-supplied dark infographics are reference layout only.
 """
 from __future__ import annotations
-import html, os, subprocess, tempfile
+import html, json, subprocess, time, urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'assets' / 'model-maps'
 OUT.mkdir(parents=True, exist_ok=True)
 
-# Shared light theme
-BG = '#FFFEFA'  # ivory
+BG = '#FFFEFA'
 INK = '#1A2332'
-MUTED = '#3D4A5C'  # dark enough for print — not low-contrast grey
+MUTED = '#3D4A5C'
 CARD = '#FFFFFF'
 BORDER = '#D8DEE8'
+WIDTH = 1400
+FOOTER_GAP = 40  # reserved space above footer band
+BOTTOM_PAD = 48
 
+# --- family data (same verified content) ---
 FAMILIES = [
   {
-    'id': 'openai',
-    'file': 'map-openai-gpt',
-    'accent': '#10A37F',
+    'id': 'openai', 'file': 'map-openai-gpt', 'accent': '#10A37F',
     'title': 'OpenAI · GPT 模型族谱（核实版）',
     'subtitle': '模型族 ≠ ChatGPT 订阅档 / App；以 API 模型目录为准',
     'cols': [
-      ('旗舰推理', [
-        ('GPT-6.2 Astra', 'gpt-6.2-astra', '1.05M 上下文 · 128K 输出', '复杂推理 / 编码 / 电脑操作'),
-      ]),
-      ('均衡主力', [
-        ('GPT-6.2 Sol', 'gpt-6.2-sol', '1.05M 上下文 · 128K 输出', '日常编码与 Agent 规模化'),
-      ]),
-      ('高效批量', [
-        ('GPT-6 Luna', 'gpt-6-luna', '1.05M 上下文 · 128K 输出', '高吞吐 / 可关 reasoning'),
-      ]),
+      ('旗舰推理', [('GPT-6.2 Astra', 'gpt-6.2-astra', '1.05M 上下文 · 128K 输出', '复杂推理 / 编码 / 电脑操作')]),
+      ('均衡主力', [('GPT-6.2 Sol', 'gpt-6.2-sol', '1.05M 上下文 · 128K 输出', '日常编码与 Agent 规模化')]),
+      ('高效批量', [('GPT-6 Luna', 'gpt-6-luna', '1.05M 上下文 · 128K 输出', '高吞吐 / 可关 reasoning')]),
     ],
-    'extra': [
-      ('专用 / 多媒体（目录另列）', 'GPT-Image-2.6 Sunburst / Flare；GPT-Live-1.1；Daybreak / GPT-6 Cyber（需审批，未在本书展开）'),
-    ],
+    'extra': [('专用 / 多媒体（目录另列）', 'GPT-Image-2.6 Sunburst / Flare；GPT-Live-1.1；Daybreak / GPT-6 Cyber（需审批，未在本书展开）')],
     'notes': [
       '官方选型页建议：最难项目用 Astra；日常用 Sol；成本敏感用 Luna。',
       'Astra / Sol 拒绝 reasoning.effort=none；Luna 支持 none。',
@@ -48,9 +44,7 @@ FAMILIES = [
     'sources': 'developers.openai.com/api/docs/models · 访问 2026-11-20',
   },
   {
-    'id': 'anthropic',
-    'file': 'map-anthropic-claude',
-    'accent': '#D97706',
+    'id': 'anthropic', 'file': 'map-anthropic-claude', 'accent': '#D97706',
     'title': 'Anthropic · Claude 模型族谱（核实版）',
     'subtitle': 'Claude API / 云平台模型 ID；产品 App 另计',
     'cols': [
@@ -74,9 +68,7 @@ FAMILIES = [
     'sources': 'platform.claude.com/docs/en/models/overview · 访问 2026-11-20',
   },
   {
-    'id': 'xai',
-    'file': 'map-xai-grok',
-    'accent': '#2563EB',
+    'id': 'xai', 'file': 'map-xai-grok', 'accent': '#2563EB',
     'title': 'xAI · Grok 模型族谱（核实版）',
     'subtitle': '文本 API 定价表所列 ID；Imagine / Voice 为专用模态',
     'cols': [
@@ -102,9 +94,7 @@ FAMILIES = [
     'sources': 'docs.x.ai/developers/models · 访问 2026-11-20',
   },
   {
-    'id': 'google',
-    'file': 'map-google-gemini',
-    'accent': '#4285F4',
+    'id': 'google', 'file': 'map-google-gemini', 'accent': '#4285F4',
     'title': 'Google · Gemini 模型族谱（核实版）',
     'subtitle': 'Gemini API / AI Studio 模型码；≠ Google AI Plus/Pro 订阅档',
     'cols': [
@@ -133,9 +123,7 @@ FAMILIES = [
     'sources': 'aistudio.google.com/docs/models · changelog · 访问 2026-11-20',
   },
   {
-    'id': 'open-weights',
-    'file': 'map-open-weights',
-    'accent': '#7C3AED',
+    'id': 'open-weights', 'file': 'map-open-weights', 'accent': '#7C3AED',
     'title': '开放权重阵营 · 核实摘录（非穷尽）',
     'subtitle': '开放权重 ≠ OSI 开源许可；商用前必读各家许可证',
     'cols': [
@@ -185,53 +173,62 @@ def render_html(fam: dict) -> str:
 <style>
   @font-face {{ font-family: 'NotoSansSC'; src: local('Noto Sans CJK SC'), local('Noto Sans SC'); }}
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  html, body {{ background: {BG}; }}
   body {{
-    width: 1400px; height: 900px; background: {BG}; color: {INK};
+    width: {WIDTH}px; min-height: 100px; height: auto; overflow: visible;
+    color: {INK};
     font-family: 'NotoSansSC', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
-    padding: 36px 40px 28px; position: relative;
+    padding: 36px 40px {BOTTOM_PAD}px; position: relative;
   }}
+  .wrap {{ display: flex; flex-direction: column; gap: 0; }}
   .banner {{
     display: flex; align-items: flex-start; justify-content: space-between;
-    border-bottom: 4px solid {accent}; padding-bottom: 16px; margin-bottom: 22px;
+    border-bottom: 4px solid {accent}; padding-bottom: 16px; margin-bottom: 20px;
   }}
-  .banner h1 {{ font-size: 34px; font-weight: 800; letter-spacing: 0.5px; color: {INK}; }}
-  .banner .sub {{ font-size: 16px; color: {MUTED}; margin-top: 8px; font-weight: 600; }}
+  .banner h1 {{ font-size: 32px; font-weight: 800; letter-spacing: 0.5px; color: {INK}; line-height: 1.25; }}
+  .banner .sub {{ font-size: 15px; color: {MUTED}; margin-top: 8px; font-weight: 600; }}
   .badge {{
     background: {accent}; color: #fff; font-size: 13px; font-weight: 800;
-    padding: 8px 14px; border-radius: 999px; white-space: nowrap; margin-left: 16px;
+    padding: 8px 14px; border-radius: 999px; white-space: nowrap; margin-left: 16px; flex: 0 0 auto;
   }}
-  .grid {{ display: flex; gap: 18px; align-items: stretch; }}
+  .grid {{ display: flex; gap: 16px; align-items: flex-start; }}
   .col {{ flex: 1; min-width: 0; }}
   .col-h {{
-    font-size: 15px; font-weight: 800; color: {accent}; text-transform: none;
+    font-size: 15px; font-weight: 800; color: {accent};
     margin-bottom: 10px; letter-spacing: 0.5px;
   }}
   .card {{
     background: {CARD}; border: 1.5px solid {BORDER}; border-left: 5px solid {accent};
-    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+    border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
     box-shadow: 0 2px 8px rgba(26,35,50,0.06);
   }}
-  .name {{ font-size: 20px; font-weight: 800; color: {INK}; }}
+  .name {{ font-size: 18px; font-weight: 800; color: {INK}; }}
   .id {{ font-size: 13px; color: {MUTED}; margin-top: 4px; }}
   .id code {{ background: #F1F4F9; padding: 2px 6px; border-radius: 4px; font-size: 12px; }}
-  .meta {{ font-size: 14px; color: {MUTED}; margin-top: 6px; font-weight: 600; }}
-  .use {{ font-size: 15px; color: {INK}; margin-top: 6px; font-weight: 600; }}
-  .extras {{ margin-top: 14px; }}
+  .meta {{ font-size: 13px; color: {MUTED}; margin-top: 5px; font-weight: 600; }}
+  .use {{ font-size: 14px; color: {INK}; margin-top: 5px; font-weight: 600; }}
+  .extras {{ margin-top: 12px; }}
   .extra {{
     background: #F7F9FC; border: 1px solid {BORDER}; border-radius: 10px;
-    padding: 10px 14px; margin-bottom: 8px; font-size: 14px; color: {INK}; line-height: 1.45;
+    padding: 10px 14px; margin-bottom: 8px; font-size: 13px; color: {INK}; line-height: 1.45;
   }}
   .extra b {{ color: {accent}; }}
   .notes {{
-    margin-top: 12px; background: #FFF; border: 1.5px solid {BORDER}; border-radius: 12px;
-    padding: 12px 18px 12px 32px; font-size: 14px; color: {INK}; line-height: 1.5;
+    margin-top: 10px; background: #FFF; border: 1.5px solid {BORDER}; border-radius: 12px;
+    padding: 12px 18px 12px 32px; font-size: 13px; color: {INK}; line-height: 1.5;
   }}
   .notes li {{ margin: 4px 0; }}
+  /* Footer in document flow — never overlaps content */
   .foot {{
-    position: absolute; left: 40px; right: 40px; bottom: 18px;
-    display: flex; justify-content: space-between; font-size: 12px; color: {MUTED}; font-weight: 600;
+    margin-top: {FOOTER_GAP}px; padding-top: 14px;
+    border-top: 1px solid {BORDER};
+    display: flex; justify-content: space-between; gap: 16px;
+    font-size: 12px; color: {MUTED}; font-weight: 600; line-height: 1.4;
   }}
+  .foot span {{ max-width: 48%; }}
+  .foot .right {{ text-align: right; }}
 </style></head><body>
+  <div class="wrap">
   <div class="banner">
     <div>
       <h1>{esc(fam['title'])}</h1>
@@ -243,79 +240,182 @@ def render_html(fam: dict) -> str:
   <div class="extras">{extras}</div>
   <ul class="notes">{notes}</ul>
   <div class="foot">
-    <span>整理/重绘 · 参考用户提供的暗色族谱图版式 · 事实仅取官方目录</span>
-    <span>{esc(fam['sources'])}</span>
+    <span>整理/重绘 · 参考用户暗色族谱图版式 · 事实仅取官方目录 · 可编辑源：本 HTML + gen_model_maps.py</span>
+    <span class="right">{esc(fam['sources'])}</span>
+  </div>
   </div>
 </body></html>'''
 
 
-def html_to_png(html_path: Path, png_path: Path, w=1400, h=900):
+def _cdp(port: int, method: str, params: dict | None = None, session_id: str | None = None):
+    # Use HTTP /json/protocol via websocket is hard without deps; instead use chrome --dump
+    raise NotImplementedError
+
+
+def measure_and_screenshot(html_path: Path, png_path: Path, width: int = WIDTH) -> tuple[int, int]:
+    """Launch Chrome with remote debugging, get document height, screenshot full page, crop."""
+    import socket
+    # pick free port
+    s = socket.socket(); s.bind(('127.0.0.1', 0)); port = s.getsockname()[1]; s.close()
+    user_data = Path('/tmp') / f'chrome-map-{port}'
+    user_data.mkdir(exist_ok=True)
     url = html_path.resolve().as_uri()
-    cmd = [
-        'google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox',
-        '--hide-scrollbars', f'--window-size={w},{h}',
-        f'--screenshot={png_path}', url,
-    ]
-    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    proc = subprocess.Popen([
+        'google-chrome', f'--remote-debugging-port={port}', '--headless=new',
+        '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
+        f'--user-data-dir={user_data}',
+        f'--window-size={width},1200',
+        url,
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        # wait for debugger
+        ws_url = None
+        for _ in range(50):
+            try:
+                with urllib.request.urlopen(f'http://127.0.0.1:{port}/json/list', timeout=1) as r:
+                    tabs = json.loads(r.read().decode())
+                for tab in tabs:
+                    if tab.get('type') == 'page' and tab.get('webSocketDebuggerUrl'):
+                        ws_url = tab['webSocketDebuggerUrl']
+                        break
+                if ws_url:
+                    break
+            except Exception:
+                time.sleep(0.1)
+        if not ws_url:
+            raise RuntimeError('Chrome CDP not ready')
+
+        # Prefer websocket; fallback if websocket-client missing
+        try:
+            import websocket  # type: ignore
+        except ImportError:
+            subprocess.check_call(['pip', 'install', '--break-system-packages', '-q', 'websocket-client'])
+            import websocket  # type: ignore
+
+        ws = websocket.create_connection(ws_url, timeout=15)
+        msg_id = 0
+
+        def call(method, params=None):
+            nonlocal msg_id
+            msg_id += 1
+            payload = {'id': msg_id, 'method': method}
+            if params:
+                payload['params'] = params
+            ws.send(json.dumps(payload))
+            while True:
+                raw = ws.recv()
+                data = json.loads(raw)
+                if data.get('id') == msg_id:
+                    if 'error' in data:
+                        raise RuntimeError(data['error'])
+                    return data.get('result', {})
+
+        call('Page.enable')
+        # wait for load
+        time.sleep(0.4)
+        metrics = call('Page.getLayoutMetrics')
+        content = metrics.get('cssContentSize') or metrics.get('contentSize') or {}
+        h = int(content.get('height', 1000)) + 8
+        w = int(content.get('width', width))
+        # clamp
+        h = max(h, 700)
+        h = min(h, 2400)
+        # set device metrics then capture
+        call('Emulation.setDeviceMetricsOverride', {
+            'width': width, 'height': h, 'deviceScaleFactor': 1, 'mobile': False,
+        })
+        time.sleep(0.15)
+        shot = call('Page.captureScreenshot', {'format': 'png', 'fromSurface': True, 'captureBeyondViewport': True})
+        import base64
+        png_path.write_bytes(base64.b64decode(shot['data']))
+        ws.close()
+        return w, h
+    finally:
+        proc.terminate()
+        try:
+            proc.wait(timeout=3)
+        except Exception:
+            proc.kill()
 
 
-def html_to_svg_wrapper(html_str: str, svg_path: Path, w=1400, h=900):
-    """Store editable source as foreignObject SVG for print/edit pipelines."""
-    # Escape for embedding: keep as CDATA-ish by using xhtml namespace
-    inner = html_str.replace('<!DOCTYPE html>', '').replace('<html lang="zh-CN">', '').replace('</html>', '')
-    # Simpler: save the HTML alongside and a minimal SVG that points conceptually
-    svg = f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">
-  <title>Editable source companion — see sibling .html</title>
+
+def crop_whitespace(png_path: Path, bottom_pad: int = 40, top_pad: int = 0, side_pad: int = 0, thresh: int = 250):
+    """Trim excess ivory/white below content while keeping bottom_pad."""
+    from PIL import Image
+    im = Image.open(png_path).convert('RGB')
+    w, h = im.size
+    px = im.load()
+    def row_has_ink(y):
+        dark = 0
+        for x in range(0, w, 3):
+            r, g, b = px[x, y]
+            if r < thresh or g < thresh or b < thresh:
+                dark += 1
+                if dark > 2:
+                    return True
+        return False
+    top = 0
+    for y in range(h):
+        if row_has_ink(y):
+            top = max(0, y - top_pad)
+            break
+    bottom = h - 1
+    for y in range(h - 1, -1, -1):
+        if row_has_ink(y):
+            bottom = min(h - 1, y + bottom_pad)
+            break
+    if bottom <= top:
+        return im.size
+    cropped = im.crop((0, top, w, bottom + 1))
+    cropped.save(png_path)
+    return cropped.size
+
+
+def write_index_svg(fam: dict, svg_path: Path, h: int):
+    """Non-editable index stub pointing at HTML — do not treat as vector artwork."""
+    svg_path.write_text(
+        f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{min(h, 200)}" viewBox="0 0 {WIDTH} {min(h, 200)}">
+  <desc>INDEX ONLY — not editable vector art. Edit {fam['file']}.html or _build/gen_model_maps.py then re-run generator.</desc>
   <rect width="100%" height="100%" fill="{BG}"/>
-  <text x="40" y="48" font-family="Noto Sans CJK SC, sans-serif" font-size="22" fill="{INK}">
-    可编辑源：同目录 .html（Chrome 渲染出 PNG）。本 SVG 为占位索引。
-  </text>
+  <text x="40" y="56" font-size="22" font-family="Noto Sans CJK SC, sans-serif" fill="{INK}">{esc(fam['title'])}</text>
+  <text x="40" y="96" font-size="14" font-family="Noto Sans CJK SC, sans-serif" fill="{MUTED}">Editable sources: {fam['file']}.html + gen_model_maps.py → PNG. This SVG is an index stub only.</text>
 </svg>
-'''
-    # Better: actually embed foreignObject with the body content
-    # For editability, the .html IS the source of truth.
-    svg_path.write_text(svg, encoding='utf-8')
+''',
+        encoding='utf-8',
+    )
 
 
 def main():
+    try:
+        from PIL import Image  # noqa: F401
+    except ImportError:
+        subprocess.check_call(['pip', 'install', '-q', 'pillow'])
+
+    sizes = []
     for fam in FAMILIES:
         html_str = render_html(fam)
         html_path = OUT / f"{fam['file']}.html"
         png_path = OUT / f"{fam['file']}.png"
         svg_path = OUT / f"{fam['file']}.svg"
         html_path.write_text(html_str, encoding='utf-8')
-        html_to_png(html_path, png_path)
-        # Also write a self-contained SVG via foreignObject for vector edit
-        fo = f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml"
-     width="1400" height="900" viewBox="0 0 1400 900">
-  <foreignObject width="1400" height="900">
-    <xhtml:div xmlns="http://www.w3.org/1999/xhtml">{html_str.split('<body>',1)[1].rsplit('</body>',1)[0] if '<body>' in html_str else ''}</xhtml:div>
-  </foreignObject>
-</svg>
-'''
-        # Keep editable HTML as primary; SVG index points to it
-        svg_path.write_text(
-            f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
-  <desc>Primary editable source: {fam['file']}.html · Generated PNG: {fam['file']}.png · Accent {fam['accent']}</desc>
-  <rect width="1400" height="900" fill="{BG}"/>
-  <text x="48" y="80" font-size="28" font-family="Noto Sans CJK SC, sans-serif" fill="{INK}">{esc(fam['title'])}</text>
-  <text x="48" y="120" font-size="16" font-family="Noto Sans CJK SC, sans-serif" fill="{MUTED}">See sibling .html for full editable layout; render with Chrome → PNG.</text>
-</svg>
-''',
-            encoding='utf-8',
-        )
-        print('wrote', png_path, png_path.stat().st_size)
-    # manifest for chapters
+        w, h = measure_and_screenshot(html_path, png_path)
+        cw, ch = crop_whitespace(png_path, bottom_pad=72)
+        w, h = cw, ch
+        write_index_svg(fam, svg_path, h)
+        sizes.append((fam['file'], w, h, png_path.stat().st_size))
+        print(f"wrote {png_path.name} {w}x{h} {png_path.stat().st_size}B")
+
     (OUT / 'README.md').write_text(
         '# Model-family maps (light theme)\n\n'
-        'Generated by `_build/gen_model_maps.py`. Editable: `*.html`. Print: `*.png`.\n'
+        '**Editable sources of truth:** `_build/gen_model_maps.py` and `*.html` in this folder.\n'
+        '**Print/raster:** `*.png` (regenerated by the generator).\n'
+        '**`*.svg`:** index stubs only — **not** editable vector graphics.\n\n'
         'Redrawn from user-supplied dark references; facts from official catalogs only '
         '(see `sources/model-maps-evidence-20261120.md`).\n',
         encoding='utf-8',
     )
+    print('sizes:', sizes)
 
 
 if __name__ == '__main__':
