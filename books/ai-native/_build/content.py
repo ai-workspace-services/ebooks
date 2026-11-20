@@ -83,20 +83,20 @@ LAYER_MAP = [  # 编者对照：五层模型 ↔ 本章工具（仅做归类，�
 MODEL_DATE = '2026-10-23'
 # 信息截至 2026-10：仅收录已在官方页面核实的型号
 MODELS = [
- ('Google', 'Gemini 4 Argon（gemini-4-argon）', '旗舰推理模型，百万级统一上下文；Antigravity 托管 Agent 已支持', 'ai.google.dev/gemini-api/docs/models'),
+ ('Google', 'Gemini 4 Carbon（gemini-4-carbon）', '旗舰推理模型，百万级统一上下文；Antigravity 托管 Agent 已支持', 'ai.google.dev/gemini-api/docs/models'),
  ('Google', 'Gemini 3.8 Flash（gemini-3.8-flash）', '快速档，面向长程软件工程与 Agent', 'ai.google.dev/gemini-api/docs/models'),
  ('Google', 'Nano Banana 2.1', '图像生成与对话式编辑', 'ai.google.dev/gemini-api/docs/models'),
- ('OpenAI', 'GPT-6.1 Sol（gpt-6.1-sol）', 'Codex 默认模型，百万级上下文；GPT-6 Astra 为最强档，GPT-6 Luna 用于高频轻任务', 'developers.openai.com/api/docs/models'),
+ ('OpenAI', 'GPT-6.2 Sol（gpt-6.2-sol）', 'Codex 默认模型，百万级上下文；GPT-6.2 Astra 为最强档，GPT-6 Luna 用于高频轻任务', 'developers.openai.com/api/docs/models'),
  ('Anthropic', 'Claude Opus 5.5 / Sonnet 5.5 / Haiku 5.5', '全系百万级上下文；Haiku 5.5 适合做轻量子 Agent', 'docs.claude.com'),
  ('xAI', 'Grok 4.7（grok-4.7）', '50 万级上下文，推理强度可调，面向编码与知识工作', 'docs.x.ai/docs/models'),
  ('DeepSeek', 'DeepSeek V4.1 Flash（deepseek-flash）', '开放权重，百万级上下文，可配合 DeepSeek Harness', 'api-docs.deepseek.com'),
 ]
 # L0–L5 角色矩阵（摘自作者的 AI 协作指南推荐，2026-10）
 ROLES = [
- ('L0 Chat 控制面', '理解、讨论、拆解、协调，不直接写代码', 'GPT-6.1 Sol / Sonnet 5.5 / Grok'),
+ ('L0 Chat 控制面', '理解、讨论、拆解、协调，不直接写代码', 'GPT-6.2 Sol / Sonnet 5.5 / Grok'),
  ('L1 Worker', '高频、重复、边界清楚的小任务', 'GPT-6 Luna / Gemini 3.8 Flash / Haiku 5.5'),
- ('L2 Engineer', '日常编码、修 Bug、写测试', 'GPT-6.1 Sol / Sonnet 5.5 / Grok 4.7 / Gemini 3.8 Flash'),
- ('L3 Architect', '架构设计、跨仓库重构、关键决策', 'GPT-6 Astra / Opus 5.5 / Gemini 4 Argon / Grok 4.7'),
+ ('L2 Engineer', '日常编码、修 Bug、写测试', 'GPT-6.2 Sol / Sonnet 5.5 / Grok 4.7 / Gemini 3.8 Flash'),
+ ('L3 Architect', '架构设计、跨仓库重构、关键决策', 'GPT-6.2 Astra / Opus 5.5 / Gemini 4 Carbon / Grok 4.7'),
  ('L4 Researcher', '选型、政策与资料核对（与 L3 平级）', 'Deep Research / Grok + X 搜索'),
  ('L5 Specialist', 'GUI 多步操作、安全等专项', 'Computer-Use 类模型 / Gemini Deep Think'),
 ]

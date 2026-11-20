@@ -1,6 +1,6 @@
 # AI-Native 超级个体 · 新时代游戏
 
-- 版本：`v0.9.6`（见 `VERSION`；升版只改这个文件）
+- 版本：`v0.9.7`（见 `VERSION`；升版只改这个文件）
 - 构建：`./build.sh` 或在仓库根目录 `make ai-native`，产物在 `dist/`（不入库）
 - 依赖：python3 + markdown + pypdf, Chrome
 - 正文是否为 Markdown：部分：sources/*.md 为原稿，排版正文在 _build/*.py（未转 MD）

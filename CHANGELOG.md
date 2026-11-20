@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-20 · AI-Native 超级个体 v0.9.7（XW-EB-06）
+- 《AI-Native 超级个体 · 新时代游戏》升至 `v0.9.7`：第 03 章装备库新增五张明亮主题模型族谱图（OpenAI / Claude / Grok / Gemini / 开放权重），由 `_build/gen_model_maps.py` 生成可编辑 HTML + PNG；版式重绘自用户提供的暗色参考图，**事实仅取官方目录**（`sources/model-maps-evidence-20261120.md`）。
+- 显著核对修正：OpenAI 旗舰线改为 GPT-6.2 Astra / Sol；Claude 最新旗舰 Fable 5.2；Gemini 最强推理对齐 Carbon（Argon 为效率档）；明确模型族 ≠ 产品订阅档、开放权重 ≠ 开源许可；Mistral Medium 3.5 按官方弃用日程标注（非「已下线」）。
+- 配装表 L0–L5 与 3.5 全家桶对照同步更新；打印页检查族谱图缩放，避免裁切与过小字号。
+
 ## 2026-11-20 · AI 工具出海通关 v0.2.7（XW-EB-05）
 - 《AI 工具出海通关 · 注册与订阅全流程》升至 `v0.2.7`：纳入此前未合并的可选第 14 章（新加坡 Starry Blu / 汇丰全球转账到账确认，原 v0.2.6 工作区内容）。
 - 第 7.4 节补充作者案例注意事项：Claude Code 场景下经 **Google Pay** 支付的订阅，在账号封禁后该次经历中未能退款；对照 Anthropic Consumer Terms 与官方退款帮助页，并区分 Google Pay（支付方式）与 Google Play（商店计费）。

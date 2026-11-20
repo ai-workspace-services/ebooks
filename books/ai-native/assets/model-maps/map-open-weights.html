@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  @font-face { font-family: 'NotoSansSC'; src: local('Noto Sans CJK SC'), local('Noto Sans SC'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #FFFEFA; }
+  body {
+    width: 1400px; min-height: 100px; height: auto; overflow: visible;
+    color: #1A2332;
+    font-family: 'NotoSansSC', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
+    padding: 36px 40px 48px; position: relative;
+  }
+  .wrap { display: flex; flex-direction: column; gap: 0; }
+  .banner {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    border-bottom: 4px solid #7C3AED; padding-bottom: 16px; margin-bottom: 20px;
+  }
+  .banner h1 { font-size: 32px; font-weight: 800; letter-spacing: 0.5px; color: #1A2332; line-height: 1.25; }
+  .banner .sub { font-size: 15px; color: #3D4A5C; margin-top: 8px; font-weight: 600; }
+  .badge {
+    background: #7C3AED; color: #fff; font-size: 13px; font-weight: 800;
+    padding: 8px 14px; border-radius: 999px; white-space: nowrap; margin-left: 16px; flex: 0 0 auto;
+  }
+  .grid { display: flex; gap: 16px; align-items: flex-start; }
+  .col { flex: 1; min-width: 0; }
+  .col-h {
+    font-size: 15px; font-weight: 800; color: #7C3AED;
+    margin-bottom: 10px; letter-spacing: 0.5px;
+  }
+  .card {
+    background: #FFFFFF; border: 1.5px solid #D8DEE8; border-left: 5px solid #7C3AED;
+    border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(26,35,50,0.06);
+  }
+  .name { font-size: 18px; font-weight: 800; color: #1A2332; }
+  .id { font-size: 13px; color: #3D4A5C; margin-top: 4px; }
+  .id code { background: #F1F4F9; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .meta { font-size: 13px; color: #3D4A5C; margin-top: 5px; font-weight: 600; }
+  .use { font-size: 14px; color: #1A2332; margin-top: 5px; font-weight: 600; }
+  .extras { margin-top: 12px; }
+  .extra {
+    background: #F7F9FC; border: 1px solid #D8DEE8; border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 8px; font-size: 13px; color: #1A2332; line-height: 1.45;
+  }
+  .extra b { color: #7C3AED; }
+  .notes {
+    margin-top: 10px; background: #FFF; border: 1.5px solid #D8DEE8; border-radius: 12px;
+    padding: 12px 18px 12px 32px; font-size: 13px; color: #1A2332; line-height: 1.5;
+  }
+  .notes li { margin: 4px 0; }
+  /* Footer in document flow — never overlaps content */
+  .foot {
+    margin-top: 40px; padding-top: 14px;
+    border-top: 1px solid #D8DEE8;
+    display: flex; justify-content: space-between; gap: 16px;
+    font-size: 12px; color: #3D4A5C; font-weight: 600; line-height: 1.4;
+  }
+  .foot span { max-width: 48%; }
+  .foot .right { text-align: right; }
+</style></head><body>
+  <div class="wrap">
+  <div class="banner">
+    <div>
+      <h1>开放权重阵营 · 核实摘录（非穷尽）</h1>
+      <div class="sub">开放权重 ≠ OSI 开源许可；商用前必读各家许可证</div>
+    </div>
+    <div class="badge">核实 · 2026-11-20</div>
+  </div>
+  <div class="grid"><div class="col"><div class="col-h">已核 API / 文档</div>
+            <div class="card">
+              <div class="name">DeepSeek V4.1 Flash</div>
+              <div class="id"><code>deepseek-flash</code></div>
+              <div class="meta">1M · 视觉✓</div>
+              <div class="use">V4 Pro：1M · 无视觉</div>
+            </div>
+            <div class="card">
+              <div class="name">Mistral Large 4</div>
+              <div class="id"><code>mistral-large-4</code></div>
+              <div class="meta">开放权重多模态</div>
+              <div class="use">Ecosystem Open Weight License</div>
+            </div>
+            <div class="card">
+              <div class="name">Mistral Small 4</div>
+              <div class="id"><code>mistral-small-4</code></div>
+              <div class="meta">Apache 2.0</div>
+              <div class="use">instruct / reasoning / coding</div>
+            </div>
+            <div class="card">
+              <div class="name">GLM 5.3 / Flash</div>
+              <div class="id"><code>见 Z.ai / Mistral 目录</code></div>
+              <div class="meta">1M 上下文</div>
+              <div class="use">Flash 多模态；5.3 文本</div>
+            </div></div></div>
+  <div class="extras"><div class="extra"><b>仍以旧证据文件为准、本次仅交叉抽查</b> — Qwen3.8-Max、Kimi K3、MiniMax M3、Meta Muse Spark Open — 细节见 ch03-sources；变更以各厂商页为准</div><div class="extra"><b>弃用提示（Mistral 目录）</b> — Mistral Medium 3.5：文档标 Deprecation 2026-10-31 / Retirement 2027-04-30 — 替代：Large 4；勿当作「已下线」除非官方确认不可用</div></div>
+  <ul class="notes"><li>自托管看许可证与硬件；云 API 看模型 ID 与地区合规。</li><li>编程工具作者统一推荐 OpenCode + 网关切后端；厂商官方工具另注。</li><li>本图不穷尽所有开放权重模型；未核名称一律不写。</li></ul>
+  <div class="foot">
+    <span>整理/重绘 · 参考用户暗色族谱图版式 · 事实仅取官方目录 · 可编辑源：本 HTML + gen_model_maps.py</span>
+    <span class="right">api-docs.deepseek.com · docs.mistral.ai · docs.z.ai · 访问 2026-11-20</span>
+  </div>
+  </div>
+</body></html>

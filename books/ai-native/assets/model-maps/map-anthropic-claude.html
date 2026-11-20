@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<style>
+  @font-face { font-family: 'NotoSansSC'; src: local('Noto Sans CJK SC'), local('Noto Sans SC'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #FFFEFA; }
+  body {
+    width: 1400px; min-height: 100px; height: auto; overflow: visible;
+    color: #1A2332;
+    font-family: 'NotoSansSC', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
+    padding: 36px 40px 48px; position: relative;
+  }
+  .wrap { display: flex; flex-direction: column; gap: 0; }
+  .banner {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    border-bottom: 4px solid #D97706; padding-bottom: 16px; margin-bottom: 20px;
+  }
+  .banner h1 { font-size: 32px; font-weight: 800; letter-spacing: 0.5px; color: #1A2332; line-height: 1.25; }
+  .banner .sub { font-size: 15px; color: #3D4A5C; margin-top: 8px; font-weight: 600; }
+  .badge {
+    background: #D97706; color: #fff; font-size: 13px; font-weight: 800;
+    padding: 8px 14px; border-radius: 999px; white-space: nowrap; margin-left: 16px; flex: 0 0 auto;
+  }
+  .grid { display: flex; gap: 16px; align-items: flex-start; }
+  .col { flex: 1; min-width: 0; }
+  .col-h {
+    font-size: 15px; font-weight: 800; color: #D97706;
+    margin-bottom: 10px; letter-spacing: 0.5px;
+  }
+  .card {
+    background: #FFFFFF; border: 1.5px solid #D8DEE8; border-left: 5px solid #D97706;
+    border-radius: 12px; padding: 12px 14px; margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(26,35,50,0.06);
+  }
+  .name { font-size: 18px; font-weight: 800; color: #1A2332; }
+  .id { font-size: 13px; color: #3D4A5C; margin-top: 4px; }
+  .id code { background: #F1F4F9; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  .meta { font-size: 13px; color: #3D4A5C; margin-top: 5px; font-weight: 600; }
+  .use { font-size: 14px; color: #1A2332; margin-top: 5px; font-weight: 600; }
+  .extras { margin-top: 12px; }
+  .extra {
+    background: #F7F9FC; border: 1px solid #D8DEE8; border-radius: 10px;
+    padding: 10px 14px; margin-bottom: 8px; font-size: 13px; color: #1A2332; line-height: 1.45;
+  }
+  .extra b { color: #D97706; }
+  .notes {
+    margin-top: 10px; background: #FFF; border: 1.5px solid #D8DEE8; border-radius: 12px;
+    padding: 12px 18px 12px 32px; font-size: 13px; color: #1A2332; line-height: 1.5;
+  }
+  .notes li { margin: 4px 0; }
+  /* Footer in document flow — never overlaps content */
+  .foot {
+    margin-top: 40px; padding-top: 14px;
+    border-top: 1px solid #D8DEE8;
+    display: flex; justify-content: space-between; gap: 16px;
+    font-size: 12px; color: #3D4A5C; font-weight: 600; line-height: 1.4;
+  }
+  .foot span { max-width: 48%; }
+  .foot .right { text-align: right; }
+</style></head><body>
+  <div class="wrap">
+  <div class="banner">
+    <div>
+      <h1>Anthropic · Claude 模型族谱（核实版）</h1>
+      <div class="sub">Claude API / 云平台模型 ID；产品 App 另计</div>
+    </div>
+    <div class="badge">核实 · 2026-11-20</div>
+  </div>
+  <div class="grid"><div class="col"><div class="col-h">最新旗舰线</div>
+            <div class="card">
+              <div class="name">Claude Fable 5.2</div>
+              <div class="id"><code>claude-fable-5-2</code></div>
+              <div class="meta">1M · 128K 输出</div>
+              <div class="use">高难推理与长程 Agent</div>
+            </div>
+            <div class="card">
+              <div class="name">Claude Opus 5.5</div>
+              <div class="id"><code>claude-opus-5-5</code></div>
+              <div class="meta">1M · 128K 输出</div>
+              <div class="use">官方建议多数负载由此起步</div>
+            </div>
+            <div class="card">
+              <div class="name">Claude Sonnet 5.5</div>
+              <div class="id"><code>claude-sonnet-5-5</code></div>
+              <div class="meta">1M · 128K 输出</div>
+              <div class="use">速度与智能平衡</div>
+            </div>
+            <div class="card">
+              <div class="name">Claude Haiku 5.5</div>
+              <div class="id"><code>claude-haiku-5-5</code></div>
+              <div class="meta">1M · 128K 输出</div>
+              <div class="use">高吞吐 / 低延迟</div>
+            </div></div></div>
+  <div class="extras"><div class="extra"><b>仍列于官方「All models」</b> — Fable 5.1 / Fable 5；Opus 5 / 4.8 / 4.7 / 4.6；Sonnet 5 / 4.6 等 — 优先用最新线</div><div class="extra"><b>有限供应</b> — Claude Mythos 5.2 / 5.1 / 5（需验证计划；本书不展开）</div><div class="extra"><b>已标注 retired（部分云平台仍可）</b> — Opus 4.1、Opus 4、Sonnet 4 — 详见 Model deprecations，勿自行臆测下线日</div></div>
+  <ul class="notes"><li>先用 Opus 5.5 评测；不够再升 Fable 5.2；子 Agent 用 Haiku 5.5。</li><li>全系当前线均为 1M 上下文 / 128K 同步输出上限。</li><li>退休承诺以 Anthropic 运营平台为准；合作云平台自定日期。</li></ul>
+  <div class="foot">
+    <span>整理/重绘 · 参考用户暗色族谱图版式 · 事实仅取官方目录 · 可编辑源：本 HTML + gen_model_maps.py</span>
+    <span class="right">platform.claude.com/docs/en/models/overview · 访问 2026-11-20</span>
+  </div>
+  </div>
+</body></html>

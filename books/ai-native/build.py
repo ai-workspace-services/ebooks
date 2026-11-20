@@ -10,7 +10,7 @@ V = a.version; E = html.escape
 def img(n): return 'data:image/jpeg;base64,' + base64.b64encode((ROOT / 'assets' / 'jpg' / f'0{n}.jpg').read_bytes()).decode()
 
 pages = []   # (bookmark title or None, html inner, label)
-TIGHT={'03 装备库 · 3.6 作者推荐':.86,'03 装备库 · 3.5 全家桶':.82,'03 装备库 · 对照表':.86,'目录（续）':.84,'02 主城 · 作者实战经验':.8,'1.4 关卡插画 · 2026-10 装备版':.86,**{f'03 装备库 · 3.{i}':.8 for i in (1,2,3,4,6)},'02 架构':.9,'03 Google AI · 2026-02-06 版':.92,'附录 B':.92,'02 主城 AI Workspace · 攻略':.93}
+TIGHT={'03 装备库 · 3.6 作者推荐':.86,'03 装备库 · 3.5 全家桶':.82,'03 装备库 · 对照表':.86,'目录（续）':.84,'02 主城 · 作者实战经验':.8,'1.4 关卡插画 · 2026-10 装备版':.86,**{f'03 装备库 · 3.{i}':.8 for i in (1,2,3,4,6)},**{f'03 装备库 · 3.{i} 族谱':.92 for i in (1,2,3,4,6)},'02 架构':.9,'03 Google AI · 2026-02-06 版':.92,'附录 B':.92,'02 主城 AI Workspace · 攻略':.93}
 def add(inner, label='', bm=None, cls=''):
     if label in TIGHT: inner=f'<div style="zoom:{TIGHT[label]}">{inner}</div>'
     pages.append(dict(inner=inner, label=label, bm=bm, cls=cls))
