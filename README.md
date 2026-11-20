@@ -6,32 +6,51 @@
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="books/it-history/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/it-history-dark.webp"><img src="https://xworktech.com/ebooks/covers/it-history-light.webp" width="200" alt="cover"></picture></a><br><b>图解 IT 简史</b><br><code>v4.9.1</code></td>
-<td align="center" width="33%"><a href="books/platform-engineering/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/platform-engineering-dark.webp"><img src="https://xworktech.com/ebooks/covers/platform-engineering-light.webp" width="200" alt="cover"></picture></a><br><b>图解平台工程 · 云中立实践</b><br><code>v0.9.18</code></td>
-<td align="center" width="33%"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="200" alt="cover"></picture></a><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
+<td align="center" width="33%"><a href="books/it-history/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/it-history-dark.webp"><img src="https://xworktech.com/ebooks/covers/it-history-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-01</code><br><b>图解 IT 简史</b><br><code>v4.9.1</code></td>
+<td align="center" width="33%"><a href="books/platform-engineering/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/platform-engineering-dark.webp"><img src="https://xworktech.com/ebooks/covers/platform-engineering-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-02</code><br><b>图解平台工程 · 云中立实践</b><br><code>v0.9.20</code></td>
+<td align="center" width="33%"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-03</code><br><b>趣谈数据基础设施 · AI 时代</b><br><code>v5.1</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.3</code></td>
-<td align="center" width="33%"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="200" alt="cover"></picture></a><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.5</code></td>
-<td align="center" width="33%"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="200" alt="cover"></picture></a><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
+<td align="center" width="33%"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-04</code><br><b>出海第一步 · 一人公司合规全流程</b><br><code>v1.4</code></td>
+<td align="center" width="33%"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-05</code><br><b>AI 工具出海通关 · 注册与订阅全流程</b><br><code>v0.2.6</code></td>
+<td align="center" width="33%"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-06</code><br><b>AI-Native 超级个体 · 新时代游戏</b><br><code>v0.9.6</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
-<td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.3</code></td>
-<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.2</code></td>
+<td align="center" width="33%"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-09</code><br><b>独立开发观察者计划：AI × 可观测 SaaS 首季</b><br><code>v0.1-r5</code></td>
+<td align="center" width="33%"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-07</code><br><b>XWorkspace Agent Skills 工程规范 · 开放方案</b><br><code>v0.3</code></td>
+<td align="center" width="33%"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="200" alt="cover"></picture></a><br><code>XW-EB-08</code><br><b>人民币 ⇄ 海外卡 · 三条路线攻略</b><br><code>v1.3</code></td>
 </tr>
 <tr>
-<td align="center" width="33%"><a href="books/design-patterns-ai/"><b>图解经典设计模式 · 遇到 AI 时代</b></a><br><code>v0.1</code></td>
+<td align="center" width="33%"><a href="books/design-patterns-ai/"><b>图解经典设计模式 · 遇到 AI 时代</b></a><br><code>v0.1</code><br><sub>未编内部编号</sub></td>
 <td align="center" width="33%"></td>
 <td align="center" width="33%"></td>
 </tr>
 </table>
 
+
+## 内部编号对照
+
+系列编号 `XW-EB-xx` 固定不变，不随版本号递增。最新 PDF 以 Drive 为准；GitHub Release zip 仍指向已发布资产（部分书正文已升版但 zip 尚未重打）。
+
+| 编号 | 系列 | 最新版本 | 最新 PDF（Drive） |
+|---|---|---|---|
+| `XW-EB-01` | 图解 IT 简史 | `v4.9.1` | [打开](https://drive.google.com/file/d/1heEAEsvb03bLqjETctFP50TM--bwyvMO/view?usp=drivesdk) |
+| `XW-EB-02` | 图解平台工程 · 云中立实践 | `v0.9.20` | [打开](https://drive.google.com/file/d/1-3ZlangvoxT8qswBIFGGvq5Jsrz9b3-8/view?usp=drivesdk) |
+| `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `v5.1` | [打开](https://drive.google.com/file/d/1OaenKGbINFoJ9_AZnXLxcOCd0sqDZo7p/view?usp=drivesdk) |
+| `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `v1.4` | [打开](https://drive.google.com/file/d/1z36up2-1qnYN_vFT_DlMx2TXX_Dv93bg/view?usp=drivesdk) |
+| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.6` | [打开](https://drive.google.com/file/d/15V24YDIendKxzegDhO1yUq3Tr1z8EOVF/view?usp=drivesdk) |
+| `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | [打开](https://drive.google.com/file/d/1RR90_uteAAyhtYiGGmfPtu18tNQqg7bq/view?usp=drivesdk) |
+| `XW-EB-07` | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | [打开](https://drive.google.com/file/d/1Y7CDFvWxPmECEZVL60UCUMLicsEBs8E2/view?usp=drivesdk) |
+| `XW-EB-08` | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.3` | [打开](https://drive.google.com/file/d/1ftAz_9O8RdRXvfuIyH_RFEQYs4ooYH17/view?usp=drivesdk) |
+| `XW-EB-09` | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | [打开](https://drive.google.com/file/d/1HXiQyf3tLghYUGcBQfjgf2q1QIhOecQj/view?usp=drivesdk) |
+
+`图解经典设计模式 · 遇到 AI 时代`（`v0.1`）在仓内，暂未编内部编号。
+
 ## 书目介绍
 
 <table><tr><td width="130" valign="top"><a href="books/it-history/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/it-history-dark.webp"><img src="https://xworktech.com/ebooks/covers/it-history-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 图解 IT 简史 · `v4.9.1`
+### XW-EB-01 · 图解 IT 简史 · `v4.9.1`
 
 这是一本讲“看不见的城市”的书：从 1964 年 IBM System/360 打地基，到云、Kubernetes，再到 ChatGPT 盖起的 AI 摩天楼，把散落在公众号和小红书上的图文按时间和因果重新排队，讲成一个连贯的故事。工程师拿它当全景地图，技术管理者拿它当选型参照，好奇的朋友也能当一本不用背名词的入门书。
 
@@ -41,7 +60,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/platform-engineering/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/platform-engineering-dark.webp"><img src="https://xworktech.com/ebooks/covers/platform-engineering-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 图解平台工程 · 云中立实践 · `v0.9.18`
+### XW-EB-02 · 图解平台工程 · 云中立实践 · `v0.9.20`
 
 全书只讲一个判断：工具拼在一起 ≠ 平台。把平台拆成 Git 与 CI、资源即代码、交付引擎、安全与身份、环境治理、云中立、可观测七层，坚持“最大程度自建”，每章都对着 ai-workspace-infra 里真实的仓库和 PR 讲。适合手里工具一大堆、却总在出事那天才发现缺了点什么的团队。
 
@@ -51,7 +70,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/data-infra/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/data-infra-ai-dark.webp"><img src="https://xworktech.com/ebooks/covers/data-infra-ai-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 趣谈数据基础设施 · AI 时代 · `v5.1`
+### XW-EB-03 · 趣谈数据基础设施 · AI 时代 · `v5.1`
 
 一条“地下管道”的故事：推荐、账单、AI 的回答背后，是一套搬运、存放、加工和守护数据的系统，从 1970 年代一路长到今天的 AI、Agent 和向量。13 章先画总地图，再自下而上走过存储、采集、计算、仓湖与 BI、治理和 AI 数据层，还给各路工具排排“年龄”。读的时候不必正襟危坐，就当听老工程师在茶水间讲往事。
 
@@ -61,7 +80,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/chuhai-first-step/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/overseas-first-step-dark.webp"><img src="https://xworktech.com/ebooks/covers/overseas-first-step-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 出海第一步 · 一人公司合规全流程 · `v1.3`
+### XW-EB-04 · 出海第一步 · 一人公司合规全流程 · `v1.4`
 
 从 LLC 到 EIN，再到银行、应用商店与跨境电汇：美国 LLC 设立、EIN 与 147C、Mercury 企业账户，Microsoft、Apple、Google Play 三家公司开发者号，大陆、香港、美国三段资金合规，以及汇丰香港「全球转账」操作步骤。都是作者自己一步步走过的真实顺序，适合想用一人公司把产品卖向全球的独立开发者。
 
@@ -71,7 +90,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/ai-tools-overseas/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-tools-overseas-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-tools-overseas-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### AI 工具出海通关 · 注册与订阅全流程 · `v0.2.5`
+### XW-EB-05 · AI 工具出海通关 · 注册与订阅全流程 · `v0.2.6`
 
 从网络环境、海外手机号、Gmail，到 ChatGPT、Claude、Grok、Gemini 的注册登录，再到 Codex、Claude Code、Cursor、Antigravity 和 App Store、Google Play 的订阅支付，一条能长期维护的路径。目标不是“一次注册成功”，而是让每个账号关系清楚、可恢复、可管理；前提只有一条：用真实资料，由本人长期控制。
 
@@ -81,7 +100,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/ai-native/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/ai-native-dark.webp"><img src="https://xworktech.com/ebooks/covers/ai-native-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### AI-Native 超级个体 · 新时代游戏 · `v0.9.6`
+### XW-EB-06 · AI-Native 超级个体 · 新时代游戏 · `v0.9.6`
 
 一本开局攻略：不带你再刷一轮“工具收藏”，而是先递一张全局地图——技术人 → AI 工具使用者 → AI 实践者 → AI 系统构建者 → AI 超级个体。它不是手把手训练营，也不承诺一夜暴富，而是帮你判断从哪条支线开始。程序员、运维、架构师、产品经理、独立开发者，想用 AI 打开新机会的技术人都适合。
 
@@ -91,7 +110,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/indie-observer/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/observer-season-1-dark.webp"><img src="https://xworktech.com/ebooks/covers/observer-season-1-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 独立开发观察者计划：AI × 可观测 SaaS 首季 · `v0.1-r5`
+### XW-EB-09 · 独立开发观察者计划：AI × 可观测 SaaS 首季 · `v0.1-r5`
 
 本季主题：AI 如何帮一个个人 SaaS 被开发出来、被看懂、被持续运行。12 篇核心稿分三个月：接得上（接观测、搬面板、串 Trace）、看得懂 AI（告警、工具调用、Token、Agent 循环）、守得住退得出（发布对比、AI 排障、自监控、季度复盘）。适合一个人做 SaaS、又想把它看清楚的开发者。
 
@@ -101,7 +120,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/agent-skills-spec/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/agent-skills-spec-dark.webp"><img src="https://xworktech.com/ebooks/covers/agent-skills-spec-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### XWorkspace Agent Skills 工程规范 · 开放方案 · `v0.3`
+### XW-EB-07 · XWorkspace Agent Skills 工程规范 · 开放方案 · `v0.3`
 
 在多仓库协作与自动化交付里，多个 Agent 一起干活时，瓶颈往往不是推理能力，而是每次任务都要重新说明团队的规范与边界。本书把已验证的规矩沉淀为可加载的 Skill（每个技能一份 `SKILL.md`），覆盖工程、运维与开发三类自研规范，只讲这些技能在真实的一天里怎么用。适合同时带着一群 Agent、在多仓库里协作交付的人。
 
@@ -111,7 +130,7 @@
 
 <table><tr><td width="130" valign="top"><a href="books/cny-overseas-card-routes/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-dark.webp"><img src="https://xworktech.com/ebooks/covers/cny-overseas-card-routes-light.webp" width="120" alt="cover"></picture></a></td><td valign="top">
 
-### 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.2`
+### XW-EB-08 · 人民币 ⇄ 海外卡 · 三条路线攻略 · `v1.3`
 
 只回答一个问题：人民币怎么进到海外卡，海外卡里的钱又怎么回到人民币。香港、菲律宾（DITO eSIM + Maya）、美国 Mercury 三条路线，各自讲清绕不开的前提。是个人经历加官方公开资料整理，适合要给海外 AI 订阅付款或收美元营收的朋友。
 
@@ -131,18 +150,18 @@
 
 把书当仓库维护：每本书的 Markdown 正文、构建脚本和版本号在一起走版本，改版时章节和示例一起提交、一起评审。PDF 由 CI 构建，不入库。
 
-| 书 | 版本 | 构建 | 图片素材 | PDF |
-|---|---|---|---|---|
-| 图解平台工程 · 云中立实践 | `v0.9.18` | `make platform-engineering` | Drive | [docs](https://xworktech.com/docs) |
-| 图解 IT 简史 | `v4.9.1` | `make it-history` | Drive | [docs](https://xworktech.com/docs) |
-| 趣谈数据基础设施 · AI 时代 | `v5.1` | `make data-infra` | Drive | [docs](https://xworktech.com/docs) |
-| 出海第一步 · 一人公司合规全流程 | `v1.3` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
-| AI 工具出海通关 · 注册与订阅全流程 | `v0.2.5` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
-| AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
-| 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
-| XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
-| 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.2` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
-| 图解经典设计模式 · 遇到 AI 时代 | `v0.1` | `make design-patterns-ai` | 构建时内联 SVG | [docs](https://xworktech.com/docs) |
+| 编号 | 书 | 版本 | 构建 | 图片素材 | PDF |
+|---|---|---|---|---|---|
+| `XW-EB-01` | 图解 IT 简史 | `v4.9.1` | `make it-history` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-02` | 图解平台工程 · 云中立实践 | `v0.9.20` | `make platform-engineering` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `v5.1` | `make data-infra` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `v1.4` | `make chuhai-first-step` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `v0.2.6` | `make ai-tools-overseas` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `v0.9.6` | `make ai-native` | Drive | [docs](https://xworktech.com/docs) |
+| `XW-EB-07` | XWorkspace Agent Skills 工程规范 · 开放方案 | `v0.3` | `make agent-skills-spec` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-08` | 人民币 ⇄ 海外卡 · 三条路线攻略 | `v1.3` | `make cny-overseas-card-routes` | — | [docs](https://xworktech.com/docs) |
+| `XW-EB-09` | 独立开发观察者计划：AI × 可观测 SaaS 首季 | `v0.1-r5` | `make indie-observer` | Drive | [docs](https://xworktech.com/docs) |
+| — | 图解经典设计模式 · 遇到 AI 时代 | `v0.1` | `make design-patterns-ai` | 构建时内联 SVG | [docs](https://xworktech.com/docs) |
 
 ## 用法
 
