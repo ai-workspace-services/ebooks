@@ -261,12 +261,10 @@ Antigravity 是 Google 的 agent-first 开发平台，包含桌面应用、IDE /
 Agent 可能访问项目文件、执行终端命令或使用浏览器。不要把密码、恢复码、API Token、私钥、`.env` 文件或支付资料放入可访问的工作区；不要使用来源不明的安装脚本、破解版本或共享账号。
 :::
 
-:::warn 注意事项：地区与账号资格（核对日期 2026-11-20）
-作者观察（2026-11-20，Asia/Shanghai）：在部分环境下，**Antigravity 客户端/App** 登录时更容易遇到「当前账号或地区不可用」一类提示；作者侧当时更接近「需要可用的美区关联账户」的体验。这是**有日期的作者观察**，**不能**据此写成「Antigravity 全球仅对美国账户开放」。
+:::warn 注意事项：Antigravity App 地区选择（核对日期 2026-11-20）
+**Antigravity App 建议优先选择美区账户；实际可用范围和资格以官方最新说明为准。** 这是作者实操建议，不是「仅美区可用」的硬性结论，也不涉及伪造账号资料或绕过资格检查。
 
-官方公开说明（同日查阅 [Google Antigravity FAQ · geographical availability](https://antigravity.google/docs/faq/)）：Antigravity 在美洲、欧洲、非洲、亚洲、大洋洲等**多个国家/地区**可用，资格主要看 Google 账号在 [Google Terms of Service](https://policies.google.com/terms) 上关联的国家/地区是否在支持名单，并要求年满 18 岁；Workspace 账号与个人账号规则不同。官方文档同时区分 **Antigravity App、CLI、IDE / 扩展** 等形态，以你实际下载的客户端与登录页为准。
-
-操作建议：登录前先核对账号 ToS 国家；遇「not available in your location / not eligible」时，以 FAQ 与登录页提示为准，不要假设改 VPN 或改 Play 国家一定有效。名单与产品形态会变化，请以官方页面最新版为准。
+官方 [Antigravity FAQ · geographical availability](https://antigravity.google/docs/faq/)（2026-11-20 查阅）列出多个国家/地区；资格通常看 Google 账号在 [Terms of Service](https://policies.google.com/terms) 上关联的国家是否在支持名单，并要求年满 18 岁。App / CLI / IDE 形态以你实际下载的客户端与登录页为准。
 :::
 
 Gemini 聊天、Antigravity 的 Agent 额度、Google Cloud API 用量可能属于不同计费路径。付款前确认：账号是否正确；购买的是哪类计划；入口是 Google One、Google Play、Google Cloud 还是组织管理员；自动续费与取消入口在哪里。
