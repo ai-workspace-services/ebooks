@@ -56,6 +56,22 @@ FIGS={
 'apple':('图 12-1 可选：App Store 应用内订阅',hflow([('Apple ID','地区=实际'),('双因素','认证'),('添加 Visa','3-D Secure'),('App 内订阅','确认方案'),('设置→订阅','核对续费')])),
 'play':('图 13-1 可选：Google Play 应用内订阅',hflow([('登录 Play','本人 Gmail'),('核对地区','所在地一致'),('付款方式','Visa / Maya'),('App 内订阅','核对账号'),('付款和订阅','保存订单号')])),
 'trouble':('图 附-1 先定位是哪一段出了问题',branch(('出问题了','先记录报错与时间'),[('打不开','网络 / DNS / 代理'),('收不到码','号码 / 短信 / 频率'),('登录报错','账号 / 组织策略'),('付款失败','地区 / 卡 / 重复订阅')])),
+'antigravity_regions':('图 09-2 示意图：四个「国家」字段不要混用',
+    branch(('资格与付款是不同开关','示意图 · 非产品 UI 截图'),[
+        ('ToS 关联国家','Antigravity FAQ 看这里'),
+        ('Payments 资料国家','卡与账单 · 国家不可改'),
+        ('Play 国家','商店目录 · 常有 90 天间隔'),
+        ('Gmail 地址','登录标识 ≠ 地区')
+    ],('加美国卡 ≠ 自动全切美区',''))),
+'antigravity_us_checklist':('图 09-3 示意图：美区优先路径清单',
+    vflow([
+        ('核对 ToS 关联国家','policies.google.com/terms'),
+        ('个人账号 + 年龄验证','FAQ · 18+'),
+        ('Payments 国家匹配卡','不对就新建资料'),
+        ('账单信息与发卡行一致','Mercury 用公司法定地址'),
+        ('登录 App / 必要时重置','以官方资格页为准'),
+        ('Play 国家单独处理','不是 Antigravity 开关')
+    ],hi=(0,3))),
 'mercury':('图 14-1 Mercury Checking 到账确认（已打码）', '<img src="file:///workspace/ebooks/books/ai-tools-overseas/assets/mercury-arrival-redacted.png" alt="Mercury 到账截图（已打码）" style="width:100%;height:auto;border:1px solid #c9d6ee;border-radius:8px"/>'),
 }
 def inl(s):
