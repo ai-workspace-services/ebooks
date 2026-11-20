@@ -14,7 +14,7 @@
 | `XW-EB-02` | 图解平台工程 · 云中立实践 | `platform-engineering` | `v0.9.20` | `books/platform-engineering/build.sh` → `build-core.sh` |
 | `XW-EB-03` | 趣谈数据基础设施 · AI 时代 | `data-infra` | `v5.1` | `books/data-infra/build.sh` → `book/build_book.py` |
 | `XW-EB-04` | 出海第一步 · 一人公司合规全流程 | `chuhai-first-step` | `v1.3` | `books/chuhai-first-step/build.sh` → `build.py` |
-| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `ai-tools-overseas` | `v0.2.5` | `books/ai-tools-overseas/build.sh` → `src/build.py` |
+| `XW-EB-05` | AI 工具出海通关 · 注册与订阅全流程 | `ai-tools-overseas` | `v0.2.7` | `books/ai-tools-overseas/build.sh` → `src/build.py` |
 | `XW-EB-06` | AI-Native 超级个体 · 新时代游戏 | `ai-native` | `v0.9.6` | `books/ai-native/build.sh` → `build.py` |
 | `XW-EB-07` | XWorkspace Agent Skills 工程规范 | `agent-skills-spec` | `v0.3` | `books/agent-skills-spec/build.sh` → `build-core.sh` |
 | `XW-EB-08` | 人民币海外卡三条路线攻略 | `cny-overseas-card-routes` | `v1.2` | `books/cny-overseas-card-routes/build.sh` → `src/build.py` |
@@ -126,7 +126,7 @@
 ### `XW-EB-05` · AI 工具出海通关 · 注册与订阅全流程 (`ai-tools-overseas`)
 
 - 构建脚本：`books/ai-tools-overseas/build.sh` → `src/build.py`
-- `main` 上 VERSION：`v0.2.5`
+- `main` 上 VERSION：`v0.2.7`
 - Release zip：[`ai-tools-overseas-v0.2.5.zip`](https://github.com/ai-workspace-services/ebooks/releases/download/v2026.11.03/ai-tools-overseas-v0.2.5.zip)
 
 | 类型 | 版本/名称 | 大小 | Drive 修改时间 | PDF | 源码核对 | 重复 |
@@ -140,6 +140,7 @@
 | `full` | `AI工具出海通关-注册与订阅全流程-v0.2.4.pdf` | 1.0 MB | 2026-10-25 20:51 CST | [打开](https://drive.google.com/file/d/1K6YNbs2K-vvzOe7rdKmm2tsmxhdh69Ci/view?usp=drivesdk) | **源码未核对到**（Drive 有 PDF；ebooks 仓 VERSION 历史/Release 无对应项） | — |
 | `full` | `AI工具出海通关-注册与订阅全流程-v0.2.5.pdf` | 1.1 MB | 2026-10-30 20:30 CST | [打开](https://drive.google.com/file/d/1qEqo7rKo08vgzwRCMCDJI_LjGKG5UOR2/view?usp=drivesdk) | git `1346d3f` (2026-11-09) · 与 `origin/main` VERSION 一致 | — |
 | `full` | `AI工具出海通关-注册与订阅全流程-v0.2.6.pdf` | 1.2 MB | 2026-11-14 19:09 CST | [打开](https://drive.google.com/file/d/15V24YDIendKxzegDhO1yUq3Tr1z8EOVF/view?usp=drivesdk) | git `2f8e9fb` (2026-11-20) | 3 |
+| `full` | `AI工具出海通关-注册与订阅全流程-v0.2.7`（源码在 main；Drive PDF 未入库） | — | 2026-11-20 | — | git `2b79558` / `8aaf69f` · 与 `origin/main` VERSION `v0.2.7` 一致 | — |
 | `cover` | `AI工具出海通关-注册与订阅全流程-v0.2.5-cover.pdf` | 1.2 MB | 2026-11-09 16:34 CST | [打开](https://drive.google.com/file/d/1rr02eUNN3TXS2VjtY7TO7DGHKn6sBE6z/view?usp=drivesdk) | 封面变体（非正文权威） | 3 |
 | `cover` | `AI工具出海通关-注册与订阅全流程-v0.2.6-cover.pdf` | 1.1 MB | 2026-11-13 20:29 CST | [打开](https://drive.google.com/file/d/1G4-NJ2fZ5JBbqpJQH9f5KLC_G-_6YnNI/view?usp=drivesdk) | 封面变体（非正文权威） | 2 |
 
